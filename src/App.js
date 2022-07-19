@@ -5,18 +5,15 @@ import Navbar from './Share/Navbar';
 
 function App() {
   return (
- header/rana
-    <>
+    <div>
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
 
       </Routes>
-      </>
 
 
-
-    
+    </div>
   );
 }
 
