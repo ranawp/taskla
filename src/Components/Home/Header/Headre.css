@@ -1,0 +1,53 @@
+.header {
+    /* display: flex; */
+    /* background-color: #6335F1; */
+}
+
+.button {
+    background-color: #0D73FA;
+    color: white;
+}
+
+.button:hover {
+    background-color: #EDF5E1;
+    color: #1F2235;
+}
+
+/* .hier-button {
+    background-color: #1F2235;
+    border: 2px solid white;
+} */
+
+
+.hier-button:hover {
+
+    border: 2px solid #FF5825;
+}
+
+.banner {
+    /* background-color: #152742; */
+    /* margin-top: -4rem; */
+    /* height: 100vh; */
+
+    /* height: calc(var(--vh, 1vh) * 100); */
+}
+
+@media only screen and (min-width: 320px) and (max-width:480px) {
+    .left-side {
+        margin-left: 2rem;
+    }
+
+    .left-side-info {
+        margin-top: 5rem;
+    }
+
+    .button {
+        padding: .5rem .5rem;
+
+    }
+
+    .right-side img {
+        margin-left: -2rem;
+    }
+
+}
