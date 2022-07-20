@@ -4,6 +4,8 @@ import './Footer.css';
 
 const Footer = () => {
     return (
+        
+        // start
         <div className='mt-12'>
     <footer className="footer p-10 bg-neutral text-neutral-content footer-style">
   <div>
