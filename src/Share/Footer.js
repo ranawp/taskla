@@ -36,6 +36,9 @@ const Footer = () => {
           <a className="link link-hover">Sylhet,Bangladesh</a>
         </div>
       </footer>
+      <div>
+        <p className='text-center font-bold text-gray-600 py-5'>&copy; All rights reserved 2022</p>
+      </div>
     </div>
   );
 };
