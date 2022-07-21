@@ -11,7 +11,9 @@ import { EffectCoverflow, Pagination } from "swiper";
 
 const Review = () => {
     return (
-        <div>
+        <div className='h-[600px] bg-base-200'>
+            <h1 className='text-center text-4xl font-bold text-gray-500 pt-10'>What people are saying
+            </h1>
             <Swiper
                 effect={"coverflow"}
                 grabCursor={true}
@@ -30,92 +32,66 @@ const Review = () => {
             >
 
                 <SwiperSlide>
-                    <div class="card w-96 bg-base-100 shadow-xl">
-                        <figure class="px-10 pt-10">
-                            <div class="avatar">
-                                <div class="w-24 rounded-full">
-                                    <img src="https://placeimg.com/192/192/people" />
+                    <div className="card w-96 bg-base-100 shadow-xl">
+                        <figure className="px-10 pt-10">
+                            <div className="avatar">
+                                <div className="w-24 rounded-full">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIqYGTo0fiyIaEafNboSfDqqoVwbMGj8sqxFDrRBcm8m5pAgkfr29BcuK1-Lu_0C1TqpU&usqp=CAU" />
                                 </div>
                             </div>
                         </figure>
-                        <div class="card-body items-center text-center">
-                            <h2 class="card-title">Shoes!</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <div className="card-body items-center text-center">
+                            <h2 className="text-2xl font-bold">Willard Volding</h2>
+                            <p className='text-lg'>English Teacher</p>
+                            <p>Taskla is a good learning website for ever. It maintain student to give learning task. It use so comfortable. We can give a student everyday task.</p>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div class="card w-96 bg-base-100 shadow-xl">
-                        <figure class="px-10 pt-10">
-                        <div class="avatar">
-                                <div class="w-24 rounded-full">
-                                    <img src="https://placeimg.com/192/192/people" />
+                    <div className="card w-96 bg-base-100 shadow-xl">
+                        <figure className="px-10 pt-10">
+                            <div className="avatar">
+                                <div className="w-24 rounded-full">
+                                    <img src="https://t3.ftcdn.net/jpg/02/48/15/86/360_F_248158608_0ErNeAWWx6GZVDCg66jNRoPGEhHCSpaJ.jpg" />
                                 </div>
                             </div>
                         </figure>
-                        <div class="card-body items-center text-center">
-                            <h2 class="card-title">Shoes!</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <div className="card-body items-center text-center">
+                            <h2 className="text-2xl font-bold">Chris Cole</h2>
+                            <p className='text-lg'>Educational Technology Coordinator</p>
+                            <p>Taskla is the best thing to happen to writing in a long, long time. With a well-designed, I can teach students to become editors themselves.</p>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div class="card w-96 bg-base-100 shadow-xl">
-                        <figure class="px-10 pt-10">
-                        <div class="avatar">
-                                <div class="w-24 rounded-full">
-                                    <img src="https://placeimg.com/192/192/people" />
+                    <div className="card w-96 bg-base-100 shadow-xl">
+                        <figure className="px-10 pt-10">
+                            <div className="avatar">
+                                <div className="w-24 rounded-full">
+                                    <img src="https://i.pinimg.com/736x/38/93/07/389307d6af5c4be0051b7d3c4f93bf3d.jpg" />
                                 </div>
                             </div>
                         </figure>
-                        <div class="card-body items-center text-center">
-                            <h2 class="card-title">Shoes!</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <div className="card-body items-center text-center">
+                            <h2 className="text-2xl font-bold">Morten Taboe Nybor</h2>
+                            <p className='text-lg'>Assistant Professor</p>
+                            <p>It is a good way for students to become familiar with the criteria, providing feedback sharpens their thinking, it's useful for both receivers and givers of feedback and it's good for learning together.</p>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div class="card w-96 bg-base-100 shadow-xl">
-                        <figure class="px-10 pt-10">
-                        <div class="avatar">
-                                <div class="w-24 rounded-full">
-                                    <img src="https://placeimg.com/192/192/people" />
+                    <div className="card w-96 bg-base-100 shadow-xl">
+                        <figure className="px-10 pt-10">
+                            <div className="avatar">
+                                <div className="w-24 rounded-full">
+                                    <img src="https://st.depositphotos.com/1371851/1256/i/600/depositphotos_12560182-stock-photo-handsome-man-with-eyeglasses.jpg" />
                                 </div>
                             </div>
                         </figure>
-                        <div class="card-body items-center text-center">
-                            <h2 class="card-title">Shoes!</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div class="card w-96 bg-base-100 shadow-xl">
-                        <figure class="px-10 pt-10">
-                        <div class="avatar">
-                                <div class="w-24 rounded-full">
-                                    <img src="https://placeimg.com/192/192/people" />
-                                </div>
-                            </div>
-                        </figure>
-                        <div class="card-body items-center text-center">
-                            <h2 class="card-title">Shoes!</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div class="card w-96 bg-base-100 shadow-xl">
-                        <figure class="px-10 pt-10">
-                        <div class="avatar">
-                                <div class="w-24 rounded-full">
-                                    <img src="https://placeimg.com/192/192/people" />
-                                </div>
-                            </div>
-                        </figure>
-                        <div class="card-body items-center text-center">
-                            <h2 class="card-title">Shoes!</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <div className="card-body items-center text-center">
+                            <h2 className="text-2xl font-bold">William Mark</h2>
+                            <p className='text-lg'>English Teacher</p>
+                            <p>Taskla is a good learning website for ever. It maintain student to give learning task. It use so comfortable. We can give a student everyday task.</p>
                         </div>
                     </div>
                 </SwiperSlide>
