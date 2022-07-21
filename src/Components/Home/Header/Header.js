@@ -1,5 +1,5 @@
 import React from 'react';
-import './Headre.css'
+import './Header.css'
 
 const Header = () => {
     return (
@@ -9,7 +9,8 @@ const Header = () => {
 
                 <h1 className='md:text-3xl font-bold md:mt-20 mt-4'>Learn by giving feedback </h1>
 
-                <a href="https://drive.google.com/file/d/10XyLv0K1zxlxTXgLKRGnD-ZwVxeBRSuP/view?usp=sharing" target="_blank"><button className=' mt-4 button mr-5 rounded text-accent px-3 py-1'>Get Started</button></a>
+                <a href="https://drive.google.com/file/d/10XyLv0K1zxlxTXgLKRGnD-ZwVxeBRSuP/view?usp=sharing" target="_blank"><button className=' mt-4 button mr-5 rounded text-accent px-3 py-1'>Get Started</button>
+                </a>
                 {/* 
                 <a href='#contact' className='hier-button  px-3 py-1 rounded-full text-accent'>Register</a> */}
 
