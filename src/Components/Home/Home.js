@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from '../../Share/Navbar';
 import Review from '../Review/Review';
 import AccordianSection from './AccordianSection';
 import Header from './Header/Header';
@@ -10,6 +9,7 @@ const Home = () => {
             <Header></Header>
             <AccordianSection></AccordianSection>
             <Review></Review>
+
         </>
     );
 };
