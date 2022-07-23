@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css'
+import logo from '../asset/logo.png'
 
 const Navbar = () => {
     const menuItems = <>
@@ -12,7 +13,7 @@ const Navbar = () => {
 
     </>
     return (
-        <div className=''>
+        <div className='max-w-7xl mx-auto'>
             <div className="navbar">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -23,7 +24,7 @@ const Navbar = () => {
                             {menuItems}
                         </ul>
                     </div>
-                    <a className=" normal-case  ml-3 font-bold text-2xl text-black"><Link to='/'>TASK<span className='text-black'>LA</span></Link></a>
+                    <img className='w-16' src={logo} alt="" /> <a className=" normal-case  ml-3 font-bold text-2xl text-black"><Link to='/'>TASK<span className='text-black'>LA</span></Link></a>
                 </div>
                 <div className="navbar-end hidden lg:flex">
                     <ul className=" menu-horizontal p-0 text-black font-bold">
