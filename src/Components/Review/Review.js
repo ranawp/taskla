@@ -5,7 +5,8 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
-import "./Review.css";
+// import "./Review.css";
+import './Review.css'
 
 import { EffectCoverflow, Pagination } from "swiper";
 
