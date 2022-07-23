@@ -12,7 +12,6 @@ const Home = () => {
             <div className='max-w-7xl mx-auto'>
                 <Header></Header>
                 <Allacordian></Allacordian>
-                {/* <AccordianSection></AccordianSection> */}
             </div>
             <Review></Review>
             <SignupBanner />
