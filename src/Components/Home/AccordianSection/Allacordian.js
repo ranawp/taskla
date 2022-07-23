@@ -1,6 +1,7 @@
 import React from 'react';
 import image from '../../../asset/pexels-pixabay-301926.jpg'
-import AccordianSection from './AccordianSection';
+import AccordianSection from '../AccordianSection';
+// import AccordianSection from './AccordianSection';
 
 const Allacordian = () => {
     return (
