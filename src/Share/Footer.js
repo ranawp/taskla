@@ -23,12 +23,22 @@ const Footer = () => {
           <a className="link link-hover">Hridoy Ahmed</a>
         </div>
         <div>
+          <span className="footer-title">Resource</span>
+          <a className="link link-hover">Library</a>
+          <a className="link link-hover">Blogs</a>
+          <a className="link link-hover">Stories</a>
+          <a className="link link-hover">Terms and Condition</a>
+        </div>
+        <div>
           <span className="footer-title">Contact</span>
           <a className="link link-hover">01308893937</a>
           <a className="link link-hover">min11d10@gmail.com</a>
           <a className="link link-hover">Sylhet,Bangladesh</a>
         </div>
       </footer>
+      <div>
+        <p className='text-center font-bold text-gray-600 py-5'>&copy; All rights reserved 2022</p>
+      </div>
     </div>
   );
 };
