@@ -1,8 +1,6 @@
 import React from 'react';
 import Review from '../Review/Review';
 import Allacordian from './AccordianSection/Allacordian';
-// import AccordianSection from './AccordianSection/AccordianSection';
-
 import Header from './Header/Header';
 import SignupBanner from './SignupBanner/SignupBanner';
 
