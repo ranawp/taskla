@@ -37,7 +37,7 @@ const Review = () => {
                         <figure className="px-10 pt-10">
                             <div className="avatar">
                                 <div className="w-24 rounded-full">
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIqYGTo0fiyIaEafNboSfDqqoVwbMGj8sqxFDrRBcm8m5pAgkfr29BcuK1-Lu_0C1TqpU&usqp=CAU" />
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIqYGTo0fiyIaEafNboSfDqqoVwbMGj8sqxFDrRBcm8m5pAgkfr29BcuK1-Lu_0C1TqpU&usqp=CAU" alt=''/>
                                 </div>
                             </div>
                         </figure>
@@ -53,7 +53,7 @@ const Review = () => {
                         <figure className="px-10 pt-10">
                             <div className="avatar">
                                 <div className="w-24 rounded-full">
-                                    <img src="https://t3.ftcdn.net/jpg/02/48/15/86/360_F_248158608_0ErNeAWWx6GZVDCg66jNRoPGEhHCSpaJ.jpg" />
+                                    <img src="https://t3.ftcdn.net/jpg/02/48/15/86/360_F_248158608_0ErNeAWWx6GZVDCg66jNRoPGEhHCSpaJ.jpg" alt=''/>
                                 </div>
                             </div>
                         </figure>
@@ -69,7 +69,7 @@ const Review = () => {
                         <figure className="px-10 pt-10">
                             <div className="avatar">
                                 <div className="w-24 rounded-full">
-                                    <img src="https://i.pinimg.com/736x/38/93/07/389307d6af5c4be0051b7d3c4f93bf3d.jpg" />
+                                    <img src="https://i.pinimg.com/736x/38/93/07/389307d6af5c4be0051b7d3c4f93bf3d.jpg" alt=''/>
                                 </div>
                             </div>
                         </figure>
@@ -85,7 +85,7 @@ const Review = () => {
                         <figure className="px-10 pt-10">
                             <div className="avatar">
                                 <div className="w-24 rounded-full">
-                                    <img src="https://st.depositphotos.com/1371851/1256/i/600/depositphotos_12560182-stock-photo-handsome-man-with-eyeglasses.jpg" />
+                                    <img src="https://st.depositphotos.com/1371851/1256/i/600/depositphotos_12560182-stock-photo-handsome-man-with-eyeglasses.jpg" alt=''/>
                                 </div>
                             </div>
                         </figure>
