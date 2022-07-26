@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './BlogDetails1.css';
+import './BlogDetails.css';
 
 const BlogDetails1 = () => {
     return (
         <div className=''>
 
-         <div className='background-style '>
-            <h1 className='text-3xl mt-7'>HTML Detailes page </h1>
+         <div className='background-style-mongodb'>
+            <h1 className='text-3xl mt-7'>mongoDB</h1>
+
          </div>
 
       <div className='image-style'>
@@ -17,7 +18,7 @@ const BlogDetails1 = () => {
 
 
 
-       <div className="mx-8">
+       <div className="px-8">
 
        <div className="mt-4  text-justify">
        <h1 className='text-3xl mt-7'>   What Is MongoDB? </h1>
@@ -37,12 +38,12 @@ const BlogDetails1 = () => {
        <h1 className='text-3xl mt-7'> How Does MongoDB Text Search Work?</h1>
        <p>
        A key feature of MongoDB is the text search, which can query string fields for specific text or words. A text search can be performed using a text index or the $text operator.
-
-A text index can either be a string or an array of string elements. To perform a text search query, the collection must contain a text index. A collection can only have one text index, and a single text index can be applied to multiple fields.
-
-A search can also be performed on a collection with a text index using the $text operator. The $text operator tokenizes each search string with white space and treats all punctuation except for “–” and “\” as delimiters. After the search string is tokenized, the operator performs the logical OR operation on the tokens.
+       A text index can either be a string or an array of string elements. To perform a text search query, the collection must contain a text index. A collection can only have one text index, and a single text index can be applied to multiple fields.
+       A search can also be performed on a collection with a text index using the $text operator. The $text operator tokenizes each search string with white space and treats all punctuation except for “–” and “\” as delimiters. After the search string is tokenized, the operator performs the logical OR operation on the tokens.
        </p>
        </div>
+
+
 
       
 
@@ -50,7 +51,7 @@ A search can also be performed on a collection with a text index using the $text
 
        </div>
     
-     <Link to=""> <h2 className='text-1xl font-bold mt-4 flex justify-center'>GO TO PREVIER PAGE</h2></Link>
+     <Link to="/blog"> <h2 className='text-1xl font-bold mt-4 flex justify-center'>GO TO PREVIER PAGE</h2></Link>
      
       </div>
          
