@@ -8,8 +8,9 @@ const Navbar = () => {
         <li className='hover:text-black'><Link to='/'>Home</Link></li>
 
         <li className='hover:text-black'><Link className='pl-5' to='/blog'>Blog</Link></li>
-        <li className='hover:text-black'><a className='pl-5' href='/#about'>About</a></li>
-        <li className='hover:text-black'><a className='px-5' href='/#contact'>Contact Us</a></li>
+        <li className='hover:text-black'><Link className='pl-5' href='/#about'>About</Link></li>
+        <li className='hover:text-black'><Link className='pl-5' href='/#about'>Dashboard</Link></li>
+        <li className='hover:text-black'><Link className='px-5' href='/#contact'>Contact Us</Link></li>
 
     </>
     return (
