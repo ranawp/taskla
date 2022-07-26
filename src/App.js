@@ -20,9 +20,9 @@ function App() {
 
 
        {/* mozahid task  */}
-       <Route path="/blogdetails1" element={<BlogDetails1/>}/>
-       <Route path="/blogdetails2" element={<BlogDetails2/>}/>
-       <Route path="/blogdetails3" element={<BlogDetails3/>}/>
+       <Route path="/blog/mongoDB" element={<BlogDetails1/>}/>
+       <Route path="/blog/reactjs" element={<BlogDetails2/>}/>
+       <Route path="/blog/javaScript" element={<BlogDetails3/>}/>
        {/* mozahid task  */}
 
 
