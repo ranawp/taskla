@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const Blogs = () => {
     return (
-        <div className='grid grid-cols-3 gap-4 my-20 mx-5'>
+        <div className='grid sm:grid-cols-3 gap-4 my-20 mx-5'>
             <Link to='/blog/javaScript'>
-                <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card w-80 sm:w-96 bg-base-100 shadow-xl">
                     <figure><img src="https://tmarketing.vn/wp-content/uploads/2021/09/JavaScript-la-gi.jpg" alt="JS" /></figure>
                     <div className="card-body">
                         <h2 className="card-title mx-auto">What is JavaScript</h2>
@@ -16,7 +16,7 @@ const Blogs = () => {
 
             </Link>
             <Link to='/blog/reactjs'>
-                <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card w-80 sm:w-96 bg-base-100 shadow-xl">
                     <figure><img src="https://blog.logrocket.com/wp-content/uploads/2021/09/5-react-performance-optimization-techniques.png" alt="React" /></figure>
                     <div className="card-body">
                         <h2 className="card-title mx-auto">What is React JS</h2>
@@ -25,7 +25,7 @@ const Blogs = () => {
                 </div>
             </Link>
             <Link to='/blog/mongoDB'>
-                <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card w-80 sm:w-96 bg-base-100 shadow-xl">
                     <figure><img src="https://www.liamkids.com/wp-content/uploads/2020/07/MongoDB.jpg" alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title mx-auto">What is MongoDB</h2>
