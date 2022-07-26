@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Blogs = () => {
     return (
         <div className='grid grid-cols-3 gap-4 my-20'>
-            <Link to='/'>
+            <Link to='/blogdetails1'>
                 <div class="card w-96 bg-base-100 shadow-xl" onClick={() => alert('clk1')}>
                     <figure><img src="https://tmarketing.vn/wp-content/uploads/2021/09/JavaScript-la-gi.jpg" alt="JS" /></figure>
                     <div class="card-body">
@@ -37,5 +37,6 @@ const Blogs = () => {
         </div>
     );
 };
+
 
 export default Blogs;
