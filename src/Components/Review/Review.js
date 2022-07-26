@@ -5,13 +5,14 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
-import "./Review.css";
+// import "./Review.css";
+import './Review.css'
 
 import { EffectCoverflow, Pagination } from "swiper";
 
 const Review = () => {
     return (
-        <div className='h-[600px] bg-base-200'>
+        <div className='h-[600px] mt-[-250px]'>
             <h1 className='text-center text-4xl font-bold text-gray-500 pt-10'>What people are saying
             </h1>
             <Swiper
