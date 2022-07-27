@@ -10,6 +10,8 @@ import MyProfile from "./Components/Dashboard/Outlet/MyProfile";
 import Home from "./Components/Home/Home";
 import SignupBanner from "./Components/Home/SignupBanner/SignupBanner";
 import Footer from "./Share/Footer";
+import Login from "./Components/Login/Login";
+import Register from "./Components/Register/Register";
 import Navbar from './Share/Navbar';
 
 function App() {
@@ -37,6 +39,9 @@ function App() {
 
 
 
+        <Route path="/" element={<Home></Home>}></Route>
+        <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/register" element={<Register></Register>}></Route>
       </Routes>
 
       <Footer></Footer>
