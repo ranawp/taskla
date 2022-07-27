@@ -1,12 +1,24 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import auth from '../../firebase.init';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import './Register.css';
 import registerImg from '../../imgages/register.png';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
-    const onSubmit = data => {
-        console.log(data);
+    const navigate = useNavigate();
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
+    const onSubmit = async data => {
+        await createUserWithEmailAndPassword(data.email, data.password);
+        navigate('/');
+        reset();
     };
     return (
         <div className='register-page lg:flex items-center'>
