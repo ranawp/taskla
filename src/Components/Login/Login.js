@@ -15,23 +15,18 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
-
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password);
         // reset();
     };
 
-<<<<<<< HEAD
-=======
     const [token] = useToken(user)
     if (token) {
         navigate('/')
     }
->>>>>>> fc759a726c9aaace52c683c4305f9d013c612efa
     let errorElement;
-
     if (error) {
-        errorElement = <p className='text-center my-3 text-white'>{error?.message}</p>
+        errorElement = <p className='text-center my-3'>{error.massage}</p>
     }
     return (
         <div className='register-page lg:flex items-center'>
@@ -79,10 +74,9 @@ const Login = () => {
                         {errors.password?.type === 'required' && <p className=''>{errors.password?.message}</p>}
 
                         {errors.password?.type === 'minLength' && <p className=''>{errors.password?.message}</p>}
-                        {errorElement}
 
                         <input className='my-2 py-2 border rounded-lg text-white font-semibold hover:bg-white hover:text-black cursor-pointer' value="Sign In" type="submit" />
-
+                        {errorElement}
                     </form>
                     <p className='my-3 text-white'>New to Taskla??  <Link to='/register'>Please Register</Link></p>
                 </div>
