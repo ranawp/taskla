@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css'
 import logo from '../asset/logo.png'
 
@@ -9,9 +9,11 @@ const Navbar = () => {
 
         <li className='hover:text-black'><Link className='pl-5' to='/blog'>Blog</Link></li>
         <li className='hover:text-black'><Link className='pl-5' to='/about'>About</Link></li>
+        <li className='hover:text-black'><Link className='pl-5' to='/dashboard'>Dashboard</Link></li>
         <li className='hover:text-black'><Link className='px-5' to='/contact'>Contact Us</Link></li>
 
     </>
+    const locatin = useLocation()
     return (
         <div className='max-w-7xl mx-auto'>
             <div className="navbar">
@@ -31,6 +33,14 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
+
+                {location.pathname == '/dashboard' &&
+                    <div className='navbar-end lg:hidden'>
+                        <label tabIndex="1" for="my-drawer-2" className="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                        </label>
+                    </div>
+                }
 
             </div>
         </div>
