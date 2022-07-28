@@ -1,6 +1,6 @@
 import React from 'react';
 import Review from '../Review/Review';
-import AccordianSection from './AccordianSection';
+import Allacordian from './AccordianSection/Allacordian';
 import Header from './Header/Header';
 import SignupBanner from './SignupBanner/SignupBanner';
 
@@ -9,9 +9,7 @@ const Home = () => {
         <div>
             <div className='max-w-7xl mx-auto'>
                 <Header></Header>
-                <AccordianSection></AccordianSection>
-                
-
+                <Allacordian></Allacordian>
             </div>
             <Review />
             <SignupBanner />
