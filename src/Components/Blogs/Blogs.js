@@ -45,9 +45,9 @@ const Blogs = () => {
 
                     </div>
                     <hr />
-                    <div class="card-actions justify-between p-8 text-slate-500">
-                        <div class="">Samad Ahmad</div>
-                        <div class="">Jul 26,2022</div>
+                    <div className="card-actions justify-between p-8 text-slate-500">
+                        <div className="">Samad Ahmad</div>
+                        <div className="">Jul 26,2022</div>
                     </div>
                 </div>
             </Link>
