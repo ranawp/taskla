@@ -5,7 +5,6 @@ import BlogDetails3 from "./Components/Blogs/BlogDetails/BlogDetails3";
 
 import Blogs from "./Components/Blogs/Blogs";
 import Dashboard from "./Components/Dashboard/Dashboard";
-import Invoice from "./Components/Dashboard/Outlet/Invoice";
 import MyProfile from "./Components/Dashboard/Outlet/MyProfile";
 import Home from "./Components/Home/Home";
 import SignupBanner from "./Components/Home/SignupBanner/SignupBanner";
@@ -13,6 +12,7 @@ import Footer from "./Share/Footer";
 import Login from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
 import Navbar from './Share/Navbar';
+import Allusers from "./Components/Dashboard/Outlet/Allusers";
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
 
         <Route path="dashboard" element={<Dashboard></Dashboard>}>
 
-          <Route path="invoiceId" element={<Invoice></Invoice>} />
+          <Route path="users" element={<Allusers></Allusers>} />
           <Route path="myprofile" element={<MyProfile></MyProfile>} />
         </Route>
 

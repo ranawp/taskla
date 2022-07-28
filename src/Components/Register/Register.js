@@ -5,9 +5,12 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import './Register.css';
 import registerImg from '../../imgages/register.png';
 import { useNavigate, Link } from 'react-router-dom';
+import useToken from '../../hooks/useToken';
 
 const Register = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
+    const [updateProfile, updating, updateerror] = useUpdateProfile(auth);
+
     const navigate = useNavigate();
     const [
         createUserWithEmailAndPassword,
@@ -16,10 +19,15 @@ const Register = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
 
+    const [token] = useToken(user)
+
+    if (token) {
+        navigate('/');
+
+    }
     const onSubmit = async data => {
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
-        navigate('/');
         reset();
     };
     return (

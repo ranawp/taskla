@@ -4,8 +4,10 @@ import auth from '../../firebase.init';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import registerImg from '../../imgages/register.png';
 import { useNavigate, Link } from 'react-router-dom';
+import useToken from '../../hooks/useToken';
 
 const Login = () => {
+    const navigate = useNavigate()
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [
         signInWithEmailAndPassword,
@@ -19,6 +21,13 @@ const Login = () => {
         // reset();
     };
 
+<<<<<<< HEAD
+=======
+    const [token] = useToken(user)
+    if (token) {
+        navigate('/')
+    }
+>>>>>>> fc759a726c9aaace52c683c4305f9d013c612efa
     let errorElement;
 
     if (error) {
