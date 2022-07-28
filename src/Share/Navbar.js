@@ -18,10 +18,11 @@ const Navbar = () => {
 
         <li className='hover:text-black'><Link className='pl-5' to='/blog'>Blog</Link></li>
         <li className='hover:text-black'><Link className='pl-5' to='/about'>About</Link></li>
+        <li className='hover:text-black'><Link className='pl-5' to='/contact'>Contact Us</Link></li>
         <li className='hover:text-black'><Link className='pl-5' to='/dashboard'>Dashboard</Link></li>
-        <li>{user ? <Link className='px-5' to='' onClick={logout} >Sign Out</Link> : <Link className='px-5' to="/login">Login</Link>}</li>
-        <li className='hover:text-black'><Link className='px-5' to='/contact'>Contact Us</Link></li>
-        <li className='hover:text-black'><Link className='pr-5' to='/login'>Login</Link></li>
+        <li>{user ? <Link className='pl-5 pr-5' to='' onClick={logout} >Sign Out</Link> : <Link className='pl-5 pr-5' to="/login">Login</Link>}</li>
+
+
 
     </>
     const locatin = useLocation()

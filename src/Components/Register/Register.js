@@ -39,8 +39,22 @@ const Register = () => {
                 <div className='lg:w-80 p-10 mx-auto shadow-lg border'>
                     <h1 className='text-center font-bold text-5xl my-4'>Sign Up</h1>
                     <form className='flex flex-col' onSubmit={handleSubmit(onSubmit)}>
+
+                        <input type="text"
+                            placeholder="Your Name"
+                            className=" mt-2 p-2 rounded-lg background-color"
+                            {...register("name", {
+                                required: {
+                                    value: true,
+                                    message: "Name is required"
+                                }
+
+                            })}
+                        />
                         <label className="label">
-                            <span className="label-text">Name</span>
+                            {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
+
+
                         </label>
                         <input
                             className='my-2 p-2 rounded-lg background-color'
