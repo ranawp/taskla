@@ -2,15 +2,65 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css'
 import logo from '../asset/logo.png'
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../firebase.init';
+import { signOut } from 'firebase/auth';
+import down from '../asset/down-filled-triangular-arrow.png'
 
 const Navbar = () => {
+    const [user] = useAuthState(auth);
+    const logout = () => {
+        signOut(auth);
+        localStorage.removeItem('accessToken');
+
+    };
     const menuItems = <>
         <li className='hover:text-black'><Link to='/'>Home</Link></li>
 
         <li className='hover:text-black'><Link className='pl-5' to='/blog'>Blog</Link></li>
-        <li className='hover:text-black'><Link className='pl-5' to='/about'>About</Link></li>
+        {/* <li className='hover:text-black'><Link className='pl-5' to='/about'>About</Link></li> */}
         <li className='hover:text-black'><Link className='pl-5' to='/dashboard'>Dashboard</Link></li>
-        <li className='hover:text-black'><Link className='px-5' to='/contact'>Contact Us</Link></li>
+
+        {/* <li className='hover:text-black'><Link className='pl-5' to='/contact'>Contact Us</Link></li> */}
+
+
+        {user ?
+            <>
+                <li><Link className='pl-5' to="/classroom">Classroom</Link></li>
+                <div className="dropdown">
+                    <label tabindex="0" className="m-1">
+                       
+                            <Link className='pl-5 pr-2 inline-block' to=''>{user.email}
+                                
+                            </Link>
+                            <img className='w-2  inline-block' src={down} alt="" />
+
+                    </label>
+                    <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><Link to='' className='pl-5'> View Profile</Link></li>
+                        <li><Link className='pl-5' to='' onClick={logout} >Sign Out</Link></li>
+
+                    </ul>
+                </div>
+
+
+
+
+
+
+
+            </>
+            :
+            <>
+
+
+                <li><Link className='pl-5' to="/login">Login</Link></li>
+                <li><Link className='pl-5' to="/register">Register</Link></li>
+            </>
+        }
+
+
+
 
     </>
     const locatin = useLocation()

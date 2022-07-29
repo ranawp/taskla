@@ -8,7 +8,6 @@ import BlogDetails3 from "./Components/Blogs/BlogDetails/BlogDetails3";
 
 import Blogs from "./Components/Blogs/Blogs";
 import Dashboard from "./Components/Dashboard/Dashboard";
-import Invoice from "./Components/Dashboard/Outlet/Invoice";
 import MyProfile from "./Components/Dashboard/Outlet/MyProfile";
 import Home from "./Components/Home/Home";
 import Footer from "./Share/Footer";
@@ -16,6 +15,10 @@ import Login from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
 import Navbar from './Share/Navbar';
 import BlogDetails4 from "./Components/Blogs/BlogDetails/BlogDetails4";
+
+import Allusers from "./Components/Dashboard/Outlet/Allusers";
+import MyClass from "./Components/MyClass/MyClass";
+
 
 function App() {
   return (
@@ -25,11 +28,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>} />
         <Route path="/blog" element={<Blogs></Blogs>} />
+        <Route path="/classroom" element={<MyClass />} />
+        
+
 
         {/* nested route for dashboard  */}
         <Route path="dashboard" element={<Dashboard></Dashboard>}>
 
-          <Route path="invoiceId" element={<Invoice></Invoice>} />
+          <Route path="users" element={<Allusers></Allusers>} />
           <Route path="myprofile" element={<MyProfile></MyProfile>} />
         </Route>
 
@@ -46,7 +52,7 @@ function App() {
 
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
-        <Route path="/register" element={<Register></Register>}></Route>
+      <Route path="/register" element={<Register></Register>}></Route>
       </Routes>
 
       <Footer></Footer>

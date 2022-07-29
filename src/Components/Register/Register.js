@@ -5,6 +5,7 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import './Register.css';
 import registerImg from '../../imgages/register.png';
 import { useNavigate, Link } from 'react-router-dom';
+import useToken from '../../hooks/useToken';
 
 const Register = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
@@ -15,9 +16,15 @@ const Register = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
+
+    const [token] = useToken(user)
+
+    if (token) {
+        navigate('/');
+
+    }
     const onSubmit = async data => {
         await createUserWithEmailAndPassword(data.email, data.password);
-        navigate('/');
         reset();
     };
     return (

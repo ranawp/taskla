@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from "react-hook-form";
 import auth from '../../firebase.init';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import registerImg from '../../imgages/register.png';
 import { useNavigate, Link } from 'react-router-dom';
+import useToken from '../../hooks/useToken';
 
 const Login = () => {
+
+    const navigate = useNavigate()
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [
         signInWithEmailAndPassword,
@@ -17,10 +20,22 @@ const Login = () => {
         signInWithEmailAndPassword(data.email, data.password);
         // reset();
     };
+    
+    const [token] = useToken(user)
+    if (token) {
+        navigate('/')
+    }
     let errorElement;
     if (error) {
         errorElement = <p className='text-center my-3'>{error.massage}</p>
     }
+    useEffect(() => {
+        if (user) {
+           navigate('/');
+            // navigate(from, { replace: true });
+            
+        }
+    }, [ user, navigate])
     return (
         <div className='register-page lg:flex items-center'>
             <div className='text-center w-100 p-10 mx-auto flex-1 w-64'>

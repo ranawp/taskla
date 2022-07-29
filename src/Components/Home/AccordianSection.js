@@ -6,7 +6,7 @@ const AccordianSection = () => {
         <div>
 
             <div className=" mt-28">
-                <div className="flex h-full">
+                <div className="flex ">
                     <div className='flex-none pl-8 items-center h-80 py-9 w-[450px] pr-4'>
                         <h2 className='mb-10 text-start border-b-4 border-yellow-400 inline-block text-3xl font-bold'>How does it work?</h2>
                         <div tabIndex="0" className="collapse border-base-300 bg-base-100 hover:border rounded hover:drop-shadow-xl mb-1">

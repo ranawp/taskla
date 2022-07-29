@@ -1,5 +1,4 @@
 import React from 'react';
-import image from '../../../asset/pexels-pixabay-301926.jpg'
 
 const AccordianSection = (props, children) => {
     return (
