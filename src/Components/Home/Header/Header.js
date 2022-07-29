@@ -4,7 +4,6 @@ import './Headre.css'
 
 const Header = () => {
     return (
-
         <div className='header  grid md:grid-cols-2  banner  '>
             <div className='ml-8 my-auto left-side-info left-side'>
 
@@ -16,18 +15,11 @@ const Header = () => {
                     Get started</p>
 
                 <Link to='/register'><button className='btn bg-blue-700 border-0 mt-4 button mr-5 rounded text-white px-3 py-1'>Get Started</button></Link>
-                {/* 
-                <a href='#contact' className='hier-button  px-3 py-1 rounded-full text-accent'>Register</a> */}
-
-
             </div>
             <div className='mr-10 my-auto right-side'>
                 <img src="https://i.ibb.co/LQ7Hzpx/banner-img.png" alt="" />
             </div>
         </div>
-
-
-
     );
 };
 
