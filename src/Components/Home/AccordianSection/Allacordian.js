@@ -6,7 +6,7 @@ const Allacordian = () => {
     return (
         <div>
             <div className="p-4 mt-28">
-                <div className="flex h-screen">
+                <div className="flex h-[600px]">
                     <div className='flex-none pl-16 items-center h-80 py-9 pr-4'>
                         <h2 className='mb-10 text-start border-b-4 border-yellow-400 inline-block text-3xl font-bold'>How does it work?</h2>
                         <AccordianSection
