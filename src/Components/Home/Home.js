@@ -1,7 +1,11 @@
 import React from 'react';
 import Review from '../Review/Review';
 import Allacordian from './AccordianSection/Allacordian';
+
 import Benifit from './Benifit/Benifit';
+
+import ContactUs from './ContactUs';
+
 import Header from './Header/Header';
 import SignupBanner from './SignupBanner/SignupBanner';
 import laptop from '../../asset/laptop.svg';
@@ -34,6 +38,7 @@ const Home = () => {
             </div>
             <Review />
             <SignupBanner />
+            <ContactUs/>
         </div>
     );
 };

@@ -8,6 +8,8 @@ import useToken from '../../hooks/useToken';
 
 const Login = () => {
 
+
+
     const navigate = useNavigate()
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [
@@ -20,7 +22,11 @@ const Login = () => {
         signInWithEmailAndPassword(data.email, data.password);
         // reset();
     };
+
     
+
+
+
     const [token] = useToken(user)
     if (token) {
         navigate('/')

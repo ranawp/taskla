@@ -14,10 +14,14 @@ import Footer from "./Share/Footer";
 import Login from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
 import Navbar from './Share/Navbar';
+
 import BlogDetails4 from "./Components/Blogs/BlogDetails/BlogDetails4";
 
 import Allusers from "./Components/Dashboard/Outlet/Allusers";
 import MyClass from "./Components/MyClass/MyClass";
+
+
+import Allusers from "./Components/Dashboard/Outlet/Allusers";
 
 
 function App() {
