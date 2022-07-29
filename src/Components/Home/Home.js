@@ -1,6 +1,7 @@
 import React from 'react';
 import Review from '../Review/Review';
 import Allacordian from './AccordianSection/Allacordian';
+import ContactUs from './ContactUs';
 import Header from './Header/Header';
 import SignupBanner from './SignupBanner/SignupBanner';
 
@@ -13,6 +14,7 @@ const Home = () => {
             </div>
             <Review></Review>
             <SignupBanner />
+            <ContactUs/>
         </div>
     );
 };
