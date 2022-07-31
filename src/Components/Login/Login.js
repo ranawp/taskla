@@ -7,9 +7,6 @@ import { useNavigate, Link } from 'react-router-dom';
 import useToken from '../../hooks/useToken';
 
 const Login = () => {
-
-
-
     const navigate = useNavigate()
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [
@@ -23,10 +20,6 @@ const Login = () => {
         // reset();
     };
 
-    
-
-
-
     const [token] = useToken(user)
     if (token) {
         navigate('/')
@@ -37,11 +30,11 @@ const Login = () => {
     }
     useEffect(() => {
         if (user) {
-           navigate('/');
+            navigate('/');
             // navigate(from, { replace: true });
-            
+
         }
-    }, [ user, navigate])
+    }, [user, navigate])
     return (
         <div className='register-page lg:flex items-center'>
             <div className='text-center w-100 p-10 mx-auto flex-1 w-64'>

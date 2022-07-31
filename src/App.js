@@ -1,11 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './App.css';
 import BlogDetails1 from "./Components/Blogs/BlogDetails/BlogDetails1";
 import BlogDetails2 from "./Components/Blogs/BlogDetails/BlogDetails2";
 import BlogDetails3 from "./Components/Blogs/BlogDetails/BlogDetails3";
-
 import Blogs from "./Components/Blogs/Blogs";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import MyProfile from "./Components/Dashboard/Outlet/MyProfile";
@@ -14,14 +12,10 @@ import Footer from "./Share/Footer";
 import Login from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
 import Navbar from './Share/Navbar';
-
 import BlogDetails4 from "./Components/Blogs/BlogDetails/BlogDetails4";
-
-import Allusers from "./Components/Dashboard/Outlet/Allusers";
 import MyClass from "./Components/MyClass/MyClass";
-
-
 import Allusers from "./Components/Dashboard/Outlet/Allusers";
+import ViewProfile from "./Components/ViewProfile/ViewProfile";
 
 
 function App() {
@@ -33,13 +27,14 @@ function App() {
         <Route path="/" element={<Home></Home>} />
         <Route path="/blog" element={<Blogs></Blogs>} />
         <Route path="/classroom" element={<MyClass />} />
-        
+        <Route path="/viewprofile" element={<ViewProfile></ViewProfile>} />
+
 
 
         {/* nested route for dashboard  */}
         <Route path="dashboard" element={<Dashboard></Dashboard>}>
 
-          <Route path="users" element={<Allusers></Allusers>} />
+          <Route index element={<Allusers></Allusers>} />
           <Route path="myprofile" element={<MyProfile></MyProfile>} />
         </Route>
 
@@ -51,12 +46,9 @@ function App() {
         {/* mozahid task  */}
 
 
-
-
-
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
-      <Route path="/register" element={<Register></Register>}></Route>
+        <Route path="/register" element={<Register></Register>}></Route>
       </Routes>
 
       <Footer></Footer>
