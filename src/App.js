@@ -15,6 +15,7 @@ import Navbar from './Share/Navbar';
 import BlogDetails4 from "./Components/Blogs/BlogDetails/BlogDetails4";
 import MyClass from "./Components/MyClass/MyClass";
 import Allusers from "./Components/Dashboard/Outlet/Allusers";
+import ViewProfile from "./Components/ViewProfile/ViewProfile";
 
 
 function App() {
@@ -26,13 +27,14 @@ function App() {
         <Route path="/" element={<Home></Home>} />
         <Route path="/blog" element={<Blogs></Blogs>} />
         <Route path="/classroom" element={<MyClass />} />
+        <Route path="/viewprofile" element={<ViewProfile></ViewProfile>} />
 
 
 
         {/* nested route for dashboard  */}
         <Route path="dashboard" element={<Dashboard></Dashboard>}>
 
-          <Route path="users" element={<Allusers></Allusers>} />
+          <Route index element={<Allusers></Allusers>} />
           <Route path="myprofile" element={<MyProfile></MyProfile>} />
         </Route>
 

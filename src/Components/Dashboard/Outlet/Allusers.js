@@ -1,18 +1,26 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import Loading from '../../../Share/Loading';
 import UserRow from './UserRow';
 
 const Allusers = () => {
     const [data, setData] = useState([])
+    const [loading, isLoading] = useState(false)
 
     useEffect(() => {
-        fetch('https://sleepy-castle-16675.herokuapp.com/user')
-            .then((response) => response.json())
-            .then((data) => setData(data));
+        isLoading(true)
+        const fetchSideeffect = async () => {
+            const res = await axios('https://sleepy-castle-16675.herokuapp.com/user')
+            setData(res.data)
+            isLoading(false)
+        }
+        fetchSideeffect()
     }, [])
 
     return (
         <div>
             <h2 className='text-2xl'>All users :{data.length}</h2>
+
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>
@@ -22,9 +30,12 @@ const Allusers = () => {
                             <th>select admin</th>
                             <th>Remove User</th>
                         </tr>
+                        {loading && <Loading></Loading>}
                     </thead>
                     <tbody>
+
                         {
+
                             data.map((user, index) => <UserRow
                                 key={user._id}
                                 user={user}
