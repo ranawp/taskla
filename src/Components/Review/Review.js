@@ -97,8 +97,6 @@ const Review = () => {
                     </div>
                 </SwiperSlide>
             </Swiper>
-
-
         </div>
     );
 };

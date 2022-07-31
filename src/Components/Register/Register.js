@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import auth from '../../firebase.init';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import './Register.css';
 import registerImg from '../../imgages/register.png';
 import { useNavigate, Link } from 'react-router-dom';
@@ -9,6 +9,8 @@ import useToken from '../../hooks/useToken';
 
 const Register = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
+    const [updateProfile, updating, updateerror] = useUpdateProfile(auth);
+
     const navigate = useNavigate();
     const [
         createUserWithEmailAndPassword,
@@ -25,6 +27,7 @@ const Register = () => {
     }
     const onSubmit = async data => {
         await createUserWithEmailAndPassword(data.email, data.password);
+        await updateProfile({ displayName: data.name });
         reset();
     };
     return (
@@ -36,6 +39,23 @@ const Register = () => {
                 <div className='lg:w-80 p-10 mx-auto shadow-lg border'>
                     <h1 className='text-center font-bold text-5xl my-4'>Sign Up</h1>
                     <form className='flex flex-col' onSubmit={handleSubmit(onSubmit)}>
+
+                        <input type="text"
+                            placeholder="Your Name"
+                            className=" mt-2 p-2 rounded-lg background-color"
+                            {...register("name", {
+                                required: {
+                                    value: true,
+                                    message: "Name is required"
+                                }
+
+                            })}
+                        />
+                        <label className="label">
+                            {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
+
+
+                        </label>
                         <input
                             className='my-2 p-2 rounded-lg background-color'
                             type='email'
