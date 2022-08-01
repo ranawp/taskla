@@ -12,7 +12,7 @@ import { EffectCoverflow, Pagination } from "swiper";
 
 const Review = () => {
     return (
-        <div className='h-[600px]'>
+        <div className='h-[600px] mt-32'>
             <h1 className='text-center text-4xl font-bold text-gray-500 pt-10'>What people are saying
             </h1>
             <Swiper

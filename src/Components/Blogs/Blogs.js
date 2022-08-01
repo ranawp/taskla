@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import banner_4 from '../../asset/thumbnail_4.jpg';
+
 
 const Blogs = () => {
     return (
@@ -31,6 +33,21 @@ const Blogs = () => {
                         <h2 className="card-title mx-auto">What is MongoDB</h2>
                         <p className='text-xl font-sans'>MongoDB is a source-available cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas.</p>
                         {/* MongoDB is developed by MongoDB Inc. and licensed under the Server Side Public License which is deemed non-free by several distributions. */}
+                    </div>
+                </div>
+            </Link>
+            <Link to='/blog/blog4'>
+                <div className="card w-80 sm:w-96 bg-base-100 shadow-xl">
+                    <figure><img src={banner_4} alt="Shoes" className='w-full max-h-[300px]' /></figure>
+                    <div className="card-body">
+                        <h2 className="card-title mx-auto">সহজে কোন প্রোগ্রামিং ল্যাঙ্গুয়েজ শেখা যায়?</h2>
+                        <p className='text-xl font-sans'>প্রোগ্রামিং ল্যাঙ্গুয়েজ কি? প্রোগ্রামিং ল্যাঙ্গুয়েজ হলো কম্পিউটারের সাথে...</p>
+
+                    </div>
+                    <hr />
+                    <div className="card-actions justify-between p-8 text-slate-500">
+                        <div className="">Samad Ahmad</div>
+                        <div className="">Jul 26,2022</div>
                     </div>
                 </div>
             </Link>
