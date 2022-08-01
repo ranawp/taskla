@@ -5,7 +5,7 @@ import './Headre.css'
 const Header = () => {
     return (
         <div className='header  grid md:grid-cols-2  banner  '>
-            <div className='ml-8 my-auto left-side-info left-side'>
+            <div className='lg:ml-8 sm:ml-5 my-auto left-side-info left-side'>
 
                 <h1 className='text-4xl font-bold md:mt-20 mt-4 font-serif tracking-wide'>Learn by giving <br /> feedback </h1>
 
