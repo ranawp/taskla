@@ -17,7 +17,10 @@ const Dashboard = () => {
                         {/* <!-- Sidebar content here --> */}
                         < li > <Link to={''}>Allusers</Link></li >
                         <li><Link to='myprofile'>MyProfile</Link></li>
-                    </ul >
+                        <li><Link to='createtask'>TaskCreate</Link></li>
+                        <li><Link to='mytask'>MyTask</Link></li>
+                    </ul>
+
 
                 </div >
             </div >

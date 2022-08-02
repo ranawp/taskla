@@ -9,6 +9,7 @@ import down from '../asset/down-filled-triangular-arrow.png'
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
+    // console.log(user.displayName)
     const logout = () => {
         signOut(auth);
         localStorage.removeItem('accessToken')
