@@ -17,6 +17,7 @@ import MyClass from "./Components/MyClass/MyClass";
 import Allusers from "./Components/Dashboard/Outlet/Allusers";
 import ViewProfile from "./Components/ViewProfile/ViewProfile";
 import TaskCreate from "./Components/Dashboard/Outlet/TaskCreate/TaskCreate";
+import MyTask from "./Components/Dashboard/Outlet/MyTasks/MyTask";
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           <Route index element={<Allusers></Allusers>} />
           <Route path="myprofile" element={<MyProfile></MyProfile>} />
           <Route path="createtask" element={<TaskCreate></TaskCreate>}></Route>
+          <Route path="mytask" element={<MyTask></MyTask>}></Route>
         </Route>
 
 
