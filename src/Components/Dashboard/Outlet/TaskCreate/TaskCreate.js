@@ -5,7 +5,7 @@ import './TaskCreate.css'
 const TaskCreate = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-        const url = `https://secret-castle-07996.herokuapp.com/inventory/`
+        const url = `http://localhost:5000/tasks`
         fetch(url, {
             method: 'POST',
             headers: {
@@ -17,6 +17,7 @@ const TaskCreate = () => {
             .then(result => {
                 console.log(result)
             })
+        reset()
     };
     return (
         <div className='w-50 mx-auto'>
@@ -30,8 +31,11 @@ const TaskCreate = () => {
                         <textarea name="" id="" cols="50" rows="10" placeholder='Write student task' className='mb-2 taskcreate' {...register("name", { required: true, maxLength: 50 })}></textarea> <br />
 
 
+
                         <input className=' bg-blue-700 border-0 px-3 py-1 button  rounded text-white' type="submit" value="Submit" />
+
                     </form>
+
                 </div>
             </div>
 
