@@ -16,7 +16,7 @@ import BlogDetails4 from "./Components/Blogs/BlogDetails/BlogDetails4";
 import MyClass from "./Components/MyClass/MyClass";
 import Allusers from "./Components/Dashboard/Outlet/Allusers";
 import ViewProfile from "./Components/ViewProfile/ViewProfile";
-import TaskCreate from "./Components/Dashboard/Outlet/TaskCreate";
+import TaskCreate from "./Components/Dashboard/Outlet/TaskCreate/TaskCreate";
 
 
 function App() {
