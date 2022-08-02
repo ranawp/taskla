@@ -8,10 +8,10 @@ const AccordianSection = (props, children) => {
                     {/* The teacher sets up an assignment */}
                     {props.heading}
                 </div>
-                <div className="collapse-content w-96">
+                <div className="collapse-content w-96" >
                     <p>{props.descrip}</p>
-                </div>
-            </div>
+                </div >
+            </div >
         </>
     );
 };
