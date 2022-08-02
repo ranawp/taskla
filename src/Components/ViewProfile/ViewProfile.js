@@ -1,52 +1,67 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import bg1 from '../../asset/bg1.jpg';
 import dummyImage from '../../asset/dummy-iamge.png'
+import auth from '../../firebase.init';
+import EditProfile from './EditProfile';
 
 const ViewProfile = () => {
-    const [image, setImage] = useState('')
-    const handleFileChange = event => {
-        const file = event.target.files[0]
-        setImage(file)
-    }
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        const name = e.target.name.value
-        const email = e.target.email.value
-        console.log(name, email, image.name)
+    const [data, getData] = useState([])
+    const [user] = useAuthState(auth)
 
-    }
+    const emails = user?.email
+    useEffect(() => {
+        fetch(`http://localhost:5000/user/${emails}`, {
+            method: 'GET',
+            header: {
+                'content-type': 'application/json'
+            }
+        })
+            .then((res) => res.json())
+            .then((data) => getData(data));
+
+    }, [emails])
+    const { name, email, phone, district, division, street, image } = data;
     return (
-        <div className='sm:h-screen justify-center items-center grid sm:grid-cols-2' style={{ backgroundImage: `url(${bg1})` }}>
-            <img src={dummyImage} className='w-52 mx-auto pt-5' alt="" />
-            <div className='my-3 sm:my-0'>
-                <h2 className='text-2xl font-bold my-3'>User Profile</h2>
-                <form onSubmit={handleSubmit} className='border-white border-2 p-3 w-80 sm:w-96 flex justify-center flex-col items-center'>
-                    <div class="form-control w-full max-w-xs">
-                        <label class="label">
-                            <span class="label-text">Username</span>
-                        </label>
-                        <input type="text" name='name' placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+        <div className='sm:min-h-screen justify-center items-center grid sm:grid-cols-2' style={{ backgroundImage: `url(${bg1})` }
+        }>
+            <div>
+                <div className="avatar flex justify-center">
+                    <div className="w-52 mx-auto rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                        <img className='' src={image || dummyImage} />
                     </div>
-                    <div class=" form-control w-full max-w-xs">
-                        <label class="label">
-                            <span class="label-text">Email</span>
-                        </label>
-                        <input type="email" name='email' placeholder="Type here" class="input input-bordered w-full max-w-xs" />
-                    </div>
-                    <div class="form-control w-full max-w-xs">
-                        <label class="label">
-                            <span class="label-text">profile Image</span>
-                        </label>
-                        <input type="file" onChange={handleFileChange} name='file' placeholder="Type here" class=" input-bordered w-full max-w-xs" />
-                    </div>
-                    <div class="form-control w-full max-w-xs mt-3">
-                        <input type="submit" class=" btn w-full max-w-xs" />
-                    </div>
-                </form>
-            </div>
+                </div>
 
-        </div>
+                <div className=" form-control w-full max-w-[350px] mx-auto mt-4">
+                    <fieldset className=" flex flex-wrap border border-solid border-white-300 p-2">
+                        <legend className="text-sm mx-auto">Addresses</legend>
+                        <input type="text" readOnly value={division} name='division' placeholder="Division" className="input input-bordered w-40 max-w-xs mr-2" />
+                        <input type="text" value={district} readOnly name='district' placeholder="District" className="input input-bordered w-40 max-w-xs" />
+                        <input type="text" value={street} readOnly name='street' placeholder="Street" className="input input-bordered w-40 max-w-xs mr-2 mt-2" />
+                        <input type="text" value={phone} readOnly name='phone' placeholder="Phone" className="input input-bordered w-40 max-w-xs mt-2" />
+
+                    </fieldset>
+                </div >
+            </div >
+            <div className='my-3 sm:my-0' >
+                <div className="card w-96 bg-base-100 shadow-xl">
+                    <div className="card-body">
+                        <h2 className="text-xl">StudentId:</h2>
+                        <p>9483jcnei98</p>
+                        <h2 className="text-xl" > FullName:</h2 >
+                        <p>{name}</p>
+                        <h2 className="text-xl" > Email Address:</h2 >
+                        <p>{email}</p>
+                        <h2 className="text-xl" > Phone No:</h2 >
+                        <p>{phone}</p>
+                        <div className="card-actions justify-end" >
+                            <EditProfile data={data}></EditProfile>
+                        </div >
+                    </div >
+                </div >
+            </div >
+
+        </div >
     );
 };
-// style={{ backgroundImage: `url(${bg1})` }}
 export default ViewProfile;

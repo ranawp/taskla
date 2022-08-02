@@ -26,14 +26,14 @@ const Allacordian = () => {
                         <AccordianSection
                             heading={' The teacher has a complete overview'}
                             descrip={'You get the complete overview of everything that is happening in the assignment'}></AccordianSection>
-                    </div>
-                    <div className='bg-amber-400 grow max-h-[500px] w-full relative rounded'>
+                    </div >
+                    <div className='bg-amber-400 grow max-h-[500px] w-full relative rounded' >
                         <img src={image} className=" absolute right-0 bottom-[55px] w-4/5 h-96 rounded-lg shadow-2xl" alt='education-pic' />
-                    </div>
-                </div>
-            </div>
+                    </div >
+                </div >
+            </div >
 
-        </div>
+        </div >
     );
 };
 

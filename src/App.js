@@ -20,7 +20,7 @@ import ViewProfile from "./Components/ViewProfile/ViewProfile";
 
 function App() {
   return (
-    <div className=" bg-white">
+    <div className=" bg-white" >
       <Navbar></Navbar>
 
       <Routes>
@@ -54,7 +54,7 @@ function App() {
       <Footer></Footer>
 
 
-    </div>
+    </div >
   );
 }
 

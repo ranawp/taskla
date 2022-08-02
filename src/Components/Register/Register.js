@@ -28,17 +28,30 @@ const Register = () => {
     const onSubmit = async data => {
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
+        const userData = {
+            email: data.email,
+            name: data.name
+        }
+        fetch('http://localhost:5000/user', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(userData)
+        })
+            .then(res => res.json())
+            .then(data => data)
         reset();
     };
     return (
-        <div className='register-page lg:flex items-center'>
-            <div className='text-center w-100 p-10 mx-auto flex-1 w-64'>
+        <div className='register-page lg:flex items-center' >
+            <div className='text-center w-100 p-10 mx-auto flex-1 w-64' >
                 <img src={registerImg} alt="" />
-            </div>
+            </div >
             <div>
                 <div className='lg:w-80 p-10 mx-auto shadow-lg border'>
                     <h1 className='text-center font-bold text-5xl my-4'>Sign Up</h1>
-                    <form className='flex flex-col' onSubmit={handleSubmit(onSubmit)}>
+                    <form className='flex flex-col' onSubmit={handleSubmit(onSubmit)} >
 
                         <input type="text"
                             placeholder="Your Name"
@@ -49,13 +62,14 @@ const Register = () => {
                                     message: "Name is required"
                                 }
 
-                            })}
+                            })
+                            }
                         />
-                        <label className="label">
-                            {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
+                        < label className="label" >
+                            {errors.name?.type === 'required' && <span className="label-text-alt text-red-500" > {errors.name.message}</span>}
 
 
-                        </label>
+                        </label >
                         <input
                             className='my-2 p-2 rounded-lg background-color'
                             type='email'
@@ -70,9 +84,10 @@ const Register = () => {
                                     message: 'Please Provide A Valid Email'
                                 }
 
-                            })} />
-                        {errors.email?.type === 'required' && <p className=''>{errors.email?.message}</p>}
-                        {errors.email?.type === 'pattern' && <p className=''>{errors.email?.message}</p>}
+                            })
+                            } />
+                        {errors.email?.type === 'required' && <p className='' > {errors.email?.message}</p >}
+                        {errors.email?.type === 'pattern' && <p className='' > {errors.email?.message}</p >}
 
                         <input
                             className='my-2 p-2 rounded-lg background-color'
@@ -89,17 +104,18 @@ const Register = () => {
                                 }
 
                             }
-                            )} />
-                        {errors.password?.type === 'required' && <p className=''>{errors.password?.message}</p>}
+                            )
+                            } />
+                        {errors.password?.type === 'required' && <p className='' > {errors.password?.message}</p >}
 
-                        {errors.password?.type === 'minLength' && <p className=''>{errors.password?.message}</p>}
+                        {errors.password?.type === 'minLength' && <p className='' > {errors.password?.message}</p >}
 
                         <input className='my-2 py-2 border rounded-lg text-white font-semibold hover:bg-white hover:text-black cursor-pointer' value="Register" type="submit" />
-                    </form>
-                    <p className='my-3 text-white'> Already Have an Account?? <Link to='/login' className='ml-16'>Please Login</Link></p>
-                </div>
-            </div>
-        </div>
+                    </form >
+                    <p className='my-3 text-white' > Already Have an Account ?? <Link to='/login' className='ml-16' > Please Login</Link ></p >
+                </div >
+            </div >
+        </div >
     );
 };
 
