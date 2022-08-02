@@ -22,7 +22,7 @@ import MyTask from "./Components/Dashboard/Outlet/MyTasks/MyTask";
 
 function App() {
   return (
-    <div className=" bg-white">
+    <div className=" bg-white" >
       <Navbar></Navbar>
 
       <Routes>
@@ -58,7 +58,7 @@ function App() {
       <Footer></Footer>
 
 
-    </div>
+    </div >
   );
 }
 
