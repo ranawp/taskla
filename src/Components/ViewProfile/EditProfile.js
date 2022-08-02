@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
-const EditProfile = ({ data }) => {
+const EditProfile = ({ data, setReset }) => {
     const [user] = useAuthState(auth)
     const emails = user?.email
     const [ss, setSS] = useState(false)
@@ -31,6 +31,7 @@ const EditProfile = ({ data }) => {
                 setSS(false)
 
             })
+
     }
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -61,6 +62,7 @@ const EditProfile = ({ data }) => {
         }).then(res => res.json())
             .then(data => console.log(data))
         e.target.reset()
+        setReset(true)
     }
     return (
         <>

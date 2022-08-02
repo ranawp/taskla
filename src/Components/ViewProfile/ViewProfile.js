@@ -8,6 +8,7 @@ import EditProfile from './EditProfile';
 const ViewProfile = () => {
     const [data, getData] = useState([])
     const [user] = useAuthState(auth)
+    const [reset, setReset] = useState(false)
 
     const emails = user?.email
     useEffect(() => {
@@ -20,13 +21,13 @@ const ViewProfile = () => {
             .then((res) => res.json())
             .then((data) => getData(data));
 
-    }, [emails])
+    }, [emails, reset])
     const { name, email, phone, district, division, street, image } = data;
     return (
         <div className='sm:min-h-screen justify-center items-center grid sm:grid-cols-2' style={{ backgroundImage: `url(${bg1})` }
         }>
             <div>
-                <div className="avatar flex justify-center">
+                <div className="avatar flex justify-center mt-3 sm:mt-0">
                     <div className="w-52 mx-auto rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                         <img className='' src={image || dummyImage} />
                     </div>
@@ -55,7 +56,7 @@ const ViewProfile = () => {
                         <h2 className="text-xl" > Phone No:</h2 >
                         <p>{phone}</p>
                         <div className="card-actions justify-end" >
-                            <EditProfile data={data}></EditProfile>
+                            <EditProfile data={data} setReset={setReset}></EditProfile>
                         </div >
                     </div >
                 </div >
