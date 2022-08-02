@@ -1,6 +1,6 @@
 /*.header {
     /* display: flex; */
-    /* background-color: #6335F1; */
+/* background-color: #6335F1; */
 /*}*/
 
 /* .button {
@@ -26,17 +26,13 @@
 
 /*.banner {
     /* background-color: #152742; */
-    /* margin-top: -4rem; */
-    /* height: 100vh;
+/* margin-top: -4rem; */
+/* height: 100vh;
 
     height: calc(var(--vh, 1vh) * 100); */
 
-<<<<<<< HEAD:src/Components/Home/Header/Header.css
-}
-=======
-    /* height: calc(var(--vh, 1vh) * 100); */
+/* height: calc(var(--vh, 1vh) * 100); */
 /*}*/
->>>>>>> fa7520219c4512d8cb2f65e5a5c4e0876be2b5cd:src/Components/Home/Header/Headre.css
 
 @media only screen and (min-width: 320px) and (max-width:480px) {
     .left-side {

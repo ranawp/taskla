@@ -9,6 +9,7 @@ import down from '../asset/down-filled-triangular-arrow.png'
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
+    // console.log(user.displayName)
     const logout = () => {
         signOut(auth);
         localStorage.removeItem('accessToken')
@@ -16,15 +17,6 @@ const Navbar = () => {
     const menuItems = <>
         <li className='hover:text-black'><Link to='/'>Home</Link></li>
         <li className='hover:text-black'><Link className='pl-5' to='/blog'>Blog</Link></li>
-<<<<<<< HEAD
-        <li className='hover:text-black'><Link className='pl-5' to='/about'>About</Link></li>
-        <li className='hover:text-black'><Link className='pl-5' to='/contact'>Contact Us</Link></li>
-        <li className='hover:text-black'><Link className='pl-5' to='/dashboard'>Dashboard</Link></li>
-        <li>{user ? <Link className='pl-5 pr-5' to='' onClick={logout} >Sign Out</Link> : <Link className='pl-5 pr-5' to="/login">Login</Link>}</li>
-
-
-=======
->>>>>>> fa7520219c4512d8cb2f65e5a5c4e0876be2b5cd
 
         {user ?
             <>
@@ -32,7 +24,7 @@ const Navbar = () => {
                 <li><Link className='pl-5' to="/classroom">Classroom</Link></li>
                 <div className="dropdown">
                     <label tabIndex="0" className="m-1">
-                        <li className='pl-5 cursor-pointer pr-2 inline-block'>{user.email}
+                        <li className='pl-5 cursor-pointer pr-2 inline-block'>{user?.displayName}
                         </li>
                         <img className='w-2 cursor-pointer  inline-block' src={down} alt="" />
 

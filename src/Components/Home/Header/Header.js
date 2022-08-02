@@ -1,10 +1,7 @@
 import React from 'react';
-<<<<<<< HEAD
 import './Header.css'
-=======
 import { Link } from 'react-router-dom';
-import './Headre.css'
->>>>>>> fa7520219c4512d8cb2f65e5a5c4e0876be2b5cd
+
 
 const Header = () => {
     return (
@@ -13,11 +10,8 @@ const Header = () => {
 
                 <h1 className='text-4xl font-bold md:mt-20 mt-4 font-serif tracking-wide'>Learn by giving <br /> feedback </h1>
 
-<<<<<<< HEAD
-=======
                 <p className='text-lg mt-3 tracking-wide leading-7 text-gray-700'>
-                    Taskla is an online platform to facilitate peer feedback sessions with students
->>>>>>> fa7520219c4512d8cb2f65e5a5c4e0876be2b5cd
+                    Taskla is an online platform to facilitate peer feedback sessions with students </p>
 
                 <p className='text-lg mt-3 tracking-wide leading-7 text-gray-700'>
                     Peergrade is an online platform to facilitate peer feedback sessions with students</p>
