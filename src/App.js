@@ -16,6 +16,7 @@ import BlogDetails4 from "./Components/Blogs/BlogDetails/BlogDetails4";
 import MyClass from "./Components/MyClass/MyClass";
 import Allusers from "./Components/Dashboard/Outlet/Allusers";
 import ViewProfile from "./Components/ViewProfile/ViewProfile";
+import Massenger from "./Components/Massenger/Massenger";
 
 
 function App() {
@@ -50,7 +51,7 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
       </Routes>
-
+        <Massenger></Massenger>
       <Footer></Footer>
 
     </div>
