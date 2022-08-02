@@ -5,7 +5,8 @@ import logo from '../asset/logo.png'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
 import { signOut } from 'firebase/auth';
-import down from '../asset/down-filled-triangular-arrow.png'
+import down from '../asset/down-filled-triangular-arrow.png';
+import notification from '../asset/notification.png'
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
@@ -21,6 +22,9 @@ const Navbar = () => {
             <>
                 <li className='hover:text-black'><Link className='pl-5' to='/dashboard'>Dashboard</Link></li>
                 <li><Link className='pl-5' to="/classroom">Classroom</Link></li>
+
+                <li><Link className='pl-5' to="/classroom"><img className='w-5 inline-block' src={notification} alt="" /></Link></li>
+
                 <div className="dropdown">
                     <label tabIndex="0" className="m-1">
                         <li className='pl-5 cursor-pointer pr-2 inline-block'>{user.email}
