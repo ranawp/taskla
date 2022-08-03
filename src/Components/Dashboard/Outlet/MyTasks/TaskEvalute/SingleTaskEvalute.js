@@ -1,8 +1,9 @@
 import React from 'react';
 
-const SingleTaskEvalute = ({ taskEvalute, index }) => {
-    console.log(taskEvalute)
-    const { taskName, taskNo, email, deadline, taskDescription } = taskEvalute;
+const SingleTaskEvalute = ({ taskEvalute, index, setEvaluteModalDetails }) => {
+
+    const { taskName, taskNo, email, deadline, taskDescription, currentDate, currentHour } = taskEvalute;
+
     return (
         <>
             <tr>
@@ -11,9 +12,14 @@ const SingleTaskEvalute = ({ taskEvalute, index }) => {
                 <td>{taskNo}</td>
                 <td>{email}</td>
                 <td>{deadline}</td>
-                <td></td>
-                <td>{taskDescription}</td>
-                <td></td>
+                <td>{currentDate}, {currentHour}</td>
+
+                <td><label for="Evalutedetails-modal"
+                    onClick={() => setEvaluteModalDetails(taskEvalute)}
+                    className=' bg-blue-700 border-0 px-3 py-1 button  rounded text-white modal-button' >Details </label></td>
+
+                {/* <td>{taskDescription}</td> */}
+                <td><input className='markinput' size='3' type="text" /></td>
                 <td><label className="bg-blue-700 border-0 px-3 py-1 button  rounded text-white modal-button">Update</label></td>
             </tr>
         </>

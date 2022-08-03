@@ -6,6 +6,10 @@ import auth from '../../../../firebase.init';
 const TaskModal = ({ modal }) => {
     // console.log(modal);
     const [user] = useAuthState(auth)
+    const date = new Date()
+    const currentDate = date.toLocaleDateString();
+    const currentHour = date.toLocaleTimeString();
+    console.log(date)
     // console.log(user.displayName)
 
     const handleForm = event => {
@@ -15,6 +19,8 @@ const TaskModal = ({ modal }) => {
         const taskDescription = event.target.taskDescription.value;
         const deadline = event.target.deadline.value;
         const taskNo = event.target.taskNo.value;
+        const currentDate = event.target.currentDate.value;
+        const currentHour = event.target.currentHour.value;
 
         // console.log(task)
 
@@ -25,7 +31,9 @@ const TaskModal = ({ modal }) => {
                 taskDescription,
                 taskName,
                 deadline,
-                taskNo
+                taskNo,
+                currentDate,
+                currentHour
 
             }),
             headers: {
@@ -60,6 +68,14 @@ const TaskModal = ({ modal }) => {
                             <span>Deadline</span>
                             <input size='20' className='h-5 mb-2 ml-1' name='deadline' type="text" readOnly value={modal.taskDeadline} />
                             <br />
+
+                            <span>Current Date: </span>
+                            <input size='20' className='h-5 mb-2 ml-1' name='currentDate' type="text" readOnly value={currentDate} />
+                            <br />
+                            <span>Current Time:</span>
+                            <input size='20' className='h-5 mb-2 ml-1' name='currentHour' type="text" readOnly value={currentHour} />
+                            <br />
+
                             <span>Massage:</span>
                             <textarea required className="mt-2 textarea w-full  h-60 mx-auto" placeholder="Give your doc file link here or put answer here" name='taskDescription'></textarea >
                             <br />

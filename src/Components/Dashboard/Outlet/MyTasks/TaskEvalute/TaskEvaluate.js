@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import EvaluteDetails from './EvaluteDetails';
 import SingleTaskEvalute from './SingleTaskEvalute';
+import './taskEvalute.css';
 
 const TaskEvaluate = () => {
     const [taskEvaluate, setTaskEvalute] = useState([]);
+    const [evaluteModalDetails, setEvaluteModalDetails] = useState(null);
+
 
     useEffect(() => {
         fetch('http://localhost:5000/answers')
@@ -36,6 +40,7 @@ const TaskEvaluate = () => {
                             key={taskEvalute._id}
                             taskEvalute={taskEvalute}
                             index={index}
+                            setEvaluteModalDetails={setEvaluteModalDetails}
                         // setModal={setModal}
                         // setModalDetails={setModalDetails}
                         // reload={reload}
@@ -43,6 +48,7 @@ const TaskEvaluate = () => {
                         ></SingleTaskEvalute>)
                     }
                 </tbody>
+                {evaluteModalDetails && <EvaluteDetails evaluteModalDetails={evaluteModalDetails} ></EvaluteDetails>}
 
             </table>
         </div>
