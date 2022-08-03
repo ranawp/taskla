@@ -7,17 +7,17 @@ const MyClass = () => {
         const task = event.target.text.value;
         console.log(task)
 
-        fetch(`http://localhost:5000/answer`, {
-            method: 'POST',
-            body: JSON.stringify({ task }),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-            },
-        })
-            .then((response) => response.json())
-            .then((json) => console.log(json));
+        // fetch(`http://localhost:5000/answer`, {
+        //     method: 'POST',
+        //     body: JSON.stringify({ task }),
+        //     headers: {
+        //         'Content-type': 'application/json; charset=UTF-8',
+        //     },
+        // })
+        //     .then((response) => response.json())
+        //     .then((json) => console.log(json));
 
-        event.target.reset();
+        // event.target.reset();
     }
 
 
@@ -27,7 +27,7 @@ const MyClass = () => {
             }>
 
 
-                <h3 className='text-4xl font-bold text-center mt-15 ' > Your assesment coming very soon...</h3 >
+                <h3 className='text-4xl font-bold text-center mt-15 ' > Your assestment coming very soon...</h3 >
                 <h4 className='text-2xl font-meidum text-center mt-10' > Submit Your Answer Script Here</h4 >
                 <form action="" className='w-2/4 mx-auto mt-10' >
                     <textarea className="textarea w-full  h-60 mx-auto" placeholder="Write Your Answer" ></textarea >
@@ -35,6 +35,18 @@ const MyClass = () => {
                     <input type="submit " value="Submit" className='btn btn-primary w-full my-10' />
                 </form >
             </div >
+            <div>
+                <h3 className='text-4xl font-bold text-center mt-15 '>Your assestment coming very soon...</h3>
+                <h4 className='text-2xl font-meidum text-center mt-10'>Submit Your Answer Script Here</h4>
+
+                <form onSubmit={handleForm} action="" className='w-2/4 mx-auto mt-10'>
+                    {/* <textarea className="textarea w-full  h-60 mx-auto" placeholder="Write Your Answer" name='text'></textarea> */}
+                    <input type='text' className="textarea w-full  h-60 mx-auto" name='text' placeholder="Write Your Answer" ></input>
+                    <br />
+                    <input type="submit" value="Submit" className='input input-primary w-full my-10' />
+
+                </form>
+            </div>
         </div>
 
     );
