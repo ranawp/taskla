@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import SingleTasks from './SingleTasks';
+import TaskDetails from './TaskDetails';
 
 const MyTask = () => {
     const [signleTask, setSingleTask] = useState([]);
+    const [modalDetails, setModalDetails] = useState(null);
     // const [reload, setReload] = useState(false);
 
     useEffect(() => {
@@ -35,13 +37,19 @@ const MyTask = () => {
                                 key={singleTask._id}
                                 task={singleTask}
                                 index={index}
+                                setModalDetails={setModalDetails}
                             // reload={reload}
                             // setReload={setReload}
                             ></SingleTasks>)
                         }
                     </tbody>
+                    {modalDetails && <TaskDetails modalDetails={modalDetails} ></TaskDetails>}
                 </table>
             </div>
+
+            {/* <label for="details-modal" class="btn modal-button">open modal</label> */}
+
+
 
 
         </div>

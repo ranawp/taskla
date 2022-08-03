@@ -25,7 +25,7 @@ const Navbar = () => {
                     <li><Link className='pl-5' to="/classroom">Classroom</Link></li >
                     <div className="dropdown" >
                         <label tabIndex="0" className="m-1" >
-                            <li className='pl-5 cursor-pointer pr-2 inline-block' > {user.email}
+                            <li className='pl-5 cursor-pointer pr-2 inline-block' > {user.displayName}
                             </li >
                             <img className='w-2 cursor-pointer  inline-block' src={down} alt="" />
 
@@ -33,7 +33,6 @@ const Navbar = () => {
                         <ul tabIndex="0" className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52" >
                             <li><Link to='/viewprofile' className='pl-5'> View Profile</Link></li >
                             <li><Link className='pl-5' to='' onClick={logout} >Sign Out</Link></li >
-
                         </ul >
                     </div >
                 </>
