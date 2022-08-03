@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import SingleTasks from './SingleTasks';
 import TaskDetails from './TaskDetails';
+import TaskModal from './TaskModal';
 
 const MyTask = () => {
-    const [signleTask, setSingleTask] = useState([]);
+    const [singleTask, setSingleTask] = useState([]);
+    const [modal, setModal] = useState({});
     const [modalDetails, setModalDetails] = useState(null);
     // const [reload, setReload] = useState(false);
 
@@ -16,8 +18,8 @@ const MyTask = () => {
     return (
         <div>
             <h4 className='text-dark font-bold text-2xl'>My Tasks</h4>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
 
                     <thead>
                         <tr>
@@ -30,13 +32,15 @@ const MyTask = () => {
                             <th>Submit</th>
                         </tr>
                     </thead>
+
                     <tbody>
                         {
-                            signleTask.map((singleTask, index) => <SingleTasks
+                            singleTask.map((singleTask, index) => <SingleTasks
 
                                 key={singleTask._id}
                                 task={singleTask}
                                 index={index}
+                                setModal={setModal}
                                 setModalDetails={setModalDetails}
                             // reload={reload}
                             // setReload={setReload}
@@ -44,13 +48,10 @@ const MyTask = () => {
                         }
                     </tbody>
                     {modalDetails && <TaskDetails modalDetails={modalDetails} ></TaskDetails>}
+                    {/* {modalDetails && <TaskDetails modalDetails={modalDetails}></TaskDetails>} */}
                 </table>
             </div>
-
-            {/* <label for="details-modal" class="btn modal-button">open modal</label> */}
-
-
-
+            {modal && <TaskModal modal={modal} />}
 
         </div>
     );

@@ -19,6 +19,7 @@ const Dashboard = () => {
                         <li><Link to='myprofile'>MyProfile</Link></li>
                         <li><Link to='createtask'>TaskCreate</Link></li>
                         <li><Link to='mytask'>MyTask</Link></li>
+                        <li><Link to='taskEvaluate'>Task Evaluate</Link></li>
                     </ul>
 
 
