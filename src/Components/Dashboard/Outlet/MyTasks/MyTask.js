@@ -5,6 +5,9 @@ import TaskModal from './TaskModal';
 const MyTask = () => {
     const [singleTask, setSingleTask] = useState([]);
     const [modal, setModal] = useState({})
+
+const MyTask = () => {
+    const [signleTask, setSingleTask] = useState([]);
     // const [reload, setReload] = useState(false);
 
     useEffect(() => {
@@ -18,6 +21,8 @@ const MyTask = () => {
             <h4 className='text-dark font-bold text-2xl'>My Tasks</h4>
             <div className="overflow-x-auto">
                 <table className="table w-full">
+            <div class="overflow-x-auto">
+                <table class="table w-full">
 
                     <thead>
                         <tr>
@@ -33,11 +38,15 @@ const MyTask = () => {
                     <tbody>
                         {
                             singleTask.map((singleTask, index) => <SingleTasks
+                            signleTask.map((singleTask, index) => <SingleTasks
 
                                 key={singleTask._id}
                                 task={singleTask}
                                 index={index}
+
                                 setModal={setModal}
+
+
                             // reload={reload}
                             // setReload={setReload}
                             ></SingleTasks>)
@@ -45,7 +54,11 @@ const MyTask = () => {
                     </tbody>
                 </table>
             </div>
+
             {modal && <TaskModal modal={modal}/>}
+
+
+
 
         </div>
     );

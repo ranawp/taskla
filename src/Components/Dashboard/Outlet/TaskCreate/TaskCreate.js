@@ -23,9 +23,12 @@ const TaskCreate = () => {
     return (
         <div>
             <div className='w-50 mx-auto border mb-10'>
-
                 <div className="card w-80 bg-base-100 shadow-2xl">
                     <div className="card-body">
+
+                <div class="card w-80 bg-base-100 shadow-2xl">
+                    <div class="card-body">
+
                         <form className='d-flex flex-column ' onSubmit={handleSubmit(onSubmit)}>
                             <h2 className='text-2xl'>Give task to Students</h2>
                             <input placeholder='Task name'
