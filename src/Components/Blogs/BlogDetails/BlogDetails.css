@@ -1,0 +1,50 @@
+
+
+.image-style img{
+width: 50%;
+}
+
+
+.image-style{
+
+display: flex;
+justify-content: center;
+margin-top: -110px;
+
+
+}
+
+
+
+.background-style-mongodb{
+    padding-top: 50px;
+    padding-bottom: 220px;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to left,green,#004d00);
+
+
+    
+}
+
+
+
+.background-style-javascript{
+    padding-top: 50px;
+    padding-bottom: 220px;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to left,#b3b300,#ffff00);
+
+
+}
+
+.background-style-react{
+    padding-top: 50px;
+    padding-bottom: 220px;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to left,#ff99cc,#33cccc);
+
+
+}
