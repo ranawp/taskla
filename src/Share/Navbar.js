@@ -10,7 +10,7 @@ import notification from '../asset/notification.png'
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
-    // console.log(user.displayName)
+    // console.log(user.photoURL)
     const logout = () => {
         signOut(auth);
         localStorage.removeItem('accessToken')
@@ -19,39 +19,35 @@ const Navbar = () => {
         <li className='hover:text-black'><Link to='/'>Home</Link></li>
         <li className='hover:text-black' > <Link className='pl-5' to='/blog' > Blog</Link></li >
 
-<<<<<<< HEAD
+
+        
+
         {user ?
             <>
-                <li className='hover:text-black'><Link className='pl-5' to='/dashboard'>Dashboard</Link></li>
+                <li className='hover:text-black'><Link className='pl-5' to='/dashboard'>CPanel</Link></li>
                 <li><Link className='pl-5' to="/classroom">Classroom</Link></li>
 
                 <li><Link className='pl-5' to="/classroom"><img className='w-5 inline-block' src={notification} alt="" /></Link></li>
 
+
+                {/* user profile/ logout / analytics  */}
                 <div className="dropdown">
                     <label tabIndex="0" className="m-1">
-                        <li className='pl-5 cursor-pointer pr-2 inline-block'>{user.email}
+                        <li className='pl-5 cursor-pointer pr-2 inline-block'>{user?.displayName}
                         </li>
                         <img className='w-2 cursor-pointer  inline-block' src={down} alt="" />
-=======
-        {
-            user ?
-                <>
-                    < li className='hover:text-black' > <Link className='pl-5' to='/dashboard' > Dashboard</Link ></li >
-                    <li><Link className='pl-5' to="/classroom">Classroom</Link></li >
-                    <div className="dropdown" >
-                        <label tabIndex="0" className="m-1" >
-                            <li className='pl-5 cursor-pointer pr-2 inline-block' > {user.email}
-                            </li >
-                            <img className='w-2 cursor-pointer  inline-block' src={down} alt="" />
->>>>>>> c820e77786f54870dc7cfc648d938e3b7cb126dc
 
                         </label >
-                        <ul tabIndex="0" className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52" >
+                        <ul tabIndex="0" className="dropdown-content menu  shadow bg-base-100 rounded-box w-40 text-xs" >
                             <li><Link to='/viewprofile' className='pl-5'> View Profile</Link></li >
+                            <li><Link to='/studentAnalytic' className='pl-5'> Student Analytics</Link></li >
+                            
                             <li><Link className='pl-5' to='' onClick={logout} >Sign Out</Link></li >
 
                         </ul >
                     </div >
+
+                    {/*end user profile/ logout / analytics  */}
                 </>
                 :
                 <>

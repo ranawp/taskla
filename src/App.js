@@ -18,6 +18,8 @@ import Allusers from "./Components/Dashboard/Outlet/Allusers";
 import ViewProfile from "./Components/ViewProfile/ViewProfile";
 import TaskCreate from "./Components/Dashboard/Outlet/TaskCreate/TaskCreate";
 import MyTask from "./Components/Dashboard/Outlet/MyTasks/MyTask";
+import StudentAnalytic from "./Components/StudentAnalytic/StudentAnalytic";
+import Admin_Dashboard from "./Components/Dashboard/Admin_Dashboard/Admin_Dashboard";
 
 
 function App() {
@@ -30,16 +32,19 @@ function App() {
         <Route path="/blog" element={<Blogs></Blogs>} />
         <Route path="/classroom" element={<MyClass />} />
         <Route path="/viewprofile" element={<ViewProfile></ViewProfile>} />
+        <Route path="/studentAnalytic" element={<StudentAnalytic />}></Route>
 
 
 
         {/* nested route for dashboard  */}
         <Route path="dashboard" element={<Dashboard></Dashboard>}>
-
-          <Route index element={<Allusers></Allusers>} />
+          <Route index element={<Admin_Dashboard></Admin_Dashboard>} />
+          <Route path="allusers" element={<Allusers></Allusers>} />
           <Route path="myprofile" element={<MyProfile></MyProfile>} />
           <Route path="createtask" element={<TaskCreate></TaskCreate>}></Route>
           <Route path="mytask" element={<MyTask></MyTask>}></Route>
+          
+
         </Route>
 
 
