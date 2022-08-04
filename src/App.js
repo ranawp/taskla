@@ -23,6 +23,8 @@ import { ToastContainer } from "react-toastify";
 import axios from "axios";
 import TaskEvaluate from "./Components/Dashboard/Outlet/MyTasks/TaskEvalute/TaskEvaluate";
 
+import StudentAnalytic from "./Components/StudentAnalytic/StudentAnalytic";
+import Admin_Dashboard from "./Components/Dashboard/Admin_Dashboard/Admin_Dashboard";
 
 
 function App() {
@@ -51,17 +53,26 @@ function App() {
         <Route path="/viewprofile" element={<ViewProfile></ViewProfile>} />
         <Route path='/courses' element={<Courses
         ></Courses>} />
+        <Route path="/studentAnalytic" element={<StudentAnalytic />}></Route>
 
 
 
         {/* nested route for dashboard  */}
-        <Route path="dashboard" element={<Dashboard />}>
+        <Route path="dashboard" element={<Dashboard />} />
 
-          <Route index element={<Allusers></Allusers>} />
-          <Route path="myprofile" element={<MyProfile ></MyProfile>} />
+        <Route index element={<Allusers></Allusers>} />
+        <Route path="myprofile" element={<MyProfile ></MyProfile>} />
+        <Route path="createtask" element={<TaskCreate></TaskCreate>}></Route>
+        <Route path="mytask" element={<MyTask></MyTask>}></Route>
+        <Route path="taskEvaluate" element={<TaskEvaluate></TaskEvaluate>}></Route>
+        <Route path="dashboard" element={<Dashboard></Dashboard>}>
+          <Route index element={<Admin_Dashboard></Admin_Dashboard>} />
+          <Route path="allusers" element={<Allusers></Allusers>} />
+          <Route path="myprofile" element={<MyProfile></MyProfile>} />
           <Route path="createtask" element={<TaskCreate></TaskCreate>}></Route>
           <Route path="mytask" element={<MyTask></MyTask>}></Route>
-          <Route path="taskEvaluate" element={<TaskEvaluate></TaskEvaluate>}></Route>
+
+
         </Route>
 
 
