@@ -22,13 +22,14 @@ const TaskEvaluate = () => {
                 <thead>
                     <tr>
                         <th>Serial</th>
-                        <th>Task Name</th>
+
                         <th>Task no</th>
                         <th>User Email</th>
                         <th>Deadline</th>
                         <th>Submitted time</th>
-                        <th>Task Details</th>
+                        <th>Answer Script</th>
                         <th>Mark</th>
+                        <th>Feedback</th>
                         <th>Upadte</th>
                     </tr>
                 </thead>

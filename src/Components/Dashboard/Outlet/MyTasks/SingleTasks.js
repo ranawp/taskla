@@ -17,8 +17,12 @@ const SingleTasks = ({ task, index, setModalDetails, setModal }) => {
                     onClick={() => setModalDetails(task)}
                     className=' bg-blue-700 border-0 px-3 py-1 button  rounded text-white modal-button' >Details </label></td>
 
-                <td>Pending</td>
+
                 <td>{task.taskDeadline}</td>
+                <td>Pending</td>
+                <td><label
+
+                    className=' bg-blue-700 border-0 px-3 py-1 button  rounded text-white modal-button' >See FeedBack </label></td>
                 <td><label htmlFor="my-modal-3" className="bg-blue-700 border-0 px-3 py-1 button  rounded text-white modal-button" onClick={() => setModal(task)}>Submit</label></td>
             </tr>
         </>

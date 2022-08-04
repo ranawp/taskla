@@ -8,7 +8,6 @@ const SingleTaskEvalute = ({ taskEvalute, index, setEvaluteModalDetails }) => {
         <>
             <tr>
                 <th>{index + 1}</th>
-                <td>{taskName}</td>
                 <td>{taskNo}</td>
                 <td>{email}</td>
                 <td>{deadline}</td>
@@ -20,6 +19,10 @@ const SingleTaskEvalute = ({ taskEvalute, index, setEvaluteModalDetails }) => {
 
                 {/* <td>{taskDescription}</td> */}
                 <td><input className='markinput' size='3' type="text" /></td>
+                <td><label for="Evalutedetails-modal"
+
+                    className=' bg-blue-700 border-0 px-3 py-1 button  rounded text-white modal-button' >Feedback </label></td>
+
                 <td><label className="bg-blue-700 border-0 px-3 py-1 button  rounded text-white modal-button">Update</label></td>
             </tr>
         </>

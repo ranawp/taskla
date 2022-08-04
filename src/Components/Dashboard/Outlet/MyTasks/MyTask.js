@@ -27,8 +27,10 @@ const MyTask = () => {
                             <th>Task Name</th>
                             <th>Task no.</th>
                             <th>Task details</th>
-                            <th>Result</th>
+
                             <th>DeadLine</th>
+                            <th>Result</th>
+                            <th>Feedback</th>
                             <th>Submit</th>
                         </tr>
                     </thead>

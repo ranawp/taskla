@@ -57,7 +57,7 @@ const TaskModal = ({ modal }) => {
                         <h4 className='text-2xl font-bold font-meidum text-center text-gray-600 mb-3' > Submit Your Script Here</h4 >
                         <form onSubmit={handleForm} className='w-3/4 mx-auto' >
                             <span>Email:</span>
-                            <input size='20' className='h-5 mb-2 ml-1' name='email' type="text" readOnly value={user.email} /> <br />
+                            <input size='20' className='h-5 mb-2 ml-1' name='email' type="text" readOnly value={user?.email} /> <br />
 
                             <span> Task Name: </span>
                             <input size='20' className='h-5 mb-2 ml-1' name='taskName' type="text" readOnly value={modal.taskName} />
