@@ -42,7 +42,7 @@ const Navbar = () => {
                 <li><Link className='pl-5' to="/courses">Courses</Link></li >
                 <div className="dropdown" >
                     <label tabIndex="0" className="m-1" >
-                        <li className='pl-5 cursor-pointer inline-block' > {user.email}
+                        <li className='pl-5 cursor-pointer inline-block' > {user?.displayName}
                         </li >
                         <img className='w-2 cursor-pointer  inline-block' src={down} alt="" />
 
