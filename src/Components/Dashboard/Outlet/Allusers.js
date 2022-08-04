@@ -28,7 +28,7 @@ const Allusers = () => {
                             <th>No.</th>
                             <th>Email</th>
                             <th>select admin</th>
-                            <th>select paid student</th>
+                            <th>Enroll Status</th>
                             <th>Remove User</th>
                         </tr>
                         {loading && <Loading></Loading>}

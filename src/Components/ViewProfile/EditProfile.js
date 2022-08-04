@@ -1,18 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
 const EditProfile = ({ data, setReset }) => {
     const [user] = useAuthState(auth)
     const emails = user?.email
-    const [ss, setSS] = useState(false)
+    const [imgLoad, setImgload] = useState(false)
     const [image, setImage] = useState('')
     const imageStoreKey = 'b13c2fea1530fdaae420c7d48efd3bdc';
 
     const handleFileChange = event => {
-        console.log(event.bubbles)
         if (event.bubbles) {
-            setSS(true)
+            setImgload(true)
         }
 
         const file = event.target.files[0]
@@ -28,7 +27,7 @@ const EditProfile = ({ data, setReset }) => {
             .then(data => {
 
                 setImage(data.data.url)
-                setSS(false)
+                setImgload(false)
 
             })
 
@@ -60,7 +59,7 @@ const EditProfile = ({ data, setReset }) => {
             })
 
         }).then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => data)
         e.target.reset()
         setReset(true)
     }
@@ -86,7 +85,7 @@ const EditProfile = ({ data, setReset }) => {
                             <label className="label" >
                                 <span className="label-text" > Email</span >
                             </label >
-                            <input type="email" value={emails} readOnly name='email' placeholder="Type here" className="input input-bordered w-full max-w-xs mb-2" />
+                            <input type="email" defaultValue={emails} name='email' placeholder="Type here" className="input input-bordered w-full max-w-xs mb-2" />
 
                         </div >
 
@@ -110,7 +109,7 @@ const EditProfile = ({ data, setReset }) => {
                             <input onChange={handleFileChange} type="file" name='file' placeholder="Type here" className=" input-bordered w-full max-w-xs" />
                         </div >
                         <div className="form-control w-full max-w-xs mt-3" >
-                            <input htmlFor="my-modal-6" type="submit" disabled={ss} className=" btn w-full max-w-xs" />
+                            <input htmlFor="my-modal-6" type="submit" disabled={imgLoad} className=" btn w-full max-w-xs" />
                         </div >
                     </form >
                     <div className="modal-action" >

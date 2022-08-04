@@ -1,7 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, Outlet } from 'react-router-dom';
+import auth from '../../firebase.init';
 
 const Dashboard = () => {
+    const [user] = useAuthState(auth)
+    const emails = user?.email
+    const [match, setMatch] = useState([])
+    useEffect(() => {
+        fetch(`http://localhost:5000/user/${emails}`, {
+            method: 'GET',
+            header: {
+                'content-type': 'application/json'
+            }
+        })
+            .then((res) => res.json())
+            .then((data) => setMatch(data));
+
+    }, [emails])
+
     return (
         <div className='h-screen' >
             <div className="drawer drawer-mobile" >
@@ -18,11 +35,13 @@ const Dashboard = () => {
                         < li > <Link to={''}>Allusers</Link></li >
                         <li><Link to='myprofile'>MyProfile</Link></li>
                         <li><Link to='createtask'>TaskCreate</Link></li>
+
+                        {/* {match?.student == 'enrolled' && <li><Link to='mytask'>MyTask</Link></li>} */}
+
                         <li><Link to='mytask'>MyTask</Link></li>
                         <li><Link to='taskEvaluate'>Task Evaluate</Link></li>
+
                     </ul>
-
-
                 </div >
             </div >
         </div >
