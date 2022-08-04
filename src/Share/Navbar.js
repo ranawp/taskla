@@ -57,7 +57,7 @@ const Navbar = () => {
         }
 
         <>
-            {match.role == 'admin' && < li className='hover:text-black' > <Link className='pl-5' to='/dashboard' > Dashboard</Link ></li >}
+            {match.role == 'admin' && < li className='hover:text-black' > <Link className='pl-5' to='/dashboard' >CPanel</Link ></li >}
 
         </>
 
