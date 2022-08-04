@@ -18,10 +18,14 @@ import Allusers from "./Components/Dashboard/Outlet/Allusers";
 import ViewProfile from "./Components/ViewProfile/ViewProfile";
 import TaskCreate from "./Components/Dashboard/Outlet/TaskCreate/TaskCreate";
 import MyTask from "./Components/Dashboard/Outlet/MyTasks/MyTask";
+
 import Courses from "./Components/Courses/Courses";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from "react-toastify";
 import axios from "axios";
+
+import TaskEvaluate from "./Components/Dashboard/Outlet/MyTasks/TaskEvalute/TaskEvaluate";
+
 
 
 function App() {
@@ -60,6 +64,7 @@ function App() {
           <Route path="myprofile" element={<MyProfile ></MyProfile>} />
           <Route path="createtask" element={<TaskCreate></TaskCreate>}></Route>
           <Route path="mytask" element={<MyTask></MyTask>}></Route>
+          <Route path="taskEvaluate" element={<TaskEvaluate></TaskEvaluate>}></Route>
         </Route>
 
 

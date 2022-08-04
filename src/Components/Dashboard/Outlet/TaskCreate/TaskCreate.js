@@ -74,7 +74,6 @@ const TaskCreate = () => {
                                         value: true,
                                         message: "Please write Task massage"
                                     }
-
                                 })}
                             ></textarea>
                             <label className="label text-red-600">

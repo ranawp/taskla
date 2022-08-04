@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import SingleTasks from './SingleTasks';
+import TaskDetails from './TaskDetails';
+import TaskModal from './TaskModal';
 
 const MyTask = () => {
-    const [signleTask, setSingleTask] = useState([]);
+    const [singleTask, setSingleTask] = useState([]);
+    const [modal, setModal] = useState({});
+    const [modalDetails, setModalDetails] = useState(null);
     // const [reload, setReload] = useState(false);
 
     useEffect(() => {
@@ -14,8 +18,8 @@ const MyTask = () => {
     return (
         <div>
             <h4 className='text-dark font-bold text-2xl'>My Tasks</h4>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
 
                     <thead>
                         <tr>
@@ -23,26 +27,33 @@ const MyTask = () => {
                             <th>Task Name</th>
                             <th>Task no.</th>
                             <th>Task details</th>
-                            <th>Result</th>
+
                             <th>DeadLine</th>
+                            <th>Result</th>
+                            <th>Feedback</th>
                             <th>Submit</th>
                         </tr>
                     </thead>
+
                     <tbody>
                         {
-                            signleTask.map((singleTask, index) => <SingleTasks
+                            singleTask.map((singleTask, index) => <SingleTasks
 
                                 key={singleTask._id}
                                 task={singleTask}
                                 index={index}
+                                setModal={setModal}
+                                setModalDetails={setModalDetails}
                             // reload={reload}
                             // setReload={setReload}
                             ></SingleTasks>)
                         }
                     </tbody>
+                    {modalDetails && <TaskDetails modalDetails={modalDetails} ></TaskDetails>}
+                    {/* {modalDetails && <TaskDetails modalDetails={modalDetails}></TaskDetails>} */}
                 </table>
             </div>
-
+            {modal && <TaskModal modal={modal} />}
 
         </div>
     );
