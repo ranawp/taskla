@@ -5,13 +5,11 @@ import BlogDetails2 from "./Components/Blogs/BlogDetails/BlogDetails2";
 import BlogDetails3 from "./Components/Blogs/BlogDetails/BlogDetails3";
 import Blogs from "./Components/Blogs/Blogs";
 import Dashboard from "./Components/Dashboard/Dashboard";
-import MyProfile from "./Components/Dashboard/Outlet/MyProfile";
 import Home from "./Components/Home/Home";
 import Footer from "./Share/Footer";
 import Login from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
 import Navbar from './Share/Navbar';
-import BlogDetails4 from "./Components/Blogs/BlogDetails/BlogDetails4";
 import MyClass from "./Components/MyClass/MyClass";
 import Allusers from "./Components/Dashboard/Outlet/Allusers";
 import ViewProfile from "./Components/ViewProfile/ViewProfile";
@@ -20,28 +18,13 @@ import MyTask from "./Components/Dashboard/Outlet/MyTasks/MyTask";
 import Courses from "./Components/Courses/Courses";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from "react-toastify";
-import axios from "axios";
 import TaskEvaluate from "./Components/Dashboard/Outlet/MyTasks/TaskEvalute/TaskEvaluate";
-
 import StudentAnalytic from "./Components/StudentAnalytic/StudentAnalytic";
 import Admin_Dashboard from "./Components/Dashboard/Admin_Dashboard/Admin_Dashboard";
 import ContactUs from "./Components/Home/ContactUs";
 
 
 function App() {
-  // const [data, setData] = useState([])
-  // const [loading, isLoading] = useState(false)
-  // useEffect(() => {
-  //   isLoading(true)
-  //   const fetchSideeffect = async () => {
-  //     const res = await axios('http://localhost:5000/user')
-  //     setData(res.data)
-  //     isLoading(false)
-  //   }
-  //   fetchSideeffect()
-  // }, [])
-
-
   return (
     <div className=" bg-white" >
       <Navbar></Navbar>
