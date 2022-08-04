@@ -25,6 +25,7 @@ import TaskEvaluate from "./Components/Dashboard/Outlet/MyTasks/TaskEvalute/Task
 
 import StudentAnalytic from "./Components/StudentAnalytic/StudentAnalytic";
 import Admin_Dashboard from "./Components/Dashboard/Admin_Dashboard/Admin_Dashboard";
+import ContactUs from "./Components/Home/ContactUs";
 
 
 function App() {
@@ -56,23 +57,12 @@ function App() {
         <Route path="/studentAnalytic" element={<StudentAnalytic />}></Route>
 
 
-
-        {/* nested route for dashboard  */}
-        <Route path="dashboard" element={<Dashboard />} />
-
-        <Route index element={<Allusers></Allusers>} />
-        <Route path="myprofile" element={<MyProfile ></MyProfile>} />
-        <Route path="createtask" element={<TaskCreate></TaskCreate>}></Route>
-        <Route path="mytask" element={<MyTask></MyTask>}></Route>
-        <Route path="taskEvaluate" element={<TaskEvaluate></TaskEvaluate>}></Route>
+        {/* dashboard routes */}
         <Route path="dashboard" element={<Dashboard></Dashboard>}>
           <Route index element={<Admin_Dashboard></Admin_Dashboard>} />
           <Route path="allusers" element={<Allusers></Allusers>} />
-          <Route path="myprofile" element={<MyProfile></MyProfile>} />
           <Route path="createtask" element={<TaskCreate></TaskCreate>}></Route>
-          <Route path="mytask" element={<MyTask></MyTask>}></Route>
-
-
+          <Route path="taskEvaluate" element={<TaskEvaluate></TaskEvaluate>}></Route>
         </Route>
 
 
@@ -81,15 +71,12 @@ function App() {
         <Route path="/blog/reactjs" element={<BlogDetails2 />} />
         <Route path="/blog/javaScript" element={<BlogDetails3 />} />
         {/* mozahid task  */}
-
-
-        <Route path="/" element={<Home></Home>}></Route>
+        <Route path="/contact" element={<ContactUs></ContactUs>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
       </Routes>
 
       <Footer></Footer>
-
       <ToastContainer />
     </div >
   );

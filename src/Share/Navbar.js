@@ -22,8 +22,6 @@ const Navbar = () => {
             .then((data) => setMatch(data));
 
     }, [emails])
-    console.log(match)
-    // console.log(user.displayName)
     const logout = () => {
         signOut(auth);
         localStorage.removeItem('accessToken')
@@ -31,7 +29,6 @@ const Navbar = () => {
     const menuItems = <>
         <li className='hover:text-black'><Link to='/'>Home</Link></li>
         <li className='hover:text-black' > <Link className='pl-5' to='/blog' > Blog</Link></li >
-
         {
             user &&
             <>
@@ -61,7 +58,7 @@ const Navbar = () => {
 
         </>
 
-        <li><Link className='pl-5' to="/login">Login</Link></li>
+        {!user && <li><Link className='pl-5' to="/login">Login</Link></li>}
         {!(match.role == 'admin') && <>
             {!(match.student == 'enrolled') && <li><Link className='pl-5' to="/register">Register</Link></li >}
             <li className='hover:text-black' > <Link className='pl-5' to='/contact' > Contact Us</Link ></li >
