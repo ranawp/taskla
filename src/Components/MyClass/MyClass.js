@@ -5,7 +5,7 @@ const MyClass = () => {
     const handleForm = event => {
         event.preventDefault();
         const task = event.target.text.value;
-        console.log(task)
+        // console.log(task)
 
         // fetch(`http://localhost:5000/answer`, {
         //     method: 'POST',

@@ -8,7 +8,6 @@ const UserRow = ({ user: users, index }) => {
     const [match, setMatch] = useState([])
     const [user] = useAuthState(auth)
     const emails = user?.email
-    console.log(enroll, student)
     const [status, setStatus] = useState('')
     // console.log(user)
     const makeAdmin = () => {
@@ -16,7 +15,7 @@ const UserRow = ({ user: users, index }) => {
             method: 'PUT'
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => data)
     }
     const paidStudent = () => {
         fetch(`http://localhost:5000/user/student/${email}`, {
@@ -25,7 +24,7 @@ const UserRow = ({ user: users, index }) => {
             .then(res => res.json())
             .then(datas => {
 
-                console.log(datas)
+                datas
 
                 toast('Enrolled successfully')
 
