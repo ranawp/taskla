@@ -52,9 +52,9 @@ const Admin_Dashboard = () => {
                 <div>
                     <h1 className='text-4xl font-bold'>Dashboard</h1>
                 </div>
-                <div class="card w-96 bg-base-100 rounded-full shadow-xl">
-                    <div class="text-center">
-                        <h2 class="text-center text-lg font-bold">Period</h2>
+                <div className="card w-96 bg-base-100 rounded-full shadow-xl">
+                    <div className="text-center">
+                        <h2 className="text-center text-lg font-bold">Period</h2>
                         <p>29/5/2022- 29/12/2022</p>
 
                     </div>
@@ -62,18 +62,18 @@ const Admin_Dashboard = () => {
             </div>
             <div className="grid gap-x-8 gap-y-8 lg:grid-cols-2 mt-14">
                 {/* 1st stat  */}
-                <div class="stats shadow p-3">
+                <div className="stats shadow p-3">
 
-                    <div class="stat">
+                    <div className="stat">
                         <div className='text-4xl font-bold mb-3'>7240</div>
 
-                        <div class=" text-[18px] font-semibold text-black">Total Students</div>
+                        <div className=" text-[18px] font-semibold text-black">Total Students</div>
 
-                        <div class=" text-[16px] font-semibold"><span className='text-green-500'>+21% </span>than last month</div>
+                        <div className=" text-[16px] font-semibold"><span className='text-green-500'>+21% </span>than last month</div>
                     </div>
 
-                    <div class="stat">
-                        <div class="stat-figure text-secondary">
+                    <div className="stat">
+                        <div className="stat-figure text-secondary">
                             <img src={student} alt="" />
                         </div>
 
@@ -81,18 +81,18 @@ const Admin_Dashboard = () => {
 
                 </div>
                 {/* 2nd state  */}
-                <div class="stats shadow p-3">
+                <div className="stats shadow p-3">
 
-                    <div class="stat">
+                    <div className="stat">
                         <div className='text-4xl font-bold mb-3'>15</div>
 
-                        <div class=" text-[18px] font-semibold text-black">Total Teacher</div>
+                        <div className=" text-[18px] font-semibold text-black">Total Teacher</div>
 
-                        <div class=" text-[16px] font-semibold"><span className='text-red-600'>-2% </span>than last month</div>
+                        <div className=" text-[16px] font-semibold"><span className='text-red-600'>-2% </span>than last month</div>
                     </div>
 
-                    <div class="stat">
-                        <div class="stat-figure text-secondary">
+                    <div className="stat">
+                        <div className="stat-figure text-secondary">
                             <img src={cap} alt="" />
                         </div>
 
@@ -100,9 +100,9 @@ const Admin_Dashboard = () => {
 
                 </div>
                 {/* 3rd stat  */}
-                <div class="stats shadow p-3">
+                <div className="stats shadow p-3">
 
-                    <div class="stat flex">
+                    <div className="stat flex">
                         <div className='' style={{ width: 100, height: 100 }}>
                             <CircularProgressbar value={percentage} text={`${percentage}%`}
                                 styles={buildStyles({
@@ -135,9 +135,9 @@ const Admin_Dashboard = () => {
 
                 </div>
                 {/* 4th state  */}
-                <div class="stats shadow p-3">
+                <div className="stats shadow p-3">
 
-                    <div class="stat flex">
+                    <div className="stat flex">
                         <div className='' style={{ width: 100, height: 100 }}>
                             <CircularProgressbar value={percentage2} text={`${percentage2}%`} />
                         </div>
@@ -154,12 +154,12 @@ const Admin_Dashboard = () => {
                 </div>
             </div>
             {/* school perfomance chart  */}
-            <div class="card lg:card-side bg-base-100 shadow-xl my-5">
+            <div className="card lg:card-side bg-base-100 shadow-xl my-5">
 
-                <div class="card-body">
+                <div className="card-body">
                     <h2 className='card-title font-semibold text-lg block'>School Perfomance</h2>
 
-                    <div class="card-actions w-[100%]">
+                    <div className="card-actions w-[100%]">
                        
                             <AreaChart
                                 width={500}
@@ -183,14 +183,14 @@ const Admin_Dashboard = () => {
                 </div>
             </div>
             {/* undpaid students */}
-            <div class="card lg:card-side bg-base-100 shadow-xl">
+            <div className="card lg:card-side bg-base-100 shadow-xl">
 
-                <div class="card-body">
-                    <h2 class="card-title">Unpaid Students</h2>
+                <div className="card-body">
+                    <h2 className="card-title">Unpaid Students</h2>
                     <p className='text-slate-500 text-[16px]'>Total 230</p>
-                    <div class="card-actions ">
-                        <div class="overflow-x-auto w-full">
-                            <table class="table w-full">
+                    <div className="card-actions ">
+                        <div className="overflow-x-auto w-full">
+                            <table className="table w-full">
 
                                 <thead>
                                     <tr>
@@ -208,19 +208,19 @@ const Admin_Dashboard = () => {
                                     <tr>
                                         <th>
                                             <label>
-                                                <input type="checkbox" class="checkbox" />
+                                                <input type="checkbox" className="checkbox" />
                                             </label>
                                         </th>
                                         <td>
-                                            <div class="flex items-center space-x-3">
-                                                <div class="avatar">
-                                                    <div class="mask mask-squircle w-12 h-12">
+                                            <div className="flex items-center space-x-3">
+                                                <div className="avatar">
+                                                    <div className="mask mask-squircle w-12 h-12">
                                                         <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <div class="font-bold">Hart Hagerty</div>
-                                                    <div class="text-sm opacity-50">United States</div>
+                                                    <div className="font-bold">Hart Hagerty</div>
+                                                    <div className="text-sm opacity-50">United States</div>
                                                 </div>
                                             </div>
                                         </td>
@@ -235,19 +235,19 @@ const Admin_Dashboard = () => {
                                     <tr>
                                         <th>
                                             <label>
-                                                <input type="checkbox" class="checkbox" />
+                                                <input type="checkbox" className="checkbox" />
                                             </label>
                                         </th>
                                         <td>
-                                            <div class="flex items-center space-x-3">
-                                                <div class="avatar">
-                                                    <div class="mask mask-squircle w-12 h-12">
+                                            <div className="flex items-center space-x-3">
+                                                <div className="avatar">
+                                                    <div className="mask mask-squircle w-12 h-12">
                                                         <img src="/tailwind-css-component-profile-3@56w.png" alt="Avatar Tailwind CSS Component" />
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <div class="font-bold">Brice Swyre</div>
-                                                    <div class="text-sm opacity-50">China</div>
+                                                    <div className="font-bold">Brice Swyre</div>
+                                                    <div className="text-sm opacity-50">China</div>
                                                 </div>
                                             </div>
                                         </td>
@@ -262,19 +262,19 @@ const Admin_Dashboard = () => {
                                     <tr>
                                         <th>
                                             <label>
-                                                <input type="checkbox" class="checkbox" />
+                                                <input type="checkbox" className="checkbox" />
                                             </label>
                                         </th>
                                         <td>
-                                            <div class="flex items-center space-x-3">
-                                                <div class="avatar">
-                                                    <div class="mask mask-squircle w-12 h-12">
+                                            <div className="flex items-center space-x-3">
+                                                <div className="avatar">
+                                                    <div className="mask mask-squircle w-12 h-12">
                                                         <img src="/tailwind-css-component-profile-4@56w.png" alt="Avatar Tailwind CSS Component" />
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <div class="font-bold">Marjy Ferencz</div>
-                                                    <div class="text-sm opacity-50">Russia</div>
+                                                    <div className="font-bold">Marjy Ferencz</div>
+                                                    <div className="text-sm opacity-50">Russia</div>
                                                 </div>
                                             </div>
                                         </td>
@@ -289,19 +289,19 @@ const Admin_Dashboard = () => {
                                     <tr>
                                         <th>
                                             <label>
-                                                <input type="checkbox" class="checkbox" />
+                                                <input type="checkbox" className="checkbox" />
                                             </label>
                                         </th>
                                         <td>
-                                            <div class="flex items-center space-x-3">
-                                                <div class="avatar">
-                                                    <div class="mask mask-squircle w-12 h-12">
+                                            <div className="flex items-center space-x-3">
+                                                <div className="avatar">
+                                                    <div className="mask mask-squircle w-12 h-12">
                                                         <img src="/tailwind-css-component-profile-5@56w.png" alt="Avatar Tailwind CSS Component" />
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <div class="font-bold">Yancy Tear</div>
-                                                    <div class="text-sm opacity-50">Brazil</div>
+                                                    <div className="font-bold">Yancy Tear</div>
+                                                    <div className="text-sm opacity-50">Brazil</div>
                                                 </div>
                                             </div>
                                         </td>

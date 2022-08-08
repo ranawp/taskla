@@ -22,6 +22,7 @@ import TaskEvaluate from "./Components/Dashboard/Outlet/MyTasks/TaskEvalute/Task
 import StudentAnalytic from "./Components/StudentAnalytic/StudentAnalytic";
 import Admin_Dashboard from "./Components/Dashboard/Admin_Dashboard/Admin_Dashboard";
 import ContactUs from "./Components/Home/ContactUs";
+import AddReview from "./Components/Review/AddReview";
 
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
         <Route path="/blog/javaScript" element={<BlogDetails3 />} />
         {/* mozahid task  */}
         <Route path="/contact" element={<ContactUs></ContactUs>}></Route>
+        <Route path="/addReview" element={<AddReview/>}/>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
       </Routes>

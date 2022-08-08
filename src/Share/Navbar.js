@@ -26,7 +26,7 @@ const Navbar = () => {
         signOut(auth);
         localStorage.removeItem('accessToken')
     };
-    console.log(match)
+    // console.log(match)
     const menuItems = <>
         <li className='hover:text-black'><Link to='/'>Home</Link></li>
         <li className='hover:text-black' > <Link className='pl-5' to='/blog' > Blog</Link></li >
@@ -38,6 +38,7 @@ const Navbar = () => {
                         <li><Link className='pl-5' to="/classroom">Classroom</Link></li ></>
                 }
                 <li><Link className='pl-5' to="/courses">Courses</Link></li >
+                <li><Link className='pl-5' to="/addReview">Student Review</Link></li >
                 <div className="dropdown" >
                     <label tabIndex="0" className="m-1" >
                         <li className='pl-5 cursor-pointer inline-block' > {user?.displayName}
