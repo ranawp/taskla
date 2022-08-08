@@ -16,9 +16,9 @@ import BlogDetails4 from "./Components/Blogs/BlogDetails/BlogDetails4";
 import MyClass from "./Components/MyClass/MyClass";
 import Allusers from "./Components/Dashboard/Outlet/Allusers";
 import ViewProfile from "./Components/ViewProfile/ViewProfile";
-<<<<<<< HEAD
-import Massenger from "./Components/Massenger/Massenger";
-=======
+
+
+
 import TaskCreate from "./Components/Dashboard/Outlet/TaskCreate/TaskCreate";
 import MyTask from "./Components/Dashboard/Outlet/MyTasks/MyTask";
 
@@ -29,7 +29,7 @@ import axios from "axios";
 
 import TaskEvaluate from "./Components/Dashboard/Outlet/MyTasks/TaskEvalute/TaskEvaluate";
 
->>>>>>> bb7057d4b1d4c47ce372d828026934c26984741a
+
 
 
 function App() {
