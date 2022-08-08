@@ -10,7 +10,7 @@ const Allusers = () => {
     useEffect(() => {
         isLoading(true)
         const fetchSideeffect = async () => {
-            const res = await axios('https://sleepy-castle-16675.herokuapp.com/user')
+            const res = await axios('http://localhost:5000/user')
             setData(res.data)
             isLoading(false)
         }
@@ -21,13 +21,14 @@ const Allusers = () => {
         <div>
             <h2 className='text-2xl'>All users :{data.length}</h2>
 
-            <div className="overflow-x-auto">
-                <table className="table w-full">
+            <div className="overflow-x-auto" >
+                <table className="table w-full" >
                     <thead>
                         <tr>
                             <th>No.</th>
                             <th>Email</th>
                             <th>select admin</th>
+                            <th>Enroll Status</th>
                             <th>Remove User</th>
                         </tr>
                         {loading && <Loading></Loading>}
@@ -43,9 +44,9 @@ const Allusers = () => {
                             ></UserRow>)
                         }
                     </tbody>
-                </table>
-            </div>
-        </div>
+                </table >
+            </div >
+        </div >
     );
 };
 
