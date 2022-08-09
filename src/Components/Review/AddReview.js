@@ -1,20 +1,54 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import ReactStars from "react-rating-stars-component";
+import auth from '../../firebase.init';
 
 const AddReview = () => {
 
-    const [rating, setRating] = useState(0)
+    const [rating, setRating] = useState(0);
+    const [data, getData] = useState([]);
+    const [user] = useAuthState(auth);
+
+    const email = user?.email;
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/user/${email}`, {
+            method: 'GET',
+            header: {
+                'content-type': 'application/json'
+            }
+        })
+            .then((res) => res.json())
+            .then((data) => getData(data));
+
+    }, [email])
+
 
     const ratingChanged = (newRating) => {
         setRating(newRating);
     };
+
+
+
 
     const handleAddReview = event => {
         event.preventDefault();
         const name = event.target.name.value;
         const course = event.target.course.value;
         const message = event.target.message.value;
-        console.log({ name, course, message, rating});
+        const image = data.image || 'https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png';
+        const review = { name, course, message, rating, image}
+        fetch('http://localhost:5000/review',{
+            method:'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(review)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
     }
     
     return (
