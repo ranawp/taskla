@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
+
 // import TaskDetails from './TaskDetails';
+
+
+
 
 const SingleTasks = ({ task, index, setModalDetails, setModal }) => {
 
-    // console.log(task)
+
     return (
         <>
             <tr>
