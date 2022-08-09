@@ -27,7 +27,7 @@ import AddReview from "./Components/Review/AddReview";
 
 function App() {
   return (
-    <div className=" bg-white overflow-x-hidden" >
+    <div className=" bg-white" >
       <Navbar></Navbar>
 
       <Routes>
