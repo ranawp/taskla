@@ -1,62 +1,73 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css'
 import logo from '../asset/logo.png'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
 import { signOut } from 'firebase/auth';
-import down from '../asset/down-filled-triangular-arrow.png';
-import notification from '../asset/notification.png'
+import down from '../asset/down-filled-triangular-arrow.png'
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
-    // console.log(user.photoURL)
+    const emails = user?.email
+    const [match, setMatch] = useState([])
+    useEffect(() => {
+        fetch(`http://localhost:5000/user/${emails}`, {
+            method: 'GET',
+            header: {
+                'content-type': 'application/json'
+            }
+        })
+            .then((res) => res.json())
+            .then((data) => setMatch(data));
+
+    }, [emails])
     const logout = () => {
         signOut(auth);
         localStorage.removeItem('accessToken')
     };
+    console.log(match)
     const menuItems = <>
         <li className='hover:text-black'><Link to='/'>Home</Link></li>
         <li className='hover:text-black' > <Link className='pl-5' to='/blog' > Blog</Link></li >
-
-
-        
-
-        {user ?
+        {
+            user &&
             <>
-                <li className='hover:text-black'><Link className='pl-5' to='/dashboard'>CPanel</Link></li>
-                <li><Link className='pl-5' to="/classroom">Classroom</Link></li>
-
-                <li><Link className='pl-5' to="/classroom"><img className='w-5 inline-block' src={notification} alt="" /></Link></li>
-
-
-                {/* user profile/ logout / analytics  */}
-                <div className="dropdown">
-                    <label tabIndex="0" className="m-1">
-                        <li className='pl-5 cursor-pointer pr-2 inline-block'>{user?.displayName}
-                        </li>
+                {match.student == 'enrolled' &&
+                    <>  <li><Link className='pl-5' to='/mytask'>MyTask</Link></li>
+                        <li><Link className='pl-5' to="/classroom">Classroom</Link></li ></>
+                }
+                <li><Link className='pl-5' to="/courses">Courses</Link></li >
+                <div className="dropdown" >
+                    <label tabIndex="0" className="m-1" >
+                        <li className='pl-5 cursor-pointer inline-block' > {user?.displayName}
+                        </li >
                         <img className='w-2 cursor-pointer  inline-block' src={down} alt="" />
 
-                        </label >
-                        <ul tabIndex="0" className="dropdown-content menu  shadow bg-base-100 rounded-box w-40 text-xs" >
-                            <li><Link to='/viewprofile' className='pl-5'> View Profile</Link></li >
-                            <li><Link to='/studentAnalytic' className='pl-5'> Student Analytics</Link></li >
-                            
-                            <li><Link className='pl-5' to='' onClick={logout} >Sign Out</Link></li >
+                    </label >
+                    <ul tabIndex="0" className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52" >
+                        <li><Link to='/viewprofile' className='pl-5'> View Profile</Link></li >
+                        <li><Link className='pl-5' to='' onClick={logout} >Sign Out</Link></li >
 
-                        </ul >
-                    </div >
-
-                    {/*end user profile/ logout / analytics  */}
-                </>
-                :
-                <>
-                    <li><Link className='pl-5' to="/login">Login</Link></li>
-                    <li><Link className='pl-5' to="/register">Register</Link></li >
-                </>
+                    </ul >
+                </div >
+            </>
         }
-        <li className='hover:text-black' > <Link className='px-5' to='/contact' > Contact Us</Link ></li >
+
+        <>
+            {match?.role == 'admin' && < li className='hover:text-black' > <Link className='pl-5' to='/dashboard' >CPanel</Link ></li >}
+
+        </>
+
+        {!user && <li><Link className='pl-5' to="/login">Login</Link></li>}
+        {!(match.role == 'admin') && <>
+            {!(match.student == 'enrolled') && <li><Link className='pl-5' to="/register">Register</Link></li >}
+            <li className='hover:text-black' > <Link className='pl-5' to='/contact' > Contact Us</Link ></li >
+        </>
+
+        }
     </>
+
     const locatin = useLocation()
     return (
         <div className='max-w-7xl mx-auto' >
@@ -72,6 +83,7 @@ const Navbar = () => {
                     </div >
                     <img className='w-16' src={logo} alt="" /> <p className=" normal-case  ml-3 font-bold text-2xl text-black" > <Link to='/'>TASK<span className='text-black'>LA</span></Link ></p >
                 </div >
+
                 <div className="navbar-end hidden lg:flex" >
                     <ul className=" menu-horizontal p-0 text-black font-bold" >
                         {menuItems}

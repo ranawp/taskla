@@ -36,10 +36,10 @@ const ViewProfile = () => {
                 <div className=" form-control w-full max-w-[350px] mx-auto mt-4">
                     <fieldset className=" flex flex-wrap border border-solid border-white-300 p-2">
                         <legend className="text-sm mx-auto">Addresses</legend>
-                        <input type="text" readOnly value={division} name='division' placeholder="Division" className="input input-bordered w-40 max-w-xs mr-2" />
-                        <input type="text" value={district} readOnly name='district' placeholder="District" className="input input-bordered w-40 max-w-xs" />
-                        <input type="text" value={street} readOnly name='street' placeholder="Street" className="input input-bordered w-40 max-w-xs mr-2 mt-2" />
-                        <input type="text" value={phone} readOnly name='phone' placeholder="Phone" className="input input-bordered w-40 max-w-xs mt-2" />
+                        <input type="text" defaultValue={division} readOnly name='division' placeholder="Division" className="input input-bordered w-40 max-w-xs mr-2" />
+                        <input type="text" defaultValue={district} readOnly name='district' placeholder="District" className="input input-bordered w-40 max-w-xs" />
+                        <input type="text" defaultValue={street} readOnly name='street' placeholder="Street" className="input input-bordered w-40 max-w-xs mr-2 mt-2" />
+                        <input type="text" defaultValue={phone} readOnly name='phone' placeholder="Phone" className="input input-bordered w-40 max-w-xs mt-2" />
 
                     </fieldset>
                 </div >
