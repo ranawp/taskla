@@ -1,14 +1,14 @@
-.header {
+/*.header {
     /* display: flex; */
-    /* background-color: #6335F1; */
-}
+/* background-color: #6335F1; */
+/*}*/
 
 /* .button {
     background-color: #0D73FA;
     color: white;
 }
 
-.button:hover {
+/* .button:hover {
     background-color: #EDF5E1;
     color: #1F2235;
 } */
@@ -24,13 +24,15 @@
     border: 2px solid #FF5825;
 }
 
-.banner {
+/*.banner {
     /* background-color: #152742; */
-    /* margin-top: -4rem; */
-    /* height: 100vh; */
+/* margin-top: -4rem; */
+/* height: 100vh;
 
-    /* height: calc(var(--vh, 1vh) * 100); */
-}
+    height: calc(var(--vh, 1vh) * 100); */
+
+/* height: calc(var(--vh, 1vh) * 100); */
+/*}*/
 
 @media only screen and (min-width: 320px) and (max-width:480px) {
     .left-side {
