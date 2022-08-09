@@ -16,6 +16,7 @@ import ViewProfile from "./Components/ViewProfile/ViewProfile";
 import TaskCreate from "./Components/Dashboard/Outlet/TaskCreate/TaskCreate";
 import MyTask from "./Components/Dashboard/Outlet/MyTasks/MyTask";
 import Courses from "./Components/Courses/Courses";
+import CreateBlog from "./Components/Dashboard/Outlet/CreateBlog/CreateBlog";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from "react-toastify";
 import TaskEvaluate from "./Components/Dashboard/Outlet/MyTasks/TaskEvalute/TaskEvaluate";
@@ -46,6 +47,7 @@ function App() {
           <Route path="allusers" element={<Allusers></Allusers>} />
           <Route path="createtask" element={<TaskCreate></TaskCreate>}></Route>
           <Route path="taskEvaluate" element={<TaskEvaluate></TaskEvaluate>}></Route>
+          <Route path="createBlog" element={<CreateBlog></CreateBlog>}></Route>
         </Route>
 
 
