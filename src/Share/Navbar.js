@@ -26,7 +26,6 @@ const Navbar = () => {
         signOut(auth);
         localStorage.removeItem('accessToken')
     };
-    console.log(match)
     const menuItems = <>
         <li className='hover:text-black'><Link to='/'>Home</Link></li>
         <li className='hover:text-black' > <Link className='pl-5' to='/blog' > Blog</Link></li >
