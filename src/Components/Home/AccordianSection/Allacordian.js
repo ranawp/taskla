@@ -6,7 +6,7 @@ const Allacordian = () => {
     return (
         <div>
             <div className="p-4 mt-28">
-                <div className="flex h-[600px]">
+                <div className="sm:flex h-[600px]">
                     <div className='flex-none lg:pl-16 sm:pl-5 items-center h-80 py-9 lg:pr-4 sm:pr-0'>
                         <h2 className='mb-10 text-start border-b-4 border-yellow-400 inline-block text-3xl font-bold'>How does it work?</h2>
                         <AccordianSection
@@ -27,7 +27,7 @@ const Allacordian = () => {
                             heading={' The teacher has a complete overview'}
                             descrip={'You get the complete overview of everything that is happening in the assignment'}></AccordianSection>
                     </div >
-                    <div className='bg-amber-400 grow max-h-[500px] w-full relative rounded' >
+                    <div className='bg-amber-400 grow max-h-[500px] w-full relative rounded invisible md:visible' >
                         <img src={image} className=" absolute right-0 bottom-[55px] w-4/5 h-96 rounded-lg shadow-2xl" alt='education-pic' />
                     </div >
                 </div >
