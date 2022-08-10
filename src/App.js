@@ -22,6 +22,7 @@ import TaskEvaluate from "./Components/Dashboard/Outlet/MyTasks/TaskEvalute/Task
 import StudentAnalytic from "./Components/StudentAnalytic/StudentAnalytic";
 import Admin_Dashboard from "./Components/Dashboard/Admin_Dashboard/Admin_Dashboard";
 import ContactUs from "./Components/Home/ContactUs";
+import BlogCreate from "./Components/Dashboard/Outlet/BlogCreate";
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
           <Route path="allusers" element={<Allusers></Allusers>} />
           <Route path="createtask" element={<TaskCreate></TaskCreate>}></Route>
           <Route path="taskEvaluate" element={<TaskEvaluate></TaskEvaluate>}></Route>
+          <Route path="blogCreate" element={<BlogCreate></BlogCreate>}></Route>
         </Route>
 
 
