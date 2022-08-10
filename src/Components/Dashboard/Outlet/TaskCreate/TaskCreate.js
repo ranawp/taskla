@@ -67,6 +67,7 @@ const TaskCreate = () => {
                                 {errors.taskDeadline?.type === 'required' && <span className="label-text-alt ">{errors.taskDeadline.message}</span>}
                             </label>
 
+
                             <textarea name="" id="" cols="35" rows="7" placeholder='Write student task'
                                 className=" mt-2 p-2 rounded-lg background-color"
                                 {...register("taskMassage", {
