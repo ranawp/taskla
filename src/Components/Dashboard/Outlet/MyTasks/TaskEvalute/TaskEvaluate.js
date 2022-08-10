@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import EvaluteDetails from './EvaluteDetails';
+import EvaluteFeedbackModal from './EvaluteFeedbackModal';
 import SingleTaskEvalute from './SingleTaskEvalute';
 import './taskEvalute.css';
 
 const TaskEvaluate = () => {
     const [taskEvaluate, setTaskEvalute] = useState([]);
     const [evaluteModalDetails, setEvaluteModalDetails] = useState(null);
+    const [evaluteFeedbackModal, setEvaluteFeedbackModal] = useState(null);
 
 
     useEffect(() => {
@@ -22,26 +24,26 @@ const TaskEvaluate = () => {
                 <thead>
                     <tr>
                         <th>Serial</th>
-
                         <th>Task no</th>
                         <th>User Email</th>
                         <th>Deadline</th>
                         <th>Submitted time</th>
                         <th>Answer Script</th>
-                        <th>Mark</th>
-                        <th>Feedback</th>
-                        <th>Upadte</th>
+                        {/* <th>Mark</th> */}
+                        <th>Give Feedback</th>
+                        {/* <th>Upadte</th> */}
                     </tr>
                 </thead>
 
                 <tbody>
                     {
                         taskEvaluate.map((taskEvalute, index) => <SingleTaskEvalute
-
                             key={taskEvalute._id}
                             taskEvalute={taskEvalute}
                             index={index}
                             setEvaluteModalDetails={setEvaluteModalDetails}
+                            setEvaluteFeedbackModal={setEvaluteFeedbackModal}
+
                         // setModal={setModal}
                         // setModalDetails={setModalDetails}
                         // reload={reload}
@@ -50,6 +52,7 @@ const TaskEvaluate = () => {
                     }
                 </tbody>
                 {evaluteModalDetails && <EvaluteDetails evaluteModalDetails={evaluteModalDetails} ></EvaluteDetails>}
+                {evaluteFeedbackModal && <EvaluteFeedbackModal evaluteFeedbackModal={evaluteFeedbackModal}></EvaluteFeedbackModal>}
 
             </table>
         </div>
