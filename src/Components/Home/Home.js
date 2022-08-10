@@ -11,6 +11,7 @@ import SignupBanner from './SignupBanner/SignupBanner';
 import laptop from '../../asset/laptop.svg';
 import football from '../../asset/football.svg';
 import { Link } from 'react-router-dom';
+import CourseDetails from './CourseDetails/CourseDetails';
 
 const Home = () => {
     return (
@@ -19,6 +20,7 @@ const Home = () => {
                 <Header></Header>
                 <Allacordian></Allacordian>
                 <Benifit />
+                <CourseDetails></CourseDetails>
                 <div className='mt-32 lg:w-4/5 mx-auto relative'>
 
                     <div>
