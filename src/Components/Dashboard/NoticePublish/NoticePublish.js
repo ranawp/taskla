@@ -4,18 +4,19 @@ const NoticePublish = () => {
     const handleNoticeForm = event => {
         event.preventDefault();
         const notice = event.target.noticeText.value;
-        console.log(notice);
+        // const read = false;
+        // console.log();
         fetch(`http://localhost:5000/notice`, {
             method: 'POST',
-            body: JSON.stringify({ notice}),
+            body: JSON.stringify({ notice: notice, read: false }),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
             },
         })
             .then((response) => response.json())
             .then((json) => console.log(json));
-        
-            event.target.reset();
+
+        event.target.reset();
     }
     return (
         <div>
