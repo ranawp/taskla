@@ -1,85 +1,69 @@
-import React from 'react';
-import { useForm } from "react-hook-form";
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
 
-const createBlog = () => {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+const CreateBlog = () => {
+    const { register, handleSubmit } = useForm();
+    // const [review, setReview] = useState({});
+    const imageStoragekey = '3cf84befed9b9bcd8f1d01c2b4412701';
 
-    const photoStoreKey = 'b838c18dfd1418a3cd43999d8336cf12';
     const onSubmit = data => {
-        const photo = data.photo[0];
+        const image = data.image[0];
         const formData = new FormData();
-        formData.append('photo', photo);
-        const url = `https://api.imgbb.com/1/upload?key=${photoStoreKey}`;
+        formData.append('image', image);
+        const url = `https://api.imgbb.com/1/upload?key=${imageStoragekey}`;
         fetch(url, {
             method: 'POST',
             body: formData
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result);
-            })
+                if (result.success) {
+                    const img = result.data.url;
+                    const product = {
+                        name: data.name,
+                        description: data.description,
 
-        // reset();
-    };
+                        rattings: data.rattings,
+                        img: img
+                    }
+
+                    //send to database 
+                    fetch('http://localhost:5000/createBlog', {
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify(product)
+                    })
+                        .then(res => res.json())
+                        .then(result => {
+                            console.log('products', result)
+                        })
+                }
+
+            })
+    }
+
+
+
     return (
         <div>
-            <div className='w-100 mx-auto my-10 ml-4'>
+            <div className='bg-base-100 shadow-2xl mx-2 py-4 mt-2 rounded-md px-10 w-80'>
+                <form
+                    className=''
+                    onSubmit={handleSubmit(onSubmit)}>
 
-                <div class="card w-80 bg-base-100 shadow-2xl">
-                    <div class="card-body">
-                        <form className='d-flex flex-column ' onSubmit={handleSubmit(onSubmit)}>
-                            <label className="label">
-                                <span className="label-text">Blog Title</span>
-                            </label>
-                            <input placeholder='Blog Title'
-                                className="p-2 rounded-lg background-color" size="30"
-                                {...register("blogTitle", {
-                                    required: {
-                                        value: true,
-                                        message: "Please write Blog Title"
-                                    }
-                                })}
-                            ></input>
-                            <label className="label text-red-600">
-                                {errors.blogTitle?.type === 'required' && <span className="label-text-alt ">{errors.blogTitle.message}</span>}
-                            </label>
-                            <label className="label">
-                                <span className="label-text">Photo</span>
-                            </label>
-                            <input
-                                type='file'
-                                className="p-2 rounded-lg background-color" size="30"
-                                {...register("photo", {
-                                    required: {
-                                        value: true,
-                                        message: "Please Choose A Photo"
-                                    }
-                                })}
-                            ></input>
-                            <label className="label text-red-600">
-                                {errors.photo?.type === 'required' && <span className="label-text-alt ">{errors.photo.message}</span>}
-                            </label>
-                            <label className="label">
-                                <span className="label-text">Blog Detail</span>
-                            </label>
-                            <textarea name="blogDetails" id="" cols="35" rows="7" placeholder='Write blog Details'
-                                className="p-2 rounded-lg background-color"
-                                {...register("blogDetails", {
-                                    required: {
-                                        value: true,
-                                        message: "Please write Blog Detail"
-                                    }
-                                })}
-                            ></textarea>
-                            <label className="label text-red-600">
-                                {errors.blogDetails?.type === 'required' && <span className="label-text-alt ">{errors.blogDetails.message}</span>}
-                            </label>
-                            <input className=' bg-blue-700 border-0 px-3 py-1 button  rounded text-white' type="submit" value="Submit" />
+                    <small>Blog Title</small><br />
+                    <input className="my-2 p-2 rounded-lg background-color w-60" placeholder='Write Blog Title'  {...register("blogTitle", { required: true, maxLength: 20 })} /> <br />
 
-                        </form>
+                    <small>Image:</small> <br />
+                    <input className="my-2 p-2 rounded-lg background-color w-60" placeholder='Quantity' type="file" {...register("image")} /> <br />
 
-                    </div>
-                </div>
+                    <small>Blog Description:</small><br />
+                    <textarea className="my-2 p-2 rounded-lg background-color w-60" placeholder='Share your Blog Description'  {...register("blogDescription")} /> <br />
+
+                    <input type="submit" value='Submit' className=' bg-blue-700 border-0 px-3 py-1 button  rounded text-white w-60' />
+                </form>
 
 
             </div>
@@ -87,4 +71,4 @@ const createBlog = () => {
     );
 };
 
-export default createBlog;
+export default CreateBlog;
