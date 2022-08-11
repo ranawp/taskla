@@ -33,7 +33,6 @@ const SingleTasks = ({ task, index, setModalDetails, setModal, setFeedbackModal,
 
                 <td><input className='markinput' size='3' type="text" />{task.mark}</td>
                 {/* {taskFeedback.map(taskMark => console.log(taskMark.mark)
-
                 )} */}
 
 

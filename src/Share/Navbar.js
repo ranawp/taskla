@@ -6,7 +6,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
 import { signOut } from 'firebase/auth';
 import down from '../asset/down-filled-triangular-arrow.png'
-import notification from '../asset/notification.png'
+import notificationIcon from '../asset/notification.png'
 import axios from 'axios';
 
 const Navbar = () => {
@@ -14,6 +14,7 @@ const Navbar = () => {
     const emails = user?.email
     const [match, setMatch] = useState([]);
     const [get, setData] = useState([])
+    const [notifications, setNotifications] = useState([]);
     useEffect(() => {
         fetch(`http://localhost:5000/user/${emails}`, {
             method: 'GET',
@@ -25,6 +26,12 @@ const Navbar = () => {
             .then((data) => setMatch(data));
 
     }, [emails])
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/notice`)
+            .then((response) => response.json())
+            .then((json) => setNotifications(json));
+    }, [notifications])
 
     useEffect(() => {
         const fetchSideeffect = async () => {
@@ -53,22 +60,21 @@ const Navbar = () => {
                 <li><Link className='pl-5' to="/courses">Courses</Link></li >
 
 
-                {/* notification */}
+                {/* notification  */}
                 <div class="dropdown">
-                    <label tabindex="0" class="">
+                    <label tabindex="1" class="">
                         <li className='pl-5 cursor-pointer'>
-                            <div className='inline-block relative'>
-                                <img className='w-5 inline' src={notification} alt="" />
-
-                                <div class="badge badge-sm bg-red-600 absolute top-[-5px] right-[-12px] border-0 text-[10px]">
-
-                                </div>
+                            <div class="indicator">
+                                <span class="indicator-item  badge bg-red-600 border-0 w-5 text-[10px]">{notifications.length}</span>
+                                <div class="grid place-items-center"><img className='w-5 inline' src={notificationIcon} alt="" /></div>
                             </div>
+                            {/* <div className='inline-block relative'>
+                            
+                            <div class="badge badge-sm bg-red-600 absolute top-[-5px] right-[-12px] border-0 text-[10px]">0</div>
+                        </div> */}
                         </li ></label>
-
-                    <ul tabindex="0" class="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4">
-                        <li><a>Item 1 adfsdfgd</a></li>
-                        <li><a>Item 2 adfagsfds</a></li>
+                    <ul tabindex="1" class="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+                        {notifications.map(notification => <li className='p-2 border  hover:bg-blue-100'>{notification.notice}</li>)}
                     </ul>
                 </div>
 

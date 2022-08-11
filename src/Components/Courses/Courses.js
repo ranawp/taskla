@@ -15,7 +15,11 @@ const Courses = () => {
             method: 'PUT'
         })
             .then(res => res.json())
+
+            .then(data => console.log(data))
+
             .then(data => data)
+
     }
     return (
         <div className='sm:min-h-screen px-10 flex justify-between relative'>

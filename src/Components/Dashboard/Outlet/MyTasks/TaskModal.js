@@ -10,7 +10,11 @@ const TaskModal = ({ modal }) => {
     const date = new Date()
     const currentDate = date.toLocaleDateString();
     const currentHour = date.toLocaleTimeString();
+
+    console.log(date)
+
     // console.log(date)
+
     // console.log(user.displayName)
 
     const handleForm = event => {
@@ -45,7 +49,9 @@ const TaskModal = ({ modal }) => {
             },
         })
             .then((response) => response.json())
-            .then((json) => json);
+
+            .then((json) => console.log(json));
+
 
         event.target.reset();
     }
