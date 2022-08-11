@@ -11,8 +11,12 @@ import SignupBanner from './SignupBanner/SignupBanner';
 import laptop from '../../asset/laptop.svg';
 import football from '../../asset/football.svg';
 import { Link } from 'react-router-dom';
+
 import CourseDetails from './CourseDetails/CourseDetails';
 import Certificate from './certificate/Certificate';
+
+
+import Gallery from './Gallery/Gallery';
 
 
 const Home = () => {
@@ -22,8 +26,12 @@ const Home = () => {
                 <Header></Header>
                 <Allacordian></Allacordian>
                 <Benifit />
+
                 <CourseDetails></CourseDetails>
                 <Certificate></Certificate>
+
+                <Gallery />
+
                 <div className='mt-32 lg:w-4/5 mx-auto relative'>
 
                     <div>
