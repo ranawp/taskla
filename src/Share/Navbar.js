@@ -91,7 +91,7 @@ const Navbar = () => {
                         </div> */}
                         </li ></label>
                     <ul tabIndex="1" className="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4">
-                        {newArray.map(notification => <li onClick={() => setNoti(notification._id)} className='p-2 border  hover:bg-blue-100 cursor-pointer'>{notification.notice}</li>)}
+                        {notifications.map(notification => <li onClick={() => setNoti(notification._id)} className={notification.read == true ? 'line-through p-2 border  hover:bg-blue-100 cursor-pointer' : 'p-2 border  hover:bg-blue-100 cursor-pointer'}>{notification.notice}</li>)}
                     </ul>
                 </div>
 
@@ -121,10 +121,11 @@ const Navbar = () => {
         </>
 
         {!user && <li><Link className='pl-5' to="/login">Login</Link></li>}
-        {!(match.role == 'admin') && <>
-            {!(match.student == 'enrolled') && !user && <li><Link className='pl-5' to="/register">Register</Link></li >}
-            <li className='hover:text-black' > <Link className='pl-5' to='/contact' > Contact Us</Link ></li >
-        </>
+        {
+            !(match.role == 'admin') && <>
+                {!(match.student == 'enrolled') && !user && <li><Link className='pl-5' to="/register">Register</Link></li >}
+                <li className='hover:text-black' > <Link className='pl-5' to='/contact' > Contact Us</Link ></li >
+            </>
 
         }
     </>
