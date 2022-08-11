@@ -54,7 +54,7 @@ const studentAnalytic = () => {
         fetch(`http://localhost:5000/allMarks/${email}`)
             .then(res => res.json())
             .then(data => setMarks(data))
-    }, [])
+    }, [marks])
 
     return (
         <>
@@ -75,7 +75,7 @@ const studentAnalytic = () => {
 
                     <tbody>
                         {
-                            marks.map((singleMark, index) => <StudentMark
+                            marks?.map((singleMark, index) => <StudentMark
 
                                 key={singleMark._id}
                                 singleMark={singleMark}
