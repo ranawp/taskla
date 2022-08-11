@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import student from '../../../asset/student.png';
@@ -46,15 +46,32 @@ const Admin_Dashboard = () => {
             "revenue": 61000
         }
     ]
+
+    const [students, setStudents] = useState([]);
+    const [task, setTask] = useState([])
+
+
+    useEffect(() => {
+        fetch('http://localhost:5000/user')
+            .then(res => res.json())
+            .then(data => setStudents(data))
+    }, [])
+
+    useEffect(() => {
+        fetch('http://localhost:5000/alltasks')
+            .then(res => res.json())
+            .then(data => setTask(data))
+    })
+
     return (
         <div className='p-10'>
             <div className='flex justify-between'>
                 <div>
                     <h1 className='text-4xl font-bold'>Dashboard</h1>
                 </div>
-                <div className="card w-96 bg-base-100 rounded-full shadow-xl">
-                    <div className="text-center">
-                        <h2 className="text-center text-lg font-bold">Period</h2>
+                <div class="card w-96 bg-base-100 rounded-full shadow-xl">
+                    <div class="text-center">
+                        <h2 class="text-center text-lg font-bold">Period</h2>
                         <p>29/5/2022- 29/12/2022</p>
 
                     </div>
@@ -62,18 +79,18 @@ const Admin_Dashboard = () => {
             </div>
             <div className="grid gap-x-8 gap-y-8 lg:grid-cols-2 mt-14">
                 {/* 1st stat  */}
-                <div className="stats shadow p-3">
+                <div class="stats shadow p-3">
 
-                    <div className="stat">
-                        <div className='text-4xl font-bold mb-3'>7240</div>
+                    <div class="stat">
+                        <div className='text-4xl font-bold mb-3'>{students.length}</div>
 
-                        <div className=" text-[18px] font-semibold text-black">Total Students</div>
+                        <div class=" text-[18px] font-semibold text-black">Total Students</div>
 
-                        <div className=" text-[16px] font-semibold"><span className='text-green-500'>+21% </span>than last month</div>
+                        <div class=" text-[16px] font-semibold"><span className='text-green-500'>+21% </span>than last month</div>
                     </div>
 
-                    <div className="stat">
-                        <div className="stat-figure text-secondary">
+                    <div class="stat">
+                        <div class="stat-figure text-secondary">
                             <img src={student} alt="" />
                         </div>
 
@@ -81,18 +98,18 @@ const Admin_Dashboard = () => {
 
                 </div>
                 {/* 2nd state  */}
-                <div className="stats shadow p-3">
+                <div class="stats shadow p-3">
 
-                    <div className="stat">
-                        <div className='text-4xl font-bold mb-3'>15</div>
+                    <div class="stat">
+                        <div className='text-4xl font-bold mb-3'>2</div>
 
-                        <div className=" text-[18px] font-semibold text-black">Total Teacher</div>
+                        <div class=" text-[18px] font-semibold text-black">Total Teacher</div>
 
-                        <div className=" text-[16px] font-semibold"><span className='text-red-600'>-2% </span>than last month</div>
+                        <div class=" text-[16px] font-semibold"><span className='text-red-600'>-2% </span>than last month</div>
                     </div>
 
-                    <div className="stat">
-                        <div className="stat-figure text-secondary">
+                    <div class="stat">
+                        <div class="stat-figure text-secondary">
                             <img src={cap} alt="" />
                         </div>
 
@@ -100,9 +117,9 @@ const Admin_Dashboard = () => {
 
                 </div>
                 {/* 3rd stat  */}
-                <div className="stats shadow p-3">
+                <div class="stats shadow p-3">
 
-                    <div className="stat flex">
+                    <div class="stat flex">
                         <div className='' style={{ width: 100, height: 100 }}>
                             <CircularProgressbar value={percentage} text={`${percentage}%`}
                                 styles={buildStyles({
@@ -135,14 +152,14 @@ const Admin_Dashboard = () => {
 
                 </div>
                 {/* 4th state  */}
-                <div className="stats shadow p-3">
+                <div class="stats shadow p-3">
 
-                    <div className="stat flex">
+                    <div class="stat flex">
                         <div className='' style={{ width: 100, height: 100 }}>
                             <CircularProgressbar value={percentage2} text={`${percentage2}%`} />
                         </div>
                         <div>
-                            <div className='text-4xl font-bold my-3'>16</div>
+                            <div className='text-4xl font-bold my-3'>{task.length}</div>
                             <h3 className='text-lg font-semibold'>Assestment</h3>
                         </div>
 
@@ -154,43 +171,43 @@ const Admin_Dashboard = () => {
                 </div>
             </div>
             {/* school perfomance chart  */}
-            <div className="card lg:card-side bg-base-100 shadow-xl my-5">
+            <div class="card lg:card-side bg-base-100 shadow-xl my-5">
 
-                <div className="card-body">
+                <div class="card-body">
                     <h2 className='card-title font-semibold text-lg block'>School Perfomance</h2>
 
-                    <div className="card-actions w-[100%]">
-                       
-                            <AreaChart
-                                width={500}
-                                height={400}
-                                data={chartData}
-                                margin={{
-                                    top: 10,
-                                    right: 0,
-                                    left: 0,
-                                    bottom: 0,
-                                }}
-                            >
-                                {/* <CartesianGrid strokeDasharray="3 3" /> */}
-                                <XAxis dataKey="sell" />
-                                <YAxis />
-                                <Tooltip />
-                                <Area type="monotone" dataKey="revenue" stroke="#8884d8" fill="#8884d8" />
-                            </AreaChart>
-                        
+                    <div class="card-actions w-[100%]">
+
+                        <AreaChart
+                            width={500}
+                            height={400}
+                            data={chartData}
+                            margin={{
+                                top: 10,
+                                right: 0,
+                                left: 0,
+                                bottom: 0,
+                            }}
+                        >
+                            {/* <CartesianGrid strokeDasharray="3 3" /> */}
+                            <XAxis dataKey="sell" />
+                            <YAxis />
+                            <Tooltip />
+                            <Area type="monotone" dataKey="revenue" stroke="#8884d8" fill="#8884d8" />
+                        </AreaChart>
+
                     </div>
                 </div>
             </div>
             {/* undpaid students */}
-            <div className="card lg:card-side bg-base-100 shadow-xl">
+            <div class="card lg:card-side bg-base-100 shadow-xl">
 
-                <div className="card-body">
-                    <h2 className="card-title">Unpaid Students</h2>
+                <div class="card-body">
+                    <h2 class="card-title">Unpaid Students</h2>
                     <p className='text-slate-500 text-[16px]'>Total 230</p>
-                    <div className="card-actions ">
-                        <div className="overflow-x-auto w-full">
-                            <table className="table w-full">
+                    <div class="card-actions ">
+                        <div class="overflow-x-auto w-full">
+                            <table class="table w-full">
 
                                 <thead>
                                     <tr>
@@ -208,19 +225,19 @@ const Admin_Dashboard = () => {
                                     <tr>
                                         <th>
                                             <label>
-                                                <input type="checkbox" className="checkbox" />
+                                                <input type="checkbox" class="checkbox" />
                                             </label>
                                         </th>
                                         <td>
-                                            <div className="flex items-center space-x-3">
-                                                <div className="avatar">
-                                                    <div className="mask mask-squircle w-12 h-12">
+                                            <div class="flex items-center space-x-3">
+                                                <div class="avatar">
+                                                    <div class="mask mask-squircle w-12 h-12">
                                                         <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <div className="font-bold">Hart Hagerty</div>
-                                                    <div className="text-sm opacity-50">United States</div>
+                                                    <div class="font-bold">Hart Hagerty</div>
+                                                    <div class="text-sm opacity-50">United States</div>
                                                 </div>
                                             </div>
                                         </td>
@@ -235,19 +252,19 @@ const Admin_Dashboard = () => {
                                     <tr>
                                         <th>
                                             <label>
-                                                <input type="checkbox" className="checkbox" />
+                                                <input type="checkbox" class="checkbox" />
                                             </label>
                                         </th>
                                         <td>
-                                            <div className="flex items-center space-x-3">
-                                                <div className="avatar">
-                                                    <div className="mask mask-squircle w-12 h-12">
+                                            <div class="flex items-center space-x-3">
+                                                <div class="avatar">
+                                                    <div class="mask mask-squircle w-12 h-12">
                                                         <img src="/tailwind-css-component-profile-3@56w.png" alt="Avatar Tailwind CSS Component" />
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <div className="font-bold">Brice Swyre</div>
-                                                    <div className="text-sm opacity-50">China</div>
+                                                    <div class="font-bold">Brice Swyre</div>
+                                                    <div class="text-sm opacity-50">China</div>
                                                 </div>
                                             </div>
                                         </td>
@@ -262,19 +279,19 @@ const Admin_Dashboard = () => {
                                     <tr>
                                         <th>
                                             <label>
-                                                <input type="checkbox" className="checkbox" />
+                                                <input type="checkbox" class="checkbox" />
                                             </label>
                                         </th>
                                         <td>
-                                            <div className="flex items-center space-x-3">
-                                                <div className="avatar">
-                                                    <div className="mask mask-squircle w-12 h-12">
+                                            <div class="flex items-center space-x-3">
+                                                <div class="avatar">
+                                                    <div class="mask mask-squircle w-12 h-12">
                                                         <img src="/tailwind-css-component-profile-4@56w.png" alt="Avatar Tailwind CSS Component" />
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <div className="font-bold">Marjy Ferencz</div>
-                                                    <div className="text-sm opacity-50">Russia</div>
+                                                    <div class="font-bold">Marjy Ferencz</div>
+                                                    <div class="text-sm opacity-50">Russia</div>
                                                 </div>
                                             </div>
                                         </td>
@@ -289,19 +306,19 @@ const Admin_Dashboard = () => {
                                     <tr>
                                         <th>
                                             <label>
-                                                <input type="checkbox" className="checkbox" />
+                                                <input type="checkbox" class="checkbox" />
                                             </label>
                                         </th>
                                         <td>
-                                            <div className="flex items-center space-x-3">
-                                                <div className="avatar">
-                                                    <div className="mask mask-squircle w-12 h-12">
+                                            <div class="flex items-center space-x-3">
+                                                <div class="avatar">
+                                                    <div class="mask mask-squircle w-12 h-12">
                                                         <img src="/tailwind-css-component-profile-5@56w.png" alt="Avatar Tailwind CSS Component" />
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <div className="font-bold">Yancy Tear</div>
-                                                    <div className="text-sm opacity-50">Brazil</div>
+                                                    <div class="font-bold">Yancy Tear</div>
+                                                    <div class="text-sm opacity-50">Brazil</div>
                                                 </div>
                                             </div>
                                         </td>
@@ -313,9 +330,6 @@ const Admin_Dashboard = () => {
                                         </td>
                                     </tr>
                                 </tbody>
-
-
-
                             </table>
                         </div>
                     </div>
