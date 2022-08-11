@@ -28,10 +28,28 @@ const Navbar = () => {
     }, [emails])
 
     useEffect(() => {
+        console.log('hello')
         fetch(`http://localhost:5000/notice`)
             .then((response) => response.json())
             .then((json) => setNotifications(json));
-    }, [notifications])
+    }, [])
+
+
+    const newArray = notifications.filter((ele) => {
+        return ele.read == false
+    })
+
+    const setNoti = (id) => {
+        console.log(id)
+        fetch(`http://localhost:5000/notice/${id}`, {
+            method: 'PUT'
+        })
+            .then(res => res.json())
+
+            .then(data => console.log(data))
+
+            .then(data => data)
+    }
 
     useEffect(() => {
         const fetchSideeffect = async () => {
@@ -40,13 +58,12 @@ const Navbar = () => {
         }
         fetchSideeffect()
     }, [])
-    // console.log(get)
-    // const value=get.filter(f=>f.name)
+
     const logout = () => {
         signOut(auth);
         localStorage.removeItem('accessToken')
     };
-    // console.log(match)
+
     const menuItems = <>
         <li className='hover:text-black'><Link to='/'>Home</Link></li>
         <li className='hover:text-black' > <Link className='pl-5' to='/blog' > Blog</Link></li >
@@ -65,7 +82,7 @@ const Navbar = () => {
                     <label tabindex="1" class="">
                         <li className='pl-5 cursor-pointer'>
                             <div class="indicator">
-                                <span class="indicator-item  badge bg-red-600 border-0 w-5 text-[10px]">{notifications.length}</span>
+                                <span class="indicator-item  badge bg-red-600 border-0 w-5 text-[10px]">{newArray?.length}</span>
                                 <div class="grid place-items-center"><img className='w-5 inline' src={notificationIcon} alt="" /></div>
                             </div>
                             {/* <div className='inline-block relative'>
@@ -74,7 +91,7 @@ const Navbar = () => {
                         </div> */}
                         </li ></label>
                     <ul tabindex="1" class="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4">
-                        {notifications.map(notification => <li className='p-2 border  hover:bg-blue-100'>{notification.notice}</li>)}
+                        {newArray.map(notification => <li onClick={() => setNoti(notification._id)} className='p-2 border  hover:bg-blue-100 cursor-pointer'>{notification.notice}</li>)}
                     </ul>
                 </div>
 
