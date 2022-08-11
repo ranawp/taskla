@@ -12,6 +12,8 @@ import laptop from '../../asset/laptop.svg';
 import football from '../../asset/football.svg';
 import { Link } from 'react-router-dom';
 import CourseDetails from './CourseDetails/CourseDetails';
+import Certificate from './certificate/Certificate';
+
 
 const Home = () => {
     return (
@@ -21,6 +23,7 @@ const Home = () => {
                 <Allacordian></Allacordian>
                 <Benifit />
                 <CourseDetails></CourseDetails>
+                <Certificate></Certificate>
                 <div className='mt-32 lg:w-4/5 mx-auto relative'>
 
                     <div>
