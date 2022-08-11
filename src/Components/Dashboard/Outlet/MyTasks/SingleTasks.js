@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-const SingleTasks = ({ task, index, setModalDetails, setModal, setFeedbackModal, taskFeedback }) => {
+const SingleTasks = ({ task, index, setModalDetails, setModal, setFeedbackModal }) => {
 
-    console.log(taskFeedback.mark)
+    // console.log(taskFeedback.mark)
     //  const { taskMark, setTaskMark } = useState([]);
 
 

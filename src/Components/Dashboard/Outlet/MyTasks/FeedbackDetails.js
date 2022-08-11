@@ -1,6 +1,7 @@
 import React from 'react';
 
-const FeedbackDetails = ({ feedbackModal }) => {
+const FeedbackDetails = ({ feedbackModal, setTaskFeedback }) => {
+    // console.log(setTaskFeedback)
     return (
         <div>
             <input type="checkbox" id="feedback-details" class="modal-toggle" />

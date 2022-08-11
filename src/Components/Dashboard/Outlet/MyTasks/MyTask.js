@@ -14,7 +14,7 @@ const MyTask = () => {
     const [feedbackModal, setFeedbackModal] = useState(null)
     // const [reload, setReload] = useState(false);
     const [user] = useAuthState(auth)
-    const email = user.email;
+    // const email = user?.email;
 
     useEffect(() => {
         fetch('http://localhost:5000/alltasks')
@@ -22,11 +22,11 @@ const MyTask = () => {
             .then(data => setSingleTask(data))
     }, [])
 
-    useEffect(() => {
-        fetch(`http://localhost:5000/answers/${email}`)
-            .then(res => res.json())
-            .then(data => setTaskFeedback(data))
-    }, [])
+    // useEffect(() => {
+    //     fetch(`http://localhost:5000/answers/${email}`)
+    //         .then(res => res.json())
+    //         .then(data => setTaskFeedback(data))
+    // }, [])
 
 
 
@@ -61,7 +61,7 @@ const MyTask = () => {
                                 setModal={setModal}
                                 setModalDetails={setModalDetails}
                                 setFeedbackModal={setFeedbackModal}
-                                taskFeedback={taskFeedback}
+                            // taskFeedback={taskFeedback}
 
                             // reload={reload}
                             // setReload={setReload}
@@ -76,7 +76,9 @@ const MyTask = () => {
 
                     </tbody>
                     {modalDetails && <TaskDetails modalDetails={modalDetails} ></TaskDetails>}
-                    {feedbackModal && <FeedbackDetails feedbackModal={feedbackModal}></FeedbackDetails>}
+                    
+                    {feedbackModal && <FeedbackDetails
+                        feedbackModal={feedbackModal}></FeedbackDetails>}
 
                 </table>
             </div>
