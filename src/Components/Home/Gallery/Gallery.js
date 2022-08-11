@@ -1,5 +1,9 @@
 import React from 'react';
 
+
+
+
+
 const Gallery = () => {
     return (
         <div>
@@ -10,29 +14,31 @@ const Gallery = () => {
                         <div class="flex flex-wrap w-1/2">
                             <div class="w-1/2 p-1 md:p-2">
                                 <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-                                    src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp" />
+                                    src="https://i.ibb.co/Js0qy42/pngtree-cartoon-girl-graduation-ceremony-and-classmates-posing-png-material-png-image-4523821.jpg" />
                             </div>
                             <div class="w-1/2 p-1 md:p-2">
                                 <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-                                    src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(72).webp" />
+                                    src="https://i.ibb.co/gWQ5VyC/pngtree-college-entrance-examination-student-exam-scene-png-image-2618540.jpg" />
                             </div>
                             <div class="w-full p-1 md:p-2">
                                 <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-                                    src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp" />
+                                    src="https://i.ibb.co/4mwmRtk/shutterstock-394793860-1024x784.jpg" />
                             </div>
                         </div>
                         <div class="flex flex-wrap w-1/2">
                             <div class="w-full p-1 md:p-2">
                                 <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-                                    src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(74).webp" />
+                                    src="https://i.ibb.co/wpb1g6J/istockphoto-1269034924-612x612.jpg
+                                    " />
                             </div>
                             <div class="w-1/2 p-1 md:p-2">
                                 <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-                                    src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(75).webp" />
+                                    src="
+                                    https://i.ibb.co/LgLjN9q/idea-brainstorming-creative-team-flat-vector-infog-linear-line-art-style-concept-web-infographics-il.jpg" />
                             </div>
                             <div class="w-1/2 p-1 md:p-2">
                                 <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-                                    src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(77).webp" />
+                                    src="https://i.ibb.co/v3bFrJ4/428d38cf0bee4072d4a7b53b44fd40c0.jpg" />
                             </div>
                         </div>
                     </div>

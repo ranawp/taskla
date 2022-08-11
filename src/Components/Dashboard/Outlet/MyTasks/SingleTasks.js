@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-const SingleTasks = ({ task, index, setModalDetails, setModal, setFeedbackModal, taskFeedback }) => {
+const SingleTasks = ({ task, index, setModalDetails, setModal, setFeedbackModal, taskFeedback, singleMark, marks, setMarks }) => {
+    console.log(marks)
 
     // console.log(taskFeedback.mark)
     // console.log(task)
@@ -18,9 +19,12 @@ const SingleTasks = ({ task, index, setModalDetails, setModal, setFeedbackModal,
         <>
             <tr>
                 <th>{index + 1}</th>
-                <td>{task.taskName}</td>
-                <td>{task.taskSerial}</td>
-                {/* <td><input className=' bg-blue-700 border-0 px-3 py-1 button  rounded text-white' type="submit" value="Details" /></td> */}
+                <td>{task?.taskName}</td>
+                <td>{task?.taskSerial}</td>
+                {/* {
+                    marks.map(mark => console.log(mark))
+                }
+                <td><input className=' bg-blue-700 border-0 px-3 py-1 button  rounded text-white' type="submit" value="Details" /></td> */}
 
 
                 <td><label for="details-modal"
@@ -31,8 +35,9 @@ const SingleTasks = ({ task, index, setModalDetails, setModal, setFeedbackModal,
                 <td>{task.questionDeliverDate},{task.questionDeliverHour}</td>
                 <td>{task.taskDeadline}</td>
 
-                {/* 
-                <td><input className='markinput' size='3' type="text" />{task.mark}</td> */}
+
+                {/* <td><input className='markinput' size='3' type="text" />{singleMark.mark}</td> */}
+
                 {/* {taskFeedback.map(taskMark => console.log(taskMark.mark)
                 )} */}
 

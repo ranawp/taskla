@@ -23,11 +23,11 @@ const MyTask = () => {
             .then(data => setSingleTask(data))
     }, [])
 
-
+    const [marks, setMarks] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/answers/${email}`)
+        fetch(`http://localhost:5000/allMarks/${email}`)
             .then(res => res.json())
-            .then(data => setTaskFeedback(data))
+            .then(data => setMarks(data))
     }, [])
 
 
@@ -47,8 +47,8 @@ const MyTask = () => {
                             <th>Task Created Time</th>
 
                             <th>DeadLine</th>
-                            {/* <th>Result</th>
-                            <th>Feedback</th> */}
+                            {/* <th>Result</th> */}
+                            {/* <th>Feedback</th>  */}
                             <th>Submit</th>
                         </tr>
                     </thead>
@@ -64,17 +64,24 @@ const MyTask = () => {
                                 setModalDetails={setModalDetails}
                                 setFeedbackModal={setFeedbackModal}
                                 taskFeedback={taskFeedback}
+                                setMarks={setMarks}
+                                marks={marks}
+
 
                             // reload={reload}
                             // setReload={setReload}
                             ></SingleTasks>)
                         }
                         {/* {
-                            taskFeedback.map(taskFeedback => <SingleTasks
-                                taskFeedback={taskFeedback}
+                            marks.map((singleMark, index) => <SingleTasks
+
+                                key={singleMark._id}
+                                singleMark={singleMark}
+                                index={index}
+
+
                             ></SingleTasks>)
                         } */}
-
                     </tbody>
                     {modalDetails && <TaskDetails modalDetails={modalDetails} ></TaskDetails>}
                     {feedbackModal && <FeedbackDetails task={singleTask} feedbackModal={feedbackModal}></FeedbackDetails>}
