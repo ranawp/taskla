@@ -52,7 +52,7 @@ function App() {
 
 
         {/* mozahid task  */}
-        <Route path="/blog/blogDetails" element={<BlogDetails />} />
+        <Route path="/createBlog/:blogId" element={<BlogDetails />} />
         <Route path="/blog/reactjs" element={<BlogDetails2 />} />
         <Route path="/blog/javaScript" element={<BlogDetails3 />} />
         {/* mozahid task  */}

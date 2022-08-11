@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const NewBlogs = ({ newBlog }) => {
-    const { blogTitle, img, blogDescription, blogUser, currentDate } = newBlog;
+    const { blogTitle, img, blogDescription, blogUser, currentDate, _id } = newBlog;
     const blogDetail = blogDescription?.slice(0, 100);
+
     return (
-        <Link to='/blog/blogDetails'>
+        <Link to={'/createBlog/' + _id}>
             <div className="card w-80 sm:w-96 bg-base-100 shadow-xl">
                 <figure><img src={img} alt="blogImg" className='w-full max-h-[300px]' /></figure>
                 <div className="card-body">
