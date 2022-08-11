@@ -1,11 +1,14 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Loading from '../../../Share/Loading';
+import UserDetails from './UserDetails';
 import UserRow from './UserRow';
 
 const Allusers = () => {
     const [data, setData] = useState([])
-    const [loading, isLoading] = useState(false)
+    const [loading, isLoading] = useState(false);
+    const [singelUser, setSingelUser] = useState([]);
+
 
     useEffect(() => {
         isLoading(true)
@@ -29,7 +32,8 @@ const Allusers = () => {
                             <th>Email</th>
                             <th>select admin</th>
                             <th>Enroll Status</th>
-                            <th>Remove User</th>
+                            <th>User Details</th>
+                            <th></th>
                         </tr>
                         {loading && <Loading></Loading>}
                     </thead>
@@ -41,8 +45,10 @@ const Allusers = () => {
                                 key={user._id}
                                 user={user}
                                 index={index}
+                                setSingelUser={setSingelUser}
                             ></UserRow>)
                         }
+                        {singelUser && <UserDetails singelUser={singelUser}></UserDetails>}
                     </tbody>
                 </table >
             </div >

@@ -44,7 +44,7 @@ const studentAnalytic = () => {
         <div className='my-5 flex flex-wrap'>
             <div className="grid gap-x-8 gap-y-8 lg:grid-cols-2 mt-14 ">
                 <div className='box-content border-4 rounded-lg p-5'>
-                    <h2 className='text-center font-semibold text-lg'>Monthly Sell</h2>
+                    <h2 className='text-center font-semibold text-lg'>Attendence</h2>
                     <LineChart width={500} height={400} data={chartData}>
                         <Line type="monotone" dataKey="sell" stroke="#8884d8" />
                         <CartesianGrid stroke="#ccc" />
@@ -55,7 +55,7 @@ const studentAnalytic = () => {
 
                 </div>
                 <div className='box-content border-4'>
-                    <h2 className='font-semibold text-lg'>Sell Revenue</h2>
+                    <h2 className='font-semibold text-lg'>Perfomance</h2>
                     <AreaChart
                         width={500}
                         height={400}
@@ -75,7 +75,7 @@ const studentAnalytic = () => {
                     </AreaChart>
                 </div>
                 <div className='ml-5'>
-                    <h2 className='font-semibold text-lg'>Investment & Sell</h2>
+                    <h2 className='font-semibold text-lg'>Mark distribution</h2>
                     <PieChart width={500} height={400}>
                         <Pie data={chartData} dataKey="investment" cx="50%" cy="50%" outerRadius={60} fill="#8884d8" />
                         <Pie data={chartData} dataKey="sell" cx="50%" cy="50%" innerRadius={70} outerRadius={90} fill="#82ca9d" label />
@@ -83,7 +83,7 @@ const studentAnalytic = () => {
                     </PieChart>
                 </div>
             </div>
-            
+
         </div>
     );
 };

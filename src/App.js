@@ -25,12 +25,14 @@ import TaskEvaluate from "./Components/Dashboard/Outlet/MyTasks/TaskEvalute/Task
 import StudentAnalytic from "./Components/StudentAnalytic/StudentAnalytic";
 import Admin_Dashboard from "./Components/Dashboard/Admin_Dashboard/Admin_Dashboard";
 import ContactUs from "./Components/Home/ContactUs";
-
+import AddReview from "./Components/Review/AddReview";
+import NoticePublish from "./Components/Dashboard/NoticePublish/NoticePublish";
 
 
 function App() {
+
   return (
-    <div className=" bg-white" >
+    <div className=" bg-white overflow-x-hidden" >
       <Navbar></Navbar>
 
       <Routes>
@@ -41,7 +43,7 @@ function App() {
         <Route path="/viewprofile" element={<ViewProfile></ViewProfile>} />
         <Route path='/courses' element={<Courses
         ></Courses>} />
-        <Route path="/studentAnalytic" element={<StudentAnalytic />}></Route>
+        <Route path="/analytics" element={<StudentAnalytic />}></Route>
 
 
         {/* dashboard routes */}
@@ -50,6 +52,7 @@ function App() {
           <Route path="allusers" element={<Allusers></Allusers>} />
           <Route path="createtask" element={<TaskCreate></TaskCreate>}></Route>
           <Route path="taskEvaluate" element={<TaskEvaluate></TaskEvaluate>}></Route>
+          <Route path="notice" element={<NoticePublish />}></Route>
         </Route>
 
 
@@ -59,6 +62,7 @@ function App() {
         <Route path="/blog/javaScript" element={<BlogDetails3 />} />
         {/* mozahid task  */}
         <Route path="/contact" element={<ContactUs></ContactUs>}></Route>
+        <Route path="/addReview" element={<AddReview />}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
       </Routes>
