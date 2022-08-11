@@ -50,8 +50,8 @@ const Home = () => {
                 </div >
             </div >
             <Review />
-            <SignupBanner />
-            <ContactUs />
+            {/* <SignupBanner />
+            <ContactUs /> */}
         </div >
     );
 };
