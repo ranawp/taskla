@@ -22,20 +22,21 @@ const Courses = () => {
 
     }
     return (
-        <div className='sm:min-h-screen px-10 flex justify-between relative'>
+        <div className='sm:min-h-screen px-10 flex justify-between relative mt-10'>
             <div className='absolute z-10 top-[40%] right-[50%]'>
             </div>
 
             <div className="card w-80 h-96 bg-base-100 shadow-xl">
-                <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+                <figure><img src="https://i.ibb.co/c1gTgV5/website-development.jpg" alt="Shoes" /></figure>
                 <div className="card-body">
+                    <h1 className='text-2xl font-bold'>Web Development crash course.Build Your carrear with tech.</h1>
                     <p>{text}</p>
                     <div className="card-actions justify-end">
-                        <button onClick={enRoll} className="btn btn-primary">Enroll Now</button>
+                        <button onClick={enRoll} className="bg-blue-700 border-0 px-3 py-2 button  rounded text-white">Enroll Now</button>
                     </div>
                 </div>
             </div>
-            <div className="card w-80  h-96 bg-base-100 shadow-xl">
+            {/* <div className="card w-80  h-96 bg-base-100 shadow-xl">
                 <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
                 <div className="card-body">
                     <p>{text}</p>
@@ -52,7 +53,7 @@ const Courses = () => {
                         <button onClick={enRoll} className="btn btn-primary">Enroll Now</button>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 };
