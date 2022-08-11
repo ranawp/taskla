@@ -6,7 +6,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
 import { signOut } from 'firebase/auth';
 import down from '../asset/down-filled-triangular-arrow.png'
-import notification from '../asset/notification.png'
+import notificationIcon from '../asset/notification.png'
 import axios from 'axios';
 
 const Navbar = () => {
@@ -14,6 +14,7 @@ const Navbar = () => {
     const emails = user?.email
     const [match, setMatch] = useState([]);
     const [get, setData] = useState([])
+    const [notifications, setNotifications] = useState([]);
     useEffect(() => {
         fetch(`http://localhost:5000/user/${emails}`, {
             method: 'GET',
@@ -27,19 +28,42 @@ const Navbar = () => {
     }, [emails])
 
     useEffect(() => {
+        console.log('hello')
+        fetch(`http://localhost:5000/notice`)
+            .then((response) => response.json())
+            .then((json) => setNotifications(json));
+    }, [])
+
+
+    const newArray = notifications.filter((ele) => {
+        return ele.read == false
+    })
+
+    const setNoti = (id) => {
+        console.log(id)
+        fetch(`http://localhost:5000/notice/${id}`, {
+            method: 'PUT'
+        })
+            .then(res => res.json())
+
+            .then(data => console.log(data))
+
+            .then(data => data)
+    }
+
+    useEffect(() => {
         const fetchSideeffect = async () => {
             const res = await axios('http://localhost:5000/user')
             setData(res.data)
         }
         fetchSideeffect()
     }, [])
-    // console.log(get)
-    // const value=get.filter(f=>f.name)
+
     const logout = () => {
         signOut(auth);
         localStorage.removeItem('accessToken')
     };
-    // console.log(match)
+
     const menuItems = <>
         <li className='hover:text-black'><Link to='/'>Home</Link></li>
         <li className='hover:text-black' > <Link className='pl-5' to='/blog' > Blog</Link></li >
@@ -53,22 +77,21 @@ const Navbar = () => {
                 <li><Link className='pl-5' to="/courses">Courses</Link></li >
 
 
-                {/* notification */}
+                {/* notification  */}
                 <div class="dropdown">
-                    <label tabindex="0" class="">
+                    <label tabindex="1" class="">
                         <li className='pl-5 cursor-pointer'>
-                            <div className='inline-block relative'>
-                                <img className='w-5 inline' src={notification} alt="" />
-
-                                <div class="badge badge-sm bg-red-600 absolute top-[-5px] right-[-12px] border-0 text-[10px]">
-
-                                </div>
+                            <div class="indicator">
+                                <span class="indicator-item  badge bg-red-600 border-0 w-5 text-[10px]">{newArray?.length}</span>
+                                <div class="grid place-items-center"><img className='w-5 inline' src={notificationIcon} alt="" /></div>
                             </div>
+                            {/* <div className='inline-block relative'>
+                            
+                            <div class="badge badge-sm bg-red-600 absolute top-[-5px] right-[-12px] border-0 text-[10px]">0</div>
+                        </div> */}
                         </li ></label>
-
-                    <ul tabindex="0" class="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4">
-                        <li><a>Item 1 adfsdfgd</a></li>
-                        <li><a>Item 2 adfagsfds</a></li>
+                    <ul tabindex="1" class="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+                        {newArray.map(notification => <li onClick={() => setNoti(notification._id)} className='p-2 border  hover:bg-blue-100 cursor-pointer'>{notification.notice}</li>)}
                     </ul>
                 </div>
 
@@ -84,6 +107,7 @@ const Navbar = () => {
                     <ul tabIndex="0" className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52" >
                         <li><Link to='/viewprofile' className='pl-5'> View Profile</Link></li >
                         <li><Link to='/analytics' className='pl-5'>Students Analytics</Link></li >
+                        <li><Link to='/addReview' className='pl-5'>Students Review</Link></li >
                         <li><Link className='pl-5' to='' onClick={logout} >Sign Out</Link></li >
 
                     </ul >
