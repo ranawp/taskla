@@ -26,30 +26,30 @@ const Courses = () => {
             <div className='absolute z-10 top-[40%] right-[50%]'>
             </div>
 
-            <div class="card w-80 h-96 bg-base-100 shadow-xl">
+            <div className="card w-80 h-96 bg-base-100 shadow-xl">
                 <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
-                <div class="card-body">
+                <div className="card-body">
                     <p>{text}</p>
-                    <div class="card-actions justify-end">
-                        <button onClick={enRoll} class="btn btn-primary">Enroll Now</button>
+                    <div className="card-actions justify-end">
+                        <button onClick={enRoll} className="btn btn-primary">Enroll Now</button>
                     </div>
                 </div>
             </div>
-            <div class="card w-80  h-96 bg-base-100 shadow-xl">
+            <div className="card w-80  h-96 bg-base-100 shadow-xl">
                 <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
-                <div class="card-body">
+                <div className="card-body">
                     <p>{text}</p>
-                    <div class="card-actions justify-end">
-                        <button onClick={enRoll} class="btn btn-primary">Enroll Now</button>
+                    <div className="card-actions justify-end">
+                        <button onClick={enRoll} className="btn btn-primary">Enroll Now</button>
                     </div>
                 </div>
             </div>
-            <div class="card w-80 h-96 bg-base-100 shadow-xl">
+            <div className="card w-80 h-96 bg-base-100 shadow-xl">
                 <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
-                <div class="card-body">
+                <div className="card-body">
                     <p>{text}</p>
-                    <div class="card-actions justify-end">
-                        <button onClick={enRoll} class="btn btn-primary">Enroll Now</button>
+                    <div className="card-actions justify-end">
+                        <button onClick={enRoll} className="btn btn-primary">Enroll Now</button>
                     </div>
                 </div>
             </div>
