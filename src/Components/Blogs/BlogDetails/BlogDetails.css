@@ -1,50 +1,25 @@
-
-
-.image-style img{
-width: 50%;
+.image-style img {
+  width: 50%;
 }
 
-
-.image-style{
-
-display: flex;
-justify-content: center;
-margin-top: -110px;
-
-
+.image-style {
+  display: flex;
+  justify-content: center;
+  margin-top: -110px;
 }
 
-
-
-.background-style-mongodb{
-    padding-top: 50px;
-    padding-bottom: 220px;
-    display: flex;
-    justify-content: center;
-    background-image: linear-gradient(to left,green,#004d00);
-
-
-    
+.background-style {
+  padding-top: 50px;
+  padding-bottom: 220px;
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(to left, rgb(190, 178, 178), #e9f8e9);
 }
 
-
-
-.background-style-javascript{
-    padding-top: 50px;
-    padding-bottom: 220px;
-    display: flex;
-    justify-content: center;
-    background-image: linear-gradient(to left,#b3b300,#ffff00);
-
-
+.back-button {
+  background-image: linear-gradient(to left, rgb(190, 178, 178), #e9f8e9);
 }
 
-.background-style-react{
-    padding-top: 50px;
-    padding-bottom: 220px;
-    display: flex;
-    justify-content: center;
-    background-image: linear-gradient(to left,#ff99cc,#33cccc);
-
-
+.back-button:hover {
+  background-image: linear-gradient(to left, #e9f8e9, rgb(190, 178, 178));
 }
