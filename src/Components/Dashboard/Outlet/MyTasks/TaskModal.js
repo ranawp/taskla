@@ -4,12 +4,17 @@ import bg1 from '../../../../asset/bg1.jpg';
 import auth from '../../../../firebase.init';
 
 const TaskModal = ({ modal }) => {
-    // console.log(modal);
+    // console.log(modal?._id);
+    const userId = modal?._id
     const [user] = useAuthState(auth)
     const date = new Date()
     const currentDate = date.toLocaleDateString();
     const currentHour = date.toLocaleTimeString();
+
+    console.log(date)
+
     // console.log(date)
+
     // console.log(user.displayName)
 
     const handleForm = event => {
@@ -21,6 +26,8 @@ const TaskModal = ({ modal }) => {
         const taskNo = event.target.taskNo.value;
         const currentDate = event.target.currentDate.value;
         const currentHour = event.target.currentHour.value;
+        const mark = event.target.mark.value;
+        const scriptfeedback = event.target.scriptfeedback.value;
 
         // console.log(task)
 
@@ -33,15 +40,18 @@ const TaskModal = ({ modal }) => {
                 deadline,
                 taskNo,
                 currentDate,
-                currentHour
-
+                currentHour,
+                mark,
+                scriptfeedback
             }),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
             },
         })
             .then((response) => response.json())
-            .then((json) => json);
+
+            .then((json) => console.log(json));
+
 
         event.target.reset();
     }
@@ -58,6 +68,14 @@ const TaskModal = ({ modal }) => {
                         <form onSubmit={handleForm} className='w-3/4 mx-auto' >
                             <span>Email:</span>
                             <input size='20' className='h-5 mb-2 ml-1' name='email' type="text" readOnly value={user?.email} /> <br />
+
+                            <span> Mark: </span>
+                            <input size='20' className='h-5 mb-2 ml-1' name='mark' type="text" readOnly />
+                            <br />
+
+                            <span> scriptfeedback: </span>
+                            <input size='20' className='h-5 mb-2 ml-1' name='scriptfeedback' type="text" readOnly />
+                            <br />
 
                             <span> Task Name: </span>
                             <input size='20' className='h-5 mb-2 ml-1' name='taskName' type="text" readOnly value={modal.taskName} />
@@ -79,6 +97,7 @@ const TaskModal = ({ modal }) => {
                             <span>Massage:</span>
                             <textarea required className="mt-2 textarea w-full  h-60 mx-auto" placeholder="Give your doc file link here or put answer here" name='taskDescription'></textarea >
                             <br />
+
                             <input type="submit" value="Submit" className='btn btn-primary w-full my-10' />
                         </form >
                     </div >

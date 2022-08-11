@@ -1,19 +1,36 @@
 import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../../firebase.init';
+import FeedbackDetails from './FeedbackDetails';
 import SingleTasks from './SingleTasks';
 import TaskDetails from './TaskDetails';
 import TaskModal from './TaskModal';
 
 const MyTask = () => {
     const [singleTask, setSingleTask] = useState([]);
+    const [singleTasks, setSingleTasks] = useState([]);
+    const [taskFeedback, setTaskFeedback] = useState([]);
     const [modal, setModal] = useState({});
     const [modalDetails, setModalDetails] = useState(null);
+    const [feedbackModal, setFeedbackModal] = useState(null)
     // const [reload, setReload] = useState(false);
+    const [user] = useAuthState(auth)
+    const email = user?.email;
 
     useEffect(() => {
         fetch('http://localhost:5000/alltasks')
             .then(res => res.json())
             .then(data => setSingleTask(data))
     }, [])
+
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/answers/${email}`)
+            .then(res => res.json())
+            .then(data => setTaskFeedback(data))
+    }, [])
+
+
 
     return (
         <div>
@@ -44,13 +61,24 @@ const MyTask = () => {
                                 index={index}
                                 setModal={setModal}
                                 setModalDetails={setModalDetails}
+                                setFeedbackModal={setFeedbackModal}
+                                taskFeedback={taskFeedback}
+
                             // reload={reload}
                             // setReload={setReload}
                             ></SingleTasks>)
                         }
+                        {/* {
+                            taskFeedback.map(taskFeedback => <SingleTasks
+                                taskFeedback={taskFeedback}
+
+                            ></SingleTasks>)
+                        } */}
+
                     </tbody>
                     {modalDetails && <TaskDetails modalDetails={modalDetails} ></TaskDetails>}
-                    {/* {modalDetails && <TaskDetails modalDetails={modalDetails}></TaskDetails>} */}
+                    {feedbackModal && <FeedbackDetails task={singleTask} feedbackModal={feedbackModal}></FeedbackDetails>}
+
                 </table>
             </div>
             {modal && <TaskModal modal={modal} />}

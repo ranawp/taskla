@@ -6,11 +6,11 @@ import './Review.css';
 const ReviewCard = ({ review }) => {
     const { name, course, image, message, rating } = review;
 
-    const [allRating, setAllRating] = useState(0);
+    // const [allRating, setAllRating] = useState(0);
 
-    const ratingChanged = (newRating) => {
-        setAllRating(newRating);
-    };
+    // const ratingChanged = (newRating) => {
+    //     setAllRating(newRating);
+    // };
 
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
@@ -24,8 +24,7 @@ const ReviewCard = ({ review }) => {
             <div className="card-body items-center text-center" >
                 <ReactStars
                     count={5}
-                    onChange={ratingChanged}
-                    size={35}
+                    size={25}
                     value={rating}
                     activeColor="#ffd700"
                 />

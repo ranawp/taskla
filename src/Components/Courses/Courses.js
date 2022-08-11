@@ -10,14 +10,21 @@ const Courses = () => {
     const enRoll = () => {
         setText('we are working.......')
         toast('Wow! you are enrolled')
+
         fetch(`http://localhost:5000/user/enroll/${email}`, {
             method: 'PUT'
         })
             .then(res => res.json())
+
+            .then(data => console.log(data))
+
             .then(data => data)
+
     }
     return (
-        <div className='sm:min-h-screen px-10 flex justify-between'>
+        <div className='sm:min-h-screen px-10 flex justify-between relative'>
+            <div className='absolute z-10 top-[40%] right-[50%]'>
+            </div>
 
             <div className="card w-80 h-96 bg-base-100 shadow-xl">
                 <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>

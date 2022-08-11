@@ -56,7 +56,7 @@ const AddReview = () => {
             <div className="hero h-[700px] bg-base-200" style={{backgroundImage:`url(https://alphagypsumboard.com/wp-content/uploads/2019/07/Background-website-01.jpg)`}}>
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
-                        <h1 className="text-4xl font-bold">Add Review</h1>
+                        <h1 className="text-3xl font-bold">Give Feedback</h1>
                         <p className="py-6">You give a important review, that's helps to grow us?</p>
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
