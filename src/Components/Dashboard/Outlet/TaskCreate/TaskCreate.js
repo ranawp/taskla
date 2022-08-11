@@ -4,7 +4,13 @@ import './TaskCreate.css';
 import taskSvg from '../../../../imgages/taskCreate.svg'
 
 const TaskCreate = () => {
+
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
+
+    const date = new Date()
+    const currentDate = date.toLocaleDateString();
+    const currentHour = date.toLocaleTimeString();
+
     const onSubmit = data => {
         const url = `http://localhost:5000/tasks`
         fetch(url, {
@@ -28,8 +34,30 @@ const TaskCreate = () => {
                     <div class="card-body">
                         <form className='d-flex flex-column ' onSubmit={handleSubmit(onSubmit)}>
                             <h2 className='text-2xl'>Give task to Students</h2>
-                            <input placeholder='Task name'
+
+                            <p className='mt-2'>Task Created Date</p>
+                            <input readOnly value={currentDate}
                                 className=" mt-2 p-2 rounded-lg background-color" size="30"
+                                {...register("questionDeliverDate", {
+                                    required: {
+                                        value: true,
+
+                                    }
+                                })}
+                            ></input>
+                            <p className='mt-3'>Task Created Hour</p>
+                            <input readOnly value={currentHour}
+                                className=" mt-2 p-2 rounded-lg background-color" size="30"
+                                {...register("questionDeliverHour", {
+                                    required: {
+                                        value: true,
+
+                                    }
+                                })}
+                            ></input>
+                            <p className='mt-3 mb-2'>Task Name:</p>
+                            <input placeholder='Input task name'
+                                className=" p-2 rounded-lg background-color" size="30"
                                 {...register("taskName", {
                                     required: {
                                         value: true,
@@ -37,10 +65,11 @@ const TaskCreate = () => {
                                     }
                                 })}
                             ></input>
+
                             <label className="label text-red-600">
                                 {errors.taskName?.type === 'required' && <span className="label-text-alt ">{errors.taskName.message}</span>}
                             </label>
-
+                            <p className=''>Task Serial:</p>
                             <input placeholder='Please provide task Serial'
                                 className=" mt-2 p-2 rounded-lg background-color" size="30"
                                 {...register("taskSerial", {
@@ -54,6 +83,8 @@ const TaskCreate = () => {
                                 {errors.taskSerial?.type === 'required' && <span className="label-text-alt ">{errors.taskSerial.message}</span>}
                             </label>
 
+
+                            <p className=''>Task submission Deadline:</p>
                             <input placeholder='Please provide task deadline'
                                 className=" mt-2 p-2 rounded-lg background-color" size="30"
                                 {...register("taskDeadline", {
@@ -67,7 +98,7 @@ const TaskCreate = () => {
                                 {errors.taskDeadline?.type === 'required' && <span className="label-text-alt ">{errors.taskDeadline.message}</span>}
                             </label>
 
-
+                            <p className=''>Task Description:</p>
                             <textarea name="" id="" cols="35" rows="7" placeholder='Write student task'
                                 className=" mt-2 p-2 rounded-lg background-color"
                                 {...register("taskMassage", {

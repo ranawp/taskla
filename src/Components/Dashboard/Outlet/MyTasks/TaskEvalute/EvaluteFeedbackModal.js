@@ -3,6 +3,10 @@ import React from 'react';
 const EvaluteFeedbackModal = ({ evaluteFeedbackModal }) => {
     console.log(evaluteFeedbackModal)
 
+    const date = new Date()
+    const currentDate = date.toLocaleDateString();
+    const currentHour = date.toLocaleTimeString();
+
     const studentEmail = evaluteFeedbackModal.email
     const handleFeedback = (e) => {
         e.preventDefault()
@@ -11,29 +15,29 @@ const EvaluteFeedbackModal = ({ evaluteFeedbackModal }) => {
         const taskName = e.target.taskName.value;
         const deadline = e.target.deadline.value;
         const taskNo = e.target.taskNo.value;
-        const currentDate = e.target.currentDate.value;
-        const currentHour = e.target.currentHour.value;
+        const feedbackDate = e.target.feedbackDate.value;
+        const feedbackHour = e.target.feedbackHour.value;
 
         const mark = e.target.mark.value;
         const scriptfeedback = e.target.scriptfeedback.value;
         console.log(email, taskDescription, taskName, deadline, taskNo, currentDate, currentHour, mark, scriptfeedback);
 
-        fetch(`http://localhost:5000/feedbackUpdate/${studentEmail}`, {
-            method: 'PUT',
+        fetch(`http://localhost:5000/studentMarks`, {
+            method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify({
-                mark: mark || evaluteFeedbackModal?.mark,
-                scriptfeedback: scriptfeedback || evaluteFeedbackModal?.scriptfeedback,
-                email: email || evaluteFeedbackModal?.email,
+                mark: mark,
+                scriptfeedback: scriptfeedback,
+                email: email,
 
-                taskDescription: taskDescription || evaluteFeedbackModal?.taskDescription,
-                taskName: taskName || evaluteFeedbackModal?.taskName,
-                deadline: deadline || evaluteFeedbackModal?.deadline,
-                taskNo: taskNo || evaluteFeedbackModal?.taskNo,
-                currentDate: currentDate || evaluteFeedbackModal?.currentDate,
-                currentHour: currentHour || evaluteFeedbackModal?.currentHour,
+                taskDescription: taskDescription,
+                taskName: taskName,
+                deadline: deadline,
+                taskNo: taskNo,
+                feedbackDate: feedbackDate,
+                feedbackHour: feedbackHour
             })
         })
     }
@@ -47,36 +51,33 @@ const EvaluteFeedbackModal = ({ evaluteFeedbackModal }) => {
 
                     <form onSubmit={handleFeedback}>
                         <p class="pt-4">Email</p>
-                        <input name='email' value={evaluteFeedbackModal.email} placeholder='Please Give Mark'
+                        <input readOnly name='email' value={evaluteFeedbackModal.email} placeholder='Please Give Mark'
                             className=" mt-2 p-2 rounded-lg background-color" size="30"
                         ></input>
                         <p class="pt-4">TaskDescription</p>
-                        <input value={evaluteFeedbackModal.taskDescription} name='taskDescription' placeholder='Please Give Mark'
+                        <input readOnly value={evaluteFeedbackModal.taskDescription} name='taskDescription' placeholder='Please Give Mark'
                             className=" mt-2 p-2 rounded-lg background-color" size="30"
                         ></input>
                         <p class="pt-4">TaskName</p>
-                        <input value={evaluteFeedbackModal.taskName} name='taskName' placeholder='Please Give Mark'
+                        <input readOnly value={evaluteFeedbackModal.taskName} name='taskName' placeholder='Please Give Mark'
                             className=" mt-2 p-2 rounded-lg background-color" size="30"
                         ></input>
                         <p class="pt-4">Deadline</p>
-                        <input value={evaluteFeedbackModal.deadline} name='deadline' placeholder='Please Give Mark'
+                        <input readOnly value={evaluteFeedbackModal.deadline} name='deadline' placeholder='Please Give Mark'
                             className=" mt-2 p-2 rounded-lg background-color" size="30"
                         ></input>
                         <p class="pt-4">taskNo</p>
                         <input value={evaluteFeedbackModal.taskNo} name='taskNo' placeholder='Please Give Mark'
                             className=" mt-2 p-2 rounded-lg background-color" size="30"
                         ></input>
-                        <p class="pt-4">CurrentDate</p>
-                        <input value={evaluteFeedbackModal.currentDate} name='currentDate' placeholder='Please Give Mark'
+                        <p class="pt-4">Feedback Date:</p>
+                        <input readOnly value={currentDate} name='feedbackDate'
                             className=" mt-2 p-2 rounded-lg background-color" size="30"
                         ></input>
-                        <p class="pt-4">currentHour</p>
-                        <input value={evaluteFeedbackModal.currentHour} name='currentHour' placeholder='Please Give Mark'
+                        <p class="pt-4">Feedback Hour:</p>
+                        <input readOnly value={currentHour} name='feedbackHour'
                             className=" mt-2 p-2 rounded-lg background-color" size="30"
                         ></input>
-
-
-
                         <p class="pt-4">Mark</p>
                         <input name='mark' placeholder='Please Give Mark'
                             className=" mt-2 p-2 rounded-lg background-color" size="30"

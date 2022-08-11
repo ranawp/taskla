@@ -25,6 +25,7 @@ const TaskEvaluate = () => {
                     <tr>
                         <th>Serial</th>
                         <th>Task no</th>
+                        <th>Task name</th>
                         <th>User Email</th>
                         <th>Deadline</th>
                         <th>Submitted time</th>

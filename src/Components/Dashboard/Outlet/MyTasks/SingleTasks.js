@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
-const SingleTasks = ({ task, index, setModalDetails, setModal, setFeedbackModal }) => {
+const SingleTasks = ({ task, index, setModalDetails, setModal, setFeedbackModal, taskFeedback }) => {
 
     // console.log(taskFeedback.mark)
+    // console.log(task)
     //  const { taskMark, setTaskMark } = useState([]);
 
 
@@ -27,20 +28,20 @@ const SingleTasks = ({ task, index, setModalDetails, setModal, setFeedbackModal 
                     className=' bg-blue-700 border-0 px-3 py-1 button  rounded text-white modal-button' >Details </label></td>
 
 
+                <td>{task.questionDeliverDate},{task.questionDeliverHour}</td>
                 <td>{task.taskDeadline}</td>
 
-
-                <td><input className='markinput' size='3' type="text" /></td>
+                {/* 
+                <td><input className='markinput' size='3' type="text" />{task.mark}</td> */}
                 {/* {taskFeedback.map(taskMark => console.log(taskMark.mark)
-
                 )} */}
 
 
-                <td><label
+                {/* <td><label
                     onClick={() => setFeedbackModal(task)}
                     for="feedback-details"
                     className=' bg-blue-700 border-0 px-3 py-1 button  rounded text-white modal-button' >See FeedBack </label>
-                </td>
+                </td> */}
 
                 <td><label htmlFor="my-modal-3" className="bg-blue-700 border-0 px-3 py-1 button  rounded text-white modal-button" onClick={() => setModal(task)}>Submit</label></td>
             </tr>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import student from '../../../asset/student.png';
@@ -46,6 +46,23 @@ const Admin_Dashboard = () => {
             "revenue": 61000
         }
     ]
+
+    const [students, setStudents] = useState([]);
+    const [task, setTask] = useState([])
+
+
+    useEffect(() => {
+        fetch('http://localhost:5000/user')
+            .then(res => res.json())
+            .then(data => setStudents(data))
+    }, [])
+
+    useEffect(() => {
+        fetch('http://localhost:5000/alltasks')
+            .then(res => res.json())
+            .then(data => setTask(data))
+    })
+
     return (
         <div className='p-10'>
             <div className='flex justify-between'>
@@ -65,7 +82,7 @@ const Admin_Dashboard = () => {
                 <div class="stats shadow p-3">
 
                     <div class="stat">
-                        <div className='text-4xl font-bold mb-3'>7240</div>
+                        <div className='text-4xl font-bold mb-3'>{students.length}</div>
 
                         <div class=" text-[18px] font-semibold text-black">Total Students</div>
 
@@ -84,7 +101,7 @@ const Admin_Dashboard = () => {
                 <div class="stats shadow p-3">
 
                     <div class="stat">
-                        <div className='text-4xl font-bold mb-3'>15</div>
+                        <div className='text-4xl font-bold mb-3'>2</div>
 
                         <div class=" text-[18px] font-semibold text-black">Total Teacher</div>
 
@@ -142,7 +159,7 @@ const Admin_Dashboard = () => {
                             <CircularProgressbar value={percentage2} text={`${percentage2}%`} />
                         </div>
                         <div>
-                            <div className='text-4xl font-bold my-3'>16</div>
+                            <div className='text-4xl font-bold my-3'>{task.length}</div>
                             <h3 className='text-lg font-semibold'>Assestment</h3>
                         </div>
 
@@ -160,25 +177,25 @@ const Admin_Dashboard = () => {
                     <h2 className='card-title font-semibold text-lg block'>School Perfomance</h2>
 
                     <div class="card-actions w-[100%]">
-                       
-                            <AreaChart
-                                width={500}
-                                height={400}
-                                data={chartData}
-                                margin={{
-                                    top: 10,
-                                    right: 0,
-                                    left: 0,
-                                    bottom: 0,
-                                }}
-                            >
-                                {/* <CartesianGrid strokeDasharray="3 3" /> */}
-                                <XAxis dataKey="sell" />
-                                <YAxis />
-                                <Tooltip />
-                                <Area type="monotone" dataKey="revenue" stroke="#8884d8" fill="#8884d8" />
-                            </AreaChart>
-                        
+
+                        <AreaChart
+                            width={500}
+                            height={400}
+                            data={chartData}
+                            margin={{
+                                top: 10,
+                                right: 0,
+                                left: 0,
+                                bottom: 0,
+                            }}
+                        >
+                            {/* <CartesianGrid strokeDasharray="3 3" /> */}
+                            <XAxis dataKey="sell" />
+                            <YAxis />
+                            <Tooltip />
+                            <Area type="monotone" dataKey="revenue" stroke="#8884d8" fill="#8884d8" />
+                        </AreaChart>
+
                     </div>
                 </div>
             </div>

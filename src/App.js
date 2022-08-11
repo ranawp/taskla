@@ -24,10 +24,10 @@ import Admin_Dashboard from "./Components/Dashboard/Admin_Dashboard/Admin_Dashbo
 import ContactUs from "./Components/Home/ContactUs";
 import BlogCreate from "./Components/Dashboard/Outlet/BlogCreate";
 
-
 function App() {
+
   return (
-    <div className=" bg-white" >
+    <div className=" bg-white overflow-x-hidden" >
       <Navbar></Navbar>
 
       <Routes>
@@ -38,7 +38,7 @@ function App() {
         <Route path="/viewprofile" element={<ViewProfile></ViewProfile>} />
         <Route path='/courses' element={<Courses
         ></Courses>} />
-        <Route path="/studentAnalytic" element={<StudentAnalytic />}></Route>
+        <Route path="/analytics" element={<StudentAnalytic />}></Route>
 
 
         {/* dashboard routes */}

@@ -20,10 +20,10 @@ const TaskModal = ({ modal }) => {
         const taskDescription = event.target.taskDescription.value;
         const deadline = event.target.deadline.value;
         const taskNo = event.target.taskNo.value;
-        const currentDate = event.target.currentDate.value;
-        const currentHour = event.target.currentHour.value;
-        const mark = event.target.mark.value;
-        const scriptfeedback = event.target.scriptfeedback.value;
+        const taskSubmitedDate = event.target.taskSubmittedDate.value;
+        const taskSubmitedHour = event.target.taskSubmitedHour.value;
+        // const mark = event.target.mark.value;
+        // const scriptfeedback = event.target.scriptfeedback.value;
 
         // console.log(task)
 
@@ -35,10 +35,10 @@ const TaskModal = ({ modal }) => {
                 taskName,
                 deadline,
                 taskNo,
-                currentDate,
-                currentHour,
-                mark,
-                scriptfeedback
+                taskSubmitedDate,
+                taskSubmitedHour,
+                // mark,
+                // scriptfeedback
             }),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
@@ -63,13 +63,13 @@ const TaskModal = ({ modal }) => {
                             <span>Email:</span>
                             <input size='20' className='h-5 mb-2 ml-1' name='email' type="text" readOnly value={user?.email} /> <br />
 
-                            <span> Mark: </span>
+                            {/* <span> Mark: </span>
                             <input size='20' className='h-5 mb-2 ml-1' name='mark' type="text" readOnly />
-                            <br />
+                            <br /> */}
 
-                            <span> scriptfeedback: </span>
+                            {/* <span> scriptfeedback: </span>
                             <input size='20' className='h-5 mb-2 ml-1' name='scriptfeedback' type="text" readOnly />
-                            <br />
+                            <br /> */}
 
                             <span> Task Name: </span>
                             <input size='20' className='h-5 mb-2 ml-1' name='taskName' type="text" readOnly value={modal.taskName} />
@@ -81,11 +81,11 @@ const TaskModal = ({ modal }) => {
                             <input size='20' className='h-5 mb-2 ml-1' name='deadline' type="text" readOnly value={modal.taskDeadline} />
                             <br />
 
-                            <span>Current Date: </span>
-                            <input size='20' className='h-5 mb-2 ml-1' name='currentDate' type="text" readOnly value={currentDate} />
+                            <span>Submisson Date: </span>
+                            <input size='20' className='h-5 mb-2 ml-1' name='taskSubmittedDate' type="text" readOnly value={currentDate} />
                             <br />
-                            <span>Current Time:</span>
-                            <input size='20' className='h-5 mb-2 ml-1' name='currentHour' type="text" readOnly value={currentHour} />
+                            <span>Submisson Time:</span>
+                            <input size='20' className='h-5 mb-2 ml-1' name='taskSubmitedHour' type="text" readOnly value={currentHour} />
                             <br />
 
                             <span>Massage:</span>
