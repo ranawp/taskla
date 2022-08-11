@@ -1,19 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
 const SingleTasks = ({ task, index, setModalDetails, setModal, setFeedbackModal, taskFeedback, singleMark, marks, setMarks }) => {
-    console.log(marks)
-
-    // console.log(taskFeedback.mark)
-    // console.log(task)
-    //  const { taskMark, setTaskMark } = useState([]);
 
 
 
-    // useEffect(() => {
-    //     fetch('http://localhost:5000/answers')
-    //         .then(res => res.json())
-    //         .then(data => setTaskMark(data))
-    // })
 
     return (
         <>
@@ -21,12 +11,6 @@ const SingleTasks = ({ task, index, setModalDetails, setModal, setFeedbackModal,
                 <th>{index + 1}</th>
                 <td>{task?.taskName}</td>
                 <td>{task?.taskSerial}</td>
-                {/* {
-                    marks.map(mark => console.log(mark))
-                }
-                <td><input className=' bg-blue-700 border-0 px-3 py-1 button  rounded text-white' type="submit" value="Details" /></td> */}
-
-
                 <td><label for="details-modal"
                     onClick={() => setModalDetails(task)}
                     className=' bg-blue-700 border-0 px-3 py-1 button  rounded text-white modal-button' >Details </label></td>
