@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import auth from '../../../../firebase.init';
 
 const CreateBlog = () => {
     const { register, handleSubmit } = useForm();
-    // const [review, setReview] = useState({});
+    const [user] = useAuthState(auth);
+    const blogUser = user?.displayName;
+    const date = new Date()
+    const currentDate = date.toLocaleDateString();
     const imageStoragekey = '3cf84befed9b9bcd8f1d01c2b4412701';
 
     const onSubmit = data => {
@@ -20,11 +25,9 @@ const CreateBlog = () => {
                 if (result.success) {
                     const img = result.data.url;
                     const product = {
-                        name: data.name,
-                        description: data.description,
-
-                        rattings: data.rattings,
-                        img: img
+                        blogTitle: data.blogTitle,
+                        blogDescription: data.blogDescription,
+                        img: img,
                     }
 
                     //send to database 

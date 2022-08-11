@@ -3,7 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
 const EditProfile = ({ data, setReset }) => {
-    const [user] = useAuthState(auth)
+    const [user] = useAuthState(auth);
     const emails = user?.email
     const [imgLoad, setImgload] = useState(false)
     const [image, setImage] = useState('')
