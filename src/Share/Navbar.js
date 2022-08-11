@@ -78,19 +78,19 @@ const Navbar = () => {
 
 
                 {/* notification  */}
-                <div class="dropdown">
-                    <label tabindex="1" class="">
+                <div className="dropdown">
+                    <label tabIndex="1" className="">
                         <li className='pl-5 cursor-pointer'>
-                            <div class="indicator">
-                                <span class="indicator-item  badge bg-red-600 border-0 w-5 text-[10px]">{newArray?.length}</span>
-                                <div class="grid place-items-center"><img className='w-5 inline' src={notificationIcon} alt="" /></div>
+                            <div className="indicator">
+                                <span className="indicator-item  badge bg-red-600 border-0 w-5 text-[10px]">{newArray?.length}</span>
+                                <div className="grid place-items-center"><img className='w-5 inline' src={notificationIcon} alt="" /></div>
                             </div>
                             {/* <div className='inline-block relative'>
                             
-                            <div class="badge badge-sm bg-red-600 absolute top-[-5px] right-[-12px] border-0 text-[10px]">0</div>
+                            <div className="badge badge-sm bg-red-600 absolute top-[-5px] right-[-12px] border-0 text-[10px]">0</div>
                         </div> */}
                         </li ></label>
-                    <ul tabindex="1" class="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+                    <ul tabIndex="1" className="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4">
                         {newArray.map(notification => <li onClick={() => setNoti(notification._id)} className='p-2 border  hover:bg-blue-100 cursor-pointer'>{notification.notice}</li>)}
                     </ul>
                 </div>
