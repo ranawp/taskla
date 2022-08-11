@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './BlogDetails.css';
 
-const BlogDetails1 = () => {
+const BlogDetails = () => {
     return (
         <div>
 
@@ -54,13 +53,7 @@ const BlogDetails1 = () => {
             <Link to="/blog"> <h2 className='text-1xl font-bold mt-4 flex justify-center'>GO TO PREVIER PAGE</h2></Link >
 
         </div >
-
-
-
-
-
-
     );
 };
 
-export default BlogDetails1;
+export default BlogDetails;

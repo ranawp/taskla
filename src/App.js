@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import './App.css';
-import BlogDetails1 from "./Components/Blogs/BlogDetails/BlogDetails1";
 import BlogDetails2 from "./Components/Blogs/BlogDetails/BlogDetails2";
 import BlogDetails3 from "./Components/Blogs/BlogDetails/BlogDetails3";
 import Blogs from "./Components/Blogs/Blogs";
@@ -23,6 +22,7 @@ import TaskEvaluate from "./Components/Dashboard/Outlet/MyTasks/TaskEvalute/Task
 import StudentAnalytic from "./Components/StudentAnalytic/StudentAnalytic";
 import Admin_Dashboard from "./Components/Dashboard/Admin_Dashboard/Admin_Dashboard";
 import ContactUs from "./Components/Home/ContactUs";
+import BlogDetails from "./Components/Blogs/BlogDetails/BlogDetails";
 
 
 function App() {
@@ -52,7 +52,7 @@ function App() {
 
 
         {/* mozahid task  */}
-        <Route path="/blog/mongoDB" element={<BlogDetails1 />} />
+        <Route path="/blog/blogDetails" element={<BlogDetails />} />
         <Route path="/blog/reactjs" element={<BlogDetails2 />} />
         <Route path="/blog/javaScript" element={<BlogDetails3 />} />
         {/* mozahid task  */}

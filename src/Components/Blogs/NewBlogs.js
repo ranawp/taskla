@@ -2,15 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const NewBlogs = ({ newBlog }) => {
-    console.log(newBlog);
     const { blogTitle, img, blogDescription, blogUser, currentDate } = newBlog;
+    const blogDetail = blogDescription?.slice(0, 100);
     return (
-        <Link to='/blog/mongoDB'>
+        <Link to='/blog/blogDetails'>
             <div className="card w-80 sm:w-96 bg-base-100 shadow-xl">
                 <figure><img src={img} alt="blogImg" className='w-full max-h-[300px]' /></figure>
                 <div className="card-body">
                     <h2 className="card-title mx-auto">{blogTitle}</h2>
-                    <p className='text-xl font-sans' >{blogDescription}</p >
+                    <p className='text-xl font-sans' >{blogDetail}</p >
 
                 </div >
                 <hr />
