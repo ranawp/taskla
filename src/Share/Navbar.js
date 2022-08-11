@@ -49,7 +49,7 @@ const Navbar = () => {
                 <li><Link className='pl-5' to="/courses">Courses</Link></li >
 
                 {/* notification  */}
-                <div class="dropdown">
+                <div className="dropdown ">
                     <label tabindex="1" class="">
                         <li className='pl-5 cursor-pointer'>
                             <div class="indicator">
@@ -62,7 +62,7 @@ const Navbar = () => {
                             <div class="badge badge-sm bg-red-600 absolute top-[-5px] right-[-12px] border-0 text-[10px]">0</div>
                         </div> */}
                         </li ></label>
-                    <ul tabindex="1" class="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+                    <ul tabindex="1" class="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4 h-[380px] overflow-auto ">
                        {notifications.map(notification => <li className='p-2 border  hover:bg-blue-100'>{notification.notice}</li>)}
                     </ul>
                 </div>
