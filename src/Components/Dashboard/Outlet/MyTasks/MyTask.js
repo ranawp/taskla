@@ -8,13 +8,14 @@ import TaskModal from './TaskModal';
 
 const MyTask = () => {
     const [singleTask, setSingleTask] = useState([]);
+    const [singleTasks, setSingleTasks] = useState([]);
     const [taskFeedback, setTaskFeedback] = useState([]);
     const [modal, setModal] = useState({});
     const [modalDetails, setModalDetails] = useState(null);
     const [feedbackModal, setFeedbackModal] = useState(null)
     // const [reload, setReload] = useState(false);
     const [user] = useAuthState(auth)
-    const email = user.email;
+    const email = user?.email;
 
     useEffect(() => {
         fetch('http://localhost:5000/alltasks')
@@ -22,12 +23,12 @@ const MyTask = () => {
             .then(data => setSingleTask(data))
     }, [])
 
+
     useEffect(() => {
         fetch(`http://localhost:5000/answers/${email}`)
             .then(res => res.json())
             .then(data => setTaskFeedback(data))
     }, [])
-
 
 
 
@@ -76,7 +77,7 @@ const MyTask = () => {
 
                     </tbody>
                     {modalDetails && <TaskDetails modalDetails={modalDetails} ></TaskDetails>}
-                    {feedbackModal && <FeedbackDetails feedbackModal={feedbackModal}></FeedbackDetails>}
+                    {feedbackModal && <FeedbackDetails task={singleTask} feedbackModal={feedbackModal}></FeedbackDetails>}
 
                 </table>
             </div>

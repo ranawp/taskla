@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 
 const SingleTasks = ({ task, index, setModalDetails, setModal, setFeedbackModal, taskFeedback }) => {
 
-    console.log(taskFeedback.mark)
+    // console.log(taskFeedback.mark)
+    // console.log(task)
     //  const { taskMark, setTaskMark } = useState([]);
 
 
@@ -30,7 +31,7 @@ const SingleTasks = ({ task, index, setModalDetails, setModal, setFeedbackModal,
                 <td>{task.taskDeadline}</td>
 
 
-                <td><input className='markinput' size='3' type="text" /></td>
+                <td><input className='markinput' size='3' type="text" />{task.mark}</td>
                 {/* {taskFeedback.map(taskMark => console.log(taskMark.mark)
 
                 )} */}

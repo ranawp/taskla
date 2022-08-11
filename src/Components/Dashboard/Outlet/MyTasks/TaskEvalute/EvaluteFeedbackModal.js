@@ -18,7 +18,7 @@ const EvaluteFeedbackModal = ({ evaluteFeedbackModal }) => {
         const scriptfeedback = e.target.scriptfeedback.value;
         console.log(email, taskDescription, taskName, deadline, taskNo, currentDate, currentHour, mark, scriptfeedback);
 
-        fetch(`http://localhost:5000/feedbackUpdate/${studentEmail}`, {
+        fetch(`http://localhost:5000/feedbackUpdate/${evaluteFeedbackModal?.taskNo}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
