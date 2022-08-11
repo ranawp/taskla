@@ -2,16 +2,18 @@ import React from 'react';
 
 const SingleTaskEvalute = ({ taskEvalute, index, setEvaluteModalDetails, setEvaluteFeedbackModal }) => {
 
-    const { taskName, taskNo, email, deadline, taskDescription, currentDate, currentHour } = taskEvalute;
+    const { taskName, taskNo, email, deadline, taskDescription, taskSubmitedDate, taskSubmitedHour } = taskEvalute;
 
     return (
         <>
             <tr>
                 <th>{index + 1}</th>
                 <td>{taskNo}</td>
+                <td>{taskName}</td>
+
                 <td>{email}</td>
                 <td>{deadline}</td>
-                <td>{currentDate}, {currentHour}</td>
+                <td>{taskSubmitedDate}, {taskSubmitedHour}</td>
 
                 <td><label for="Evalutedetails-modal"
                     onClick={() => setEvaluteModalDetails(taskEvalute)}

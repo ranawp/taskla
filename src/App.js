@@ -25,6 +25,7 @@ import ContactUs from "./Components/Home/ContactUs";
 import AddReview from "./Components/Review/AddReview";
 import NoticePublish from "./Components/Dashboard/NoticePublish/NoticePublish";
 
+
 function App() {
 
   return (
@@ -48,7 +49,11 @@ function App() {
           <Route path="allusers" element={<Allusers></Allusers>} />
           <Route path="createtask" element={<TaskCreate></TaskCreate>}></Route>
           <Route path="taskEvaluate" element={<TaskEvaluate></TaskEvaluate>}></Route>
+
+
+
           <Route path="notice" element={<NoticePublish />}></Route>
+
         </Route>
 
 
