@@ -35,7 +35,7 @@ const Review = () => {
                     stretch: 0,
                     depth: 100,
                     modifier: 1,
-                    slideShadows: true,
+                    slideShadows: false,
                 }}
                 pagination={true}
                 modules={[EffectCoverflow, Pagination]}
