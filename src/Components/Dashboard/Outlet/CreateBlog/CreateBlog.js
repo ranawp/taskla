@@ -61,7 +61,7 @@ const CreateBlog = () => {
                     onSubmit={handleSubmit(onSubmit)}>
 
                     <small>Blog Title</small><br />
-                    <input className="my-2 p-2 rounded-lg background-color w-full" placeholder='Write Blog Title'  {...register("blogTitle", { required: true, maxLength: 20 })} /> <br />
+                    <input className="my-2 p-2 rounded-lg background-color w-full" placeholder='Write Blog Title'  {...register("blogTitle", { required: true })} /> <br />
 
                     <small>Image</small> <br />
                     <input className="my-2 p-2 rounded-lg background-color w-full" placeholder='Quantity' type="file" {...register("image")} /> <br />
