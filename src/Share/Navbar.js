@@ -16,7 +16,7 @@ const Navbar = () => {
     const [get, setData] = useState([])
     const [notifications, setNotifications] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/user/${emails}`, {
+        fetch(` https://cryptic-stream-86241.herokuapp.com/user/${emails}`, {
             method: 'GET',
             header: {
                 'content-type': 'application/json'
@@ -29,7 +29,7 @@ const Navbar = () => {
 
     useEffect(() => {
         console.log('hello')
-        fetch(`http://localhost:5000/notice`)
+        fetch(` https://cryptic-stream-86241.herokuapp.com/notice`)
             .then((response) => response.json())
             .then((json) => setNotifications(json));
     }, [])
@@ -41,7 +41,7 @@ const Navbar = () => {
 
     const setNoti = (id) => {
         console.log(id)
-        fetch(`http://localhost:5000/notice/${id}`, {
+        fetch(` https://cryptic-stream-86241.herokuapp.com/notice/${id}`, {
             method: 'PUT'
         })
             .then(res => res.json())
@@ -53,7 +53,7 @@ const Navbar = () => {
 
     useEffect(() => {
         const fetchSideeffect = async () => {
-            const res = await axios('http://localhost:5000/user')
+            const res = await axios(' https://cryptic-stream-86241.herokuapp.com/user')
             setData(res.data)
         }
         fetchSideeffect()

@@ -6,7 +6,7 @@ const NoticePublish = () => {
         const notice = event.target.noticeText.value;
         // const read = false;
         // console.log();
-        fetch(`http://localhost:5000/notice`, {
+        fetch(` https://cryptic-stream-86241.herokuapp.com/notice`, {
             method: 'POST',
             body: JSON.stringify({ notice: notice, read: false }),
             headers: {

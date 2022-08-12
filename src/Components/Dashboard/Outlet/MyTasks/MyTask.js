@@ -18,14 +18,14 @@ const MyTask = () => {
     const email = user?.email;
 
     useEffect(() => {
-        fetch('http://localhost:5000/alltasks')
+        fetch(' https://cryptic-stream-86241.herokuapp.com/alltasks')
             .then(res => res.json())
             .then(data => setSingleTask(data))
     }, [])
 
     const [marks, setMarks] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/allMarks/${email}`)
+        fetch(` https://cryptic-stream-86241.herokuapp.com/allMarks/${email}`)
             .then(res => res.json())
             .then(data => setMarks(data))
     }, [])
