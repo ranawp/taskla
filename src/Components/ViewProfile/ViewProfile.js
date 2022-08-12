@@ -11,6 +11,7 @@ const ViewProfile = () => {
     const [reset, setReset] = useState(false)
 
     const emails = user?.email
+
     useEffect(() => {
         fetch(`http://localhost:5000/user/${emails}`, {
             method: 'GET',
@@ -22,6 +23,7 @@ const ViewProfile = () => {
             .then((data) => getData(data));
 
     }, [emails, reset])
+
     const { name, email, phone, district, division, street, image } = data;
     return (
         <div className='sm:min-h-screen justify-center items-center grid sm:grid-cols-2' style={{ backgroundImage: `url(${bg1})` }
@@ -40,7 +42,6 @@ const ViewProfile = () => {
                         <input type="text" defaultValue={district} readOnly name='district' placeholder="District" className="input input-bordered w-40 max-w-xs" />
                         <input type="text" defaultValue={street} readOnly name='street' placeholder="Street" className="input input-bordered w-40 max-w-xs mr-2 mt-2" />
                         <input type="text" defaultValue={phone} readOnly name='phone' placeholder="Phone" className="input input-bordered w-40 max-w-xs mt-2" />
-
                     </fieldset>
                 </div >
             </div >

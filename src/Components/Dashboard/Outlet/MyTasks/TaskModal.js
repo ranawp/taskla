@@ -4,12 +4,17 @@ import bg1 from '../../../../asset/bg1.jpg';
 import auth from '../../../../firebase.init';
 
 const TaskModal = ({ modal }) => {
-    // console.log(modal);
+    // console.log(modal?._id);
+    const userId = modal?._id
     const [user] = useAuthState(auth)
     const date = new Date()
     const currentDate = date.toLocaleDateString();
     const currentHour = date.toLocaleTimeString();
+
+    console.log(date)
+
     // console.log(date)
+
     // console.log(user.displayName)
 
     const handleForm = event => {
@@ -19,8 +24,10 @@ const TaskModal = ({ modal }) => {
         const taskDescription = event.target.taskDescription.value;
         const deadline = event.target.deadline.value;
         const taskNo = event.target.taskNo.value;
-        const currentDate = event.target.currentDate.value;
-        const currentHour = event.target.currentHour.value;
+        const taskSubmitedDate = event.target.taskSubmittedDate.value;
+        const taskSubmitedHour = event.target.taskSubmitedHour.value;
+        // const mark = event.target.mark.value;
+        // const scriptfeedback = event.target.scriptfeedback.value;
 
         // console.log(task)
 
@@ -32,16 +39,19 @@ const TaskModal = ({ modal }) => {
                 taskName,
                 deadline,
                 taskNo,
-                currentDate,
-                currentHour
-
+                taskSubmitedDate,
+                taskSubmitedHour,
+                // mark,
+                // scriptfeedback
             }),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
             },
         })
             .then((response) => response.json())
-            .then((json) => json);
+
+            .then((json) => console.log(json));
+
 
         event.target.reset();
     }
@@ -59,6 +69,14 @@ const TaskModal = ({ modal }) => {
                             <span>Email:</span>
                             <input size='20' className='h-5 mb-2 ml-1' name='email' type="text" readOnly value={user?.email} /> <br />
 
+                            {/* <span> Mark: </span>
+                            <input size='20' className='h-5 mb-2 ml-1' name='mark' type="text" readOnly />
+                            <br /> */}
+
+                            {/* <span> scriptfeedback: </span>
+                            <input size='20' className='h-5 mb-2 ml-1' name='scriptfeedback' type="text" readOnly />
+                            <br /> */}
+
                             <span> Task Name: </span>
                             <input size='20' className='h-5 mb-2 ml-1' name='taskName' type="text" readOnly value={modal.taskName} />
                             <br />
@@ -69,16 +87,17 @@ const TaskModal = ({ modal }) => {
                             <input size='20' className='h-5 mb-2 ml-1' name='deadline' type="text" readOnly value={modal.taskDeadline} />
                             <br />
 
-                            <span>Current Date: </span>
-                            <input size='20' className='h-5 mb-2 ml-1' name='currentDate' type="text" readOnly value={currentDate} />
+                            <span>Submisson Date: </span>
+                            <input size='20' className='h-5 mb-2 ml-1' name='taskSubmittedDate' type="text" readOnly value={currentDate} />
                             <br />
-                            <span>Current Time:</span>
-                            <input size='20' className='h-5 mb-2 ml-1' name='currentHour' type="text" readOnly value={currentHour} />
+                            <span>Submisson Time:</span>
+                            <input size='20' className='h-5 mb-2 ml-1' name='taskSubmitedHour' type="text" readOnly value={currentHour} />
                             <br />
 
                             <span>Massage:</span>
                             <textarea required className="mt-2 textarea w-full  h-60 mx-auto" placeholder="Give your doc file link here or put answer here" name='taskDescription'></textarea >
                             <br />
+
                             <input type="submit" value="Submit" className='btn btn-primary w-full my-10' />
                         </form >
                     </div >

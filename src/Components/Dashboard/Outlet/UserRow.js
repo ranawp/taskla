@@ -2,14 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { toast } from 'react-toastify';
+// import userDetails from '../../../asset/userDetails.jpg'
+import Loading from '../../../Share/Loading';
+import UserDetails from './UserDetails';
 
-const UserRow = ({ user: users, index }) => {
+
+const UserRow = ({ user: users, index, setSingelUser }) => {
     const { email, role, enroll, student } = users
-    const [match, setMatch] = useState([])
+
+
     const [user] = useAuthState(auth)
     const emails = user?.email
-    const [status, setStatus] = useState('')
-    // console.log(user)
     const makeAdmin = () => {
         fetch(`http://localhost:5000/user/admin/${email}`, {
             method: 'PUT'
@@ -30,22 +33,7 @@ const UserRow = ({ user: users, index }) => {
 
             })
 
-
-
-
     }
-
-    useEffect(() => {
-        fetch(`http://localhost:5000/user/${emails}`, {
-            method: 'GET',
-            header: {
-                'content-type': 'application/json'
-            }
-        })
-            .then((res) => res.json())
-            .then((data) => setMatch(data));
-    }, [emails])
-
     return (
 
         <tr>
@@ -58,12 +46,9 @@ const UserRow = ({ user: users, index }) => {
                         <button disabled className="btn btn-xs">enrolled</button> </> :
 
                     <> {enroll == 'enrollPending' && <button onClick={paidStudent} className="btn btn-xs">enrollPending</button>}</>
-
-
-
             }</td>
 
-            <td><button className="btn btn-xs">Remove User</button></td >
+            <td><label onClick={() => setSingelUser(users)} className="btn btn-xs modal-button" for="my-modal-6">See-Details</label></td >
         </tr >
 
     );

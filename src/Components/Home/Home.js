@@ -11,6 +11,7 @@ import SignupBanner from './SignupBanner/SignupBanner';
 import laptop from '../../asset/laptop.svg';
 import football from '../../asset/football.svg';
 import { Link } from 'react-router-dom';
+import Gallery from './Gallery/Gallery';
 
 const Home = () => {
     return (
@@ -19,10 +20,11 @@ const Home = () => {
                 <Header></Header>
                 <Allacordian></Allacordian>
                 <Benifit />
+                <Gallery />
                 <div className='mt-32 lg:w-4/5 mx-auto relative'>
 
                     <div>
-                        <div className='bg-[#FCF7F1] px-24 py-20
+                        <div className='bg-[#FCF7F1] px-8 py-20
                         text-center '>
 
                             <h1 className='text-5xl font-serif
