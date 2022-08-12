@@ -52,13 +52,13 @@ const Admin_Dashboard = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/user')
+        fetch('https://cryptic-stream-86241.herokuapp.com/user')
             .then(res => res.json())
             .then(data => setStudents(data))
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:5000/alltasks')
+        fetch('https://cryptic-stream-86241.herokuapp.com/alltasks')
             .then(res => res.json())
             .then(data => setTask(data))
     })
