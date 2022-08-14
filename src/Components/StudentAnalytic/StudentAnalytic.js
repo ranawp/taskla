@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Area, AreaChart, CartesianGrid, Cell, Line, LineChart, Pie, PieChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import auth from '../../firebase.init';
+import StudentMark from './StudentMark';
+
 
 const studentAnalytic = () => {
     const chartData = [
@@ -40,51 +44,101 @@ const studentAnalytic = () => {
             "revenue": 61000
         }
     ]
-    return (
-        <div className='my-5 flex flex-wrap'>
-            <div className="grid gap-x-8 gap-y-8 lg:grid-cols-2 mt-14 ">
-                <div className='box-content border-4 rounded-lg p-5'>
-                    <h2 className='text-center font-semibold text-lg'>Monthly Sell</h2>
-                    <LineChart width={500} height={400} data={chartData}>
-                        <Line type="monotone" dataKey="sell" stroke="#8884d8" />
-                        <CartesianGrid stroke="#ccc" />
-                        <XAxis dataKey="month" />
-                        <YAxis />
-                        <Tooltip />
-                    </LineChart>
 
-                </div>
-                <div className='box-content border-4'>
-                    <h2 className='font-semibold text-lg'>Sell Revenue</h2>
-                    <AreaChart
-                        width={500}
-                        height={400}
-                        data={chartData}
-                        margin={{
-                            top: 10,
-                            right: 30,
-                            left: 0,
-                            bottom: 0,
-                        }}
-                    >
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="sell" />
-                        <YAxis />
-                        <Tooltip />
-                        <Area type="monotone" dataKey="revenue" stroke="#8884d8" fill="#8884d8" />
-                    </AreaChart>
-                </div>
-                <div className='ml-5'>
-                    <h2 className='font-semibold text-lg'>Investment & Sell</h2>
+    const [user] = useAuthState(auth)
+    const email = user?.email
+
+    const [marks, setMarks] = useState([]);
+
+    useEffect(() => {
+
+        fetch(`http://localhost:5000/allMarks/${email}`)
+            .then(res => res.json())
+            .then(data => setMarks(data))
+    }, [marks])
+
+    return (
+        <>
+            <div className='ml-5'>
+                <h2 className='font-semibold text-lg mb-5 text-center'>Mark distribution</h2>
+                <table className="table mx-auto">
+
+                    <thead>
+                        <tr>
+                            <th>Serial</th>
+                            <th>Task Name</th>
+                            <th>Task no.</th>
+                            <th>Mark</th>
+                            <th>Feedback</th>
+                            <th>Mark Upadate date</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {
+                            marks?.map((singleMark, index) => <StudentMark
+
+                                key={singleMark._id}
+                                singleMark={singleMark}
+                                index={index}
+
+
+                            ></StudentMark>)
+                        }
+
+
+                    </tbody>
+
+
+                </table>
+            </div>
+
+            <div className='my-5 flex flex-wrap'>
+                <div className="grid gap-x-8 gap-y-8 lg:grid-cols-2 mt-14 ">
+
+                    <div className='box-content border-4 rounded-lg p-5'>
+                        <h2 className='text-center font-semibold text-lg'>Attendence</h2>
+                        <LineChart width={500} height={400} data={chartData}>
+                            <Line type="monotone" dataKey="sell" stroke="#8884d8" />
+                            <CartesianGrid stroke="#ccc" />
+                            <XAxis dataKey="month" />
+                            <YAxis />
+                            <Tooltip />
+                        </LineChart>
+
+                    </div>
+                    <div className='box-content border-4'>
+                        <h2 className='font-semibold text-lg'>Perfomance</h2>
+                        <AreaChart
+                            width={500}
+                            height={400}
+                            data={chartData}
+                            margin={{
+                                top: 10,
+                                right: 30,
+                                left: 0,
+                                bottom: 0,
+                            }}
+                        >
+                            <CartesianGrid strokeDasharray="3 3" />
+                            <XAxis dataKey="sell" />
+                            <YAxis />
+                            <Tooltip />
+                            <Area type="monotone" dataKey="revenue" stroke="#8884d8" fill="#8884d8" />
+                        </AreaChart>
+                    </div>
+                    {/* <div className='ml-5'>
+                    <h2 className='font-semibold text-lg'>Mark distribution</h2>
                     <PieChart width={500} height={400}>
                         <Pie data={chartData} dataKey="investment" cx="50%" cy="50%" outerRadius={60} fill="#8884d8" />
                         <Pie data={chartData} dataKey="sell" cx="50%" cy="50%" innerRadius={70} outerRadius={90} fill="#82ca9d" label />
                         <Tooltip />
                     </PieChart>
+                </div> */}
                 </div>
+
             </div>
-            
-        </div>
+        </>
     );
 };
 

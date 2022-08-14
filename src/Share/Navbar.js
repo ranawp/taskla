@@ -5,14 +5,16 @@ import logo from '../asset/logo.png'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
 import { signOut } from 'firebase/auth';
-import down from '../asset/down-filled-triangular-arrow.png';
+import down from '../asset/down-filled-triangular-arrow.png'
 import notificationIcon from '../asset/notification.png'
+import axios from 'axios';
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
-    const emails = user?.email;
+    const emails = user?.email
     const [match, setMatch] = useState([]);
-    const [notifications,setNotifications] = useState([]);
+    const [get, setData] = useState([])
+    const [notifications, setNotifications] = useState([]);
     useEffect(() => {
         fetch(`http://localhost:5000/user/${emails}`, {
             method: 'GET',
@@ -23,19 +25,45 @@ const Navbar = () => {
             .then((res) => res.json())
             .then((data) => setMatch(data));
 
-    }, [emails]);
+    }, [emails])
 
-    useEffect(()=>{
+    useEffect(() => {
+        console.log('hello')
         fetch(`http://localhost:5000/notice`)
-        .then((response) => response.json())
-        .then((json) => setNotifications(json));
-    },[notifications])
+            .then((response) => response.json())
+            .then((json) => setNotifications(json));
+    }, [])
+
+
+    const newArray = notifications.filter((ele) => {
+        return ele.read == false
+    })
+
+    const setNoti = (id) => {
+        console.log(id)
+        fetch(`http://localhost:5000/notice/${id}`, {
+            method: 'PUT'
+        })
+            .then(res => res.json())
+
+            .then(data => console.log(data))
+
+            .then(data => data)
+    }
+
+    useEffect(() => {
+        const fetchSideeffect = async () => {
+            const res = await axios('http://localhost:5000/user')
+            setData(res.data)
+        }
+        fetchSideeffect()
+    }, [])
 
     const logout = () => {
         signOut(auth);
         localStorage.removeItem('accessToken')
     };
-    console.log(match)
+
     const menuItems = <>
         <li className='hover:text-black'><Link to='/'>Home</Link></li>
         <li className='hover:text-black' > <Link className='pl-5' to='/blog' > Blog</Link></li >
@@ -48,24 +76,25 @@ const Navbar = () => {
                 }
                 <li><Link className='pl-5' to="/courses">Courses</Link></li >
 
+
                 {/* notification  */}
-                <div className="dropdown ">
-                    <label tabindex="1" class="">
+                <div className="dropdown">
+                    <label tabIndex="1" className="">
                         <li className='pl-5 cursor-pointer'>
-                            <div class="indicator">
-                                <span class="indicator-item  badge bg-red-600 border-0 w-5 text-[10px]">{notifications.length}</span>
-                                <div class="grid place-items-center"><img className='w-5 inline' src={notificationIcon} alt="" /></div>
+                            <div className="indicator">
+                                <span className="indicator-item  badge bg-red-600 border-0 w-5 text-[10px]">{newArray?.length}</span>
+                                <div className="grid place-items-center"><img className='w-5 inline' src={notificationIcon} alt="" /></div>
                             </div>
                             {/* <div className='inline-block relative'>
                             
-
-                            <div class="badge badge-sm bg-red-600 absolute top-[-5px] right-[-12px] border-0 text-[10px]">0</div>
+                            <div className="badge badge-sm bg-red-600 absolute top-[-5px] right-[-12px] border-0 text-[10px]">0</div>
                         </div> */}
                         </li ></label>
-                    <ul tabindex="1" class="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4 h-[380px] overflow-auto ">
-                       {notifications.map(notification => <li className='p-2 border  hover:bg-blue-100'>{notification.notice}</li>)}
+                    <ul tabIndex="1" className="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+                        {notifications.map(notification => <li onClick={() => setNoti(notification._id)} className={notification.read == true ? 'line-through p-2 border  hover:bg-blue-100 cursor-pointer' : 'p-2 border  hover:bg-blue-100 cursor-pointer'}>{notification.notice}</li>)}
                     </ul>
                 </div>
+
 
 
                 <div className="dropdown" >
@@ -77,6 +106,8 @@ const Navbar = () => {
                     </label >
                     <ul tabIndex="0" className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52" >
                         <li><Link to='/viewprofile' className='pl-5'> View Profile</Link></li >
+                        <li><Link to='/analytics' className='pl-5'>Students Analytics</Link></li >
+                        <li><Link to='/addReview' className='pl-5'>Students Review</Link></li >
                         <li><Link className='pl-5' to='' onClick={logout} >Sign Out</Link></li >
 
                     </ul >
@@ -90,10 +121,11 @@ const Navbar = () => {
         </>
 
         {!user && <li><Link className='pl-5' to="/login">Login</Link></li>}
-        {!(match.role == 'admin') && <>
-            {!(match.student == 'enrolled') && <li><Link className='pl-5' to="/register">Register</Link></li >}
-            <li className='hover:text-black' > <Link className='pl-5' to='/contact' > Contact Us</Link ></li >
-        </>
+        {
+            !(match.role == 'admin') && <>
+                {!(match.student == 'enrolled') && !user && <li><Link className='pl-5' to="/register">Register</Link></li >}
+                <li className='hover:text-black' > <Link className='pl-5' to='/contact' > Contact Us</Link ></li >
+            </>
 
         }
     </>

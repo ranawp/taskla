@@ -4,7 +4,7 @@ import './BlogDetails.css';
 
 const BlogDetails1 = () => {
     return (
-        <div className='' >
+        <div>
 
             <div className='background-style-mongodb' >
                 <h1 className='text-3xl mt-7' > mongoDB</h1 >

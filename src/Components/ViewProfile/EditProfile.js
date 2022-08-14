@@ -3,7 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
 const EditProfile = ({ data, setReset }) => {
-    const [user] = useAuthState(auth)
+    const [user] = useAuthState(auth);
     const emails = user?.email
     const [imgLoad, setImgload] = useState(false)
     const [image, setImage] = useState('')
@@ -32,6 +32,7 @@ const EditProfile = ({ data, setReset }) => {
             })
 
     }
+
     const handleSubmit = (e) => {
         e.preventDefault()
         const name = e.target.name.value
@@ -54,8 +55,6 @@ const EditProfile = ({ data, setReset }) => {
                 street: street || data?.street,
                 phone: phone || data?.phone,
                 image: image || data?.image,
-
-
             })
 
         }).then(res => res.json())
@@ -73,6 +72,7 @@ const EditProfile = ({ data, setReset }) => {
             <div className="modal modal-bottom sm:modal-middle" >
                 <div className="modal-box text-center" >
                     <h2 className='text-2xl font-bold my-3'>User Profile</h2>
+
                     <form onSubmit={handleSubmit} className='mx-auto border-gray border-2 p-3 w-80 sm:w-96 flex justify-center flex-col items-center'>
 
                         <div className="form-control w-full max-w-xs">
@@ -85,7 +85,7 @@ const EditProfile = ({ data, setReset }) => {
                             <label className="label" >
                                 <span className="label-text" > Email</span >
                             </label >
-                            <input type="email" defaultValue={emails} name='email' placeholder="Type here" className="input input-bordered w-full max-w-xs mb-2" />
+                            <input readOnly type="email" defaultValue={emails} name='email' placeholder="Type here" className="input input-bordered w-full max-w-xs mb-2" />
 
                         </div >
 
