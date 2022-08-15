@@ -72,16 +72,6 @@ const MyTask = () => {
                             // setReload={setReload}
                             ></SingleTasks>)
                         }
-                        {/* {
-                            marks.map((singleMark, index) => <SingleTasks
-
-                                key={singleMark._id}
-                                singleMark={singleMark}
-                                index={index}
-
-
-                            ></SingleTasks>)
-                        } */}
                     </tbody>
                     {modalDetails && <TaskDetails modalDetails={modalDetails} ></TaskDetails>}
                     {feedbackModal && <FeedbackDetails task={singleTask} feedbackModal={feedbackModal}></FeedbackDetails>}
