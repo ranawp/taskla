@@ -133,7 +133,7 @@ const Navbar = () => {
     const locatin = useLocation()
     return (
         <div className='max-w-7xl mx-auto' >
-            <div className="navbar " >
+            <div className="navbar sticky z-10 bg-transparent" >
                 <div className="navbar-start" >
                     <div className="dropdown" >
                         <label tabIndex="0" className="btn btn-ghost lg:hidden" >
@@ -143,7 +143,7 @@ const Navbar = () => {
                             {menuItems}
                         </ul >
                     </div >
-                    <img className='w-16' src={logo} alt="" /> <p className=" normal-case  ml-3 font-bold text-2xl text-black" > <Link to='/'>TASK<span className='text-black'>LA</span></Link ></p >
+                    <img className='w-16' src={logo} alt="" /> <p className=" normal-case  ml-3 font-bold text-2xl text-black" > <Link to='/'>TASKLA</Link ></p >
                 </div >
 
                 <div className="navbar-end hidden lg:flex" >
