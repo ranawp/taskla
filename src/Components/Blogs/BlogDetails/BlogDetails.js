@@ -21,6 +21,9 @@ const BlogDetails = () => {
                 <img src={img} alt='blogImage'></img>
             </div >
 
+
+            
+
             <div className='my-4 pl-52'>
                 <h3>{blogUser}</h3>
                 <h4>{currentDate}</h4>
