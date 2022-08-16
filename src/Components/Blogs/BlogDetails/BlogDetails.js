@@ -28,7 +28,7 @@ const BlogDetails = () => {
 
             <div className="px-8">
                 <div className="mt-4  text-justify" >
-                    <h1 className='text-3xl mt-7 text-center my-2'> {blogTitle} </h1 >
+                    <h1 className='text-3xl mt-7 text-center mb-3'> {blogTitle} </h1 >
                     <p>{blogDescription}</p>
                 </div >
             </div >

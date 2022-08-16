@@ -1,7 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import './App.css';
-import BlogDetails2 from "./Components/Blogs/BlogDetails/BlogDetails2";
-import BlogDetails3 from "./Components/Blogs/BlogDetails/BlogDetails3";
 import Blogs from "./Components/Blogs/Blogs";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Home from "./Components/Home/Home";
@@ -61,8 +59,6 @@ function App() {
 
         {/* mozahid task  */}
         <Route path="/createBlog/:blogId" element={<BlogDetails />} />
-        <Route path="/blog/reactjs" element={<BlogDetails2 />} />
-        <Route path="/blog/javaScript" element={<BlogDetails3 />} />
         {/* mozahid task  */}
         <Route path="/contact" element={<ContactUs></ContactUs>}></Route>
         <Route path="/addReview" element={<AddReview />}></Route>
