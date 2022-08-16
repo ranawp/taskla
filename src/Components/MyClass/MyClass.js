@@ -7,7 +7,7 @@ const MyClass = () => {
         const task = event.target.text.value;
         // console.log(task)
 
-        // fetch(` https://cryptic-stream-86241.herokuapp.com/answer`, {
+        // fetch(` http://localhost:5000/answer`, {
         //     method: 'POST',
         //     body: JSON.stringify({ task }),
         //     headers: {
