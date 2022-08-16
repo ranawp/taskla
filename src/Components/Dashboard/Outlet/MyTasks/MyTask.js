@@ -11,23 +11,23 @@ import './MyTask.css';
 const MyTask = () => {
     const [singleTask, setSingleTask] = useState([]);
     const [taskData, setTaskData] = useState([]);
-    const [taskSubmit, setTaskSubmit] = useState([]);
     const [toogle, setToogle] = useState(true);
-    const [submitOne, setSubmitOne] = useState(false);
-
     const [user] = useAuthState(auth)
     const email = user?.email;
 
-    // console.log(taskData)
-    // console.log(submit)
-    // console.log(submitOne)
-
-
 
     useEffect(() => {
-        fetch('http://localhost:5000/alltasks')
+        fetch(' http://localhost:5000/alltasks')
             .then(res => res.json())
             .then(data => setSingleTask(data))
+    }, [])
+
+
+    const [marks, setMarks] = useState([]);
+    useEffect(() => {
+        fetch(` http://localhost:5000/allMarks/${email}`)
+            .then(res => res.json())
+            .then(data => setMarks(data))
     }, [])
 
     // const [marks, setMarks] = useState([]);
@@ -38,25 +38,18 @@ const MyTask = () => {
     // }, [])
 
 
-    // console.log(taskData)
-    // console.log(taskSubmit)
-
-
     return (
         <>
             <h1 className='text-2xl text-center mt-10'>Your Assignment</h1>
-            <section className="grid grid-cols-2 px-10 mt-5 task-list">
+            <section className="grid sm:grid-cols-2 px-10 mt-5 task-list">
 
-                <div className='w-4/5 border h-80 overflow-y-auto' >
+                <div className='w-[300px] mb-3 sm:w-4/5 border h-80 overflow-y-auto' >
                     {singleTask.map((singleTask) =>
                         <SingleTasks
                             key={singleTask._id}
                             singleTask={singleTask}
                             setTaskData={setTaskData}
-                            setTaskSubmit={setTaskSubmit}
                             setToogle={setToogle}
-                            setSubmitOne={setSubmitOne}
-                            toogle={toogle}
 
                         ></SingleTasks>
                     )}
@@ -64,36 +57,21 @@ const MyTask = () => {
 
                 <div className="overflow-y-auto border h-80">
 
-
-                    {toogle &&
-                        <div>
-                            <>
-                                <h1 className="title">Task Name:{taskData.taskName}</h1>
-                                <p className="details">Task no:{taskData.taskSerial}</p>
-                                <p class="details">Task Posted time:{taskData.questionDeliverDate}</p>
-                                <p className="details">Deadline:{taskData.taskDeadline}</p>
-                                <p className="details">Task Details : {taskData.taskMassage} </p> </>
-
-
-                        </div>
+                    {toogle === true &&
+                        <>
+                            <h1 className="title">Task Name:{taskData.taskName}</h1>
+                            <p className="details">Task no:{taskData.taskSerial}</p>
+                            <p class="details">Task Posted time:{taskData.questionDeliverDate}</p>
+                            <p className="details">Deadline:{taskData.taskDeadline}</p>
+                            <p className="details">Task Details : {taskData.taskMassage} </p> </>
                     }
                     <>
-                        {!toogle &&
+                        {toogle === false &&
                             <textarea placeholder='submit your answer' name="" id="" cols="30" rows="10"></textarea>
                         }
                     </>
 
-
-
-
-
-
-
-
                 </div>
-
-
-
             </section>
         </>
     );

@@ -14,14 +14,14 @@ const UserRow = ({ user: users, index, setSingelUser }) => {
     const [user] = useAuthState(auth)
     const emails = user?.email
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(` http://localhost:5000/user/admin/${email}`, {
             method: 'PUT'
         })
             .then(res => res.json())
             .then(data => data)
     }
     const paidStudent = () => {
-        fetch(`http://localhost:5000/user/student/${email}`, {
+        fetch(` http://localhost:5000/user/student/${email}`, {
             method: 'PUT'
         })
             .then(res => res.json())
