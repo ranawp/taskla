@@ -34,7 +34,7 @@ const CreateBlog = () => {
                     }
 
                     //send to database 
-                    fetch('http://localhost:5000/createBlog', {
+                    fetch(' http://localhost:5000/createBlog', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'
