@@ -151,7 +151,7 @@ const Navbar = () => {
 
                     <img className='w-16' src={logo} alt="" /> <p className=" normal-case ml-3 font-bold text-2xl " > <Link to='/'>TASK<span className='text-black'>LA</span></Link ></p >
 
-                    <img className='w-16' src={logo} alt="" /> <p className=" normal-case  ml-3 font-bold text-2xl text-black" > <Link to='/'>TASKLA</Link ></p >
+
 
                 </div >
 
@@ -172,6 +172,9 @@ const Navbar = () => {
 
             </div >
         </div >
+        </div >
+        </div >
+    
     );
 };
 
