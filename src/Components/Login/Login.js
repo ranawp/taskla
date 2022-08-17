@@ -103,7 +103,7 @@ const Login = () => {
 
                         {errors.password?.type === 'minLength' && <p className='' > {errors.password?.message}</p >}
 
-                        <input className='my-2 py-2 border rounded-lg text-white font-semibold hover:bg-white hover:text-black cursor-pointer' value="Sign In" type="submit" />
+                        <input data-testid='button' className='my-2 py-2 border rounded-lg text-white font-semibold hover:bg-white hover:text-black cursor-pointer' value="Sign In" type="submit" />
                         {errorElement}
                     </form >
                     <p className='my-3 text-white' > New to Taskla ?? <Link to='/register'>Please Register</Link></p >

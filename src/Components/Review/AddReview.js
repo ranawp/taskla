@@ -37,9 +37,9 @@ const AddReview = () => {
         const course = event.target.course.value;
         const message = event.target.message.value;
         const image = data.image || 'https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png';
-        const review = { name, course, message, rating, image}
-        fetch('https://cryptic-stream-86241.herokuapp.com/review',{
-            method:'POST',
+        const review = { name, course, message, rating, image }
+        fetch('https://cryptic-stream-86241.herokuapp.com/review', {
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -49,6 +49,7 @@ const AddReview = () => {
             .then(data => {
                 console.log(data);
             })
+        event.target.reset();
     }
 
     return (
