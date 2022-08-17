@@ -8,6 +8,7 @@ const BlogDetails = () => {
     const { blogTitle, img, blogDescription, currentDate, blogUser } = blogDetail;
     useEffect(() => {
         fetch(`https://cryptic-stream-86241.herokuapp.com/createBlog/${blogId}`)
+        fetch(` http://localhost:5000/createBlog/${blogId}`)
             .then(res => res.json())
             .then(data => setBlogDetail(data));
     }, []);

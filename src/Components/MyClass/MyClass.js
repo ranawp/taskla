@@ -6,7 +6,6 @@ const MyClass = () => {
         event.preventDefault();
         const task = event.target.text.value;
         // console.log(task)
-
         // fetch(`https://cryptic-stream-86241.herokuapp.com/answer`, {
         //     method: 'POST',
         //     body: JSON.stringify({ task }),

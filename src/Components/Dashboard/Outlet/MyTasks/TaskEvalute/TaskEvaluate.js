@@ -44,11 +44,6 @@ const TaskEvaluate = () => {
                             index={index}
                             setEvaluteModalDetails={setEvaluteModalDetails}
                             setEvaluteFeedbackModal={setEvaluteFeedbackModal}
-
-                        // setModal={setModal}
-                        // setModalDetails={setModalDetails}
-                        // reload={reload}
-                        // setReload={setReload}
                         ></SingleTaskEvalute>)
                     }
                 </tbody>
