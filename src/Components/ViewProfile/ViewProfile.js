@@ -13,7 +13,7 @@ const ViewProfile = () => {
     const emails = user?.email
 
     useEffect(() => {
-        fetch(`http://localhost:5000/user/${emails}`, {
+        fetch(` http://localhost:5000/user/${emails}`, {
             method: 'GET',
             header: {
                 'content-type': 'application/json'

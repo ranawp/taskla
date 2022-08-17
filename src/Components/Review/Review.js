@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 // import "./Review.css";
 import './Review.css'
 
-import { EffectCoverflow, Pagination } from "swiper";
+import { EffectCoverflow, Pagination, Navigation } from "swiper";
 import ReviewCard from './ReviewCard';
 
 const Review = () => {
@@ -16,7 +16,7 @@ const Review = () => {
     const [reviewCard, setReviewCard] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/review')
+        fetch(' http://localhost:5000/review')
             .then(res => res.json())
             .then(data => setReviewCard(data))
     }, [])
@@ -37,8 +37,9 @@ const Review = () => {
                     modifier: 1,
                     slideShadows: false,
                 }}
+                
                 pagination={true}
-                modules={[EffectCoverflow, Pagination]}
+                modules={[EffectCoverflow, Pagination, Navigation]}
                 className="mySwiper"
             >
 
