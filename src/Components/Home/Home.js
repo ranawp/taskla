@@ -17,6 +17,7 @@ import Certificate from './certificate/Certificate';
 
 
 import Gallery from './Gallery/Gallery';
+import AboutDeveloper from './AboutDeveloper/AboutDeveloper';
 
 
 const Home = () => {
@@ -29,6 +30,7 @@ const Home = () => {
 
        
                 <Allacordian></Allacordian>
+                <AboutDeveloper></AboutDeveloper>
                 <Benifit />
 
                
