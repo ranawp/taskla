@@ -19,7 +19,7 @@ const Register = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
 
-    const [token] = useToken(user)
+    const [token] = useToken(user);
 
     if (token) {
         navigate('/');
@@ -112,7 +112,7 @@ const Register = () => {
 
                         <input className='my-2 py-2 border rounded-lg text-white font-semibold hover:bg-white hover:text-black cursor-pointer' value="Register" type="submit" />
                     </form >
-                    <p className='my-3 text-white' > Already Have an Account ?? <Link to='/login' className='ml-16' > Please Login</Link ></p >
+                    <p className='my-3 text-white text-xs' > Already Have an Account?? <Link to='/login'> Please Login</Link ></p >
                 </div >
             </div >
         </div >
