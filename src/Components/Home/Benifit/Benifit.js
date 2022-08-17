@@ -9,7 +9,9 @@ import support from '../../../asset/benefit/group-users.png';
 const Benifit = () => {
     return (
         <div>
-            <h1 className='text-3xl text-center'><span className=' text-blue-400'>So Much More </span> Than A Binder</h1 >
+        <h1 className=" text-3xl text-center text-black font-bold">So Much More  <span className='text-primary'>Than A Binder</span></h1>
+
+
             <div className="grid gap-x-8 gap-y-8 lg:grid-cols-2 mt-14" >
 
                 <div className="flex p-5" >

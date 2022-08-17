@@ -23,12 +23,15 @@ const Home = () => {
     return (
         <div>
             <div className='max-w-7xl mx-auto'>
-                <Header></Header>
+            <Header></Header>
+            <CourseDetails></CourseDetails>
+                <Certificate></Certificate>
+
+       
                 <Allacordian></Allacordian>
                 <Benifit />
 
-                <CourseDetails></CourseDetails>
-                <Certificate></Certificate>
+               
 
                 <Gallery />
 
@@ -50,8 +53,8 @@ const Home = () => {
                 </div >
             </div >
             <Review />
-            <SignupBanner />
-            <ContactUs />
+          
+ 
         </div >
     );
 };

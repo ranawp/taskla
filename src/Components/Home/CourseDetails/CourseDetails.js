@@ -3,9 +3,9 @@ import './CourseDetails.css';
 
 const CourseDetails = () => {
     return (
-        <div className='mt-12'>
-            <h1 className="text-3xl text-center text-primary font-bold">Everything in this course</h1>
-            <div className='card   border-2 shadow-inner mt-6   grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  justify-center p-6'>
+        <div className='mt-16'>
+            <h1 className="text-3xl text-center text-black font-bold">Everything in this <span className="text-primary">course</span></h1>
+            <div className='card   border-2 shadow-inner mt-12   grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  justify-center p-6'>
 
 
                 <div className="lg:max-w-lg bg-base-100  items-center text-center grid justify-center card-style  lg:border-r-2 lg:border-b-2 sm:border-b-4">
