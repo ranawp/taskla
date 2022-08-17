@@ -28,6 +28,7 @@ import ContactUs from "./Components/Home/ContactUs";
 import BlogDetails from "./Components/Blogs/BlogDetails/BlogDetails";
 import AddReview from "./Components/Review/AddReview";
 import NoticePublish from "./Components/Dashboard/NoticePublish/NoticePublish";
+import Payment from "./Components/Courses/Payment";
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
         <Route path="/viewprofile" element={<ViewProfile></ViewProfile>} />
         <Route path='/courses' element={<Courses
         ></Courses>} />
+        <Route path='/courses/payment' element={<Payment></Payment>} />
         <Route path="/analytics" element={<StudentAnalytic />}></Route>
 
 

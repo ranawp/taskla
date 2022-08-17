@@ -12,7 +12,7 @@ const AddReview = () => {
     const email = user?.email;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/user/${email}`, {
+        fetch(` http://localhost:5000/user/${email}`, {
             method: 'GET',
             header: {
                 'content-type': 'application/json'
@@ -37,23 +37,23 @@ const AddReview = () => {
         const course = event.target.course.value;
         const message = event.target.message.value;
         const image = data.image || 'https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png';
-        const review = { name, course, message, rating, image}
-        fetch('http://localhost:5000/review',{
-            method:'POST',
+        const review = { name, course, message, rating, image }
+        fetch(' http://localhost:5000/review', {
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(review)
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
     }
-    
+
     return (
         <div>
-            <div className="hero h-[700px] bg-base-200" style={{backgroundImage:`url(https://alphagypsumboard.com/wp-content/uploads/2019/07/Background-website-01.jpg)`}}>
+            <div className="hero h-[700px] bg-base-200" style={{ backgroundImage: `url(https://alphagypsumboard.com/wp-content/uploads/2019/07/Background-website-01.jpg)` }}>
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
                         <h1 className="text-3xl font-bold">Give Feedback</h1>

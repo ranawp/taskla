@@ -7,7 +7,7 @@ const BlogDetails = () => {
     const [blogDetail, setBlogDetail] = useState({});
     const { blogTitle, img, blogDescription, currentDate, blogUser } = blogDetail;
     useEffect(() => {
-        fetch(`http://localhost:5000/createBlog/${blogId}`)
+        fetch(` http://localhost:5000/createBlog/${blogId}`)
             .then(res => res.json())
             .then(data => setBlogDetail(data));
     }, []);

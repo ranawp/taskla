@@ -5,7 +5,8 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import registerImg from '../../imgages/register.png';
 import { useNavigate, Link } from 'react-router-dom';
 import useToken from '../../hooks/useToken';
-
+import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
+import { useState } from 'react';
 
 const Login = () => {
     const navigate = useNavigate()
@@ -39,7 +40,14 @@ const Login = () => {
             // navigate(from, { replace: true });
 
         }
-    }, [user, navigate])
+    }, [user, navigate]);
+
+    // password show/hide 
+    const [state, setState] = useState(false);
+
+    const btnValue = () => {
+        setState(click => !click);
+    }
     return (
         <div className='register-page lg:flex items-center' >
             <div className='text-center w-100 p-10 mx-auto flex-1 w-64' >
@@ -50,7 +58,7 @@ const Login = () => {
                     <h1 className='text-center font-bold text-5xl my-4'>Sign In</h1>
                     <form className='flex flex-col' onSubmit={handleSubmit(onSubmit)} >
                         <input
-                            className='my-2 p-2 rounded-lg background-color'
+                            className='my-2 p-2 rounded-lg background-color inline'
                             type='email'
                             placeholder='Your Email'
                             {...register("email", {
@@ -65,26 +73,32 @@ const Login = () => {
 
                             })
                             } />
+
                         {errors.email?.type === 'required' && <p className='' > {errors.email?.message}</p >}
                         {errors.email?.type === 'pattern' && <p className='' > {errors.email?.message}</p >}
 
-                        <input
-                            className='my-2 p-2 rounded-lg background-color'
-                            placeholder='Password'
-                            type='password'
-                            {...register("password", {
-                                required: {
-                                    value: true,
-                                    message: 'Password is Required',
-                                },
-                                minLength: {
-                                    value: 6,
-                                    message: 'Of course, you have to give a password greater than 6 digits'
-                                }
+                        <div className='flex'>
+                            <input
+                                className='my-2 p-2 rounded-lg background-color w-full inline'
+                                placeholder='Password'
+                                type={state ? 'text' : 'password'}
+                                {...register("password", {
+                                    required: {
+                                        value: true,
+                                        message: 'Password is Required',
+                                    },
+                                    minLength: {
+                                        value: 6,
+                                        message: 'Of course, you have to give a password greater than 6 digits'
+                                    }
 
-                            }
-                            )
-                            } />
+                                }
+                                )
+                                } />
+                            <button onClick={btnValue} className='inline text-[18px] p-[10px] ml-[-35px]'>
+                                {state ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+                            </button>
+                        </div>
                         {errors.password?.type === 'required' && <p className='' > {errors.password?.message}</p >}
 
                         {errors.password?.type === 'minLength' && <p className='' > {errors.password?.message}</p >}

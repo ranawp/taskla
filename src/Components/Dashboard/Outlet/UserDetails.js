@@ -8,12 +8,12 @@ const UserDetails = ({ singelUser }) => {
 
     return (
         <>
-            <input type="checkbox" id="my-modal-6" class="modal-toggle" />
-            {<div class="modal modal-middle sm:modal-middle px-5 sm:p-0" >
-                <div class="modal-box text-center" style={{ backgroundImage: `url(${bg}) ` }}>
+            <input type="checkbox" id="my-modal-6" className="modal-toggle" />
+            {<div className="modal modal-middle sm:modal-middle px-5 sm:p-0" >
+                <div className="modal-box text-center" style={{ backgroundImage: `url(${bg}) ` }}>
                     <div className='w-full rounded h-44' style={{ backgroundImage: `url(${userDetails}) ` }}></div>
-                    <div class="avatar w-36 mt-[-75px]">
-                        <div class="w-36 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                    <div className="avatar w-36 mt-[-75px]">
+                        <div className="w-36 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                             <img src={image || defaultImage} />
                         </div>
                     </div>
@@ -26,8 +26,8 @@ const UserDetails = ({ singelUser }) => {
                         <p className='text-2xl text-slate-500'>Street: {street}</p>
                     </div>
 
-                    <div class="modal-action">
-                        <label for="my-modal-6" class="btn">Close!</label>
+                    <div className="modal-action">
+                        <label for="my-modal-6" className="btn">Close!</label>
                     </div>
                 </div>
             </div>}

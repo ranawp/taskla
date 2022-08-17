@@ -16,7 +16,7 @@ const Navbar = () => {
     const [get, setData] = useState([])
     const [notifications, setNotifications] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/user/${emails}`, {
+        fetch(` http://localhost:5000/user/${emails}`, {
             method: 'GET',
             header: {
                 'content-type': 'application/json'
@@ -29,7 +29,7 @@ const Navbar = () => {
 
     useEffect(() => {
         console.log('hello')
-        fetch(`http://localhost:5000/notice`)
+        fetch(` http://localhost:5000/notice`)
             .then((response) => response.json())
             .then((json) => setNotifications(json));
     }, [])
@@ -41,7 +41,7 @@ const Navbar = () => {
 
     const setNoti = (id) => {
         console.log(id)
-        fetch(`http://localhost:5000/notice/${id}`, {
+        fetch(` http://localhost:5000/notice/${id}`, {
             method: 'PUT'
         })
             .then(res => res.json())
@@ -53,7 +53,7 @@ const Navbar = () => {
 
     useEffect(() => {
         const fetchSideeffect = async () => {
-            const res = await axios('http://localhost:5000/user')
+            const res = await axios(' http://localhost:5000/user')
             setData(res.data)
         }
         fetchSideeffect()
@@ -78,20 +78,20 @@ const Navbar = () => {
 
 
                 {/* notification  */}
-                <div class="dropdown">
-                    <label tabindex="1" class="">
+                <div className="dropdown">
+                    <label tabIndex="1" className="">
                         <li className='pl-5 cursor-pointer'>
-                            <div class="indicator">
-                                <span class="indicator-item  badge bg-red-600 border-0 w-5 text-[10px]">{newArray?.length}</span>
-                                <div class="grid place-items-center"><img className='w-5 inline' src={notificationIcon} alt="" /></div>
+                            <div className="indicator">
+                                <span className="indicator-item  badge bg-red-600 border-0 w-5 text-[10px]">{newArray?.length}</span>
+                                <div className="grid place-items-center"><img className='w-5 inline' src={notificationIcon} alt="" /></div>
                             </div>
                             {/* <div className='inline-block relative'>
                             
-                            <div class="badge badge-sm bg-red-600 absolute top-[-5px] right-[-12px] border-0 text-[10px]">0</div>
+                            <div className="badge badge-sm bg-red-600 absolute top-[-5px] right-[-12px] border-0 text-[10px]">0</div>
                         </div> */}
                         </li ></label>
-                    <ul tabindex="1" class="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4">
-                        {newArray.map(notification => <li onClick={() => setNoti(notification._id)} className='p-2 border  hover:bg-blue-100 cursor-pointer'>{notification.notice}</li>)}
+                    <ul tabIndex="1" className="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+                        {notifications.map(notification => <li onClick={() => setNoti(notification._id)} className={notification.read == true ? 'line-through p-2 border  hover:bg-blue-100 cursor-pointer' : 'p-2 border  hover:bg-blue-100 cursor-pointer'}>{notification.notice}</li>)}
                     </ul>
                 </div>
 
@@ -121,18 +121,24 @@ const Navbar = () => {
         </>
 
         {!user && <li><Link className='pl-5' to="/login">Login</Link></li>}
-        {!(match.role == 'admin') && <>
-            {!(match.student == 'enrolled') && !user && <li><Link className='pl-5' to="/register">Register</Link></li >}
-            <li className='hover:text-black' > <Link className='pl-5' to='/contact' > Contact Us</Link ></li >
-        </>
+        {
+            !(match.role == 'admin') && <>
+                {!(match.student == 'enrolled') && !user && <li><Link className='pl-5' to="/register">Register</Link></li >}
+                <li className='hover:text-black' > <Link className='pl-5' to='/contact' > Contact Us</Link ></li >
+            </>
 
         }
     </>
 
     const locatin = useLocation()
     return (
+
         <div className='bg-primary p-2' >
             <div className="navbar px-12" >
+
+        <div className='max-w-7xl mx-auto' >
+            <div className="navbar sticky z-10 bg-transparent" >
+
                 <div className="navbar-start" >
                     <div className="dropdown" >
                         <label tabIndex="0" className="btn btn-ghost lg:hidden" >
@@ -142,7 +148,11 @@ const Navbar = () => {
                             {menuItems}
                         </ul >
                     </div >
+
                     <img className='w-16' src={logo} alt="" /> <p className=" normal-case ml-3 font-bold text-2xl " > <Link to='/'>TASK<span className='text-black'>LA</span></Link ></p >
+
+                    <img className='w-16' src={logo} alt="" /> <p className=" normal-case  ml-3 font-bold text-2xl text-black" > <Link to='/'>TASKLA</Link ></p >
+
                 </div >
 
                 <div className="navbar-end hidden lg:flex" >
