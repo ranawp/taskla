@@ -60,14 +60,18 @@ const CreateBlog = () => {
                     className=''
                     onSubmit={handleSubmit(onSubmit)}>
 
+
+                    <p className=' font-bold'>Blog Title</p><br />
+                    <input className=" p-2 rounded-lg background-color w-full" placeholder='Write Blog Title'  {...register("blogTitle", { required: true, maxLength: 20 })} /> <br />
+
                     <small>Blog Title</small><br />
                     <input className="my-2 p-2 rounded-lg background-color w-full" placeholder='Write Blog Title'  {...register("blogTitle", { required: true })} /> <br />
 
-                    <small>Image</small> <br />
-                    <input className="my-2 p-2 rounded-lg background-color w-full" placeholder='Quantity' type="file" {...register("image")} /> <br />
+                    <p className='mt-3 font-bold'>Image</p> <br />
+                    <input className="p-2 rounded-lg background-color w-full" placeholder='Quantity' type="file" {...register("image")} /> <br />
 
-                    <small>Blog Description</small><br />
-                    <textarea className="my-2 p-2 rounded-lg background-color w-full h-64" placeholder='Share your Blog Description'  {...register("blogDescription")} /> <br />
+                    <p className='font-bold mt-5'>Blog Description</p><br />
+                    <textarea className=" p-2 rounded-lg background-color w-full h-64" placeholder='Share your Blog Description'  {...register("blogDescription")} /> <br />
 
                     <input type="submit" value='Submit' className=' bg-blue-700 border-0 py-2 px-4 button  rounded text-white' />
                 </form>
