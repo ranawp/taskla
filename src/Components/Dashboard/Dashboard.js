@@ -8,7 +8,7 @@ const Dashboard = () => {
     const emails = user?.email
     const [match, setMatch] = useState([])
     useEffect(() => {
-        fetch(`https://cryptic-stream-86241.herokuapp.com/user/${emails}`,  {
+        fetch(`http://localhost:5000/user/${emails}`,  {
             method: 'GET',
             header: {
                 'content-type': 'application/json'
