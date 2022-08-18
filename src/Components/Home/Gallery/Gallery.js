@@ -13,7 +13,7 @@ const Gallery = () => {
                     <div class="flex flex-wrap -m-1 md:-m-2">
                         <div class="flex flex-wrap w-1/2">
                             <div class="w-1/2 p-1 md:p-2">
-                                <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
+                                <img alt="gallery" class="block object-cover  object-center w-full h-full rounded-lg"
                                     src="https://i.ibb.co/Js0qy42/pngtree-cartoon-girl-graduation-ceremony-and-classmates-posing-png-material-png-image-4523821.jpg" />
                             </div>
                             <div class="w-1/2 p-1 md:p-2">

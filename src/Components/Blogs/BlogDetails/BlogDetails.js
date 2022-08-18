@@ -8,6 +8,7 @@ const BlogDetails = () => {
     const { blogTitle, img, blogDescription, currentDate, blogUser } = blogDetail;
     useEffect(() => {
         fetch(`http://localhost:5000/createBlog/${blogId}`)
+        fetch(` http://localhost:5000/createBlog/${blogId}`)
             .then(res => res.json())
             .then(data => setBlogDetail(data));
     }, []);
@@ -20,6 +21,9 @@ const BlogDetails = () => {
             <div className='image-style' >
                 <img src={img} alt='blogImage'></img>
             </div >
+
+
+            
 
             <div className='my-4 pl-52'>
                 <h3>{blogUser}</h3>

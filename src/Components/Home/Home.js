@@ -17,18 +17,25 @@ import Certificate from './certificate/Certificate';
 
 
 import Gallery from './Gallery/Gallery';
+import AboutDeveloper from './AboutDeveloper/AboutDeveloper';
 
 
 const Home = () => {
     return (
         <div>
-            <div className=''>
-                <Header></Header>
-                
+            
+            <div className='max-w-7xl mx-auto'>
+            <Header></Header>
+            <CourseDetails></CourseDetails>
+                <Certificate></Certificate>
+
+       
+                <Allacordian></Allacordian>
+                <AboutDeveloper></AboutDeveloper>
                 <Benifit />
 
-                <CourseDetails></CourseDetails>
-                <Certificate></Certificate>
+               
+
                 <Gallery />
 
                 <div className='mt-32 lg:w-4/5 mx-auto relative'>
@@ -51,6 +58,8 @@ const Home = () => {
             <Allacordian></Allacordian>
             {/*
             <ContactUs /> */}
+          
+ 
         </div >
     );
 };

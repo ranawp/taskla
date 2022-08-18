@@ -1,17 +1,36 @@
-import React from 'react';
-import moment from 'moment';
+import React, { useState } from 'react';
 
 const NoticePublish = () => {
+
+
+    const options = {   month: 'short', day: 'numeric',year: 'numeric' };
+    const dateFunction = new Date().toLocaleDateString("en-UK", options);
+
+    // time 
+    let time = new Date().toLocaleTimeString();
+    const [cTime, setCTime] = useState(time);
+    const updateTime = () => {
+        time = new Date().toLocaleTimeString();
+        setCTime(time);
+    }
+    setInterval(updateTime, 1000);
+    const Mydate = dateFunction;
+    const Mytime = cTime;
+
+
+    const dateTime = Mydate + "," + Mytime;
     
+    // console.log(dateTime);
+
     const handleNoticeForm = event => {
         event.preventDefault();
-        const notice = event.target.noticeText.value;
-        const time = moment().format('MMMM D YYYY, h:mm:ss a');
+        const notice = event.target.title.value;
+        const announcement = event.target.announcement.value;
         // const read = false;
-        // console.log();
+        const data = { notice, announcement, time:dateTime }
         fetch(`http://localhost:5000/notice`, {
             method: 'POST',
-            body: JSON.stringify({ notice: notice, time:time ,read: false }),
+            body: JSON.stringify(data),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
             },
@@ -24,15 +43,28 @@ const NoticePublish = () => {
     
     return (
         <div>
-            <h2 className='text-xl text-center'>Notice</h2>
-            <form onSubmit={handleNoticeForm} action="">
-                <textarea className="textarea textarea-info w-full max-w-xs" placeholder="Notice" name='noticeText'></textarea>
-                <br />
-                <br />
-                <input type="submit" value="Publish" className="input input-bordered input-info bg-sky-400 w-full max-w-xs" />
-                
-                
-            </form>
+            <h2 className='text-3xl p-6 font-bold text-primary text-center'>Notice</h2>
+            {/* <form onSubmit={handleNoticeForm} action=""> */}
+            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mx-auto">
+                <div className="card-body">
+                    <form action="" onSubmit={handleNoticeForm}>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Title</span>
+                            </label>
+                            <input type="text" placeholder="Title" name='title' className="input input-bordered" />
+
+                            <label className="label">
+                                <span className="label-text">Announcement</span>
+                            </label>
+                            <textarea className="textarea textarea-bordered h-[200px]" placeholder="Announcement" name='announcement'></textarea>
+                            <button className="btn btn-primary mt-5">Submit</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            {/* </form> */}
         </div>
     );
 };

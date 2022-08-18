@@ -8,6 +8,7 @@ const TaskEvaluate = () => {
     const [taskEvaluate, setTaskEvalute] = useState([]);
     const [evaluteModalDetails, setEvaluteModalDetails] = useState(null);
     const [evaluteFeedbackModal, setEvaluteFeedbackModal] = useState(null);
+    const [refresh, setRefresh] = useState(null)
 
 
     useEffect(() => {
@@ -15,7 +16,11 @@ const TaskEvaluate = () => {
             .then(res => res.json())
             .then(data => setTaskEvalute(data))
     }
-        , [])
+        , [refresh])
+
+    const pendingFeedbackTask = taskEvaluate.filter(task => {
+        return task.feedbackSubmit !== "feedbacksubmited"
+    })
     return (
         <div>
             <h1 className='font-bold text-2xl'>Student Submitted tasks</h1>
@@ -38,22 +43,20 @@ const TaskEvaluate = () => {
 
                 <tbody>
                     {
-                        taskEvaluate.map((taskEvalute, index) => <SingleTaskEvalute
+                        pendingFeedbackTask.map((taskEvalute, index) => <SingleTaskEvalute
                             key={taskEvalute._id}
                             taskEvalute={taskEvalute}
                             index={index}
                             setEvaluteModalDetails={setEvaluteModalDetails}
                             setEvaluteFeedbackModal={setEvaluteFeedbackModal}
 
-                        // setModal={setModal}
-                        // setModalDetails={setModalDetails}
-                        // reload={reload}
-                        // setReload={setReload}
                         ></SingleTaskEvalute>)
                     }
                 </tbody>
                 {evaluteModalDetails && <EvaluteDetails evaluteModalDetails={evaluteModalDetails} ></EvaluteDetails>}
-                {evaluteFeedbackModal && <EvaluteFeedbackModal evaluteFeedbackModal={evaluteFeedbackModal}></EvaluteFeedbackModal>}
+                {evaluteFeedbackModal && <EvaluteFeedbackModal
+                    setRefresh={setRefresh}
+                    evaluteFeedbackModal={evaluteFeedbackModal}></EvaluteFeedbackModal>}
 
             </table>
         </div>

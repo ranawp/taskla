@@ -27,8 +27,15 @@ import Admin_Dashboard from "./Components/Dashboard/Admin_Dashboard/Admin_Dashbo
 import ContactUs from "./Components/Home/ContactUs";
 import BlogDetails from "./Components/Blogs/BlogDetails/BlogDetails";
 import AddReview from "./Components/Review/AddReview";
-import NoticePublish from "./Components/Dashboard/NoticePublish/NoticePublish"; import { createContext, useState } from "react";
-;
+import NoticePublish from "./Components/Dashboard/NoticePublish/NoticePublish"; 
+import { createContext, useState } from "react";
+
+
+import Payment from "./Components/Courses/Payment";
+import Announcement from "./Components/Announcement/Announcement";
+import SubmittedTask from "./Components/Dashboard/Outlet/MyTasks/SubmittedTask";
+import CompletedTaskEvalute from "./Components/Dashboard/Outlet/MyTasks/TaskEvalute/CompletedTaskEvalute";
+
 
 export const TimeContext = createContext('default');
 function App() {
@@ -50,48 +57,64 @@ function App() {
   return (
     <div className="bg-white overflow-x-hidden" >
       <Navbar></Navbar>
-    <TimeContext.Provider value={[Mydate,Mytime]}>
-        <Routes>
-          <Route path="/" element={<Home></Home>} />
-          <Route path="/blog" element={<Blogs></Blogs>} />
-          <Route path="/classroom" element={<MyClass />} />
-          <Route path="/mytask" element={<MyTask />} />
-          <Route path="/viewprofile" element={<ViewProfile></ViewProfile>} />
-          <Route path='/courses' element={<Courses
-          ></Courses>} />
-          <Route path="/analytics" element={<StudentAnalytic />}></Route>
+      <TimeContext.Provider value={[Mydate, Mytime]}>
+            <Routes>
+              <Route path="/" element={<Home></Home>} />
+              <Route path="/blog" element={<Blogs></Blogs>} />
+              <Route path="/classroom" element={<MyClass />} />
+              <Route path="/mytask" element={<MyTask />} />
+              <Route path="/viewprofile" element={<ViewProfile></ViewProfile>} />
+              <Route path='/courses' element={<Courses
+              ></Courses>} />
+              <Route path='/courses/payment' element={<Payment></Payment>} />
+              <Route path="/analytics" element={<StudentAnalytic />}></Route>
 
 
-          {/* dashboard routes */}
-          <Route path="dashboard" element={<Dashboard></Dashboard>}>
-            <Route index element={<Admin_Dashboard></Admin_Dashboard>} />
-            <Route path="allusers" element={<Allusers></Allusers>} />
-            <Route path="createtask" element={<TaskCreate></TaskCreate>}></Route>
-            <Route path="taskEvaluate" element={<TaskEvaluate></TaskEvaluate>}></Route>
-            <Route path="createBlog" element={<CreateBlog></CreateBlog>}></Route>
+              {/* dashboard routes */}
+              <Route path="dashboard" element={<Dashboard></Dashboard>}>
+                <Route index element={<Admin_Dashboard></Admin_Dashboard>} />
+                <Route path="allusers" element={<Allusers></Allusers>} />
+                <Route path="createtask" element={<TaskCreate></TaskCreate>}></Route>
+                <Route path="taskEvaluate" element={<TaskEvaluate></TaskEvaluate>}></Route>
+                <Route path="taskEvaluateCompleted" element={<CompletedTaskEvalute />}></Route>
+                <Route path="createBlog" element={<CreateBlog></CreateBlog>}></Route>
 
 
 
-            <Route path="notice" element={<NoticePublish />}></Route>
+                <Route path="notice" element={<NoticePublish />}></Route>
 
-          </Route>
+              </Route>
 
 
-          {/* mozahid task  */}
-          <Route path="/createBlog/:blogId" element={<BlogDetails />} />
-          <Route path="/blog/reactjs" element={<BlogDetails2 />} />
-          <Route path="/blog/javaScript" element={<BlogDetails3 />} />
-          {/* mozahid task  */}
-          <Route path="/contact" element={<ContactUs></ContactUs>}></Route>
-          <Route path="/addReview" element={<AddReview />}></Route>
-          <Route path="/login" element={<Login></Login>}></Route>
-          <Route path="/register" element={<Register></Register>}></Route>
+              {/* mozahid task  */}
+              <Route path="/createBlog/:blogId" element={<BlogDetails />} />
+              <Route path="/blog/reactjs" element={<BlogDetails2 />} />
+              <Route path="/blog/javaScript" element={<BlogDetails3 />} />
+              {/* mozahid task  */}
+              <Route path="/contact" element={<ContactUs></ContactUs>}></Route>
+              <Route path="/addReview" element={<AddReview />}></Route>
+              <Route path="/login" element={<Login></Login>}></Route>
+              <Route path="/register" element={<Register></Register>}></Route>
+            
+
+
+            {/* mozahid task  */}
+            <Route path="/createBlog/:blogId" element={<BlogDetails />} />
+            <Route path="/blog/reactjs" element={<BlogDetails2 />} />
+            <Route path="/blog/javaScript" element={<BlogDetails3 />} />
+            {/* mozahid task  */}
+            <Route path="/contact" element={<ContactUs></ContactUs>}></Route>
+            <Route path="/addReview" element={<AddReview />}></Route>
+            <Route path="/announcement" element={<Announcement />}></Route>
+            <Route path="/submittedTask" element={<SubmittedTask />}></Route>
+            <Route path="/login" element={<Login></Login>}></Route>
+            <Route path="/register" element={<Register></Register>}></Route>
         </Routes>
+
+        <Footer></Footer>
+
+        <ToastContainer />
       </TimeContext.Provider>
-
-
-      <Footer></Footer>
-      <ToastContainer />
     </div >
   );
 }

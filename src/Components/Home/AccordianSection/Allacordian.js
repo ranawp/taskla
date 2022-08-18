@@ -43,11 +43,3 @@ const Allacordian = () => {
 };
 
 export default Allacordian;
-
-{/* <div className="p-4 mt-28">
-                <div className="sm:flex h-[600px]">
-                    
-                    
-                    
-                </div >
-            </div > */}

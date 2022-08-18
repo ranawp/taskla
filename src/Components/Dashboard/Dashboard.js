@@ -9,7 +9,7 @@ const Dashboard = () => {
     const emails = user?.email
     const [match, setMatch] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/user/${emails}`, {
+        fetch(`http://localhost:5000/user/${emails}`,  {
             method: 'GET',
             header: {
                 'content-type': 'application/json'
@@ -29,16 +29,17 @@ const Dashboard = () => {
                     {/* <!-- Page content here --> */}
                     < Outlet ></Outlet >
                 </div >
-                <div className="drawer-side" >
+                <div className="drawer-side border ml-5 shadow-lg mt-5 mr-3" >
                     <label htmlFor="my-drawer-2" className="drawer-overlay" ></label >
                     <ul className="menu p-4 overflow-y-auto w-48 bg-base-100
                     lg:bg-transparent text-base-content" >
                         {/* <!-- Sidebar content here --> */}
-                        < li className='hover:bg-primary rounded-lg'> <NavLink to=''>Dashboard</NavLink></li >
-                        < li className='hover:bg-primary rounded-lg'> <NavLink to='allusers'>Allusers</NavLink></li >
-                        <li className='hover:bg-purple-600 rounded-lg'><NavLink to='createtask'>TaskCreate</NavLink></li>
-                        <li className='hover:bg-primary rounded-lg'><NavLink to='taskEvaluate'>Task Evaluate</NavLink></li>
-                        <li className='hover:bg-primary rounded-lg'><NavLink to='createBlog'>Create Blog</NavLink></li>
+                        < li className='hover:bg-primary rounded-lg'> <Link to=''>Dashboard</Link></li >
+                        < li className='hover:bg-primary rounded-lg'> <Link to='allusers'>Allusers</Link></li >
+                        <li className='hover:bg-purple-600 rounded-lg'><Link to='createtask'>TaskCreate</Link></li>
+                        <li className='hover:bg-primary rounded-lg'><Link to='taskEvaluate'>Task Evaluate</Link></li>
+                        <li className='hover:bg-primary rounded-lg'><Link to='taskEvaluateCompleted'>Completed Evaluate</Link></li>
+                        <li className='hover:bg-primary rounded-lg'><Link to='createBlog'>Create Blog</Link></li>
 
 
 

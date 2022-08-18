@@ -5,6 +5,7 @@ import {FaGraduationCap} from 'react-icons/fa';
 
 
 const Certificate = () => {
+  
     return (
         <div className='mt-[70px] relative'>
             <div className='absolute text-[50px] text-purple-200  top-[30%] left-[50px]'>
