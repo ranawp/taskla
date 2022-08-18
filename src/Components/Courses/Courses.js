@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
 import auth from '../../firebase.init';
 import { useNavigate } from "react-router-dom";
 
 const Courses = () => {
+    const [text, setText] = useState('')
+    const [user] = useAuthState(auth)
+    const email = user?.email
+    const enRoll = () => {
+        setText('we are working.......')
+        toast('Wow! you are enrolled')
+
+        fetch(`http://localhost:5000/user/enroll/${email}`, {
+            method: 'PUT'
+        })
+            .then(res => res.json())
+
+            .then(data => console.log(data))
+
+            .then(data => data)
+
+    }
     let navigate = useNavigate();
     return (
         <div className='sm:min-h-screen px-10 flex justify-between relative mt-10'>

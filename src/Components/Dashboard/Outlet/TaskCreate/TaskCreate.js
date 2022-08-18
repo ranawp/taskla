@@ -12,7 +12,7 @@ const TaskCreate = () => {
     const currentHour = date.toLocaleTimeString();
 
     const onSubmit = data => {
-        const url = ` http://localhost:5000/tasks`
+        const url = `http://localhost:5000/tasks`
         fetch(url, {
             method: 'POST',
             headers: {
