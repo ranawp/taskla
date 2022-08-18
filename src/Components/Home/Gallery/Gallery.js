@@ -6,7 +6,7 @@ import React from 'react';
 
 const Gallery = () => {
     return (
-        <div className='mt-[70px]'>
+        <div className='mt-[100px]'>
             <h1 className='text-[32px] text-primary text-center font-bold mt-10'><span className='text-secondary'>Course </span> Overview</h1>
             <section class="overflow-hidden">
                 <div class="container px-5 py-2 mx-auto lg:pt-12 lg:px-32">

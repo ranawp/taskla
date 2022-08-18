@@ -14,7 +14,7 @@ const AboutDeveloper = () => {
 {/* ......................... */}
 <div class="card w-96 bg-base-100 shadow-xl">
                     <figure class="px-10 pt-10">
-                    <img class="mask mask-circle w-50%" src="https://placeimg.com/160/160/arch" />
+                    <img class="mask mask-circle w-[150px]" src="https://i.ibb.co/Rp4khnx/pngwing-com.png" />
                     </figure>
                     <div class="card-body items-center text-center">
                         <h2 class="card-title">Rana Akash</h2>
@@ -34,7 +34,7 @@ const AboutDeveloper = () => {
                 {/* ......................... */}
                 <div class="card w-96 bg-base-100 shadow-xl">
                     <figure class="px-10 pt-10">
-                    <img class="mask mask-circle w-50%" src="https://placeimg.com/160/160/arch" />
+                    <img class="mask mask-circle w-[150px]" src="https://i.ibb.co/Rp4khnx/pngwing-com.png" />
                     </figure>
                     <div class="card-body items-center text-center">
                         <h2 class="card-title">Masud Rana</h2>
@@ -55,7 +55,7 @@ const AboutDeveloper = () => {
                      {/* ......................... */}
                      <div class="card w-96 bg-base-100 shadow-xl">
                     <figure class="px-10 pt-10 w-25%">
-                    <img class="mask mask-circle " src="https://placeimg.com/160/160/arch" />
+                    <img class="mask mask-circle w-[150px]" src="https://i.ibb.co/Rp4khnx/pngwing-com.png" />
                     </figure>
                     <div class="card-body items-center text-center">
                         <h2 class="card-title">Mozahid Ahmed</h2>
