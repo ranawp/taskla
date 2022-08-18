@@ -3,7 +3,7 @@ import React from 'react';
 const AboutDeveloper = () => {
     return (
         <div className='grid justify-center mt-12 mb-16'>
-        <h1 className="text-3xl text-center text-black font-bold">Our  All <span className="text-primary">Team</span>  Member</h1>
+        <h1 className="text-2xl text-center text-black font-bold">Our  All <span className="text-primary">Team</span>  Member</h1>
 
 
             {/* .............................................................. */}
@@ -27,10 +27,10 @@ const AboutDeveloper = () => {
                         </p>
                         
                         <div class="flex justify-center">
-                        <i class="fa-brands fa-facebook text-primary p-4 text-3xl fa-beat-fade"></i>
-                        <i class="fa-brands fa-instagram text-primary p-4 text-3xl fa-beat-fade"></i>
-                        <i class="fa-brands fa-github text-primary p-4 text-3xl  fa-beat-fade"></i>
-                        <i class="fa-brands fa-linkedin text-primary p-4 text-3xl fa-beat-fade"></i>
+                        <i class="fa-brands fa-facebook text-primary p-4 text-2xl fa-beat-fade"></i>
+                        <i class="fa-brands fa-instagram text-primary p-4 text-2xl fa-beat-fade"></i>
+                        <i class="fa-brands fa-github text-primary p-4 text-2xl  fa-beat-fade"></i>
+                        <i class="fa-brands fa-linkedin text-primary p-4 text-2xl fa-beat-fade"></i>
                            
                         </div>
                     </div>
@@ -52,10 +52,10 @@ const AboutDeveloper = () => {
                         </p>
                         
                         <div class="flex justify-center">
-                        <i class="fa-brands fa-facebook text-primary p-4 text-3xl fa-beat-fade"></i>
-                        <i class="fa-brands fa-instagram text-primary p-4 text-3xl fa-beat-fade"></i>
-                        <i class="fa-brands fa-github text-primary p-4 text-3xl  fa-beat-fade"></i>
-                        <i class="fa-brands fa-linkedin text-primary p-4 text-3xl fa-beat-fade"></i>
+                        <i class="fa-brands fa-facebook text-primary p-4 text-2xl fa-beat-fade"></i>
+                        <i class="fa-brands fa-instagram text-primary p-4 text-2xl fa-beat-fade"></i>
+                        <i class="fa-brands fa-github text-primary p-4 text-2xl  fa-beat-fade"></i>
+                        <i class="fa-brands fa-linkedin text-primary p-4 text-2xl fa-beat-fade"></i>
                            
                         </div>
                     </div>
@@ -78,10 +78,10 @@ const AboutDeveloper = () => {
                         </p>
                         
                         <div class="flex justify-center">
-                        <i class="fa-brands fa-facebook text-primary p-4 text-3xl fa-beat-fade"></i>
-                        <i class="fa-brands fa-instagram text-primary p-4 text-3xl fa-beat-fade"></i>
-                        <i class="fa-brands fa-github text-primary p-4 text-3xl  fa-beat-fade"></i>
-                        <i class="fa-brands fa-linkedin text-primary p-4 text-3xl fa-beat-fade"></i>
+                        <i class="fa-brands fa-facebook text-primary p-4 text-2xl fa-beat-fade"></i>
+                        <i class="fa-brands fa-instagram text-primary p-4 text-2xl fa-beat-fade"></i>
+                        <i class="fa-brands fa-github text-primary p-4 text-2xl  fa-beat-fade"></i>
+                        <i class="fa-brands fa-linkedin text-primary p-4 text-2xl fa-beat-fade"></i>
                            
                         </div>
                     </div>
@@ -103,10 +103,10 @@ const AboutDeveloper = () => {
                         </p>
                         
                         <div class="flex justify-center">
-                        <i class="fa-brands fa-facebook text-primary p-4 text-3xl fa-beat-fade"></i>
-                        <i class="fa-brands fa-instagram text-primary p-4 text-3xl fa-beat-fade"></i>
-                        <i class="fa-brands fa-github text-primary p-4 text-3xl  fa-beat-fade"></i>
-                        <i class="fa-brands fa-linkedin text-primary p-4 text-3xl fa-beat-fade"></i>
+                        <i class="fa-brands fa-facebook text-primary p-4 text-2xl fa-beat-fade"></i>
+                        <i class="fa-brands fa-instagram text-primary p-4 text-2xl fa-beat-fade"></i>
+                        <i class="fa-brands fa-github text-primary p-4 text-2xl  fa-beat-fade"></i>
+                        <i class="fa-brands fa-linkedin text-primary p-4 text-2xl fa-beat-fade"></i>
                            
                         </div>
                     </div>
@@ -128,10 +128,10 @@ const AboutDeveloper = () => {
                         </p>
                         
                         <div class="flex justify-center">
-                        <i class="fa-brands fa-facebook text-primary p-4 text-3xl fa-beat-fade"></i>
-                        <i class="fa-brands fa-instagram text-primary p-4 text-3xl fa-beat-fade"></i>
-                        <i class="fa-brands fa-github text-primary p-4 text-3xl  fa-beat-fade"></i>
-                        <i class="fa-brands fa-linkedin text-primary p-4 text-3xl fa-beat-fade"></i>
+                        <i class="fa-brands fa-facebook text-primary p-4 text-2xl fa-beat-fade"></i>
+                        <i class="fa-brands fa-instagram text-primary p-4 text-2xl fa-beat-fade"></i>
+                        <i class="fa-brands fa-github text-primary p-4 text-2xl  fa-beat-fade"></i>
+                        <i class="fa-brands fa-linkedin text-primary p-4 text-2xl fa-beat-fade"></i>
                            
                         </div>
                     </div>
@@ -153,10 +153,10 @@ const AboutDeveloper = () => {
                         </p>
                         
                         <div class="flex justify-center">
-                        <i class="fa-brands fa-facebook text-primary p-4 text-3xl fa-beat-fade"></i>
-                        <i class="fa-brands fa-instagram text-primary p-4 text-3xl fa-beat-fade"></i>
-                        <i class="fa-brands fa-github text-primary p-4 text-3xl  fa-beat-fade"></i>
-                        <i class="fa-brands fa-linkedin text-primary p-4 text-3xl fa-beat-fade"></i>
+                        <i class="fa-brands fa-facebook text-primary p-4 text-2xl fa-beat-fade"></i>
+                        <i class="fa-brands fa-instagram text-primary p-4 text-2xl fa-beat-fade"></i>
+                        <i class="fa-brands fa-github text-primary p-4 text-2xl  fa-beat-fade"></i>
+                        <i class="fa-brands fa-linkedin text-primary p-4 text-2xl fa-beat-fade"></i>
                            
                         </div>
                     </div>

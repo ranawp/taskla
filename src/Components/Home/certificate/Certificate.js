@@ -2,7 +2,7 @@ import React from 'react';
 import './Certificate.css'
 
 const Certificate = () => {
-    // https://taskla.netlify.app/
+  
     return (
         <div className='container mt-12'>
           <h1 className=" text-3xl text-center  font-bold">We will get End of <span className='text-primary'>course</span></h1>
