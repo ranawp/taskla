@@ -1,21 +1,21 @@
 import React from 'react';
 import './MyTask.css';
 
-const SingleTasks = ({ singleTask, setTaskData, setToogle }) => {
+const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit }) => {
 
     const handleClick = task => {
         setTaskData(task);
     }
 
-    // const handleSubmit = submit => {
-    //     setSubmit(submit)
-    // }
+    const handleSubmit = submit => {
+        setSubmit(submit)
+    }
 
 
     return (
         <>
             <div>
-                <div className='py-2 '>
+                <div className='py-2 text-sm'>
 
                     <div
 
@@ -38,11 +38,12 @@ const SingleTasks = ({ singleTask, setTaskData, setToogle }) => {
 
                             </div>
                         </div>
-
+                        {/* onClick={() => handleSubmit(singleTask)} */}
 
                         <div class="collapse-content">
                             <label
-                                onClick={(e) => setToogle(false)}
+
+                                onClick={(e) => { setToogle(false); handleSubmit(singleTask); }}
                                 className="bg-blue-700 border-0 px-3 py-1 button  rounded text-white modal-button cursor-pointer">Submit</label>
                         </div>
                     </div>

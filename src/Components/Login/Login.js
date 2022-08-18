@@ -49,13 +49,13 @@ const Login = () => {
         setState(click => !click);
     }
     return (
-        <div className='register-page lg:flex items-center' >
-            <div className='text-center w-100 p-10 mx-auto flex-1 w-64' >
+        <div className='px-48 mt-10 register-page lg:flex items-center ' >
+            <div className='text-center p-10 mx-auto flex-1 w-64' >
                 <img src={registerImg} alt="" />
             </div >
             <div>
                 <div className='lg:w-80 p-10 mx-auto shadow-lg border'>
-                    <h1 className='text-center font-bold text-5xl my-4'>Sign In</h1>
+                    <h1 className='text-center font-bold text-3xl my-4'>Sign In</h1>
                     <form className='flex flex-col' onSubmit={handleSubmit(onSubmit)} >
                         <input
                             className='my-2 p-2 rounded-lg background-color inline'
@@ -102,11 +102,11 @@ const Login = () => {
                         {errors.password?.type === 'required' && <p className='' > {errors.password?.message}</p >}
 
                         {errors.password?.type === 'minLength' && <p className='' > {errors.password?.message}</p >}
-
                         <input data-testid='button' className='my-2 py-2 border rounded-lg text-white font-semibold hover:bg-white hover:text-black cursor-pointer' value="Sign In" type="submit" />
+                        <input className='my-2 py-2 border rounded-lg text-dark font-semibold hover:bg-white hover:text-black cursor-pointer' value="Sign In" type="submit" />
                         {errorElement}
                     </form >
-                    <p className='my-3 text-white' > New to Taskla ?? <Link to='/register'>Please Register</Link></p >
+                    <p className='my-3 text-dark' > New to Taskla ?? <Link to='/register'>Please Register</Link></p >
                 </div >
             </div >
         </div >

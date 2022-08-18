@@ -106,6 +106,7 @@ const Navbar = () => {
                     </label >
                     <ul tabIndex="0" className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52" >
                         <li><Link to='/viewprofile' className='pl-5'> View Profile</Link></li >
+                        <li><Link to='/submittedTask' className='pl-5'> Submitted Task</Link></li >
                         <li><Link to='/analytics' className='pl-5'>Students Analytics</Link></li >
                         <li><Link to='/addReview' className='pl-5'>Students Review</Link></li >
                         <li><Link to='/announcement' className='pl-5'>Announcement</Link></li >

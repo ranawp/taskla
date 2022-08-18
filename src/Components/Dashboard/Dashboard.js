@@ -37,6 +37,7 @@ const Dashboard = () => {
                         < li className='hover:bg-primary rounded-lg'> <Link to='allusers'>Allusers</Link></li >
                         <li className='hover:bg-purple-600 rounded-lg'><Link to='createtask'>TaskCreate</Link></li>
                         <li className='hover:bg-primary rounded-lg'><Link to='taskEvaluate'>Task Evaluate</Link></li>
+                        <li className='hover:bg-primary rounded-lg'><Link to='taskEvaluateCompleted'>Completed Evaluate</Link></li>
                         <li className='hover:bg-primary rounded-lg'><Link to='createBlog'>Create Blog</Link></li>
 
 

@@ -14,7 +14,7 @@ const Header = () => {
 
                     Get started</p >
 
-                <Link to='/register'><button className='btn bg-blue-700 border-0 mt-4 button mr-5 rounded text-white px-3 py-1'>Get Started</button></Link >
+                <Link to='/register'><button className='btn  bg-primary btn-style border-0 mt-4 button mr-5 rounded text-white px-5 py-1'>Get Started</button></Link >
             </div >
             <div className='mr-10 my-auto right-side' >
                 <img src="https://i.ibb.co/LQ7Hzpx/banner-img.png" alt="" />
