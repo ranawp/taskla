@@ -6,11 +6,11 @@ const Footer = () => {
   return (
 
     // start
-    <div className='mt-48 footer-style' >
-      <footer className="footer p-10  text-neutral-content footer-style" >
-        <div className='mx-auto' >
-          <span className="footer-title text-primary" > Services</span >
-          <p className="link link-hover" > Reading</p >
+    <div className='mt-[70px] bg-[#0F172A]'>
+      <footer className="footer p-10 text-neutral-content footer-style" >
+        <div className='mx-auto ' >
+          <span className="footer-title" > Services</span >
+          <p className="#" > Reading</p >
           <p className="link link-hover" > Writing</p >
           <p className="link link-hover" > Assignment</p >
           <p className="link link-hover" > Marks</p >

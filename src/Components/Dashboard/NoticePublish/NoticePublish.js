@@ -40,9 +40,10 @@ const NoticePublish = () => {
 
         event.target.reset();
     }
+    
     return (
         <div>
-            <h2 className='text-3xl p-6 font-bold text-sky-400 text-center'>Notice</h2>
+            <h2 className='text-3xl p-6 font-bold text-primary text-center'>Notice</h2>
             {/* <form onSubmit={handleNoticeForm} action=""> */}
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mx-auto">
                 <div className="card-body">

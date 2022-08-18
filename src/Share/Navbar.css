@@ -7,6 +7,15 @@
 
 }
 
+.Nav{
+    position: -webkit-sticky;
+    z-index: 1;
+}
+
 html {
     scroll-behavior: smooth;
+}
+
+Link:hover{
+    color:#C21A80;
 }

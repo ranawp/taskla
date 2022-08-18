@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Admin_Dashboard from './Admin_Dashboard/Admin_Dashboard';
 
 const Dashboard = () => {
     const [user] = useAuthState(auth)
@@ -42,7 +43,7 @@ const Dashboard = () => {
 
 
 
-                        <li className='hover:bg-primary rounded-lg'><Link to='notice'>Notice</Link></li>
+                        <li className='hover:bg-primary rounded-lg'><NavLink to='notice'>Notice</NavLink></li>
 
                     </ul>
                 </div >

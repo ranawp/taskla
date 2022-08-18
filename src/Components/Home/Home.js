@@ -23,6 +23,7 @@ import AboutDeveloper from './AboutDeveloper/AboutDeveloper';
 const Home = () => {
     return (
         <div>
+            
             <div className='max-w-7xl mx-auto'>
             <Header></Header>
             <CourseDetails></CourseDetails>
@@ -45,8 +46,7 @@ const Home = () => {
 
                             <h1 className='text-5xl font-serif
                             '>Taskla helps to improve discipline and make student hard worker by using Remind education solutions</h1>
-                            <Link to='/register'><button className='btn btn-primary mt-5'>Get Started</button></Link>
-                            {/* <img src={laptop} alt="" /> */}
+                            <Link to='/register'><button className='btn btn-secondary mt-5'>Get Started</button></Link>
                         </div >
 
                     </div >
@@ -55,6 +55,9 @@ const Home = () => {
                 </div >
             </div >
             <Review />
+            <Allacordian></Allacordian>
+            {/*
+            <ContactUs /> */}
           
  
         </div >
