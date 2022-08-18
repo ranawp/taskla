@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const NoticePublish = () => {
 
 
-    const options = {  year: 'numeric', day: 'numeric', month: 'short' };
+    const options = {   month: 'short', day: 'numeric',year: 'numeric' };
     const dateFunction = new Date().toLocaleDateString("en-UK", options);
 
     // time 

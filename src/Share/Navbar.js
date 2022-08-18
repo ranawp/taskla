@@ -108,6 +108,7 @@ const Navbar = () => {
                         <li><Link to='/viewprofile' className='pl-5'> View Profile</Link></li >
                         <li><Link to='/analytics' className='pl-5'>Students Analytics</Link></li >
                         <li><Link to='/addReview' className='pl-5'>Students Review</Link></li >
+                        <li><Link to='/announcement' className='pl-5'>Announcement</Link></li >
                         <li><Link className='pl-5' to='' onClick={logout} >Sign Out</Link></li >
 
                     </ul >
