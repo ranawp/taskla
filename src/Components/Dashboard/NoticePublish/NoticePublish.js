@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const NoticePublish = () => {
 
 
-    const options = {   month: 'short', day: 'numeric',year: 'numeric' };
+    const options = { month: 'short', day: 'numeric', year: 'numeric' };
     const dateFunction = new Date().toLocaleDateString("en-UK", options);
 
     // time 
@@ -19,7 +19,7 @@ const NoticePublish = () => {
 
 
     const dateTime = Mydate + "," + Mytime;
-    
+
     // console.log(dateTime);
 
     const handleNoticeForm = event => {
@@ -27,8 +27,8 @@ const NoticePublish = () => {
         const notice = event.target.title.value;
         const announcement = event.target.announcement.value;
         // const read = false;
-        const data = { notice, announcement, time:dateTime }
-        fetch(`http://localhost:5000/notice`, {
+        const data = { notice, announcement, time: dateTime }
+        fetch(`https://cryptic-stream-86241.herokuapp.com/notice`, {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
@@ -40,7 +40,7 @@ const NoticePublish = () => {
 
         event.target.reset();
     }
-    
+
     return (
         <div>
             <h2 className='text-3xl p-6 font-bold text-primary text-center'>Notice</h2>
@@ -58,7 +58,7 @@ const NoticePublish = () => {
                                 <span className="label-text">Announcement</span>
                             </label>
                             <textarea className="textarea textarea-bordered h-[200px]" placeholder="Announcement" name='announcement'></textarea>
-                            <button className="btn btn-primary mt-5">Submit</button>
+                            <button className="btn btn-primary text-white mt-5">Submit</button>
                         </div>
                     </form>
 

@@ -8,7 +8,7 @@ import { IoIosPeople } from 'react-icons/io';
 
 const Benifit = () => {
     return (
-        <div className='relative'>
+        <div className='relative mt-28'>
             <div className='w-[200px] h-[200px] opacity-20 blur rounded-full bg-purple-500 absolute -left-16 top-[90px]'></div>
             <div className='w-[200px] h-[200px] opacity-20 blur rounded-full bg-pink-500 absolute left-10 top-[200px]'></div>
             <div className='w-[200px] h-[200px] opacity-20 blur rounded-full bg-cyan-300 absolute -left-16 top-[260px]'></div>
@@ -16,7 +16,7 @@ const Benifit = () => {
             <div className='w-[200px] h-[200px] opacity-20 blur rounded-full bg-yellow-600 absolute bottom-[50px] -right-16'></div>
             <div className='w-[200px] h-[200px] opacity-30 filter blur rounded-full bg-[#0F67B7] absolute bottom-[160px] right-10'></div>
             <div className='w-[200px] h-[200px] opacity-30 blur rounded-full bg-green-500 absolute bottom-[200px] -right-16'></div>
-            <div className='mt-[70px] container mx-auto relative'>
+            <div className='mt-[70px] max-w-screen-xl mx-auto relative'>
                 <h1 className='text-[32px] font-bold text-center text-primary'>So Much More <span className=' text-secondary'>Than A Binder</span></h1 >
                 <div className="grid gap-x-8 gap-y-8 lg:grid-cols-2 mt-14" >
 

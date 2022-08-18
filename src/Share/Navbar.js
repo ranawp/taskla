@@ -18,7 +18,7 @@ const Navbar = () => {
     const [get, setData] = useState([])
     const [notifications, setNotifications] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/user/${emails}`, {
+        fetch(`https://cryptic-stream-86241.herokuapp.com/user/${emails}`, {
             method: 'GET',
             header: {
                 'content-type': 'application/json'
@@ -31,7 +31,7 @@ const Navbar = () => {
 
     useEffect(() => {
         console.log('hello')
-        fetch(`http://localhost:5000/notice`)
+        fetch(`https://cryptic-stream-86241.herokuapp.com/notice`)
             .then((response) => response.json())
             .then((json) => setNotifications(json));
     }, [])
@@ -43,7 +43,7 @@ const Navbar = () => {
 
     const setNoti = (id) => {
         console.log(id)
-        fetch(`http://localhost:5000/notice/${id}`, {
+        fetch(`https://cryptic-stream-86241.herokuapp.com/notice/${id}`, {
             method: 'PUT'
         })
             .then(res => res.json())
@@ -55,7 +55,7 @@ const Navbar = () => {
 
     useEffect(() => {
         const fetchSideeffect = async () => {
-            const res = await axios('http://localhost:5000/user')
+            const res = await axios('https://cryptic-stream-86241.herokuapp.com/user')
             setData(res.data)
         }
         fetchSideeffect()
@@ -68,7 +68,7 @@ const Navbar = () => {
 
     // first menuItems 
     const menuItems = <>
-        <li className='hover:text-secondary'><NavLink to='/'>Home</NavLink></li>
+        <li className='hover:text-secondary'><Link to='/'>Home</Link></li>
         <li className='hover:text-secondary' > <Link className='pl-5' to='/blog' > Blog</Link></li >
 
         {
@@ -136,45 +136,47 @@ const Navbar = () => {
 
     const locatin = useLocation()
     return (
-        <div className='max-w-7xl mx-auto ' >
-            <div className="navbar bg-white bg-opacity-90 Nav" >
-                <div className="navbar-start" >
-                    <div className="dropdown" >
-                        <label tabIndex="0" className="btn btn-ghost lg:hidden" >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" > <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg >
-                        </label >
-                        <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-primary" >
+        <div className='shadow-lg '>
+            <div className='max-w-screen-xl mx-auto' >
+                <div className="navbar bg-white bg-opacity-90 Nav" >
+                    <div className="navbar-start" >
+                        <div className="dropdown" >
+                            <label tabIndex="0" className="btn btn-ghost lg:hidden" >
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" > <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg >
+                            </label >
+                            <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-primary" >
+                                {menuItems}
+                                {menuItem2}
+                            </ul >
+                        </div >
+                        <img className='w-16' src={logo} alt="" /> <p className=" normal-case  ml-3 font-bold text-2xl text-[#383D8A]" > <Link to='/'>TASKLA</Link ></p >
+                    </div >
+
+                    <div className="navbar hidden lg:flex" >
+                        <ul className="menu-horizontal gap-5 text-primary font-bold" >
                             {menuItems}
+                        </ul >
+                    </div >
+
+                    {/* menuItem End  */}
+                    <div className="navbar-end hidden lg:flex" >
+                        <ul className=" menu-horizontal p-0 text-black font-bold" >
                             {menuItem2}
                         </ul >
                     </div >
-                    <img className='w-16' src={logo} alt="" /> <p className=" normal-case  ml-3 font-bold text-2xl text-[#383D8A]" > <Link to='/'>TASKLA</Link ></p >
+
+                    {
+                        location.pathname == '/dashboard' &&
+                        <div className='navbar-end lg:hidden' >
+                            <label tabIndex="1" htmlFor="my-drawer-2" className="btn btn-ghost lg:hidden" >
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" > <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                            </label >
+                        </div >
+                    }
+
                 </div >
-
-                <div className="navbar hidden lg:flex" >
-                    <ul className="menu-horizontal gap-5 text-primary font-bold" >
-                        {menuItems}
-                    </ul >
-                </div >
-
-                {/* menuItem End  */}
-                <div className="navbar-end hidden lg:flex" >
-                    <ul className=" menu-horizontal p-0 text-black font-bold" >
-                        {menuItem2}
-                    </ul >
-                </div >
-
-                {
-                    location.pathname == '/dashboard' &&
-                    <div className='navbar-end lg:hidden' >
-                        <label tabIndex="1" htmlFor="my-drawer-2" className="btn btn-ghost lg:hidden" >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" > <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                        </label >
-                    </div >
-                }
-
             </div >
-        </div >
+        </div>
     );
 };
 

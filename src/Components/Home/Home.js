@@ -23,19 +23,12 @@ import AboutDeveloper from './AboutDeveloper/AboutDeveloper';
 const Home = () => {
     return (
         <div>
-            
-            <div className='max-w-7xl mx-auto'>
-            <Header></Header>
-            <CourseDetails></CourseDetails>
-                <Certificate></Certificate>
 
-       
-                <Allacordian></Allacordian>
-                <AboutDeveloper></AboutDeveloper>
+            <div className=''>
+                <Header></Header>
                 <Benifit />
-
-               
-
+                <CourseDetails></CourseDetails>
+                <Certificate></Certificate>
                 <Gallery />
 
                 <div className='mt-32 lg:w-4/5 mx-auto relative'>
@@ -56,10 +49,11 @@ const Home = () => {
             </div >
             <Review />
             <Allacordian></Allacordian>
+            <AboutDeveloper></AboutDeveloper>
             {/*
             <ContactUs /> */}
-          
- 
+
+
         </div >
     );
 };

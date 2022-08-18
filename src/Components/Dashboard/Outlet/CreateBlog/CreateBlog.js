@@ -34,7 +34,7 @@ const CreateBlog = () => {
                     }
 
                     //send to database 
-                    fetch('http://localhost:5000/createBlog', {
+                    fetch('https://cryptic-stream-86241.herokuapp.com/createBlog', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'
