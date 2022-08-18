@@ -29,6 +29,7 @@ import BlogDetails from "./Components/Blogs/BlogDetails/BlogDetails";
 import AddReview from "./Components/Review/AddReview";
 import NoticePublish from "./Components/Dashboard/NoticePublish/NoticePublish";
 import Payment from "./Components/Courses/Payment";
+import Announcement from "./Components/Announcement/Announcement";
 import SubmittedTask from "./Components/Dashboard/Outlet/MyTasks/SubmittedTask";
 import CompletedTaskEvalute from "./Components/Dashboard/Outlet/MyTasks/TaskEvalute/CompletedTaskEvalute";
 
@@ -74,6 +75,7 @@ function App() {
         {/* mozahid task  */}
         <Route path="/contact" element={<ContactUs></ContactUs>}></Route>
         <Route path="/addReview" element={<AddReview />}></Route>
+        <Route path="/announcement" element={<Announcement />}></Route>
         <Route path="/submittedTask" element={<SubmittedTask />}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>

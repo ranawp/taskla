@@ -34,7 +34,7 @@ const CreateBlog = () => {
                     }
 
                     //send to database 
-                    fetch(' http://localhost:5000/createBlog', {
+                    fetch('http://localhost:5000/createBlog', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'
@@ -60,8 +60,12 @@ const CreateBlog = () => {
                     className=''
                     onSubmit={handleSubmit(onSubmit)}>
 
+
                     <p className=' font-bold'>Blog Title</p><br />
                     <input className=" p-2 rounded-lg background-color w-full" placeholder='Write Blog Title'  {...register("blogTitle", { required: true, maxLength: 20 })} /> <br />
+
+                    <small>Blog Title</small><br />
+                    <input className="my-2 p-2 rounded-lg background-color w-full" placeholder='Write Blog Title'  {...register("blogTitle", { required: true })} /> <br />
 
                     <p className='mt-3 font-bold'>Image</p> <br />
                     <input className="p-2 rounded-lg background-color w-full" placeholder='Quantity' type="file" {...register("image")} /> <br />
