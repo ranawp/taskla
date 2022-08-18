@@ -36,12 +36,12 @@ const MyTask = () => {
     }, [refresh])
 
 
-    const [marks, setMarks] = useState([]);
-    useEffect(() => {
-        fetch(` http://localhost:5000/allMarks/${email}`)
-            .then(res => res.json())
-            .then(data => setMarks(data))
-    }, [])
+    // const [marks, setMarks] = useState([]);
+    // useEffect(() => {
+    //     fetch(` http://localhost:5000/allMarks/${email}`)
+    //         .then(res => res.json())
+    //         .then(data => setMarks(data))
+    // }, [])
 
     return (
         <>
