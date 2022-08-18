@@ -29,6 +29,8 @@ import BlogDetails from "./Components/Blogs/BlogDetails/BlogDetails";
 import AddReview from "./Components/Review/AddReview";
 import NoticePublish from "./Components/Dashboard/NoticePublish/NoticePublish";
 import Payment from "./Components/Courses/Payment";
+import SubmittedTask from "./Components/Dashboard/Outlet/MyTasks/SubmittedTask";
+import CompletedTaskEvalute from "./Components/Dashboard/Outlet/MyTasks/TaskEvalute/CompletedTaskEvalute";
 
 
 function App() {
@@ -55,6 +57,7 @@ function App() {
           <Route path="allusers" element={<Allusers></Allusers>} />
           <Route path="createtask" element={<TaskCreate></TaskCreate>}></Route>
           <Route path="taskEvaluate" element={<TaskEvaluate></TaskEvaluate>}></Route>
+          <Route path="taskEvaluateCompleted" element={<CompletedTaskEvalute />}></Route>
           <Route path="createBlog" element={<CreateBlog></CreateBlog>}></Route>
 
 
@@ -71,6 +74,7 @@ function App() {
         {/* mozahid task  */}
         <Route path="/contact" element={<ContactUs></ContactUs>}></Route>
         <Route path="/addReview" element={<AddReview />}></Route>
+        <Route path="/submittedTask" element={<SubmittedTask />}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
       </Routes>

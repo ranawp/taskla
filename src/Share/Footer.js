@@ -6,7 +6,7 @@ const Footer = () => {
   return (
 
     // start
-    <div className='mt-12 footer-style' >
+    <div className='mt-48 footer-style' >
       <footer className="footer p-10  text-neutral-content footer-style" >
         <div className='mx-auto' >
           <span className="footer-title text-primary" > Services</span >
@@ -36,8 +36,8 @@ const Footer = () => {
           <p className="link link-hover" > sylhet</p >
           <p className="link link-hover" > +hotline:976</p >
         </div >
-     
-        
+
+
       </footer >
       <div>
         <p className='text-center font-bold text-primary py-5'>&copy; All rights reserved 2022</p>

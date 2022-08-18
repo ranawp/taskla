@@ -1,7 +1,8 @@
 import React from 'react';
 
-const EvaluteFeedbackModal = ({ evaluteFeedbackModal }) => {
-    console.log(evaluteFeedbackModal)
+const EvaluteFeedbackModal = ({ evaluteFeedbackModal, setRefresh }) => {
+    const taskId = evaluteFeedbackModal?._id
+    console.log(taskId)
 
     const date = new Date()
     const currentDate = date.toLocaleDateString();
@@ -39,8 +40,26 @@ const EvaluteFeedbackModal = ({ evaluteFeedbackModal }) => {
                 feedbackDate: feedbackDate,
                 feedbackHour: feedbackHour
             })
-        })
+        });
+        fetch(` http://localhost:5000/answers/${taskId}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                feedbackSubmit: "feedbacksubmited"
+            })
+
+        }).then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setRefresh(data.acknowledged == true)
+            })
+        event.target.reset()
+
     }
+
+
     return (
         <div>
             <input type="checkbox" id="evalute-feedback-details" class="modal-toggle" />

@@ -51,13 +51,11 @@ const Register = () => {
         setShow(click => !click);
     }
     return (
-        <div className='register-page lg:flex items-center' >
-            <div className='text-center w-100 p-10 mx-auto flex-1 w-64' >
-                <img src={registerImg} alt="" />
-            </div >
+        <div className='mt-10 lg:flex items-center px-48' >
+
             <div>
                 <div className='lg:w-80 p-10 mx-auto shadow-lg border'>
-                    <h1 className='text-center font-bold text-5xl my-4'>Sign Up</h1>
+                    <h1 className='text-center font-bold text-3xl my-4'>Sign Up</h1>
                     <form className='flex flex-col' onSubmit={handleSubmit(onSubmit)} >
 
                         <input required type="text"
@@ -96,7 +94,7 @@ const Register = () => {
                         {errors.email?.type === 'required' && <p className='' > {errors.email?.message}</p >}
                         {errors.email?.type === 'pattern' && <p className='' > {errors.email?.message}</p >}
 
-                        <div className='flex'> 
+                        <div className='flex'>
                             <input
                                 className='my-2 p-2 rounded-lg background-color w-full'
                                 placeholder='Password'
@@ -122,10 +120,13 @@ const Register = () => {
 
                         {errors.password?.type === 'minLength' && <p className='' > {errors.password?.message}</p >}
 
-                        <input className='my-2 py-2 border rounded-lg text-white font-semibold hover:bg-white hover:text-black cursor-pointer' value="Register" type="submit" />
+                        <input className='my-2 py-2 border rounded-lg text-dark font-semibold hover:bg-white hover:text-black cursor-pointer' value="Register" type="submit" />
                     </form >
-                    <p className='my-3 text-white' > Already Have an Account ?? <Link to='/login' className='ml-16' > Please Login</Link ></p >
+                    <p className='my-3 text-dark' > Already Have an Account? <Link to='/login' className='ml-3' > Please Login</Link ></p >
                 </div >
+            </div >
+            <div className='text-center flex-1 w-64 ml-10' >
+                <img src={registerImg} alt="" />
             </div >
         </div >
     );
