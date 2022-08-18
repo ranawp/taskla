@@ -12,7 +12,7 @@ const TaskEvaluate = () => {
 
 
     useEffect(() => {
-        fetch(' http://localhost:5000/answers')
+        fetch('http://localhost:5000/answers')
             .then(res => res.json())
             .then(data => setTaskEvalute(data))
     }

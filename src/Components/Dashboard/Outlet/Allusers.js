@@ -13,7 +13,7 @@ const Allusers = () => {
     useEffect(() => {
         isLoading(true)
         const fetchSideeffect = async () => {
-            const res = await axios(' http://localhost:5000/user')
+            const res = await axios('http://localhost:5000/user')
             setData(res.data)
             isLoading(false)
         }
@@ -22,7 +22,7 @@ const Allusers = () => {
 
     return (
         <div>
-            <h2 className='text-2xl'>All users :{data.length}</h2>
+            <h2 className='text-lg text-center font-bold my-5'>All users</h2>
 
             <div className="overflow-x-auto" >
                 <table className="table w-full" >

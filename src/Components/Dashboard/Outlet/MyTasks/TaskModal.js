@@ -30,8 +30,7 @@ const TaskModal = ({ modal }) => {
         // const scriptfeedback = event.target.scriptfeedback.value;
 
         // console.log(task)
-
-        fetch(` http://localhost:5000/answer`, {
+        fetch(`http://localhost:5000/answer`, {
             method: 'POST',
             body: JSON.stringify({
                 email,

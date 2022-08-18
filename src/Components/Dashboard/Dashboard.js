@@ -8,7 +8,7 @@ const Dashboard = () => {
     const emails = user?.email
     const [match, setMatch] = useState([])
     useEffect(() => {
-        fetch(` http://localhost:5000/user/${emails}`, {
+        fetch(`http://localhost:5000/user/${emails}`,  {
             method: 'GET',
             header: {
                 'content-type': 'application/json'
@@ -28,7 +28,7 @@ const Dashboard = () => {
                     {/* <!-- Page content here --> */}
                     < Outlet ></Outlet >
                 </div >
-                <div className="drawer-side" >
+                <div className="drawer-side border ml-5 shadow-lg mt-5 mr-3" >
                     <label htmlFor="my-drawer-2" className="drawer-overlay" ></label >
                     <ul className="menu p-4 overflow-y-auto w-48 bg-base-100
                     lg:bg-transparent text-base-content" >
