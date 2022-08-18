@@ -6,7 +6,7 @@ import taskSvg from '../../../../imgages/taskCreate.svg'
 const TaskCreate = () => {
 
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
-
+    // var options = { weekday: 'long', year: 'numeric', day: 'numeric', month: 'long' };
     const date = new Date()
     const currentDate = date.toLocaleDateString();
     const currentHour = date.toLocaleTimeString();

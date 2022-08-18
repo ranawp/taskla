@@ -1,14 +1,17 @@
 import React from 'react';
+import moment from 'moment';
 
 const NoticePublish = () => {
+    
     const handleNoticeForm = event => {
         event.preventDefault();
         const notice = event.target.noticeText.value;
+        const time = moment().format('MMMM D YYYY, h:mm:ss a');
         // const read = false;
         // console.log();
         fetch(`http://localhost:5000/notice`, {
             method: 'POST',
-            body: JSON.stringify({ notice: notice, read: false }),
+            body: JSON.stringify({ notice: notice, time:time ,read: false }),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
             },
@@ -18,6 +21,7 @@ const NoticePublish = () => {
 
         event.target.reset();
     }
+    
     return (
         <div>
             <h2 className='text-xl text-center'>Notice</h2>
@@ -26,6 +30,8 @@ const NoticePublish = () => {
                 <br />
                 <br />
                 <input type="submit" value="Publish" className="input input-bordered input-info bg-sky-400 w-full max-w-xs" />
+                
+                
             </form>
         </div>
     );

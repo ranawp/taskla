@@ -6,8 +6,8 @@ const Footer = () => {
   return (
 
     // start
-    <div className='mt-12' >
-      <footer className="footer p-10 bg-neutral text-neutral-content footer-style" >
+    <div className='mt-[70px] bg-[#0F172A]'>
+      <footer className="footer p-10 text-neutral-content footer-style" >
         <div className='mx-auto ' >
           <span className="footer-title" > Services</span >
           <p className="#" > Reading</p >

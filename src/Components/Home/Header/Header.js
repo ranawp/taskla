@@ -1,24 +1,31 @@
 import React from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Header.css'
+import moment from 'moment';
+import banner from '../../../asset/hero-bg.png'
+import hero from '../../../asset/hero.png'
+
 
 const Header = () => {
     return (
-        <div className='header  grid md:grid-cols-2  banner  ' >
-            <div className='ml-8 my-auto left-side-info left-side' >
+        <div className='mt-[10px] bg-cover h-[600px]  lg:h-[500px] relative' style={{ backgroundImage: `url(${banner})`}}>
+            <div className='max-w-7xl mx-auto '>
+                 <div className='grid-cols-2'>
+                   <div className='p-5 lg:top-[20px] w-full pb-32'>
+                        <h1 className='text-[32px] lg:text-[45px] text-primary font-bold md:mt-20 mt-4 tracking-wide' > Believe Bigger, Aim Higher </h1 >
+                        <h2 className='text-[32px] font-bold text-secondary tracking-wide'>Taskla <span className='text-primary'>are with you</span></h2>
+                        <p className='text-lg mt-3 tracking-wide leading-7 text-[#1e266d]' >
+                            Taskla is an online platform to facilitate peer feedback sessions <br /> with students
 
-                <h1 className='text-4xl font-bold md:mt-20 mt-4 font-serif tracking-wide' > Learn by giving < br /> feedback </h1 >
+                            Get started</p >
 
-                <p className='text-lg mt-3 tracking-wide leading-7 text-gray-700' >
-                    Taskla is an online platform to facilitate peer feedback sessions with students
-
-                    Get started</p >
-
-                <Link to='/register'><button className='btn bg-blue-700 border-0 mt-4 button mr-5 rounded text-white px-3 py-1'>Get Started</button></Link >
-            </div >
-            <div className='mr-10 my-auto right-side' >
-                <img src="https://i.ibb.co/LQ7Hzpx/banner-img.png" alt="" />
-            </div >
+                        <Link to='/register'><button className='btn btn-secondary mt-5 text-white'>Get Started</button></Link>
+                    </div >
+                     <div className='absolute bottom-0 right-0'>
+                        <img className='w-[680px]' src={hero} alt="" />
+                    </div>
+                </div> 
+            </div>
         </div >
     );
 };

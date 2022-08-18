@@ -22,14 +22,13 @@ import Gallery from './Gallery/Gallery';
 const Home = () => {
     return (
         <div>
-            <div className='max-w-7xl mx-auto'>
+            <div className=''>
                 <Header></Header>
-                <Allacordian></Allacordian>
+                
                 <Benifit />
 
                 <CourseDetails></CourseDetails>
                 <Certificate></Certificate>
-
                 <Gallery />
 
                 <div className='mt-32 lg:w-4/5 mx-auto relative'>
@@ -40,8 +39,7 @@ const Home = () => {
 
                             <h1 className='text-5xl font-serif
                             '>Taskla helps to improve discipline and make student hard worker by using Remind education solutions</h1>
-                            <Link to='/register'><button className='btn btn-primary mt-5'>Get Started</button></Link>
-                            {/* <img src={laptop} alt="" /> */}
+                            <Link to='/register'><button className='btn btn-secondary mt-5'>Get Started</button></Link>
                         </div >
 
                     </div >
@@ -50,7 +48,8 @@ const Home = () => {
                 </div >
             </div >
             <Review />
-            {/* <SignupBanner />
+            <Allacordian></Allacordian>
+            {/*
             <ContactUs /> */}
         </div >
     );

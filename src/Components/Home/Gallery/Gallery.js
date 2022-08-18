@@ -6,10 +6,10 @@ import React from 'react';
 
 const Gallery = () => {
     return (
-        <div>
-            <h1 className='text-2xl text-center font-bold mt-10'>Course Overview</h1>
-            <section class="overflow-hidden text-gray-700">
-                <div class="container px-5 py-2 mx-auto lg:pt-10 lg:px-32">
+        <div className='mt-[70px]'>
+            <h1 className='text-[32px] text-primary text-center font-bold mt-10'><span className='text-secondary'>Course </span> Overview</h1>
+            <section class="overflow-hidden">
+                <div class="container px-5 py-2 mx-auto lg:pt-12 lg:px-32">
                     <div class="flex flex-wrap -m-1 md:-m-2">
                         <div class="flex flex-wrap w-1/2">
                             <div class="w-1/2 p-1 md:p-2">
