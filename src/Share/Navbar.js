@@ -136,9 +136,9 @@ const Navbar = () => {
 
     const locatin = useLocation()
     return (
-        <div className='shadow-lg '>
+        <div className='shadow-md '>
             <div className='max-w-screen-xl mx-auto' >
-                <div className="navbar bg-white bg-opacity-90 Nav" >
+                <div className="navbar bg-white bg-opacity-70 Nav" >
                     <div className="navbar-start" >
                         <div className="dropdown" >
                             <label tabIndex="0" className="btn btn-ghost lg:hidden" >

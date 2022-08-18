@@ -2,8 +2,8 @@ import React from 'react';
 
 const AboutDeveloper = () => {
     return (
-        <div className='grid justify-center mt-12 mb-16'>
-        <h1 className="text-2xl text-center text-black font-bold">Our   <span className="text-primary">Team</span></h1>
+        <div className='grid justify-center mt-16 mb-16'>
+        <h1 className="text-4xl text-center text-primary font-bold">Our<span className="text-secondary">Team</span></h1>
 
 
             {/* .............................................................. */}
