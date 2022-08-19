@@ -23,6 +23,7 @@ import ContactUs from "./Components/Home/ContactUs";
 import BlogDetails from "./Components/Blogs/BlogDetails/BlogDetails";
 import AddReview from "./Components/Review/AddReview";
 import NoticePublish from "./Components/Dashboard/NoticePublish/NoticePublish";
+import AllBlogs from "./Components/Dashboard/AllBlogs/AllBlogs";
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
           <Route path="createtask" element={<TaskCreate></TaskCreate>}></Route>
           <Route path="taskEvaluate" element={<TaskEvaluate></TaskEvaluate>}></Route>
           <Route path="createBlog" element={<CreateBlog></CreateBlog>}></Route>
+          <Route path="allBlogs" element={<AllBlogs></AllBlogs>}></Route>
 
 
 
