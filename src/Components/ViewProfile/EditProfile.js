@@ -65,7 +65,11 @@ const EditProfile = ({ data, setReset }) => {
     return (
         <>
             {/* <!-- The button to open modal --> */}
-            <label htmlFor="my-modal-6" className="btn modal-button">Edit profile</label>
+   
+            <label htmlFor="my-modal-6" className="btn btn-secondary modal-button ">Edit profile</label>
+
+           
+
 
             {/* <!-- Put this part before </body> tag --> */}
             <input type="checkbox" id="my-modal-6" className="modal-toggle" />
