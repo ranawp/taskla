@@ -7,6 +7,7 @@ import auth from '../firebase.init';
 import { signOut } from 'firebase/auth';
 import down from '../asset/down-filled-triangular-arrow.png'
 import notificationIcon from '../asset/notification.png'
+import notification from '../asset/notification.svg'
 import axios from 'axios';
 
 const Navbar = () => {
@@ -64,6 +65,22 @@ const Navbar = () => {
         localStorage.removeItem('accessToken')
     };
 
+
+    // notification start
+    const notification = <>
+        <label tabIndex="0" className="">
+            <div tabIndex='4' className="indicator pl-5 cursor-pointer">
+                <span className="indicator-item  badge bg-red-600 border-0 w-5 text-[10px]">{newArray?.length}</span>
+                <div className="grid place-items-center"><img className='w-5 inline' src={notificationIcon} alt="" /></div>
+            </div>
+        </label>
+
+        <ul tabIndex="0" className="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+            {notifications.map(notification => <li onClick={() => setNoti(notification._id)} className={notification.read == true ? 'line-through p-2 border  hover:bg-blue-100 cursor-pointer' : 'p-2 border  hover:bg-blue-100 cursor-pointer'}>{notification.notice}</li>)}
+        </ul>
+    </>
+    // notification end
+
     const menuItems = <>
         <li className='hover:text-black'><Link to='/'>Home</Link></li>
         <li className='hover:text-black' > <Link className='pl-5' to='/blog' > Blog</Link></li >
@@ -77,27 +94,32 @@ const Navbar = () => {
                 <li><Link className='pl-5' to="/courses">Courses</Link></li >
 
 
-                {/* notification  */}
-                <div className="dropdown">
-                    <label tabIndex="1" className="">
-                        <li className='pl-5 cursor-pointer'>
-                            <div className="indicator">
-                                <span className="indicator-item  badge bg-red-600 border-0 w-5 text-[10px]">{newArray?.length}</span>
-                                <div className="grid place-items-center"><img className='w-5 inline' src={notificationIcon} alt="" /></div>
-                            </div>
-                            {/* <div className='inline-block relative'>
-                            
-                            <div className="badge badge-sm bg-red-600 absolute top-[-5px] right-[-12px] border-0 text-[10px]">0</div>
-                        </div> */}
-                        </li ></label>
-                    <ul tabIndex="1" className="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4">
-                        {notifications.map(notification => <li onClick={() => setNoti(notification._id)} className={notification.read == true ? 'line-through p-2 border  hover:bg-blue-100 cursor-pointer' : 'p-2 border  hover:bg-blue-100 cursor-pointer'}>{notification.notice}</li>)}
-                    </ul>
+                {/* notification large device*/}
+                <div className="dropdown hidden sm:block">
+                    {notification}
+                </div>
+                {/* notification end */}
+
+
+
+                {/* username like helal*/}
+                <div class="collapse sm:hidden">
+                    <input type="checkbox" class="peer" />
+                    <div class="collapse-title text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content pl-5 cursor-pointer inline-block">
+                        {user?.displayName}
+                        <img className='w-2 cursor-pointer ml-3 inline-block' src={down} alt="" />
+                    </div>
+                    <div class="collapse-content bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
+                        <li><Link to='/viewprofile' className='pl-5'> View Profile</Link></li >
+                        <li><Link to='/submittedTask' className='pl-5'> Submitted Task</Link></li >
+                        <li><Link to='/analytics' className='pl-5'>Students Analytics</Link></li >
+                        <li><Link to='/addReview' className='pl-5'>Students Review</Link></li >
+                        <li><Link to='/announcement' className='pl-5'>Announcement</Link></li >
+                        <li><Link className='pl-5' to='' onClick={logout} >Sign Out</Link></li >
+                    </div>
                 </div>
 
-
-
-                <div className="dropdown" >
+                <div className="dropdown hidden sm:block" >
                     <label tabIndex="0" className="m-1" >
                         <li className='pl-5 cursor-pointer inline-block' > {user?.displayName}
                         </li >
@@ -114,6 +136,8 @@ const Navbar = () => {
 
                     </ul >
                 </div >
+
+                {/* username like helal*/}
             </>
         }
 
@@ -133,38 +157,73 @@ const Navbar = () => {
     </>
 
     const locatin = useLocation()
+    const [open, setOpen] = useState(null)
+    console.log(open)
     return (
-        <div className='max-w-7xl mx-auto' >
-            <div className="navbar sticky z-10 bg-transparent" >
-                <div className="navbar-start" >
-                    <div className="dropdown" >
-                        <label tabIndex="0" className="btn btn-ghost lg:hidden" >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" > <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg >
-                        </label >
-                        <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-black" >
+        <>
+            <div className='max-w-7xl mx-auto' >
+                <div className="navbar sticky z-10 bg-transparent" >
+                    <div className="navbar-start" >
+
+                        {/* small device */}
+                        {/* <div className="dropdown" >
+                            <label tabIndex="0" className="btn btn-ghost lg:hidden" >
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" > <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg >
+                            </label >
+
+
+                            <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-black" >
+                                {menuItems}
+                            </ul >
+                        </div > */}
+                        {/* small device */}
+                        {/* sidebar */}
+                        <div id="mySidenav" className={open == true ? 'sidenav' : 'sidenav1'}>
+                            <a href="javascript:void(0)" class="closebtn" onClick={() => setOpen(false)}>&times;</a>
+                            {open && <ul tabIndex="0" className="mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-black" >
+                                {menuItems}
+                            </ul >}
+                        </div>
+                        <span className='lg:hidden'>
+                            <svg onClick={() => setOpen(true)} xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" > <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg >
+                        </span>
+                        {/* sidebar end*/}
+
+
+
+
+
+
+                        <img className='w-16' src={logo} alt="" /> <p className=" normal-case  ml-3 font-bold text-2xl text-black" > <Link to='/'>TASKLA</Link ></p >
+                    </div >
+
+                    {/* notification small device  */}
+                    <div className="dropdown dropdown-end block sm:hidden ml-14">
+                        {notification}
+                    </div>
+                    {/* notification end */}
+
+                    <div className="navbar-end hidden lg:flex" >
+
+                        {/* large device */}
+                        <ul className=" menu-horizontal p-0 text-black font-bold" >
                             {menuItems}
                         </ul >
                     </div >
-                    <img className='w-16' src={logo} alt="" /> <p className=" normal-case  ml-3 font-bold text-2xl text-black" > <Link to='/'>TASKLA</Link ></p >
+
+                    {
+                        location.pathname == '/dashboard' &&
+                        <div className='navbar-end lg:hidden' >
+                            <label tabIndex="1" htmlFor="my-drawer-2" className="btn btn-ghost lg:hidden" >
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" > <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                            </label >
+                        </div >
+                    }
+
                 </div >
-
-                <div className="navbar-end hidden lg:flex" >
-                    <ul className=" menu-horizontal p-0 text-black font-bold" >
-                        {menuItems}
-                    </ul >
-                </div >
-
-                {
-                    location.pathname == '/dashboard' &&
-                    <div className='navbar-end lg:hidden' >
-                        <label tabIndex="1" htmlFor="my-drawer-2" className="btn btn-ghost lg:hidden" >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" > <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                        </label >
-                    </div >
-                }
-
             </div >
-        </div >
+
+        </>
     );
 };
 
