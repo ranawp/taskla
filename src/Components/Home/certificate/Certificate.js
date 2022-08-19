@@ -14,12 +14,12 @@ const Certificate = () => {
             <div className='absolute text-[50px] text-primary opacity-30 top-0 left-[10%]'>
                 <FaGraduationCap/>
             </div>
-            <div className='container mx-auto'>
+            <div className='container mx-auto pt-12'>
             <h1 className=" text-3xl text-center text-primary font-bold">We will get <span className='text-secondary'>End of Course</span></h1>
 
 
             <div className="grid justify-center gap-6">
-                <div className='card shadow-lg  gap-4   sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid align-center justify-center px-6'>
+                <div className='card shadow-md  gap-4   sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid align-center justify-center px-6'>
                     <div className="box-style m-12">
                         <div className="imageBox ">
                             <img className='w-48 ' src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/certificate-of-appreciation-design-template-23c938b8b40c0633fe90f7a41be1fb5a_screen.jpg?ts=1646644068" class="max-w-sm rounded-lg shadow-2xl" alt="" />

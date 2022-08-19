@@ -9,8 +9,8 @@ const CourseDetails = () => {
            <div className='w-[100px] h-[100px] opacity-20 rounded-full bg-pink-700 absolute bottom-0 right-12'></div>
              {/* <div className='w-[50px] h-[50px] opacity-20 blur rounded-full bg-purple-500 absolute top-[90px]'></div> */}
 
-            <div className='container mx-auto lg:px-20'>
-                <h1 className="text-[32px] text-center text-primary font-bold">Everything in this course</h1>
+            <div className='max-w-screen-xl mx-auto'>
+                <h1 className="text-[32px] text-center text-primary font-bold">Everything in this<span className='text-secondary'> Course</span></h1>
                 <div className='card   border-2 shadow-inner mt-6   grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  justify-center p-6'>
 
 
