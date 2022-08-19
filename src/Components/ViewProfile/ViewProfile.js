@@ -48,14 +48,16 @@ const ViewProfile = () => {
             <div className='my-3 sm:my-0' >
                 <div className="card w-96 bg-base-100 shadow-xl">
                     <div className="card-body">
-                        <h2 className="text-xl">StudentId:</h2>
-                        <p>9483jcnei98</p>
-                        <h2 className="text-xl" > FullName:</h2 >
-                        <p>{name}</p>
-                        <h2 className="text-xl" > Email Address:</h2 >
-                        <p>{email}</p>
-                        <h2 className="text-xl" > Phone No:</h2 >
-                        <p>{phone}</p>
+                    <h2 className='text-xl p-6 font-bold  text-center'>About  <span className='text-secondary'>Profile</span></h2>
+
+                        <h2 className="text-xl">StudentId:  <span className='text-secondary'>9483jcnei98</span></h2>
+                        
+                        <h2 className="text-xl" > FullName:    <span className='text-secondary'>{name}</span></h2 >
+                        
+                        <h2 className="text-xl" > Email Address:  <span className='text-secondary'>  {email}</span></h2 >
+                      
+                        <h2 className="text-xl" > Phone No:   <span className='text-secondary'>  {phone}</span></h2 >
+                      
                         <div className="card-actions justify-end" >
                             <EditProfile data={data} setReset={setReset}></EditProfile>
                         </div >
