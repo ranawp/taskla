@@ -99,7 +99,7 @@ const Navbar = () => {
                     </div>
                 </li ></label>
             <ul tabIndex="1" className="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4 h-[380px] overflow-auto">
-                {notifications.map(notification => <li onClick={() => setNoti(notification._id)} className={notification.read == true ? 'line-through p-2 border  hover:bg-blue-100 cursor-pointer' : 'p-2 border  hover:bg-blue-100 cursor-pointer'}>{notification.notice} <span className='text-xs'> moment({notification.time}).fromNow() </span> </li>)}
+                {notifications.map(notification => <li onClick={() => setNoti(notification._id)} className={notification.read == true ? 'line-through p-2 border  hover:bg-blue-100 cursor-pointer' : 'p-2 border  hover:bg-blue-100 cursor-pointer'}>{notification.notice} <span className='text-xs'> {notification.time}</span> </li>)}
             </ul>
         </div>
         <div className="dropdown" >
