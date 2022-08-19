@@ -10,7 +10,7 @@ const UseNewBlog = () => {
             })
     }, []);
 
-    return [newBlogs]
+    return [newBlogs, setNewBlogs]
 }
 
 
