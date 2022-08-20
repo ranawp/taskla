@@ -12,6 +12,7 @@ const Allusers = () => {
 
     useEffect(() => {
         isLoading(true)
+        console.log('singaluser')
         const fetchSideeffect = async () => {
             const res = await axios('http://localhost:5000/user')
             setData(res.data)

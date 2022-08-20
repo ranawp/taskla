@@ -6,7 +6,7 @@ import taskSvg from '../../../../imgages/taskCreate.svg'
 const TaskCreate = () => {
 
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
-
+    // var options = { weekday: 'long', year: 'numeric', day: 'numeric', month: 'long' };
     const date = new Date()
     const currentDate = date.toLocaleDateString();
     const currentHour = date.toLocaleTimeString();
@@ -65,7 +65,7 @@ const TaskCreate = () => {
 
                             <div className='grid lg:grid-cols-2 mt-5'>
                                 <div>
-                                    <p className=''>Task Serial:</p>
+                                    <p className='mt-5'>Task Serial:</p>
                                     <input placeholder='Please provide task Serial'
                                         className="mt-2 p-2 rounded-lg background-color" size="15"
                                         {...register("taskSerial", {

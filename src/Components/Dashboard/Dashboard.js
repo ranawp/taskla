@@ -1,26 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Admin_Dashboard from './Admin_Dashboard/Admin_Dashboard';
+import './Dashboard.css'
 
 const Dashboard = () => {
     const [user] = useAuthState(auth)
     const emails = user?.email
     const [match, setMatch] = useState([])
-    useEffect(() => {
-        fetch(`http://localhost:5000/user/${emails}`,  {
-            method: 'GET',
-            header: {
-                'content-type': 'application/json'
-            }
-        })
-            .then((res) => res.json())
-            .then((data) => setMatch(data));
+    // useEffect(() => {
+    //     fetch(`http://localhost:5000/user/${emails}`, {
+    //         method: 'GET',
+    //         header: {
+    //             'content-type': 'application/json'
+    //         }
+    //     })
+    //         .then((res) => res.json())
+    //         .then((data) => setMatch(data));
 
-    }, [emails])
+    // }, [emails])
 
     return (
-        <div className='h-screen' >
+        <div className='h-screen mt-20' >
             <div className="drawer drawer-mobile" >
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content" >
@@ -33,16 +35,16 @@ const Dashboard = () => {
                     <ul className="menu p-4 overflow-y-auto w-48 bg-base-100
                     lg:bg-transparent text-base-content" >
                         {/* <!-- Sidebar content here --> */}
-                        < li className='hover:bg-primary rounded-lg'> <Link to=''>Dashboard</Link></li >
-                        < li className='hover:bg-primary rounded-lg'> <Link to='allusers'>Allusers</Link></li >
-                        <li className='hover:bg-purple-600 rounded-lg'><Link to='createtask'>TaskCreate</Link></li>
-                        <li className='hover:bg-primary rounded-lg'><Link to='taskEvaluate'>Task Evaluate</Link></li>
-                        <li className='hover:bg-primary rounded-lg'><Link to='taskEvaluateCompleted'>Completed Evaluate</Link></li>
-                        <li className='hover:bg-primary rounded-lg'><Link to='createBlog'>Create Blog</Link></li>
+                        < li className='hover:bg-secondary hover:text-white rounded-lg'> <NavLink to=''>Dashboard</NavLink></li >
+                        < li className='hover:bg-secondary hover:text-white rounded-lg'> <NavLink to='allusers'>Allusers</NavLink></li >
+                        <li className='hover:bg-secondary hover:text-white rounded-lg'><NavLink to='createtask'>TaskCreate</NavLink></li>
+                        <li className='hover:bg-secondary hover:text-white rounded-lg'><NavLink to='taskEvaluate'>Task Evaluate</NavLink></li>
+                        <li className='hover:bg-secondary hover:text-white rounded-lg'><NavLink to='taskEvaluateCompleted'>Completed Evaluate</NavLink></li>
+                        <li className='hover:bg-secondary hover:text-white rounded-lg'><NavLink to='createBlog'>Create Blog</NavLink></li>
 
 
 
-                        <li className='hover:bg-primary rounded-lg'><Link to='notice'>Notice</Link></li>
+                        <li className='hover:bg-secondary hover:text-white rounded-lg'><NavLink to='notice'>Notice</NavLink></li>
 
                     </ul>
                 </div >

@@ -7,9 +7,15 @@
 
 }
 
+.Nav {
+    position: -webkit-sticky;
+    z-index: 1;
+}
+
 html {
     scroll-behavior: smooth;
 }
+
 
 
 /* sidebar */
@@ -18,13 +24,15 @@ html {
     width: 300px;
     position: fixed;
     z-index: 1;
-    top: 70px;
+    top: 0;
     left: 0;
-    background-color: rgb(18, 14, 14);
+    background-color: #1e256c;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
 }
+
+
 
 .sidenav1 {
     width: 0;
@@ -32,18 +40,31 @@ html {
 
 }
 
+.sidenav>ul {
+    display: grid;
+    grid-template-columns: auto auto;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.closebtn {
+    color: #c11a7e;
+}
+
+* li {
+    list-style: none;
+}
+
 .sidenav a {
-    padding: 8px 8px 8px 32px;
+
+    padding: 8px 8px 8px 0px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: #c11a7e;
     display: block;
     transition: 0.3s;
 }
 
-/* .sidenav a:hover {
-    color: #f1f1f1;
-} */
 
 .sidenav .closebtn {
     position: absolute;
@@ -63,11 +84,3 @@ html {
     }
 
 }
-
-
-/* hambargar icon ta hide korar jonno */
-/* @media screen and (min-height:450px) {
-    .hide {
-        display: none;
-    }
-} */
