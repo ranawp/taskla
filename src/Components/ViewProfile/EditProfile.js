@@ -42,7 +42,7 @@ const EditProfile = ({ data, setReset }) => {
         const street = e.target.street.value
         const phone = e.target.phone.value
 
-        fetch(`http://localhost:5000/update/${emails}`, {
+        fetch(`https://cryptic-stream-86241.herokuapp.com/update/${emails}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -65,10 +65,10 @@ const EditProfile = ({ data, setReset }) => {
     return (
         <>
             {/* <!-- The button to open modal --> */}
-   
+
             <label htmlFor="my-modal-6" className="btn btn-secondary modal-button ">Edit profile</label>
 
-           
+
 
 
             {/* <!-- Put this part before </body> tag --> */}

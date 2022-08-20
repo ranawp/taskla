@@ -16,7 +16,7 @@ const Review = () => {
     const [reviewCard, setReviewCard] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/review')
+        fetch('https://cryptic-stream-86241.herokuapp.com/review')
             .then(res => res.json())
             .then(data => setReviewCard(data))
     }, [])
