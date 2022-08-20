@@ -1,12 +1,21 @@
 .navbar-bg {
-    background-color: #152742;
-    position: fixed;
+    background-color: #00a5cf;
+    position: fixed; 
     top: 0;
     width: 100%;
     z-index: 10;
 
 }
 
+.Nav{
+    position: -webkit-sticky;
+    z-index: 1;
+}
+
 html {
     scroll-behavior: smooth;
+}
+
+Link:hover{
+    color:#C21A80;
 }

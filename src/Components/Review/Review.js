@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 // import "./Review.css";
 import './Review.css'
 
-import { EffectCoverflow, Pagination } from "swiper";
+import { Autoplay,EffectCoverflow, Pagination, Navigation, FreeMode } from "swiper";
 import ReviewCard from './ReviewCard';
 
 const Review = () => {
@@ -23,10 +23,15 @@ const Review = () => {
 
     return (
         <div className='h-[600px] mt-32' >
-            <h1 className='text-center text-4xl font-bold text-gray-500 pt-10' > What people are saying
+            <h1 className='text-center capitalize text-[32px] font-bold text-primary pt-10' > What <span className='text-secondary'>People</span> are saying
             </h1 >
             <Swiper
-                effect={"coverflow"}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
+                freeMode={true}
+                // effect={"coverflow"}
                 grabCursor={true}
                 centeredSlides={true}
                 slidesPerView={"auto"}
@@ -35,10 +40,11 @@ const Review = () => {
                     stretch: 0,
                     depth: 100,
                     modifier: 1,
-                    slideShadows: true,
+                    slideShadows: false,
                 }}
+
                 pagination={true}
-                modules={[EffectCoverflow, Pagination]}
+                modules={[Autoplay,FreeMode,EffectCoverflow, Pagination, Navigation]}
                 className="mySwiper"
             >
 
