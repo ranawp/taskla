@@ -15,7 +15,6 @@ const Navbar = () => {
     const [user] = useAuthState(auth);
     const email = user?.email;
     const [match, setMatch] = useState([]);
-    // const [get, setData] = useState([])
     const [notifications, setNotifications] = useState([]);
 
     //fetching those kind of people who is enrolled
@@ -51,14 +50,6 @@ const Navbar = () => {
 
             .then(data => data)
     }
-
-    // useEffect(() => {
-    //     const fetchSideeffect = async () => {
-    //         const res = await axios('http://localhost:5000/user')
-    //         setData(res.data)
-    //     }
-    //     fetchSideeffect()
-    // }, [])
 
     const logout = () => {
         signOut(auth);
@@ -208,7 +199,7 @@ const Navbar = () => {
                     <div className="navbar-start" >
 
                         {/* sidebar small device*/}
-                        <div id="mySidenav" className={open == true ? 'sidenav' : 'sidenav1'}>
+                        <div id="mySidenav" className={open == true ? 'sidenav shadow-lg' : 'sidenav1'}>
                             <span className="closebtn" onClick={() => setOpen(false)}>&times;</span>
                             {open && <><ul className="" >
                                 {menuItems}
