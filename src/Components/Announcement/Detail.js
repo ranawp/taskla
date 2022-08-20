@@ -7,7 +7,7 @@ const Detail = ({ announcement, handleAnnounceDetail }) => {
     return (
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mx-auto">
             <div className="card-body" onClick={() => handleAnnounceDetail(_id)}>
-                <h2 class="card-title">{notice}</h2>
+                <h2 className="card-title">{notice}</h2>
                 <span>{time}</span>
             </div>
         </div>

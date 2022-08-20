@@ -29,21 +29,21 @@ const MyTask = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/alltasks')
+        fetch('https://cryptic-stream-86241.herokuapp.com/alltasks')
             .then(res => res.json())
             .then(data => setSingleTask(data))
 
     }, [refresh])
     const [marks, setMarks] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/allMarks/${email}`)
+        fetch(`https://cryptic-stream-86241.herokuapp.com/allMarks/${email}`)
             .then(res => res.json())
             .then(data => setMarks(data))
     }, [])
 
     // const [marks, setMarks] = useState([]);
     // useEffect(() => {
-    //     fetch(` http://localhost:5000/allMarks/${email}`)
+    //     fetch(` https://cryptic-stream-86241.herokuapp.com/allMarks/${email}`)
     //         .then(res => res.json())
     //         .then(data => setMarks(data))
     // }, [])
@@ -74,7 +74,7 @@ const MyTask = () => {
                         <>
                             <h1 className="title">Task Name:{taskData.taskName}</h1>
                             <p className="details">Task no:{taskData.taskSerial}</p>
-                            <p class="details">Task Posted time:{taskData.questionDeliverDate}</p>
+                            <p className="details">Task Posted time:{taskData.questionDeliverDate}</p>
                             <p className="details">Deadline:{taskData.taskDeadline}</p>
                             <p className="details">Task Details : {taskData.taskMassage} </p> </>
                     }
@@ -124,14 +124,14 @@ export default MyTask;
 //     const email = user?.email;
 
 //     useEffect(() => {
-//         fetch('http://localhost:5000/alltasks')
+//         fetch('https://cryptic-stream-86241.herokuapp.com/alltasks')
 //             .then(res => res.json())
 //             .then(data => setSingleTask(data))
 //     }, [])
 
 //     const [marks, setMarks] = useState([]);
 //     useEffect(() => {
-//         fetch(`http://localhost:5000/allMarks/${email}`)
+//         fetch(`https://cryptic-stream-86241.herokuapp.com/allMarks/${email}`)
 //             .then(res => res.json())
 //             .then(data => setMarks(data))
 //     }, [])

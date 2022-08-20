@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 // import "./Review.css";
 import './Review.css'
 
-import { Autoplay,EffectCoverflow, Pagination, Navigation, FreeMode } from "swiper";
+import { Autoplay, EffectCoverflow, Pagination, Navigation, FreeMode } from "swiper";
 import ReviewCard from './ReviewCard';
 
 const Review = () => {
@@ -16,7 +16,7 @@ const Review = () => {
     const [reviewCard, setReviewCard] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/review')
+        fetch('https://cryptic-stream-86241.herokuapp.com/review')
             .then(res => res.json())
             .then(data => setReviewCard(data))
     }, [])
@@ -44,12 +44,13 @@ const Review = () => {
                 }}
 
                 pagination={true}
-                modules={[Autoplay,FreeMode,EffectCoverflow, Pagination, Navigation]}
+                modules={[Autoplay, FreeMode, EffectCoverflow, Pagination, Navigation]}
                 className="mySwiper"
             >
 
                 {reviewCard.map((review, index) => <SwiperSlide>
                     <ReviewCard
+                        key={review._id}
                         review={review
                         } /></SwiperSlide>)}
             </Swiper >

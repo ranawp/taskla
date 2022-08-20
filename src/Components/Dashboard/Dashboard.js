@@ -9,20 +9,20 @@ const Dashboard = () => {
     const [user] = useAuthState(auth)
     const emails = user?.email
     const [match, setMatch] = useState([])
-    useEffect(() => {
-        fetch(`http://localhost:5000/user/${emails}`,  {
-            method: 'GET',
-            header: {
-                'content-type': 'application/json'
-            }
-        })
-            .then((res) => res.json())
-            .then((data) => setMatch(data));
+    // useEffect(() => {
+    //     fetch(`https://cryptic-stream-86241.herokuapp.com/user/${emails}`, {
+    //         method: 'GET',
+    //         header: {
+    //             'content-type': 'application/json'
+    //         }
+    //     })
+    //         .then((res) => res.json())
+    //         .then((data) => setMatch(data));
 
-    }, [emails])
+    // }, [emails])
 
     return (
-        <div className='h-screen' >
+        <div className='h-screen mt-20' >
             <div className="drawer drawer-mobile" >
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content" >
