@@ -8,8 +8,8 @@ import { signOut } from 'firebase/auth';
 import down from '../asset/down-filled-triangular-arrow.png'
 import notificationIcon from '../asset/notification.png'
 import axios from 'axios';
-import moment from 'moment';
-import dummyImage from '../asset/dummy-iamge.png'
+// import moment from 'moment';
+// import dummyImage from '../asset/dummy-iamge.png'
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
