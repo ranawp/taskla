@@ -57,7 +57,7 @@ const NoticePublish = () => {
                                 <span className="label-text">Announcement</span>
                             </label>
                             <textarea className="textarea textarea-bordered h-[200px]" placeholder="Announcement" name='announcement'></textarea>
-                            <button className="btn btn-primary mt-5">Submit</button>
+                            <button className="btn btn-primary mt-5 text-white">Submit</button>
                         </div>
                     </form>
 
