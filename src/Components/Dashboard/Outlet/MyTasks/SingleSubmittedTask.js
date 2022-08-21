@@ -13,10 +13,10 @@ const SingleSubmittedTask = ({ taskDone, answerScript }) => {
 
                 <div
 
-                    tabindex="0" classNeme="collapse group collapse-arrow border border-base-300 bg-base-100 rounded-box">
+                    tabindex="0" className="collapse group collapse-arrow border border-base-300 bg-base-100 rounded-box">
 
                     <div>
-                        <div classNeme="collapse-title  font-medium flex justify-between">
+                        <div className="collapse-title  font-medium flex justify-between">
                             <div>
                                 {taskDone.taskSerial}   {taskDone.taskName} <br />
                                 {/* Mark:{answerScript.mark} */}
@@ -30,7 +30,7 @@ const SingleSubmittedTask = ({ taskDone, answerScript }) => {
                     </div>
                     {/* onClick={() => handleSubmit(singleTask)} */}
 
-                    <div classNeme="collapse-content">
+                    <div className="collapse-content">
                         <label className="bg-blue-700 border-0 px-3 py-1 button  rounded text-white modal-button cursor-pointer">My Submission</label>
                         <p>My submission: {answerScript.taskDescription}</p>
                     </div>

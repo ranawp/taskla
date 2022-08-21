@@ -1,7 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import './App.css';
-// import BlogDetails2 from "./Components/Blogs/BlogDetails/BlogDetails2";
-// import BlogDetails3 from "./Components/Blogs/BlogDetails/BlogDetails3";
 import Blogs from "./Components/Blogs/Blogs";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Home from "./Components/Home/Home";
@@ -38,6 +36,7 @@ import CompletedTaskEvalute from "./Components/Dashboard/Outlet/MyTasks/TaskEval
 import AllBlogs from "./Components/Dashboard/AllBlogs/AllBlogs";
 
 
+
 export const TimeContext = createContext('default');
 function App() {
 
@@ -52,7 +51,7 @@ function App() {
     time = new Date().toLocaleTimeString();
     setCTime(time);
   }
-  setInterval(updateTime, 1000);
+  // setInterval(updateTime, 1000);
   const Mydate = dateFunction;
   const Mytime = cTime;
   return (
@@ -79,7 +78,10 @@ function App() {
             <Route path="taskEvaluate" element={<TaskEvaluate></TaskEvaluate>}></Route>
             <Route path="taskEvaluateCompleted" element={<CompletedTaskEvalute />}></Route>
             <Route path="createBlog" element={<CreateBlog></CreateBlog>}></Route>
+
             <Route path="allBlogs" element={<AllBlogs></AllBlogs>}></Route>
+
+
 
 
 
@@ -90,6 +92,7 @@ function App() {
 
           {/* mozahid task  */}
           <Route path="/createBlog/:blogId" element={<BlogDetails />} />
+
           {/* mozahid task  */}
           <Route path="/contact" element={<ContactUs></ContactUs>}></Route>
           <Route path="/addReview" element={<AddReview />}></Route>
@@ -100,6 +103,7 @@ function App() {
 
           {/* mozahid task  */}
           <Route path="/createBlog/:blogId" element={<BlogDetails />} />
+
           {/* mozahid task  */}
           <Route path="/contact" element={<ContactUs></ContactUs>}></Route>
           <Route path="/addReview" element={<AddReview />}></Route>

@@ -59,12 +59,12 @@ const Login = () => {
         setState(click => !click);
     }
     return (
-        <div className='px-48 mt-10 register-page lg:flex items-center ' >
-            <div className='text-center p-10 mx-auto flex-1 w-64' >
-                <img src={registerImg} alt="" />
+        <div className='sm:px-48 mt-10 register-page sm:flex items-center ' >
+            <div className='text-center p-10 mx-auto md:w-80' >
+                <img src={registerImg} className='w-80' alt="" />
             </div >
             <div>
-                <div className='lg:w-80 p-10 mx-auto shadow-lg border'>
+                <div className='w-80 p-10 mx-auto shadow-lg border'>
                     <h1 className='text-center font-bold text-3xl my-4'>Sign In</h1>
                     <form className='flex flex-col' onSubmit={handleSubmit(onSubmit)} >
                         <input

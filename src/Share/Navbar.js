@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css'
 import logo from '../asset/logo.png'
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -8,30 +8,28 @@ import { signOut } from 'firebase/auth';
 import down from '../asset/down-filled-triangular-arrow.png'
 import notificationIcon from '../asset/notification.png'
 import axios from 'axios';
-import moment from 'moment';
 import dummyImage from '../asset/dummy-iamge.png'
+
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
-    const emails = user?.email;
+    const email = user?.email;
     const [match, setMatch] = useState([]);
-    const [get, setData] = useState([])
     const [notifications, setNotifications] = useState([]);
+
+    //fetching those kind of people who is enrolled
     useEffect(() => {
-        fetch(`http://localhost:5000/user/${emails}`, {
-            method: 'GET',
-            header: {
-                'content-type': 'application/json'
-            }
-        })
-            .then((res) => res.json())
-            .then((data) => setMatch(data));
+        const fetchSideeffect = async () => {
+            const res = await axios(`https://cryptic-stream-86241.herokuapp.com/user/${email}`)
+            setMatch(res.data)
+        }
+        fetchSideeffect()
+    }, [email])
 
-    }, [emails])
-
+    console.log(match)
     useEffect(() => {
         console.log('hello')
-        fetch(`http://localhost:5000/notice`)
+        fetch(`https://cryptic-stream-86241.herokuapp.com/notice`)
             .then((response) => response.json())
             .then((json) => setNotifications(json));
     }, [])
@@ -43,7 +41,7 @@ const Navbar = () => {
 
     const setNoti = (id) => {
         console.log(id)
-        fetch(`http://localhost:5000/notice/${id}`, {
+        fetch(`https://cryptic-stream-86241.herokuapp.com/notice/${id}`, {
             method: 'PUT'
         })
             .then(res => res.json())
@@ -52,14 +50,6 @@ const Navbar = () => {
 
             .then(data => data)
     }
-
-    useEffect(() => {
-        const fetchSideeffect = async () => {
-            const res = await axios('http://localhost:5000/user')
-            setData(res.data)
-        }
-        fetchSideeffect()
-    }, [])
 
     const logout = () => {
         signOut(auth);
@@ -79,7 +69,7 @@ const Navbar = () => {
                         <li className='hover:text-secondary'><Link className='pl-5' to="/classroom">Classroom</Link></li ></>
                 }
                 <li className='hover:text-secondary'><Link className='pl-5' to="/courses">Courses</Link></li >
-                <li className='hover:text-black' > <Link className='pl-5' to='/contact' > Contact Us</Link ></li >
+                <li className='hover:text-secondary' > <Link className='pl-5' to='/contact' > Contact Us</Link ></li >
 
             </>
         }
@@ -87,40 +77,105 @@ const Navbar = () => {
 
     </>
 
+
+    //userProfile info srart
+    const userProfileNameLogo = <>
+        {/* {match?.image} */}
+        <img src={match?.image || dummyImage} className='w-8 border-red-800 border-2 rounded-full mx-auto items-center' alt="" />
+        {/* <img className='w-2 cursor-pointer ml-3 inline-block' src={down} alt="" /> */}
+    </>
+
+    const userProfileDes = <>
+        <li><Link to='/viewprofile' className='pl-5'> View Profile</Link></li >
+        {match.student == 'enrolled' && (<><li><Link to='/submittedTask' className='pl-5'> Submitted Task</Link></li >
+            <li><Link to='/analytics' className='pl-5'>Students Analytics</Link></li >
+            <li><Link to='/addReview' className='pl-5'>Students Review</Link></li >
+            <li><Link to='/announcement' className='pl-5'>Announcement</Link></li ></>)}
+        <li><Link className='pl-5' to='' onClick={logout} >Sign Out</Link></li >
+    </>
+    //userProfile info end
+
+
+
+    //notification info start
+    const userNotificationIndicator = <>
+        <div className="indicator">
+            <span className="indicator-item  badge bg-red-600 border-0 w-5 text-[10px]">{newArray?.length}</span>
+            <div className="grid place-items-center"><img className='w-5 inline bg-white' src={notificationIcon} alt="" /></div>
+        </div>
+    </>
+    const userNotificationDescrip = <>
+        {notifications.map(notification => <li key={notification._id} onClick={() => setNoti(notification._id)} className={notification.read == true ? 'line-through p-2 border  hover:bg-blue-100 cursor-pointer' : 'p-2 border  hover:bg-blue-100 cursor-pointer'}>{notification.notice} <span className='text-xs'> {notification.time}</span> </li>)}
+    </>
+    //notification info start
+
+
     // Nav-End MenuItems 
+
+
     const menuItem2 = <>
-        {/* notification  */}
-        <div className="dropdown">
+
+        {/* notification large device start*/}
+        {(user && match.student == 'enrolled') && <div className="dropdown hidden md:block">
             <label tabIndex="1" className="">
                 <li className='pl-5 cursor-pointer'>
-                    <div className="indicator">
-                        <span className="indicator-item  badge bg-red-600 border-0 w-5 text-[10px]">{newArray?.length}</span>
-                        <div className="grid place-items-center"><img className='w-5 inline' src={notificationIcon} alt="" /></div>
-                    </div>
+                    {userNotificationIndicator}
                 </li ></label>
             <ul tabIndex="1" className="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4 h-[380px] overflow-auto">
-                {notifications.map(notification => <li onClick={() => setNoti(notification._id)} className={notification.read == true ? 'line-through p-2 border  hover:bg-blue-100 cursor-pointer' : 'p-2 border  hover:bg-blue-100 cursor-pointer'}>{notification.notice} <span className='text-xs'> {notification.time}</span> </li>)}
+                {userNotificationDescrip}
             </ul>
+        </div>}
+        {/* notification large device end*/}
+
+        {/* notification small device start*/}
+        {(user && match.student == 'enrolled') && < div className="collapse md:hidden text-center">
+            <input type="checkbox" className="peer" />
+            <div className="collapse-title text-white peer-checked:bg-secondary peer-checked:text-secondary-content pl-5 cursor-pointer inline-block">
+                {userNotificationIndicator}
+            </div>
+            <div className="collapse-content bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
+                {userNotificationDescrip}
+            </div>
         </div>
-        <div className="dropdown" >
-            <label tabIndex="0" className="m-1" >
-                <li className='pl-5 cursor-pointer inline-block' >{user?.displayName}
-                </li >
-                <img className='w-2 cursor-pointer  inline-block' src={down} alt="" />
+        }
+        {/* notification small device end*/}
 
-            </label >
-            <ul tabIndex="0" className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52" >
-                <li><Link to='/viewprofile' className='pl-5'> View Profile</Link></li >
-                <li><Link to='/analytics' className='pl-5'>Students Analytics</Link></li >
-                <li><Link to='/submittedTask' className='pl-5'> Submitted Task</Link></li >
-                <li><Link to='/announcement' className='pl-5'>Announcement</Link></li >
-                <li><Link to='/addReview' className='pl-5'>Students Review</Link></li >
-                <li><Link className='pl-5' to='' onClick={logout} >Sign Out</Link></li >
 
-            </ul >
-        </div >
+
+        {/* small device user profile info start */}
+        {
+            user && <div className="collapse md:hidden">
+                <input type="checkbox" className="peer" />
+                <div className="collapse-title text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content pl-5 cursor-pointer inline-block">
+                    {userProfileNameLogo}
+                </div>
+                <div className="collapse-content bg-primary peer-checked:text-secondary-content">
+                    {userProfileDes}
+                </div>
+            </div>
+        }
+        {/* small device user profile info end */}
+
+        {/* large device user proile start */}
+        {
+            user && <div className="dropdown dropdown-end hidden md:block" >
+                <label tabIndex="0" className="m-1" >
+                    <li className='pl-5 cursor-pointe inline-block' >
+
+                        {userProfileNameLogo}
+                    </li >
+
+                </label >
+                <ul tabIndex="0" className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52" >
+                    {userProfileDes}
+
+                </ul >
+            </div >
+        }
+        {/* large device user proil end */}
+
         <>
-            {match?.role == 'admin' && < li className='hover:text-black' > <Link className='pl-5' to='/dashboard' >CPanel</Link ></li >}
+            {match?.role == 'admin' && < li className='hover:text-black text-center' > <Link className='pl-5' to='/dashboard' >CPanel</Link ></li >}
 
         </>
 
@@ -134,21 +189,30 @@ const Navbar = () => {
         }
     </>
 
+
     const locatin = useLocation()
+    const [open, setOpen] = useState(null)
     return (
-        <div className='shadow-md '>
+        <div className='shadow-md fixed z-50 bg-white w-full'>
             <div className='max-w-screen-xl mx-auto' >
                 <div className="navbar bg-white bg-opacity-70 Nav" >
                     <div className="navbar-start" >
-                        <div className="dropdown" >
-                            <label tabIndex="0" className="btn btn-ghost lg:hidden" >
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" > <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg >
-                            </label >
-                            <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-primary" >
+
+                        {/* sidebar small device*/}
+                        <div id="mySidenav" className={open == true ? 'sidenav shadow-lg' : 'sidenav1'}>
+                            <span className="closebtn" onClick={() => setOpen(false)}>&times;</span>
+                            {open && <><ul className="" >
                                 {menuItems}
-                                {menuItem2}
                             </ul >
-                        </div >
+                                {menuItem2}
+                            </>
+
+                            }
+                        </div>
+                        <span className='lg:hidden'>
+                            <svg onClick={() => setOpen(true)} xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" > <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg >
+                        </span>
+                        {/* sidebar end*/}
                         <img className='w-16' src={logo} alt="" /> <p className=" normal-case  ml-3 font-bold text-2xl text-[#383D8A]" > <Link to='/'>TASKLA</Link ></p >
                     </div >
 
@@ -160,7 +224,7 @@ const Navbar = () => {
 
                     {/* menuItem End  */}
                     <div className="navbar-end hidden lg:flex" >
-                        <ul className=" menu-horizontal p-0 text-black font-bold" >
+                        <ul className=" menu-horizontal p-0 text-black font-bold flex justify-center items-center" >
                             {menuItem2}
                         </ul >
                     </div >
@@ -181,4 +245,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

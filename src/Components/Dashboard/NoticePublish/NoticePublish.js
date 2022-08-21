@@ -28,7 +28,7 @@ const NoticePublish = () => {
         const announcement = event.target.announcement.value;
         // const read = false;
         const data = { notice, announcement, time: dateTime }
-        fetch(`http://localhost:5000/notice`, {
+        fetch(`https://cryptic-stream-86241.herokuapp.com/notice`, {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
@@ -46,12 +46,12 @@ const NoticePublish = () => {
             <h2 className='text-3xl p-6 font-bold  text-center'>Important <span className='text-secondary'>Notice</span></h2>
 
 
-            <div classNeme=" mx-auto  mb-10 grid lg:grid-cols-2 justify-center align-center gap-2 mt-4">
+            <div className=" mx-auto  mb-10 grid lg:grid-cols-2 justify-center align-center gap-2 mt-4">
 
 
                 <div className="p-16">
 
-                    <img classNeme="w-96" src="https://i.ibb.co/XJbLX4f/3784896-removebg-preview.png" alt="" />
+                    <img className="w-96" src="https://i.ibb.co/XJbLX4f/3784896-removebg-preview.png" alt="" />
 
                 </div>
 

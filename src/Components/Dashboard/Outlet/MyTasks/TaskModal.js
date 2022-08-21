@@ -30,7 +30,7 @@ const TaskModal = ({ modal }) => {
         // const scriptfeedback = event.target.scriptfeedback.value;
 
         // console.log(task)
-        fetch(`http://localhost:5000/answer`, {
+        fetch(`https://cryptic-stream-86241.herokuapp.com/answer`, {
             method: 'POST',
             body: JSON.stringify({
                 email,

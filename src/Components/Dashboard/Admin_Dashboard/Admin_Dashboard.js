@@ -55,25 +55,25 @@ const Admin_Dashboard = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/user')
+        fetch('https://cryptic-stream-86241.herokuapp.com/user')
             .then(res => res.json())
             .then(data => setStudents(data))
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:5000/alltasks')
+        fetch('https://cryptic-stream-86241.herokuapp.com/alltasks')
             .then(res => res.json())
             .then(data => setTask(data))
-    });
+    }, []);
     return (
         <div className='p-10'>
             <div className='flex justify-between'>
                 <div>
                     <h1 className='text-4xl font-bold'>Dashboard</h1>
                 </div>
-                <div classNeme="card w-96 bg-base-100 rounded-full shadow-xl">
-                    <div classNeme="text-center">
-                        <h2 classNeme="text-center text-lg font-bold">Period </h2>
+                <div className="card w-96 bg-base-100 rounded-full shadow-xl">
+                    <div className="text-center">
+                        <h2 className="text-center text-lg font-bold">Period </h2>
                         <p>29/5/2022- 29/12/2022</p>
                         <p>{currentDate}</p>
                         <p>{Current_time}</p>
@@ -82,18 +82,18 @@ const Admin_Dashboard = () => {
             </div>
             <div className="grid gap-x-8 gap-y-8 lg:grid-cols-2 mt-14">
                 {/* 1st stat  */}
-                <div classNeme="stats shadow p-3">
+                <div className="stats shadow p-3">
 
-                    <div classNeme="stat">
+                    <div className="stat">
                         <div className='text-4xl font-bold mb-3'>{students.length}</div>
 
-                        <div classNeme=" text-[18px] font-semibold text-black">Total Students</div>
+                        <div className=" text-[18px] font-semibold text-black">Total Students</div>
 
-                        <div classNeme=" text-[16px] font-semibold"><span className='text-green-500'>+21% </span>than last month</div>
+                        <div className=" text-[16px] font-semibold"><span className='text-green-500'>+21% </span>than last month</div>
                     </div>
 
-                    <div classNeme="stat">
-                        <div classNeme="stat-figure text-secondary">
+                    <div className="stat">
+                        <div className="stat-figure text-secondary">
                             <img src={student} alt="" />
                         </div>
 
@@ -101,18 +101,18 @@ const Admin_Dashboard = () => {
 
                 </div>
                 {/* 2nd state  */}
-                <div classNeme="stats shadow p-3">
+                <div className="stats shadow p-3">
 
-                    <div classNeme="stat">
+                    <div className="stat">
                         <div className='text-4xl font-bold mb-3'>2</div>
 
-                        <div classNeme=" text-[18px] font-semibold text-black">Total Teacher</div>
+                        <div className=" text-[18px] font-semibold text-black">Total Teacher</div>
 
-                        <div classNeme=" text-[16px] font-semibold"><span className='text-red-600'>-2% </span>than last month</div>
+                        <div className=" text-[16px] font-semibold"><span className='text-red-600'>-2% </span>than last month</div>
                     </div>
 
-                    <div classNeme="stat">
-                        <div classNeme="stat-figure text-secondary">
+                    <div className="stat">
+                        <div className="stat-figure text-secondary">
                             <img src={cap} alt="" />
                         </div>
 
@@ -120,9 +120,9 @@ const Admin_Dashboard = () => {
 
                 </div>
                 {/* 3rd stat  */}
-                <div classNeme="stats shadow p-3">
+                <div className="stats shadow p-3">
 
-                    <div classNeme="stat flex">
+                    <div className="stat flex">
                         <div className='' style={{ width: 100, height: 100 }}>
                             <CircularProgressbar value={percentage} text={`${percentage}%`}
                                 styles={buildStyles({
@@ -155,9 +155,9 @@ const Admin_Dashboard = () => {
 
                 </div>
                 {/* 4th state  */}
-                <div classNeme="stats shadow p-3">
+                <div className="stats shadow p-3">
 
-                    <div classNeme="stat flex">
+                    <div className="stat flex">
                         <div className='' style={{ width: 100, height: 100 }}>
                             <CircularProgressbar value={percentage2} text={`${percentage2}%`} />
                         </div>
@@ -174,12 +174,12 @@ const Admin_Dashboard = () => {
                 </div>
             </div>
             {/* school perfomance chart  */}
-            <div classNeme="card lg:card-side bg-base-100 shadow-xl my-5">
+            <div className="card lg:card-side bg-base-100 shadow-xl my-5">
 
-                <div classNeme="card-body">
+                <div className="card-body">
                     <h2 className='card-title font-semibold text-lg block'>School Perfomance</h2>
 
-                    <div classNeme="card-actions w-[100%]">
+                    <div className="card-actions w-[100%]">
 
                         <AreaChart
                             width={500}
@@ -203,14 +203,14 @@ const Admin_Dashboard = () => {
                 </div>
             </div>
             {/* undpaid students */}
-            <div classNeme="card lg:card-side bg-base-100 shadow-xl">
+            <div className="card lg:card-side bg-base-100 shadow-xl">
 
-                <div classNeme="card-body">
-                    <h2 classNeme="card-title">Unpaid Students</h2>
+                <div className="card-body">
+                    <h2 className="card-title">Unpaid Students</h2>
                     <p className='text-slate-500 text-[16px]'>Total 230</p>
-                    <div classNeme="card-actions ">
-                        <div classNeme="overflow-x-auto w-full">
-                            <table classNeme="table w-full">
+                    <div className="card-actions ">
+                        <div className="overflow-x-auto w-full">
+                            <table className="table w-full">
 
                                 <thead>
                                     <tr>
@@ -228,19 +228,19 @@ const Admin_Dashboard = () => {
                                     <tr>
                                         <th>
                                             <label>
-                                                <input type="checkbox" classNeme="checkbox" />
+                                                <input type="checkbox" className="checkbox" />
                                             </label>
                                         </th>
                                         <td>
-                                            <div classNeme="flex items-center space-x-3">
-                                                <div classNeme="avatar">
-                                                    <div classNeme="mask mask-squircle w-12 h-12">
+                                            <div className="flex items-center space-x-3">
+                                                <div className="avatar">
+                                                    <div className="mask mask-squircle w-12 h-12">
                                                         <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <div classNeme="font-bold">Hart Hagerty</div>
-                                                    <div classNeme="text-sm opacity-50">United States</div>
+                                                    <div className="font-bold">Hart Hagerty</div>
+                                                    <div className="text-sm opacity-50">United States</div>
                                                 </div>
                                             </div>
                                         </td>
@@ -255,19 +255,19 @@ const Admin_Dashboard = () => {
                                     <tr>
                                         <th>
                                             <label>
-                                                <input type="checkbox" classNeme="checkbox" />
+                                                <input type="checkbox" className="checkbox" />
                                             </label>
                                         </th>
                                         <td>
-                                            <div classNeme="flex items-center space-x-3">
-                                                <div classNeme="avatar">
-                                                    <div classNeme="mask mask-squircle w-12 h-12">
+                                            <div className="flex items-center space-x-3">
+                                                <div className="avatar">
+                                                    <div className="mask mask-squircle w-12 h-12">
                                                         <img src="/tailwind-css-component-profile-3@56w.png" alt="Avatar Tailwind CSS Component" />
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <div classNeme="font-bold">Brice Swyre</div>
-                                                    <div classNeme="text-sm opacity-50">China</div>
+                                                    <div className="font-bold">Brice Swyre</div>
+                                                    <div className="text-sm opacity-50">China</div>
                                                 </div>
                                             </div>
                                         </td>
@@ -282,19 +282,19 @@ const Admin_Dashboard = () => {
                                     <tr>
                                         <th>
                                             <label>
-                                                <input type="checkbox" classNeme="checkbox" />
+                                                <input type="checkbox" className="checkbox" />
                                             </label>
                                         </th>
                                         <td>
-                                            <div classNeme="flex items-center space-x-3">
-                                                <div classNeme="avatar">
-                                                    <div classNeme="mask mask-squircle w-12 h-12">
+                                            <div className="flex items-center space-x-3">
+                                                <div className="avatar">
+                                                    <div className="mask mask-squircle w-12 h-12">
                                                         <img src="/tailwind-css-component-profile-4@56w.png" alt="Avatar Tailwind CSS Component" />
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <div classNeme="font-bold">Marjy Ferencz</div>
-                                                    <div classNeme="text-sm opacity-50">Russia</div>
+                                                    <div className="font-bold">Marjy Ferencz</div>
+                                                    <div className="text-sm opacity-50">Russia</div>
                                                 </div>
                                             </div>
                                         </td>
@@ -309,19 +309,19 @@ const Admin_Dashboard = () => {
                                     <tr>
                                         <th>
                                             <label>
-                                                <input type="checkbox" classNeme="checkbox" />
+                                                <input type="checkbox" className="checkbox" />
                                             </label>
                                         </th>
                                         <td>
-                                            <div classNeme="flex items-center space-x-3">
-                                                <div classNeme="avatar">
-                                                    <div classNeme="mask mask-squircle w-12 h-12">
+                                            <div className="flex items-center space-x-3">
+                                                <div className="avatar">
+                                                    <div className="mask mask-squircle w-12 h-12">
                                                         <img src="/tailwind-css-component-profile-5@56w.png" alt="Avatar Tailwind CSS Component" />
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <div classNeme="font-bold">Yancy Tear</div>
-                                                    <div classNeme="text-sm opacity-50">Brazil</div>
+                                                    <div className="font-bold">Yancy Tear</div>
+                                                    <div className="text-sm opacity-50">Brazil</div>
                                                 </div>
                                             </div>
                                         </td>

@@ -3,7 +3,7 @@ import React from 'react';
 const ContactUs = () => {
     return (
         <div>
-            <h1 className='lg:text-[40px] text-[32px] text-center text-primary p-10 font-bold' > Contact With Taskla</h1 >
+            <h1 className='lg:text-[40px] mt-32 text-[32px] text-center text-primary p-10 font-bold' > Contact With Taskla</h1 >
             <div className='container mx-auto grid grid-cols-1 lg:grid-cols-2'>
                 <div>
                     <img className='w-[500px]' src='https://i.ibb.co/TBqMpzt/contact-us.png' alt="" />

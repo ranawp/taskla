@@ -6,7 +6,7 @@ const MyClass = () => {
         event.preventDefault();
         const task = event.target.text.value;
         // console.log(task)
-        // fetch(`http://localhost:5000/answer`, {
+        // fetch(`https://cryptic-stream-86241.herokuapp.com/answer`, {
         //     method: 'POST',
         //     body: JSON.stringify({ task }),
         //     headers: {
@@ -22,7 +22,7 @@ const MyClass = () => {
 
     return (
         <div>
-            <div className='bg-no-repeat bg-center h-fit py-20' style={{ backgroundImage: `url(${bg1})` }
+            <div className='bg-no-repeat bg-center h-fit py-20 mt-20' style={{ backgroundImage: `url(${bg1})` }
             }>
                 <h3 className='text-4xl font-bold text-center mt-15 ' > Your assestment coming very soon...</h3 >
                 <h4 className='text-2xl font-meidum text-center mt-10' > Submit Your Answer Script Here</h4 >

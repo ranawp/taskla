@@ -19,14 +19,14 @@ const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit }) => {
 
                     <div
 
-                        tabindex="0" classNeme="collapse group collapse-arrow border border-base-300 bg-base-100 rounded-box">
+                        tabindex="0" className="collapse group collapse-arrow border border-base-300 bg-base-100 rounded-box">
 
                         <div onClick={(e) => setToogle(true)}>
                             <div
                                 onClick={() => {
                                     handleClick(singleTask)
                                 }}
-                                classNeme="collapse-title  font-medium flex justify-between">
+                                className="collapse-title  font-medium flex justify-between">
                                 <div
 
                                 >
@@ -40,7 +40,7 @@ const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit }) => {
                         </div>
                         {/* onClick={() => handleSubmit(singleTask)} */}
 
-                        <div classNeme="collapse-content">
+                        <div className="collapse-content">
                             <label
 
                                 onClick={(e) => { setToogle(false); handleSubmit(singleTask); }}
@@ -69,7 +69,7 @@ export default SingleTasks;
 //                 <th>{index + 1}</th>
 //                 <td>{task?.taskName}</td>
 //                 <td>{task?.taskSerial}</td>
-//                 <td><label for="details-modal"
+//                 <td><label htmlFor="details-modal"
 //                     onClick={() => setModalDetails(task)}
 //                     className=' bg-blue-700 border-0 px-3 py-1 button  rounded text-white modal-button' >Details </label></td>
 //                 <td>{task.questionDeliverDate},{task.questionDeliverHour}</td>
