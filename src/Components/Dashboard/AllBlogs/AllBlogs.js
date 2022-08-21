@@ -11,6 +11,7 @@ const AllBlogs = () => {
                     key={allBlog._id}
                     allBlog={allBlog}
                     setNewBlogs={setNewBlogs}
+                    newBlogs={newBlogs}
                 ></AllBlog>)
             }
         </div >

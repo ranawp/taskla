@@ -35,7 +35,7 @@ import Payment from "./Components/Courses/Payment";
 import Announcement from "./Components/Announcement/Announcement";
 import SubmittedTask from "./Components/Dashboard/Outlet/MyTasks/SubmittedTask";
 import CompletedTaskEvalute from "./Components/Dashboard/Outlet/MyTasks/TaskEvalute/CompletedTaskEvalute";
-import AllBlog from "./Components/Dashboard/AllBlogs/AllBlog";
+import AllBlogs from "./Components/Dashboard/AllBlogs/AllBlogs";
 
 
 export const TimeContext = createContext('default');
@@ -79,7 +79,7 @@ function App() {
             <Route path="taskEvaluate" element={<TaskEvaluate></TaskEvaluate>}></Route>
             <Route path="taskEvaluateCompleted" element={<CompletedTaskEvalute />}></Route>
             <Route path="createBlog" element={<CreateBlog></CreateBlog>}></Route>
-            <Route path="allBlogs" element={<AllBlog></AllBlog>}></Route>
+            <Route path="allBlogs" element={<AllBlogs></AllBlogs>}></Route>
 
 
 
