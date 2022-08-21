@@ -14,7 +14,7 @@ const ContactUs = () => {
                         <input size='40' type="text" placeholder="Your Name" name='Name' className="input input-bordered mb-5 " /><br />
                         <input size='40' type="text" placeholder="Email Address" name='Email' className="input input-bordered mb-5" /><br />
                         <textarea cols='42' className="textarea textarea-bordered" name='Message' placeholder="Enter your message" ></textarea ><br />
-                        
+
                         <input size='40' className='btn btn-secondary text-white' type="submit" value="Send Message" />
                     </form >
                 </div >

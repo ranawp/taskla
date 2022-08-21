@@ -62,42 +62,42 @@ const EvaluteFeedbackModal = ({ evaluteFeedbackModal, setRefresh }) => {
 
     return (
         <div>
-            <input type="checkbox" id="evalute-feedback-details" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box">
-                    <label for="evalute-feedback-details" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <h3 class="font-bold text-lg">Please Give FeedBack of this task</h3>
+            <input type="checkbox" id="evalute-feedback-details" classNeme="modal-toggle" />
+            <div classNeme="modal modal-bottom sm:modal-middle">
+                <div classNeme="modal-box">
+                    <label for="evalute-feedback-details" classNeme="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <h3 classNeme="font-bold text-lg">Please Give FeedBack of this task</h3>
 
                     <form onSubmit={handleFeedback}>
-                        <p class="pt-4">Email</p>
+                        <p classNeme="pt-4">Email</p>
                         <input readOnly name='email' value={evaluteFeedbackModal.email} placeholder='Please Give Mark'
                             className=" mt-2 p-2 rounded-lg background-color" size="30"
                         ></input>
-                        <p class="pt-4">TaskDescription</p>
+                        <p classNeme="pt-4">TaskDescription</p>
                         <input readOnly value={evaluteFeedbackModal.taskDescription} name='taskDescription' placeholder='Please Give Mark'
                             className=" mt-2 p-2 rounded-lg background-color" size="30"
                         ></input>
-                        <p class="pt-4">TaskName</p>
+                        <p classNeme="pt-4">TaskName</p>
                         <input readOnly value={evaluteFeedbackModal.taskName} name='taskName' placeholder='Please Give Mark'
                             className=" mt-2 p-2 rounded-lg background-color" size="30"
                         ></input>
-                        <p class="pt-4">Deadline</p>
+                        <p classNeme="pt-4">Deadline</p>
                         <input readOnly value={evaluteFeedbackModal.deadline} name='deadline' placeholder='Please Give Mark'
                             className=" mt-2 p-2 rounded-lg background-color" size="30"
                         ></input>
-                        <p class="pt-4">taskNo</p>
+                        <p classNeme="pt-4">taskNo</p>
                         <input value={evaluteFeedbackModal.taskNo} name='taskNo' placeholder='Please Give Mark'
                             className=" mt-2 p-2 rounded-lg background-color" size="30"
                         ></input>
-                        <p class="pt-4">Feedback Date:</p>
+                        <p classNeme="pt-4">Feedback Date:</p>
                         <input readOnly value={currentDate} name='feedbackDate'
                             className=" mt-2 p-2 rounded-lg background-color" size="30"
                         ></input>
-                        <p class="pt-4">Feedback Hour:</p>
+                        <p classNeme="pt-4">Feedback Hour:</p>
                         <input readOnly value={currentHour} name='feedbackHour'
                             className=" mt-2 p-2 rounded-lg background-color" size="30"
                         ></input>
-                        <p class="pt-4">Mark</p>
+                        <p classNeme="pt-4">Mark</p>
                         <input name='mark' placeholder='Please Give Mark'
                             className=" mt-2 p-2 rounded-lg background-color" size="30"
                         ></input>

@@ -23,7 +23,7 @@ const BlogDetails = () => {
             </div >
 
 
-            
+
 
             <div className='my-4 pl-52'>
                 <h3>{blogUser}</h3>

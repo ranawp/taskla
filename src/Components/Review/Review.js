@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 // import "./Review.css";
 import './Review.css'
 
-import { Autoplay,EffectCoverflow, Pagination, Navigation, FreeMode } from "swiper";
+import { Autoplay, EffectCoverflow, Pagination, Navigation, FreeMode } from "swiper";
 import ReviewCard from './ReviewCard';
 
 const Review = () => {
@@ -44,7 +44,7 @@ const Review = () => {
                 }}
 
                 pagination={true}
-                modules={[Autoplay,FreeMode,EffectCoverflow, Pagination, Navigation]}
+                modules={[Autoplay, FreeMode, EffectCoverflow, Pagination, Navigation]}
                 className="mySwiper"
             >
 
