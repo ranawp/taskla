@@ -70,7 +70,6 @@ function App() {
               <Route path="/analytics" element={<StudentAnalytic />}></Route>
 
 
-              {/* dashboard routes */}
               <Route path="dashboard" element={<Dashboard></Dashboard>}>
                 <Route index element={<Admin_Dashboard></Admin_Dashboard>} />
                 <Route path="allusers" element={<Allusers></Allusers>} />
@@ -85,12 +84,9 @@ function App() {
 
               </Route>
 
-
-              {/* mozahid task  */}
               <Route path="/createBlog/:blogId" element={<BlogDetails />} />
               <Route path="/blog/reactjs" element={<BlogDetails2 />} />
               <Route path="/blog/javaScript" element={<BlogDetails3 />} />
-              {/* mozahid task  */}
               <Route path="/contact" element={<ContactUs></ContactUs>}></Route>
               <Route path="/addReview" element={<AddReview />}></Route>
               <Route path="/login" element={<Login></Login>}></Route>
@@ -98,11 +94,9 @@ function App() {
             
 
 
-            {/* mozahid task  */}
             <Route path="/createBlog/:blogId" element={<BlogDetails />} />
             <Route path="/blog/reactjs" element={<BlogDetails2 />} />
             <Route path="/blog/javaScript" element={<BlogDetails3 />} />
-            {/* mozahid task  */}
             <Route path="/contact" element={<ContactUs></ContactUs>}></Route>
             <Route path="/addReview" element={<AddReview />}></Route>
             <Route path="/announcement" element={<Announcement />}></Route>

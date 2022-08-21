@@ -19,14 +19,14 @@ const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit }) => {
 
                     <div
 
-                        tabindex="0" class="collapse group collapse-arrow border border-base-300 bg-base-100 rounded-box">
+                        tabindex="0" className="collapse group collapse-arrow border border-base-300 bg-base-100 rounded-box">
 
                         <div onClick={(e) => setToogle(true)}>
                             <div
                                 onClick={() => {
                                     handleClick(singleTask)
                                 }}
-                                class="collapse-title  font-medium flex justify-between">
+                                className="collapse-title  font-medium flex justify-between">
                                 <div
 
                                 >
@@ -40,7 +40,7 @@ const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit }) => {
                         </div>
                         {/* onClick={() => handleSubmit(singleTask)} */}
 
-                        <div class="collapse-content">
+                        <div className="collapse-content">
                             <label
 
                                 onClick={(e) => { setToogle(false); handleSubmit(singleTask); }}
