@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Admin_Dashboard from './Admin_Dashboard/Admin_Dashboard';
+import './Dashboard.css'
 
 const Dashboard = () => {
     const [user] = useAuthState(auth)
@@ -28,21 +30,21 @@ const Dashboard = () => {
                     {/* <!-- Page content here --> */}
                     < Outlet ></Outlet >
                 </div >
-                <div className="drawer-side" >
+                <div className="drawer-side border ml-5 shadow-lg mt-5 mr-3" >
                     <label htmlFor="my-drawer-2" className="drawer-overlay" ></label >
                     <ul className="menu p-4 overflow-y-auto w-48 bg-base-100
                     lg:bg-transparent text-base-content" >
                         {/* <!-- Sidebar content here --> */}
-                        < li className='hover:bg-primary rounded-lg'> <Link to=''>Dashboard</Link></li >
-                        < li className='hover:bg-primary rounded-lg'> <Link to='allusers'>Allusers</Link></li >
-                        <li className='hover:bg-purple-600 rounded-lg'><Link to='createtask'>TaskCreate</Link></li>
-                        <li className='hover:bg-primary rounded-lg'><Link to='taskEvaluate'>Task Evaluate</Link></li>
-                        <li className='hover:bg-primary rounded-lg'><Link to='taskEvaluateCompleted'>Completed Evaluate</Link></li>
-                        <li className='hover:bg-primary rounded-lg'><Link to='createBlog'>Create Blog</Link></li>
+                        < li className='hover:bg-secondary hover:text-white rounded-lg'> <NavLink to=''>Dashboard</NavLink></li >
+                        < li className='hover:bg-secondary hover:text-white rounded-lg'> <NavLink to='allusers'>Allusers</NavLink></li >
+                        <li className='hover:bg-secondary hover:text-white rounded-lg'><NavLink to='createtask'>TaskCreate</NavLink></li>
+                        <li className='hover:bg-secondary hover:text-white rounded-lg'><NavLink to='taskEvaluate'>Task Evaluate</NavLink></li>
+                        <li className='hover:bg-secondary hover:text-white rounded-lg'><NavLink to='taskEvaluateCompleted'>Completed Evaluate</NavLink></li>
+                        <li className='hover:bg-secondary hover:text-white rounded-lg'><NavLink to='createBlog'>Create Blog</NavLink></li>
 
 
 
-                        <li className='hover:bg-primary rounded-lg'><Link to='notice'>Notice</Link></li>
+                        <li className='hover:bg-secondary hover:text-white rounded-lg'><NavLink to='notice'>Notice</NavLink></li>
 
                     </ul>
                 </div >

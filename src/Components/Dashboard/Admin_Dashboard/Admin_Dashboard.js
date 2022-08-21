@@ -4,8 +4,11 @@ import 'react-circular-progressbar/dist/styles.css';
 import student from '../../../asset/student.png';
 import cap from '../../../asset/cap.png'
 import { AreaChart, CartesianGrid, XAxis, YAxis, Tooltip, Area, ResponsiveContainer } from 'recharts';
+import { useContext } from 'react';
+import { TimeContext } from '../../../App';
 
-const Admin_Dashboard = () => {
+const Admin_Dashboard = () => {   
+    const [currentDate,Current_time] = useContext(TimeContext);
     const percentage = 66;
     const percentage2 = 88;
     const chartData = [
@@ -46,7 +49,7 @@ const Admin_Dashboard = () => {
             "revenue": 61000
         }
     ]
-
+    
     const [students, setStudents] = useState([]);
     const [task, setTask] = useState([])
 
@@ -61,8 +64,7 @@ const Admin_Dashboard = () => {
         fetch('http://localhost:5000/alltasks')
             .then(res => res.json())
             .then(data => setTask(data))
-    })
-
+    });
     return (
         <div className='p-10'>
             <div className='flex justify-between'>
@@ -71,9 +73,10 @@ const Admin_Dashboard = () => {
                 </div>
                 <div class="card w-96 bg-base-100 rounded-full shadow-xl">
                     <div class="text-center">
-                        <h2 class="text-center text-lg font-bold">Period</h2>
+                        <h2 class="text-center text-lg font-bold">Period </h2>
                         <p>29/5/2022- 29/12/2022</p>
-
+                        <p>{currentDate}</p>
+                        <p>{Current_time}</p>
                     </div>
                 </div>
             </div>

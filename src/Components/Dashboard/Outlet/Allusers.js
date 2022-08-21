@@ -22,7 +22,7 @@ const Allusers = () => {
 
     return (
         <div>
-            <h2 className='text-2xl'>All users :{data.length}</h2>
+            <h2 className='text-lg text-center font-bold my-5'>All users</h2>
 
             <div className="overflow-x-auto" >
                 <table className="table w-full" >
