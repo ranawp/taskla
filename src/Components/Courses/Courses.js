@@ -12,7 +12,7 @@ const Courses = () => {
         setText('we are working.......')
         toast('Wow! you are enrolled')
 
-        fetch(`http://localhost:5000/user/enroll/${email}`, {
+        fetch(`https://cryptic-stream-86241.herokuapp.com/user/enroll/${email}`, {
             method: 'PUT'
         })
             .then(res => res.json())
@@ -24,7 +24,7 @@ const Courses = () => {
     }
     let navigate = useNavigate();
     return (
-        <div className='sm:min-h-screen px-10 flex justify-between relative mt-10'>
+        <div className='sm:min-h-screen px-10 flex justify-between relative mt-32'>
             <div className='absolute z-10 top-[40%] right-[50%]'>
             </div>
             <div className="card w-80 h-96 bg-base-100 shadow-xl">

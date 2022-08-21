@@ -4,7 +4,6 @@ import defaultImage from '../../../asset/dummy-iamge.png'
 import bg from '../../../asset/bg1.jpg'
 const UserDetails = ({ singelUser }) => {
     const { district, division, email, image, name, street } = singelUser;
-    console.log(singelUser)
 
     return (
         <>

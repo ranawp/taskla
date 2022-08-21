@@ -7,8 +7,8 @@ import { AreaChart, CartesianGrid, XAxis, YAxis, Tooltip, Area, ResponsiveContai
 import { useContext } from 'react';
 import { TimeContext } from '../../../App';
 
-const Admin_Dashboard = () => {   
-    const [currentDate,Current_time] = useContext(TimeContext);
+const Admin_Dashboard = () => {
+    const [currentDate, Current_time] = useContext(TimeContext);
     const percentage = 66;
     const percentage2 = 88;
     const chartData = [
@@ -49,22 +49,22 @@ const Admin_Dashboard = () => {
             "revenue": 61000
         }
     ]
-    
+
     const [students, setStudents] = useState([]);
     const [task, setTask] = useState([])
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/user')
+        fetch('https://cryptic-stream-86241.herokuapp.com/user')
             .then(res => res.json())
             .then(data => setStudents(data))
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:5000/alltasks')
+        fetch('https://cryptic-stream-86241.herokuapp.com/alltasks')
             .then(res => res.json())
             .then(data => setTask(data))
-    });
+    }, []);
     return (
         <div className='p-10'>
             <div className='flex justify-between'>

@@ -6,7 +6,7 @@ import NewBlogs from './NewBlogs';
 const Blogs = () => {
     const [newBlogs] = UseNewBlog();
     return (
-        <div className='grid sm:grid-cols-3 gap-4 my-20 mx-5' >
+        <div className='grid sm:grid-cols-3 gap-4 my-20 mx-5 mt-32' >
             {
                 newBlogs.map(newBlog => <NewBlogs
                     key={newBlog._id}

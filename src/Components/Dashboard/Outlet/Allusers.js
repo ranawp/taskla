@@ -12,8 +12,9 @@ const Allusers = () => {
 
     useEffect(() => {
         isLoading(true)
+        console.log('singaluser')
         const fetchSideeffect = async () => {
-            const res = await axios('http://localhost:5000/user')
+            const res = await axios('https://cryptic-stream-86241.herokuapp.com/user')
             setData(res.data)
             isLoading(false)
         }

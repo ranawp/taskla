@@ -33,7 +33,7 @@ const Register = () => {
             email: data.email,
             name: data.name
         }
-        fetch('http://localhost:5000/user', {
+        fetch('https://cryptic-stream-86241.herokuapp.com/user', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

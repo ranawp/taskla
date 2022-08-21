@@ -6,8 +6,8 @@ const CourseDetails = () => {
         <div className='mt-[70px] relative'>
             <div className='w-[50px] h-[50px] opacity-20 filter blur rounded-full bg-yellow-500 absolute top-[90px]'></div>
             <div className='w-[50px] h-[50px] opacity-20  rounded-full bg-purple-500 absolute top-[50px] left-[120px] z-0'></div>
-           <div className='w-[100px] h-[100px] opacity-20 rounded-full bg-pink-700 absolute bottom-0 right-12'></div>
-             {/* <div className='w-[50px] h-[50px] opacity-20 blur rounded-full bg-purple-500 absolute top-[90px]'></div> */}
+            <div className='w-[100px] h-[100px] opacity-20 rounded-full bg-pink-700 absolute bottom-0 right-12'></div>
+            {/* <div className='w-[50px] h-[50px] opacity-20 blur rounded-full bg-purple-500 absolute top-[90px]'></div> */}
 
             <div className='max-w-screen-xl mx-auto'>
                 <h1 className="text-[32px] text-center text-primary font-bold">Everything in this<span className='text-secondary'> Course</span></h1>
