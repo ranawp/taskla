@@ -9,12 +9,12 @@ import { toast } from 'react-toastify';
 const CheckoutForm = () => {
     const stripe = useStripe();
     const elements = useElements()
-    const [cardError, setcardError] = useState('')
-    const [cardsuccess, setcardSuccess] = useState('')
-    const [clientSecret, setClientSecret] = useState('')
+    const [cardError, setcardError] = useState<string>('')
+    const [cardsuccess, setcardSuccess] = useState<string>('')
+    const [clientSecret, setClientSecret] = useState<string>('')
     const [user] = useAuthState(auth)
-    const email = user?.email
-    const displayName = user?.displayName
+    const email : string | null | undefined = user?.email
+    const displayName : string | null | undefined = user?.displayName
 
 
 
@@ -47,7 +47,7 @@ const CheckoutForm = () => {
             return;
         }
 
-        const { error, paymentMethod } = await stripe.createPaymentMethod({
+        const { error, paymentMethod }:any = await stripe.createPaymentMethod({
             type: 'card',
             card,
         })
@@ -60,7 +60,7 @@ const CheckoutForm = () => {
         }
         setcardSuccess('')
 
-        const { paymentIntent, error: intentError } = await stripe.confirmCardPayment(
+        const { paymentIntent, error: intentError }: any = await stripe.confirmCardPayment(
             clientSecret,
             {
                 payment_method: {

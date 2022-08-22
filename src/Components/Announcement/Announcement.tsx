@@ -3,25 +3,37 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import Detail from './Detail';
 
-const Announcement = () => {
-    const [data, setAnnouncement] = useState([]);
-    const [announcementDetail, setAnnouncementDetail] = useState({});
 
-    const { notice, time, announcement } = announcementDetail
+interface Announcement {
+    _id: string
+    notice: string
+    announcement: string
+    time: string
+    read: boolean
+}
+
+
+const Announcement = () => {
+    const [data, setAnnouncement] = useState<Announcement[]>([]);
+    const [announcementDetail, setAnnouncementDetail] = useState<Announcement | any>({});
+
+    const { notice, time, announcement } : any = announcementDetail;
 
     useEffect(() => {
-        fetch('https://cryptic-stream-86241.herokuapp.com/announcement')
+        fetch('http://localhost:5000/announcement')
             .then(res => res.json())
             .then(data => setAnnouncement(data))
     }, [])
 
-    const handleAnnounceDetail = id => {
-        fetch(`https://cryptic-stream-86241.herokuapp.com/announcement/${id}`)
+    const handleAnnounceDetail = (id) : void => {
+        fetch(`http://localhost:5000/announcement/${id}`)
             .then(res => res.json())
             .then(data => setAnnouncementDetail(data))
+        
     }
 
-    const announcementFilter = data.filter(a => (a.announcement && a.announcement));
+    const announcementFilter : Announcement[] = data.filter(a => (a.announcement && a.announcement));
+
     return (
         <div className="hero bg-base-200 mt-20">
             <div className="hero-content flex-col lg:flex-row mt-10">

@@ -5,8 +5,29 @@ import auth from '../../firebase.init';
 import StudentMark from './StudentMark';
 
 
+interface CardData {
+    month: string;
+    investment: number;
+    sell: number;
+    revenue: number;
+}
+
+interface Mark {
+    _id: string
+    mark: string
+    scriptfeedback: string
+    email: string
+    taskDescription: string
+    taskName: string
+    deadline: string
+    taskNo: string
+    feedbackDate: string
+    feedbackHour: string
+}
+
+
 const studentAnalytic = () => {
-    const chartData = [
+    const chartData: CardData[] = [
         {
             "month": "Mar",
             "investment": 100000,
@@ -46,9 +67,9 @@ const studentAnalytic = () => {
     ]
 
     const [user] = useAuthState(auth)
-    const email = user?.email
+    const email: string | null | undefined = user?.email
 
-    const [marks, setMarks] = useState([]);
+    const [marks, setMarks] = useState<Mark[]>([]);
 
     useEffect(() => {
         fetch(`https://cryptic-stream-86241.herokuapp.com/allMarks/${email}`)

@@ -10,12 +10,33 @@ import notificationIcon from '../asset/notification.png'
 import axios from 'axios';
 import dummyImage from '../asset/dummy-iamge.png'
 
+interface Notice {
+    _id: string
+    notice: string
+    announcement: string
+    time: string
+    read?: boolean
+}
+
+interface Profile {
+    _id?: string
+    email?: string
+    name?: string
+    role?: string
+    student?: string
+    district?: string
+    division?: string
+    street?: string
+    enroll?: string
+    phone?: string
+    image?: string
+}
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
     const email = user?.email;
-    const [match, setMatch] = useState([]);
-    const [notifications, setNotifications] = useState([]);
+    const [match, setMatch] = useState<Profile>({});
+    const [notifications, setNotifications] = useState<Notice[]>([]);
 
     //fetching those kind of people who is enrolled
     useEffect(() => {
@@ -26,16 +47,15 @@ const Navbar = () => {
         fetchSideeffect()
     }, [email])
 
-    console.log(match)
-    useEffect(() => {
-        console.log('hello')
+    // console.log(match)
+    useEffect(() : void => {
         fetch(`https://cryptic-stream-86241.herokuapp.com/notice`)
             .then((response) => response.json())
             .then((json) => setNotifications(json));
     }, [])
 
 
-    const newArray = notifications.filter((ele) => {
+    const newArray : Notice[] = notifications.filter((ele) => {
         return ele.read == false
     })
 
@@ -117,11 +137,11 @@ const Navbar = () => {
 
         {/* notification large device start*/}
         {(user && match.student == 'enrolled') && <div className="dropdown hidden md:block">
-            <label tabIndex="1" className="">
+            <label tabIndex={1} className="">
                 <li className='pl-5 cursor-pointer'>
                     {userNotificationIndicator}
                 </li ></label>
-            <ul tabIndex="1" className="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4 h-[380px] overflow-auto">
+            <ul tabIndex={1} className="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4 h-[380px] overflow-auto">
                 {userNotificationDescrip}
             </ul>
         </div>}
@@ -159,14 +179,14 @@ const Navbar = () => {
         {/* large device user proile start */}
         {
             user && <div className="dropdown dropdown-end hidden md:block" >
-                <label tabIndex="0" className="m-1" >
+                <label tabIndex={0} className="m-1" >
                     <li className='pl-5 cursor-pointe inline-block' >
 
                         {userProfileNameLogo}
                     </li >
 
                 </label >
-                <ul tabIndex="0" className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52" >
+                <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52" >
                     {userProfileDes}
 
                 </ul >
@@ -191,7 +211,7 @@ const Navbar = () => {
 
 
     const locatin = useLocation()
-    const [open, setOpen] = useState(null)
+    const [open, setOpen] = useState<boolean | null>(null)
     return (
         <div className='shadow-md fixed z-50 bg-white w-full'>
             <div className='max-w-screen-xl mx-auto' >
@@ -232,7 +252,7 @@ const Navbar = () => {
                     {
                         location.pathname == '/dashboard' &&
                         <div className='navbar-end lg:hidden' >
-                            <label tabIndex="1" htmlFor="my-drawer-2" className="btn btn-ghost lg:hidden" >
+                            <label tabIndex={1} htmlFor="my-drawer-2" className="btn btn-ghost lg:hidden" >
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" > <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                             </label >
                         </div >

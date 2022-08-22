@@ -13,7 +13,7 @@ const SingleSubmittedTask = ({ taskDone, answerScript }) => {
 
                 <div
 
-                    tabindex="0" className="collapse group collapse-arrow border border-base-300 bg-base-100 rounded-box">
+                    tabIndex={0} className="collapse group collapse-arrow border border-base-300 bg-base-100 rounded-box">
 
                     <div>
                         <div className="collapse-title  font-medium flex justify-between">

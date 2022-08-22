@@ -5,20 +5,29 @@ import dummyImage from '../../asset/dummy-iamge.png'
 import auth from '../../firebase.init';
 import EditProfile from './EditProfile';
 
+interface Profile {
+    _id?: string
+    email?: string
+    name?: string
+    role?: string
+    student?: string
+    district?: string
+    division?: string
+    street?: string
+    enroll?: string
+    phone?: string
+    image?: string
+}
+
 const ViewProfile = () => {
-    const [data, getData] = useState([])
+    const [data, getData] = useState<Profile>({})
     const [user] = useAuthState(auth)
-    const [reset, setReset] = useState(false)
+    const [reset, setReset] = useState<boolean>(false)
 
     const emails = user?.email
 
     useEffect(() => {
-        fetch(`https://cryptic-stream-86241.herokuapp.com/user/${emails}`, {
-            method: 'GET',
-            header: {
-                'content-type': 'application/json'
-            }
-        })
+        fetch(`https://cryptic-stream-86241.herokuapp.com/user/${emails}`)
             .then((res) => res.json())
             .then((data) => getData(data));
 

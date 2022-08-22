@@ -11,15 +11,26 @@ import './Review.css'
 import { Autoplay, EffectCoverflow, Pagination, Navigation, FreeMode } from "swiper";
 import ReviewCard from './ReviewCard';
 
+type Review ={
+    _id: string,
+    name: string,
+    course: string,
+    message:string,
+    rating:number,
+    image: string
+}
+
 const Review = () => {
 
-    const [reviewCard, setReviewCard] = useState([]);
+    const [reviewCard, setReviewCard] = useState<Review[] | any>([]);
 
     useEffect(() => {
         fetch('https://cryptic-stream-86241.herokuapp.com/review')
             .then(res => res.json())
             .then(data => setReviewCard(data))
     }, [])
+
+    
 
     return (
         <div className='h-[600px] mt-32' >
@@ -48,7 +59,7 @@ const Review = () => {
                 className="mySwiper"
             >
 
-                {reviewCard.map((review, index) => <SwiperSlide>
+                {reviewCard.map((review) => <SwiperSlide>
                     <ReviewCard
                         key={review._id}
                         review={review

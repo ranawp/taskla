@@ -3,12 +3,13 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 
 import auth from '../../firebase.init';
 import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
 
 const Courses = () => {
-    const [text, setText] = useState('')
+    const [text, setText] = useState<string>('')
     const [user] = useAuthState(auth)
     const email = user?.email
-    const enRoll = () => {
+    const enRoll = ():void => {
         setText('we are working.......')
         toast('Wow! you are enrolled')
 

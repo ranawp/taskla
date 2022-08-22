@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, FormEvent, HTMLInputTypeAttribute, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
+
 const EditProfile = ({ data, setReset }) => {
     const [user] = useAuthState(auth);
-    const emails = user?.email
-    const [imgLoad, setImgload] = useState(false)
-    const [image, setImage] = useState('')
-    const imageStoreKey = 'b13c2fea1530fdaae420c7d48efd3bdc';
+    const emails: any= user?.email
+    const [imgLoad, setImgload] = useState<boolean>(false)
+    const [image, setImage] = useState<string>('')
+    const imageStoreKey:string = 'b13c2fea1530fdaae420c7d48efd3bdc';
 
-    const handleFileChange = event => {
+    const handleFileChange = (event):void => {
         if (event.bubbles) {
             setImgload(true)
         }
@@ -33,7 +34,7 @@ const EditProfile = ({ data, setReset }) => {
 
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: any):void => {
         e.preventDefault()
         const name = e.target.name.value
         const email = e.target.email.value

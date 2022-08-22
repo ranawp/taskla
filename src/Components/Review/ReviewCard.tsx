@@ -7,11 +7,6 @@ import { RiDoubleQuotesL } from 'react-icons/ri'
 const ReviewCard = ({ review }) => {
     const { name, course, image, message, rating } = review;
 
-    // const [allRating, setAllRating] = useState(0);
-
-    // const ratingChanged = (newRating) => {
-    //     setAllRating(newRating);
-    // };
 
     return (
         <div className="card w-96 bg-base-100 shadow-xl relative">

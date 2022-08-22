@@ -5,33 +5,28 @@ import auth from '../../firebase.init';
 
 const AddReview = () => {
 
-    const [rating, setRating] = useState(0);
-    const [data, getData] = useState([]);
+    const [rating, setRating] = useState<number>(0);
+    const [data, getData] = useState<object[] | any>([]);
     const [user] = useAuthState(auth);
 
-    const email = user?.email;
+    const email: string | null | undefined = user?.email;
 
     useEffect(() => {
-        fetch(`https://cryptic-stream-86241.herokuapp.com/user/${email}`, {
-            method: 'GET',
-            header: {
-                'content-type': 'application/json'
-            }
-        })
+        fetch(`https://cryptic-stream-86241.herokuapp.com/user/${email}`)
             .then((res) => res.json())
             .then((data) => getData(data));
 
     }, [email])
 
 
-    const ratingChanged = (newRating) => {
+    const ratingChanged = (newRating : number): void => {
         setRating(newRating);
     };
 
 
 
 
-    const handleAddReview = event => {
+    const handleAddReview = (event : any) : void => {
         event.preventDefault();
         const name = event.target.name.value;
         const course = event.target.course.value;
