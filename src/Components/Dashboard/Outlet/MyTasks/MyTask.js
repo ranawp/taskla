@@ -74,7 +74,11 @@ const MyTask = () => {
                         <>
                             <h1 className="title">Task Name:{taskData.taskName}</h1>
                             <p className="details">Task no:{taskData.taskSerial}</p>
+
+                            <p classNeme="details">Task Posted time:{taskData.questionDeliverDate}</p>
+
                             <p className="details">Task Posted time:{taskData.questionDeliverDate}</p>
+
                             <p className="details">Deadline:{taskData.taskDeadline}</p>
                             <p className="details">Task Details : {taskData.taskMassage} </p> </>
                     }

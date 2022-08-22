@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useForm } from "react-hook-form";
 import auth from '../../firebase.init';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import registerImg from '../../imgages/register.png';
 import { useNavigate, Link } from 'react-router-dom';
 import useToken from '../../hooks/useToken';
@@ -17,9 +17,11 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password);
-        // reset();
+        reset();
     };
 
     const [token] = useToken(user)
@@ -28,7 +30,15 @@ const Login = () => {
     }
 
 
-
+    const handelResetPassword = async () => {
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast("Sent Email");
+        }
+        else {
+            toast("Please Enter Your Email");
+        }
+    }
 
     let errorElement;
     if (error) {
@@ -49,12 +59,12 @@ const Login = () => {
         setState(click => !click);
     }
     return (
-        <div className='px-48 mt-10 register-page lg:flex items-center ' >
-            <div className='text-center p-10 mx-auto flex-1 w-64' >
-                <img src={registerImg} alt="" />
+        <div className='sm:px-48 mt-10 register-page sm:flex items-center ' >
+            <div className='text-center p-10 mx-auto md:w-80' >
+                <img src={registerImg} className='w-80' alt="" />
             </div >
             <div>
-                <div className='lg:w-80 p-10 mx-auto shadow-lg border'>
+                <div className='w-80 p-10 mx-auto shadow-lg border'>
                     <h1 className='text-center font-bold text-3xl my-4'>Sign In</h1>
                     <form className='flex flex-col' onSubmit={handleSubmit(onSubmit)} >
                         <input
@@ -102,11 +112,13 @@ const Login = () => {
                         {errors.password?.type === 'required' && <p className='' > {errors.password?.message}</p >}
 
                         {errors.password?.type === 'minLength' && <p className='' > {errors.password?.message}</p >}
-                        
+
                         <input className='my-2 py-2 border rounded-lg text-dark font-semibold hover:bg-white hover:text-black cursor-pointer' value="Sign In" type="submit" />
                         {errorElement}
                     </form >
-                    <p className='my-3 text-dark' > New to Taskla ?? <Link to='/register'>Please Register</Link></p >
+
+                    <p className='my-3 text-dark text-xs' > New to Taskla ?? <Link to='/register'>Please Register</Link></p >
+                    <p className='my-3 text-dark text-xs'>Forget Password?? <span className='link no-underline' onClick={handelResetPassword}>Reset Password</span></p>
                 </div >
             </div >
         </div >
