@@ -43,6 +43,7 @@ const Dashboard = () => {
                         <li className='hover:bg-secondary hover:text-white rounded-lg'><NavLink to='taskEvaluate'>Task Evaluate</NavLink></li>
                         <li className='hover:bg-secondary hover:text-white rounded-lg'><NavLink to='taskEvaluateCompleted'>Completed Evaluate</NavLink></li>
                         <li className='hover:bg-secondary hover:text-white rounded-lg'><NavLink to='createBlog'>Create Blog</NavLink></li>
+                        <li className='hover:bg-secondary hover:text-white rounded-lg'><NavLink to='allBlogs'>All blogs</NavLink></li>
 
 
 
