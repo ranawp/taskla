@@ -13,21 +13,21 @@ const UserRow = ({ user: users, index, setSingelUser }) => {
 
     const [user] = useAuthState(auth)
     const emails = user?.email
-    const makeAdmin = () => {
+    const makeAdmin = () :void => {
         fetch(`https://cryptic-stream-86241.herokuapp.com/user/admin/${email}`, {
             method: 'PUT'
         })
             .then(res => res.json())
             .then(data => data)
     }
-    const paidStudent = () => {
+    const paidStudent = () : void => {
         fetch(`https://cryptic-stream-86241.herokuapp.com/user/student/${email}`, {
             method: 'PUT'
         })
             .then(res => res.json())
-            .then(datas => {
+            .then(data => {
 
-                datas
+                data
 
                 toast('Enrolled successfully')
 
@@ -48,7 +48,7 @@ const UserRow = ({ user: users, index, setSingelUser }) => {
                     <> {enroll == 'enrollPending' && <button onClick={paidStudent} className="btn btn-xs">enrollPending</button>}</>
             }</td>
 
-            <td><label onClick={() => setSingelUser(users)} className="btn btn-xs modal-button" for="my-modal-6">See-Details</label></td >
+            <td><label onClick={() => setSingelUser(users)} className="btn btn-xs modal-button" htmlFor="my-modal-6">See-Details</label></td >
         </tr >
 
     );

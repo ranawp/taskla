@@ -4,13 +4,27 @@ import Loading from '../../../Share/Loading';
 import UserDetails from './UserDetails';
 import UserRow from './UserRow';
 
+interface User {
+    _id ?: string
+    email ?: string
+    name ?: string
+    role ?: string
+    student ?: string
+    district ?: string
+    division ?: string
+    street ?: string
+    enroll ?: string
+    phone ?: string
+    image ?: string
+}
+
 const Allusers = () => {
-    const [data, setData] = useState([])
-    const [loading, isLoading] = useState(false);
-    const [singelUser, setSingelUser] = useState([]);
+    const [data, setData] = useState<User[]>([])
+    const [loading, isLoading] = useState<Boolean>(false);
+    const [singelUser, setSingelUser] = useState<any[]>([]);
 
 
-    useEffect(() => {
+    useEffect(() : void => {
         isLoading(true)
         console.log('singaluser')
         const fetchSideeffect = async () => {

@@ -5,13 +5,13 @@ import taskSvg from '../../../../imgages/taskCreate.svg'
 
 const TaskCreate = () => {
 
-    const { register, formState: { errors }, handleSubmit, reset } = useForm();
+    const { register, formState: { errors }, handleSubmit, reset } : any = useForm();
     // var options = { weekday: 'long', year: 'numeric', day: 'numeric', month: 'long' };
     const date = new Date()
     const currentDate = date.toLocaleDateString();
     const currentHour = date.toLocaleTimeString();
 
-    const onSubmit = data => {
+    const onSubmit = (data) : void  => {
         const url = `https://cryptic-stream-86241.herokuapp.com/tasks`
         fetch(url, {
             method: 'POST',
@@ -40,7 +40,7 @@ const TaskCreate = () => {
                                 <div>
                                     <p className='mt-2'>Task Created Date</p>
                                     <input readOnly value={currentDate}
-                                        className=" mt-2 p-2 rounded-lg background-color" size="15"
+                                        className=" mt-2 p-2 rounded-lg background-color" size='15'
                                         {...register("questionDeliverDate", {
                                             required: {
                                                 value: true,
@@ -52,7 +52,7 @@ const TaskCreate = () => {
                                 <div>
                                     <p className='mt-2'>Task Created Hour</p>
                                     <input readOnly value={currentHour}
-                                        className=" mt-2 p-2 rounded-lg background-color" size="15"
+                                        className=" mt-2 p-2 rounded-lg background-color" size='15'
                                         {...register("questionDeliverHour", {
                                             required: {
                                                 value: true,
@@ -67,7 +67,7 @@ const TaskCreate = () => {
                                 <div>
                                     <p className='mt-5'>Task Serial:</p>
                                     <input placeholder='Please provide task Serial'
-                                        className="mt-2 p-2 rounded-lg background-color" size="15"
+                                        className="mt-2 p-2 rounded-lg background-color" size='15'
                                         {...register("taskSerial", {
                                             required: {
                                                 value: true,

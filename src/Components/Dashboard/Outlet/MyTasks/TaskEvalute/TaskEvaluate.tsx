@@ -5,10 +5,10 @@ import SingleTaskEvalute from './SingleTaskEvalute';
 import './taskEvalute.css';
 
 const TaskEvaluate = () => {
-    const [taskEvaluate, setTaskEvalute] = useState([]);
-    const [evaluteModalDetails, setEvaluteModalDetails] = useState(null);
-    const [evaluteFeedbackModal, setEvaluteFeedbackModal] = useState(null);
-    const [refresh, setRefresh] = useState(null)
+    const [taskEvaluate, setTaskEvalute] = useState<Object[] | any>([]);
+    const [evaluteModalDetails, setEvaluteModalDetails] = useState<Object | null>(null);
+    const [evaluteFeedbackModal, setEvaluteFeedbackModal] = useState<Object | null>(null);
+    const [refresh, setRefresh] = useState<Object | null>(null)
 
 
     useEffect(() => {
@@ -18,7 +18,7 @@ const TaskEvaluate = () => {
     }
         , [refresh])
 
-    const pendingFeedbackTask = taskEvaluate.filter(task => {
+    const pendingFeedbackTask = taskEvaluate.filter((task) : boolean => {
         return task.feedbackSubmit !== "feedbacksubmited"
     })
     return (

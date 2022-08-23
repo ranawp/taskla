@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 
-const useToken = user => {
-    const [token, setToken] = useState('');
-    useEffect(() => {
+
+const useToken = (user) : string[] => {
+    const [token, setToken] = useState<string>('');
+    useEffect(() : void => {
         const email = user?.user?.email;
         const currentUser = { email: email };
         if (email) {

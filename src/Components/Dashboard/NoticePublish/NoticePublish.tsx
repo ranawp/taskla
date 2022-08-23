@@ -1,28 +1,34 @@
 import React, { useState } from 'react';
 
+interface Date {
+    month: string
+    day: string
+    year: string
+}
+
 const NoticePublish = () => {
 
 
-    const options = { month: 'short', day: 'numeric', year: 'numeric' };
+    const options : Date = { month: 'short', day: 'numeric', year: 'numeric' };
     const dateFunction = new Date().toLocaleDateString("en-UK", options);
 
     // time 
     let time = new Date().toLocaleTimeString();
-    const [cTime, setCTime] = useState(time);
-    const updateTime = () => {
+    const [cTime, setCTime] = useState<String>(time);
+    const updateTime = () : void => {
         time = new Date().toLocaleTimeString();
         setCTime(time);
     }
     setInterval(updateTime, 1000);
-    const Mydate = dateFunction;
-    const Mytime = cTime;
+    const Mydate : string = dateFunction;
+    const Mytime : String = cTime;
 
 
     const dateTime = Mydate + "," + Mytime;
 
     // console.log(dateTime);
 
-    const handleNoticeForm = event => {
+    const handleNoticeForm = (event : any) : void => {
         event.preventDefault();
         const notice = event.target.title.value;
         const announcement = event.target.announcement.value;

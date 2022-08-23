@@ -26,7 +26,7 @@ const UserDetails = ({ singelUser }) => {
                     </div>
 
                     <div className="modal-action">
-                        <label for="my-modal-6" className="btn">Close!</label>
+                        <label htmlFor="my-modal-6" className="btn">Close!</label>
                     </div>
                 </div>
             </div>}

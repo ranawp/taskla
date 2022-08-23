@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import DoneSignleEvaluate from './DoneSignleEvaluate';
+import EvaluteDetails from './EvaluteDetails';
 
 const CompletedTaskEvalute = () => {
 
-    const [taskEvaluate, setTaskEvalute] = useState([]);
-    const [evaluteModalDetails, setEvaluteModalDetails] = useState(null);
+    const [taskEvaluate, setTaskEvalute] = useState<Object[]>([]);
+    const [evaluteModalDetails, setEvaluteModalDetails] = useState<object | any>(null);
 
     useEffect(() => {
-        fetch(' https://cryptic-stream-86241.herokuapp.com/answers')
+        fetch('https://cryptic-stream-86241.herokuapp.com/answers')
             .then(res => res.json())
             .then(data => setTaskEvalute(data))
     }
         , [])
 
-    const doneFeedbackTask = taskEvaluate.filter(task => {
+    const doneFeedbackTask : Object[] = taskEvaluate.filter((task : Object | any) => {
         return task.feedbackSubmit == "feedbacksubmited"
     })
 
@@ -35,11 +36,11 @@ const CompletedTaskEvalute = () => {
                 </thead>
                 <tbody>
                     {
-                        doneFeedbackTask.map((taskEvalute, index) => <DoneSignleEvaluate
+                        doneFeedbackTask.map((taskEvalute: object | any, index) => <DoneSignleEvaluate
                             key={taskEvalute._id}
                             taskEvalute={taskEvalute}
                             index={index}
-                            setEvaluteModalDetails={setEvaluteModalDetails}
+                            // setEvaluteModalDetails={setEvaluteModalDetails}
 
 
                         ></DoneSignleEvaluate>)

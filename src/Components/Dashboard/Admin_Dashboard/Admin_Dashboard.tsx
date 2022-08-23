@@ -7,11 +7,33 @@ import { AreaChart, CartesianGrid, XAxis, YAxis, Tooltip, Area, ResponsiveContai
 import { useContext } from 'react';
 import { TimeContext } from '../../../App';
 
+
+interface Data {
+    "month": string
+    "investment": number
+    "sell": string
+    "revenue": number
+}
+
+interface Student {
+    _id ?: string
+    email ?: string
+    name ?: string
+    role ?: string
+    student ?: string
+    district ?: string
+    division ?: string
+    street ?: string
+    enroll ?: string
+    phone ?: string
+    image ?: string
+}
+
 const Admin_Dashboard = () => {
     const [currentDate, Current_time] = useContext(TimeContext);
     const percentage = 66;
     const percentage2 = 88;
-    const chartData = [
+    const chartData: Data[] = [
         {
             "month": "Mar",
             "investment": 100000,
@@ -50,8 +72,8 @@ const Admin_Dashboard = () => {
         }
     ]
 
-    const [students, setStudents] = useState([]);
-    const [task, setTask] = useState([])
+    const [students, setStudents] = useState<Student[]>([]);
+    const [task, setTask] = useState<Object[]>([])
 
 
     useEffect(() => {

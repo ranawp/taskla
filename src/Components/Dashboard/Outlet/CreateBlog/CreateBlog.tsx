@@ -7,16 +7,16 @@ const CreateBlog = () => {
 
     const { register, handleSubmit, reset } = useForm();
     const [user] = useAuthState(auth);
-    const blogUser = user?.displayName;
+    const blogUser: string | null | undefined = user?.displayName;
     const date = new Date();
-    const currentDate = date.toLocaleDateString();
-    const imageStoragekey = '3cf84befed9b9bcd8f1d01c2b4412701';
+    const currentDate: string = date.toLocaleDateString();
+    const imageStoragekey : string = '3cf84befed9b9bcd8f1d01c2b4412701';
 
-    const onSubmit = data => {
+    const onSubmit = (data) : void => {
         const image = data.image[0];
         const formData = new FormData();
         formData.append('image', image);
-        const url = `https://api.imgbb.com/1/upload?key=${imageStoragekey}`;
+        const url : string = `https://api.imgbb.com/1/upload?key=${imageStoragekey}`;
         fetch(url, {
             method: 'POST',
             body: formData
