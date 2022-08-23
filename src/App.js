@@ -33,7 +33,13 @@ import Payment from "./Components/Courses/Payment";
 import Announcement from "./Components/Announcement/Announcement";
 import SubmittedTask from "./Components/Dashboard/Outlet/MyTasks/SubmittedTask";
 import CompletedTaskEvalute from "./Components/Dashboard/Outlet/MyTasks/TaskEvalute/CompletedTaskEvalute";
+
+import SignleEditTask from "./Components/Dashboard/Outlet/TaskCreate/SignleEditTask";
+import TaskEdit from "./Components/Dashboard/Outlet/TaskCreate/TaskEdit";
+import ModuleUpload from "./Components/Dashboard/Outlet/TaskCreate/ModuleUpload";
+
 import AllBlogs from "./Components/Dashboard/AllBlogs/AllBlogs";
+
 
 
 
@@ -75,6 +81,8 @@ function App() {
             <Route index element={<Admin_Dashboard></Admin_Dashboard>} />
             <Route path="allusers" element={<Allusers></Allusers>} />
             <Route path="createtask" element={<TaskCreate></TaskCreate>}></Route>
+            <Route path="moduleUpload" element={<ModuleUpload></ModuleUpload>}></Route>
+            <Route path="editTask" element={<TaskEdit></TaskEdit>}></Route>
             <Route path="taskEvaluate" element={<TaskEvaluate></TaskEvaluate>}></Route>
             <Route path="taskEvaluateCompleted" element={<CompletedTaskEvalute />}></Route>
             <Route path="createBlog" element={<CreateBlog></CreateBlog>}></Route>

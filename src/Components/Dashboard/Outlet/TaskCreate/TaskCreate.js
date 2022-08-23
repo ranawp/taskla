@@ -12,7 +12,7 @@ const TaskCreate = () => {
     const currentHour = date.toLocaleTimeString();
 
     const onSubmit = data => {
-        const url = `https://cryptic-stream-86241.herokuapp.com/tasks`
+        const url = `http://localhost:5000/tasks`
         fetch(url, {
             method: 'POST',
             headers: {
@@ -68,7 +68,7 @@ const TaskCreate = () => {
                                     <p className='mt-5'>Task Serial:</p>
                                     <input placeholder='Please provide task Serial'
                                         className="mt-2 p-2 rounded-lg background-color" size="15"
-                                        {...register("taskSerial", {
+                                        {...register("taskNo", {
                                             required: {
                                                 value: true,
                                                 message: "Task serial"

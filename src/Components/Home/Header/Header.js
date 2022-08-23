@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import moment from 'moment';
+// import moment from 'moment';
 import banner from '../../../asset/hero-bg.png'
 import hero from '../../../asset/hero.png'
 
