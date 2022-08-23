@@ -1,3 +1,46 @@
+// import React from 'react';
+// import './MyTask.css';
+
+// const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit }) => {
+
+//     const handleClick = task => {
+//         setTaskData(task);
+//     }
+
+//     const handleSubmit = submit => {
+//         setSubmit(submit)
+//     }
+
+
+//     return (
+//         <>
+//             <div>
+//                 <div className=' text-sm border'>
+//                     <div onClick={(e) => setToogle(true)}>
+
+
+//                         <div onClick={() => {
+//                             handleClick(singleTask)
+//                         }}>
+//                             {singleTask.ModuleName}
+//                         </div>
+//                     </div>
+
+//                 </div>
+//             </div>
+//         </>
+//     );
+// };
+
+// export default SingleTasks;
+
+
+
+
+// // //////////////////
+
+
+
 import React from 'react';
 import './MyTask.css';
 
@@ -11,6 +54,8 @@ const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit }) => {
         setSubmit(submit)
     }
 
+    const collection = [{ milstone: "module1" }, { milstone: "module2" }, { milstone: "module3" }, { milstone: "module4" },]
+
 
     return (
         <>
@@ -19,33 +64,39 @@ const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit }) => {
 
                     <div
 
-                        tabindex="0" class="collapse group collapse-arrow border border-base-300 bg-base-100 rounded-box">
+                        tabindex="0" className="collapse group collapse-arrow border border-base-300 bg-base-100 rounded-box">
 
                         <div onClick={(e) => setToogle(true)}>
                             <div
                                 onClick={() => {
                                     handleClick(singleTask)
                                 }}
-                                class="collapse-title  font-medium flex justify-between">
-                                <div
-
-                                >
+                                className="collapse-title  font-medium flex justify-between">
+                                <div>
                                     {singleTask.taskSerial}  -  {singleTask.taskName}
+                                    {singleTask.ModuleName}
                                 </div>
                                 <div>
                                     Due {singleTask.taskDeadline}
                                 </div>
 
+
                             </div>
                         </div>
                         {/* onClick={() => handleSubmit(singleTask)} */}
 
-                        <div class="collapse-content">
+
+                        {/* <div className=" collapse-content">
+                            <p>Module 1 </p>
+                            
+
                             <label
 
                                 onClick={(e) => { setToogle(false); handleSubmit(singleTask); }}
                                 className="bg-blue-700 border-0 px-3 py-1 button  rounded text-white modal-button cursor-pointer">Submit</label>
-                        </div>
+
+                        </div> */}
+
                     </div>
                 </div>
             </div>
@@ -55,30 +106,3 @@ const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit }) => {
 
 export default SingleTasks;
 
-
-
-
-// //////////////////
-
-// import React from 'react';
-
-// const SingleTasks = ({ task, index, setModalDetails, setModal, setFeedbackModal, taskFeedback, singleMark, marks, setMarks }) => {
-//     return (
-//         <>
-//             <tr>
-//                 <th>{index + 1}</th>
-//                 <td>{task?.taskName}</td>
-//                 <td>{task?.taskSerial}</td>
-//                 <td><label for="details-modal"
-//                     onClick={() => setModalDetails(task)}
-//                     className=' bg-blue-700 border-0 px-3 py-1 button  rounded text-white modal-button' >Details </label></td>
-//                 <td>{task.questionDeliverDate},{task.questionDeliverHour}</td>
-//                 <td>{task.taskDeadline}</td>
-
-//                 <td><label htmlFor="my-modal-3" className="bg-blue-700 border-0 px-3 py-1 button  rounded text-white modal-button" onClick={() => setModal(task)}>Submit</label></td>
-//             </tr>
-//         </>
-//     );
-// };
-
-// export default SingleTasks;

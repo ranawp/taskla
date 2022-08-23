@@ -3,8 +3,8 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../../firebase.init';
 import FeedbackDetails from './FeedbackDetails';
 import SingleTasks from './SingleTasks';
-import TaskDetails from './TaskDetails';
-import TaskModal from './TaskModal';
+// import TaskDetails from './TaskDetails';
+// import TaskModal from './TaskModal';
 import './MyTask.css';
 import TaskSubmit from './TaskSubmit';
 
@@ -19,8 +19,8 @@ const MyTask = () => {
 
     const email = user?.email;
 
-    console.log(submit)
-    // console.log(toogle)
+    // console.log(submit)
+    console.log(taskData)
 
     const pendingTask = singleTask.filter(task => {
         return task.submit !== "submited"
@@ -35,19 +35,7 @@ const MyTask = () => {
 
     }, [refresh])
 
-    // const [marks, setMarks] = useState([]);
-    // useEffect(() => {
-    //     fetch(`http://localhost:5000/allMarks/${email}`)
-    //         .then(res => res.json())
-    //         .then(data => setMarks(data))
-    // }, [])
 
-    // const [marks, setMarks] = useState([]);
-    // useEffect(() => {
-    //     fetch(` http://localhost:5000/allMarks/${email}`)
-    //         .then(res => res.json())
-    //         .then(data => setMarks(data))
-    // }, [])
 
     return (
         <>
@@ -69,15 +57,28 @@ const MyTask = () => {
                     )}
                 </div>
 
-                <div className=" overflow-y-auto border h-80 pt-3 pl-2 text-base">
+                <div className=" overflow-y-auto border  pt-3 pl-2 text-base">
 
                     {toogle === true &&
                         <>
                             <h1 className="title">Task Name:{taskData.taskName}</h1>
                             <p className="details">Task no:{taskData.taskSerial}</p>
-                            <p class="details">Task Posted time:{taskData.questionDeliverDate}</p>
+                            <p className="details">Task Posted time:{taskData.questionDeliverDate}</p>
                             <p className="details">Deadline:{taskData.taskDeadline}</p>
-                            <p className="details">Task Details : {taskData.taskMassage} </p> </>
+                            <p className="details">Task Details : {taskData.taskMassage} </p>
+
+                            <iframe className=""
+                                src={taskData.video}
+                                frameborder="0"
+                                allow="autoplay; encrypted-media"
+                                allowfullscreen
+                                title="video"
+                            />
+
+                            {/* <p className="details"> <img src={taskData.img} alt="" /> */}
+
+
+                        </>
                     }
                     <>
                         {toogle === false &&

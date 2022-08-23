@@ -65,10 +65,10 @@ const EditProfile = ({ data, setReset }) => {
     return (
         <>
             {/* <!-- The button to open modal --> */}
-   
+
             <label htmlFor="my-modal-6" className="btn btn-secondary modal-button ">Edit profile</label>
 
-           
+
 
 
             {/* <!-- Put this part before </body> tag --> */}
