@@ -56,8 +56,10 @@ const Dashboard = () => {
                 <span className='w-full p-4'><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
                 </svg></span>
-                <li className='hover:bg-secondary ml-6 hover:text-white rounded-lg'><NavLink to='moduleUpload'>Module upload</NavLink></li>
+                <li className='hover:bg-secondary ml-6 hover:text-white rounded-lg'><NavLink to='moduleUpload'>Module Upload</NavLink></li> <br />
+
             </div>
+            <li className='hover:bg-secondary ml-6 hover:text-white rounded-lg'><NavLink to='editTask'>Task Edit </NavLink></li>
             <div className='flex w-20 scroll'>
                 <span className='w-full p-4'><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -75,6 +77,13 @@ const Dashboard = () => {
                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
                 </svg></span>
                 <li className='hover:bg-secondary ml-6 hover:text-white rounded-lg'><NavLink to='createBlog'>Create Blog</NavLink></li>
+            </div>
+            <div className='flex w-20 scroll'>
+                <span className='w-full p-4'><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                </svg></span>
+                <li className='hover:bg-secondary ml-6 hover:text-white rounded-lg'><NavLink to='allblogs'>All Blogs</NavLink></li>
+
             </div>
             <div className='flex w-20 scroll'>
                 <span className='w-full p-4'><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

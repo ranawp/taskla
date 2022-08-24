@@ -6,38 +6,11 @@ const ModuleUpload = () => {
     const { register, handleSubmit, reset } = useForm();
     // const [review, setReview] = useState({});
     // const imageStoragekey = '3cf84befed9b9bcd8f1d01c2b4412701';
-
-
-
-
-    const submit = () => {
-        // const ModuleName = {
-        //     video5: 'video5',
-        //     video6: 'video6',
-        //     video7: 'video7'
-
-        // }
-        const id = "6304b082a791aa8efdb54139"
-        const urls = `http://localhost:5000/tasks/${id}`
-        fetch(urls, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(
-
-                { video7: 'video12', video10: 'video13' }
-            )
-        })
-            .then(res => res.json())
-            .then(result => {
-                result
-                console.log(result)
-            })
-    }
+    const date = new Date()
+    const currentDate = date.toLocaleDateString();
+    const currentHour = date.toLocaleTimeString();
 
     const onSubmit = data => {
-        console.log(data)
         const url = `http://localhost:5000/tasks`
         fetch(url, {
             method: 'POST',
@@ -49,22 +22,10 @@ const ModuleUpload = () => {
             .then(res => res.json())
             .then(result => {
                 result
+                console.log(result)
             })
         reset()
-
-
-        // const ModuleName = [
-        //     { video5: 'video5' },
-        //     { video6: 'video6' },
-        //     { video7: 'video7' }
-
-        // ]
-
-        reset()
-
-
     };
-
 
     return (
         <div>
@@ -77,23 +38,134 @@ const ModuleUpload = () => {
                     <div className="card-body">
                         <form onSubmit={handleSubmit(onSubmit)}>
 
-                            <p>Module Name: <br /></p><input class="input input-bordered w-full max-w-xs" placeholder='Write module Name'  {...register("ModuleName", { required: true, maxLength: 20 })} /> <br />
+                            <p className='mt-5'>Milestone Serial:</p>
+                            <input class="input input-bordered w-full max-w-xs" placeholder='Write milestone serial'  {...register("MilstoneSerialNo", { required: true })} /> <br />
 
-                            <p className='mt-5'>video 1 :</p> <br /><input class="input input-bordered w-full max-w-xs" placeholder='put video link'  {...register("video1", { required: true })} /> <br />
-                            <p className='mt-5'>video 1 des :</p> <br /><input class="input input-bordered w-full max-w-xs" placeholder='put video link'  {...register("video1", { required: true })} /> <br />
+                            <p>Milstone Name:  <br /></p>
+                            <input class="input input-bordered w-full max-w-xs" placeholder='Write milestone Name'  {...register("MilstoneName", { required: true })} /> <br />
 
-                            <p className='mt-5'>Video 2 </p> <br /><input class="input input-bordered w-full max-w-xs" placeholder='put video link'  {...register("video2", { required: true })} /> <br />
+                            <p>Module Text introduction:  <br /></p>
+                            <textarea name="" id="" cols="35" rows="7" placeholder='Write student task'
+                                className=" mt-2 p-2 rounded-lg background-color"
+                                {...register("moduleIntroduction", {
+                                    required: {
+                                        value: true,
+                                    }
+                                })}
+                            ></textarea> <br />
 
-                            <p className='mt-5'>Video 3 </p> <br /><input class="input input-bordered w-full max-w-xs" placeholder='put video link'  {...register("video3", { required: true })} /> <br />
 
-                            <p className='mt-5'>Video 4 </p> <br /><input class="input input-bordered w-full max-w-xs" placeholder='put video link'  {...register("video4", { required: true })} /> <br />
+
+                            <p>Module Name and serial:  <br /></p>
+                            <input class="input input-bordered w-full max-w-xs" placeholder='Write module Name'  {...register("ModuleNameserial1", { required: true })} /> <br />
+
+                            <p>Module video 1:  <br /></p>
+                            <input class="input input-bordered w-full max-w-xs" placeholder='Write video link'  {...register("Modulevideo1", { required: true })} /> <br />
+
+                            {/* second module name and video */}
+
+                            <p>Module Name and serial 2:  <br /></p>
+                            <input class="input input-bordered w-full max-w-xs" placeholder='Write module Name'  {...register("ModuleNameserial2", { required: true })} /> <br />
+
+                            <p>Module video 2:  <br /></p>
+                            <input class="input input-bordered w-full max-w-xs" placeholder='Write video link'  {...register("Modulevideo2", { required: true })} /> <br />
+
+                            {/* third module name and video */}
+
+                            <p>Module Name and serial3:  <br /></p>
+                            <input class="input input-bordered w-full max-w-xs" placeholder='Write module Name'  {...register("ModuleNameserial3", { required: true })} /> <br />
+
+                            <p>Module video 3:  <br /></p>
+                            <input class="input input-bordered w-full max-w-xs" placeholder='Write video link'  {...register("Modulevideo3", { required: true })} /> <br />
+
+                            {/* fourth module name and video */}
+                            <p>Module Name and serial4:  <br /></p>
+                            <input class="input input-bordered w-full max-w-xs" placeholder='Write module Name'  {...register("ModuleNameserial4", { required: true })} /> <br />
+
+                            <p>Module video 4:  <br /></p>
+                            <input class="input input-bordered w-full max-w-xs" placeholder='Write video link'  {...register("Modulevideo4", { required: true })} /> <br />
+
+                            {/* fifth module name and video */}
+                            <p>Module Name and serial5:  <br /></p>
+                            <input class="input input-bordered w-full max-w-xs" placeholder='Write module Name'  {...register("ModuleNameserial5", { required: true })} /> <br />
+                            <p>Module video 5:  <br /></p>
+                            <input class="input input-bordered w-full max-w-xs" placeholder='Write video link'  {...register("Modulevideo5", { required: true })} /> <br />
+
+                            {/* sixth module name and video */}
+                            <p>Module Name and serial6:  <br /></p>
+                            <input class="input input-bordered w-full max-w-xs" placeholder='Write module Name'  {...register("ModuleNameserial6", { required: true })} /> <br />
+
+                            <p>Module video 6:  <br /></p>
+                            <input class="input input-bordered w-full max-w-xs" placeholder='Write video link'  {...register("Modulevideo6", { required: true })} /> <br />
+
+                            {/* assignment created time  */}
+                            <div className='grid lg:grid-cols-2'>
+                                <div>
+                                    <p className='mt-2'>Task Created Date</p>
+                                    <input readOnly value={currentDate}
+                                        className=" mt-2 p-2 rounded-lg background-color" size="15"
+                                        {...register("questionDeliverDate", {
+                                            required: {
+                                                value: true,
+
+                                            }
+                                        })}
+                                    ></input>
+                                </div>
+                                <div>
+                                    <p className='mt-2'>Task Created Hour</p>
+                                    <input readOnly value={currentHour}
+                                        className=" mt-2 p-2 rounded-lg background-color" size="15"
+                                        {...register("questionDeliverHour", {
+                                            required: {
+                                                value: true,
+
+                                            }
+                                        })}
+                                    ></input>
+                                </div>
+                            </div>
+
+                            {/* submitsson deadline */}
+                            <div>
+                                <p className=''>Task submission Deadline:</p>
+                                <input placeholder='Please provide task deadline'
+                                    className="mt-2 p-2 rounded-lg background-color" size="15"
+                                    {...register("taskDeadline", {
+                                        required: {
+                                            value: true,
+                                            message: "Task serial"
+                                        }
+                                    })}
+                                ></input>
+
+
+
+                            </div>
+                            {/* assignment instruction   */}
+                            <p>Assignment Name and serial  <br /></p>
+                            <input class="input input-bordered w-full max-w-xs" placeholder='Write module Name'  {...register("asignmentName", { required: true })} /> <br />
+
+                            <p>Assignment instruction massage</p>
+                            <textarea name="" id="" cols="30" rows="10"
+                                className=" mt-2 p-2 rounded-lg background-color"
+                                {...register("assignmentInstruction", {
+                                    required: {
+                                        value: true,
+
+                                    }
+                                })}
+                            ></textarea> <br />
+
+                            <p>Will you lock this milestone? write: lock<br /></p>
+                            <input class="input input-bordered w-full max-w-xs" placeholder='Write lock'  {...register("submit", { required: true })} /> <br />
+
 
                             <input type="submit" value='Submit' className='mt-4 text-white btn-secondary px-4 py-1   max-w-xs' />
                         </form>
 
                     </div>
                 </div>
-                <button onClick={submit}>submit</button>
 
                 <div className='mt-36'>
                     <img className='w-96' src="https://i.ibb.co/XJbLX4f/3784896-removebg-preview.png" alt="" />

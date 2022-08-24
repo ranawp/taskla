@@ -1,59 +1,10 @@
-// import React from 'react';
-// import { useEffect } from 'react';
-// import './MyTask.css';
-
-// const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit }) => {
-
-//     const handleClick = task => {
-//         setTaskData(task);
-//     }
-
-
-//     // console.log(singleTask?.ModuleName[0])
-//     console.log(singleTask?.ModuleName?.video5)
-//     console.log(singleTask?.ModuleName?.video6)
-//     // console.log(singleTask?.ModuleName.video6)
-//     // singleTask.ModuleName.map((user) =>console.log(user))
-//     const handleSubmit = submit => {
-//         setSubmit(submit)
-//     }
-
-
-
-//     return (
-//         <>
-//             <div>
-//                 <div className=' text-sm border'>
-//                     <div onClick={(e) => setToogle(true)}>
-
-
-//                         <div onClick={() => {
-//                             handleClick(singleTask)
-//                         }}>
-//                             {/* { singleTask?.ModuleName.map((item)=>console.log(item))} */}
-//                             {''}
-//                         </div>
-//                     </div>
-
-//                 </div>
-//             </div>
-//         </>
-//     );
-// };
-
-// export default SingleTasks;
-
-
-
-
-// // //////////////////
-
-
 
 import React from 'react';
 import './MyTask.css';
 
-const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit, seeVideos }) => {
+const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit, setWatchVideo }) => {
+
+    console.log(singleTask)
 
     const handleClick = task => {
         setTaskData(task);
@@ -63,7 +14,6 @@ const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit, seeVideos 
         setSubmit(submit)
     }
 
-    console.log(singleTask)
     const collection = [{ milstone: "module1" }, { milstone: "module2" }, { milstone: "module3" }, { milstone: "module4" },]
 
 
@@ -72,23 +22,21 @@ const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit, seeVideos 
             <div>
                 <div className='py-2 text-sm'>
 
-                    <div
-
-                        tabindex="0" className="collapse group collapse-arrow border border-base-300 bg-base-100 rounded-box">
+                    <div tabindex="0" className="collapse group collapse-arrow border border-base-300 bg-base-100 rounded-box ">
 
                         <div onClick={(e) => setToogle(true)}>
                             <div
                                 onClick={() => {
                                     handleClick(singleTask)
                                 }}
-                                className="collapse-title  font-medium flex justify-between">
+                                className="collapse-title  font-medium flex justify-between pointer-event-none">
                                 <div>
-                                    {singleTask.taskSerial}  -  {singleTask.taskName}
-                                    {singleTask.ModuleName}
+                                    {singleTask.MilstoneSerialNo}
+                                    {singleTask.MilstoneName}
                                 </div>
-                                <div>
+                                {/* <div>
                                     Due {singleTask.taskDeadline}
-                                </div>
+                                </div> */}
 
 
                             </div>
@@ -96,28 +44,28 @@ const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit, seeVideos 
                         {/* onClick={() => handleSubmit(singleTask)} */}
 
 
-                        <div className=" collapse-content">
+                        <div className={singleTask.submit == 'lock' ? " collapse-content pointer-events-none " : " collapse-content"}>
+                            <p onClick={() => setWatchVideo('00')} >Module Introduction text </p>
+                            <p onClick={() => setWatchVideo('01')} className='pointer-events-none border mt-3 cursor-pointer bg-gray-700'>{singleTask.ModuleNameserial1} </p>
+
+                            <p onClick={() => setWatchVideo('02')} className='border mt-3 cursor-pointer bg-gray-700'>{singleTask.ModuleNameserial2} </p>
+
+                            <p onClick={() => setWatchVideo('03')} className='border mt-3 cursor-pointer bg-gray-700'>{singleTask.ModuleNameserial3} </p>
+
+                            <p onClick={() => setWatchVideo('04')} className='border mt-3 cursor-pointer bg-gray-700'>{singleTask.ModuleNameserial4} </p>
+                            <p onClick={() => setWatchVideo('05')} className='border mt-3 cursor-pointer bg-gray-700'>{singleTask.ModuleNameserial5} </p>
+
+                            <p onClick={() => setWatchVideo('06')} className='border mt-3 cursor-pointer bg-gray-700'>{singleTask.ModuleNameserial6} </p>
+
+                            <p onClick={() => setWatchVideo('assignment')} className='border mt-3 mb-5 cursor-pointer bg-gray-700'>{singleTask.asignmentName} </p>
 
 
-                            <div onClick={() => seeVideos(true)}
-                                className='cursor-pointer'
+                            <label
 
-
-                            >video1: {singleTask.video1}</div>
-
-
-                            <div>{singleTask.video2}</div>
-                            <div>{singleTask.video3}</div>
-
-
-
-
-
-
+                                onClick={(e) => { setToogle(false); handleSubmit(singleTask); }}
+                                className="bg-blue-700 border-0 px-3 py-1  button  rounded text-white modal-button cursor-pointer">Assignment Submit</label>
 
                         </div>
-
-
 
                     </div>
                 </div>
@@ -127,4 +75,3 @@ const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit, seeVideos 
 };
 
 export default SingleTasks;
-
