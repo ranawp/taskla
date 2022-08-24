@@ -15,7 +15,7 @@ const ReviewCard = ({ review }) => {
 
     return (
         <div className="card w-96 bg-base-100 shadow-xl relative">
-            <div className='absolute top-5 left-5 text-5xl text-secondary font-extrabold'><RiDoubleQuotesL/></div>
+            <div className='absolute top-5 left-5 text-5xl text-secondary font-extrabold'><RiDoubleQuotesL /></div>
             <figure className="px-10 pt-10">
                 <div className="avatar">
                     <div className="w-16 rounded-full">

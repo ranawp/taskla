@@ -87,7 +87,3 @@ const AboutDeveloper = () => {
 };
 
 export default AboutDeveloper;
-
-
-
-

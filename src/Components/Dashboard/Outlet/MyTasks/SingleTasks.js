@@ -1,7 +1,59 @@
+// import React from 'react';
+// import { useEffect } from 'react';
+// import './MyTask.css';
+
+// const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit }) => {
+
+//     const handleClick = task => {
+//         setTaskData(task);
+//     }
+
+
+//     // console.log(singleTask?.ModuleName[0])
+//     console.log(singleTask?.ModuleName?.video5)
+//     console.log(singleTask?.ModuleName?.video6)
+//     // console.log(singleTask?.ModuleName.video6)
+//     // singleTask.ModuleName.map((user) =>console.log(user))
+//     const handleSubmit = submit => {
+//         setSubmit(submit)
+//     }
+
+
+
+//     return (
+//         <>
+//             <div>
+//                 <div className=' text-sm border'>
+//                     <div onClick={(e) => setToogle(true)}>
+
+
+//                         <div onClick={() => {
+//                             handleClick(singleTask)
+//                         }}>
+//                             {/* { singleTask?.ModuleName.map((item)=>console.log(item))} */}
+//                             {''}
+//                         </div>
+//                     </div>
+
+//                 </div>
+//             </div>
+//         </>
+//     );
+// };
+
+// export default SingleTasks;
+
+
+
+
+// // //////////////////
+
+
+
 import React from 'react';
 import './MyTask.css';
 
-const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit }) => {
+const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit, seeVideos }) => {
 
     const handleClick = task => {
         setTaskData(task);
@@ -10,6 +62,9 @@ const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit }) => {
     const handleSubmit = submit => {
         setSubmit(submit)
     }
+
+    console.log(singleTask)
+    const collection = [{ milstone: "module1" }, { milstone: "module2" }, { milstone: "module3" }, { milstone: "module4" },]
 
 
     return (
@@ -27,25 +82,43 @@ const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit }) => {
                                     handleClick(singleTask)
                                 }}
                                 className="collapse-title  font-medium flex justify-between">
-                                <div
-
-                                >
+                                <div>
                                     {singleTask.taskSerial}  -  {singleTask.taskName}
+                                    {singleTask.ModuleName}
                                 </div>
                                 <div>
                                     Due {singleTask.taskDeadline}
                                 </div>
 
+
                             </div>
                         </div>
                         {/* onClick={() => handleSubmit(singleTask)} */}
 
-                        <div className="collapse-content">
-                            <label
 
-                                onClick={(e) => { setToogle(false); handleSubmit(singleTask); }}
-                                className="bg-blue-700 border-0 px-3 py-1 button  rounded text-white modal-button cursor-pointer">Submit</label>
+                        <div className=" collapse-content">
+
+
+                            <div onClick={() => seeVideos(true)}
+                                className='cursor-pointer'
+
+
+                            >video1: {singleTask.video1}</div>
+
+
+                            <div>{singleTask.video2}</div>
+                            <div>{singleTask.video3}</div>
+
+
+
+
+
+
+
                         </div>
+
+
+
                     </div>
                 </div>
             </div>
@@ -55,30 +128,3 @@ const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit }) => {
 
 export default SingleTasks;
 
-
-
-
-// //////////////////
-
-// import React from 'react';
-
-// const SingleTasks = ({ task, index, setModalDetails, setModal, setFeedbackModal, taskFeedback, singleMark, marks, setMarks }) => {
-//     return (
-//         <>
-//             <tr>
-//                 <th>{index + 1}</th>
-//                 <td>{task?.taskName}</td>
-//                 <td>{task?.taskSerial}</td>
-//                 <td><label htmlFor="details-modal"
-//                     onClick={() => setModalDetails(task)}
-//                     className=' bg-blue-700 border-0 px-3 py-1 button  rounded text-white modal-button' >Details </label></td>
-//                 <td>{task.questionDeliverDate},{task.questionDeliverHour}</td>
-//                 <td>{task.taskDeadline}</td>
-
-//                 <td><label htmlFor="my-modal-3" className="bg-blue-700 border-0 px-3 py-1 button  rounded text-white modal-button" onClick={() => setModal(task)}>Submit</label></td>
-//             </tr>
-//         </>
-//     );
-// };
-
-// export default SingleTasks;

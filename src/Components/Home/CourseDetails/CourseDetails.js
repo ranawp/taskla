@@ -55,8 +55,8 @@ const CourseDetails = () => {
 
                     <div className="lg:max-w-lg bg-base-100 items-center text-center grid justify-center card-style  lg:border-b-2">
                         <div className="animation">
-                            <div className='grid justify-center hover:text-[#C11A7E] text-green-600'>
-                                <svg stroke="currentColor" className='grid text-center' fill="currentColor" strokeWidth="0" viewBox="0 0 16 16" className="text-colorful" height="48" width="48" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M3.57 6.699l5.693-4.936L8.585 1 3.273 5.596l-1.51-1.832L1 4.442l1.85 2.214.72.043zM15 5H6.824l2.307-2H15v2zM6 7h9v2H6V7zm9 4H6v2h9v-2z"></path></svg>
+                            <div className='grid justify-center hover:text-[#C11A7E] text-green-600 text-colorful'>
+                                <svg stroke="currentColor" className='grid text-center' fill="currentColor" strokeWidth="0" viewBox="0 0 16 16" height="48" width="48" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M3.57 6.699l5.693-4.936L8.585 1 3.273 5.596l-1.51-1.832L1 4.442l1.85 2.214.72.043zM15 5H6.824l2.307-2H15v2zM6 7h9v2H6V7zm9 4H6v2h9v-2z"></path></svg>
 
 
                             </div>
@@ -146,5 +146,3 @@ const CourseDetails = () => {
 };
 
 export default CourseDetails;
-
-

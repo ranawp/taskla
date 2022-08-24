@@ -20,7 +20,7 @@ const CheckoutForm = () => {
 
 
     useEffect(() => {
-        fetch('https://cryptic-stream-86241.herokuapp.com/create-payment-intent', {
+        fetch('http://localhost:5000/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -81,7 +81,7 @@ const CheckoutForm = () => {
             console.log(paymentIntent)
             setcardSuccess('congrats! your payment is completed')
             if (paymentIntent) {
-                fetch(` https://cryptic-stream-86241.herokuapp.com/user/enroll/${email}`, {
+                fetch(` http://localhost:5000/user/enroll/${email}`, {
                     method: 'PUT'
                 })
                     .then(res => res.json())

@@ -1,7 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import './App.css';
-import BlogDetails2 from "./Components/Blogs/BlogDetails/BlogDetails2";
-import BlogDetails3 from "./Components/Blogs/BlogDetails/BlogDetails3";
 import Blogs from "./Components/Blogs/Blogs";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Home from "./Components/Home/Home";
@@ -35,6 +33,13 @@ import Payment from "./Components/Courses/Payment";
 import Announcement from "./Components/Announcement/Announcement";
 import SubmittedTask from "./Components/Dashboard/Outlet/MyTasks/SubmittedTask";
 import CompletedTaskEvalute from "./Components/Dashboard/Outlet/MyTasks/TaskEvalute/CompletedTaskEvalute";
+
+import SignleEditTask from "./Components/Dashboard/Outlet/TaskCreate/SignleEditTask";
+import TaskEdit from "./Components/Dashboard/Outlet/TaskCreate/TaskEdit";
+import ModuleUpload from "./Components/Dashboard/Outlet/TaskCreate/ModuleUpload";
+
+import AllBlogs from "./Components/Dashboard/AllBlogs/AllBlogs";
+
 
 
 
@@ -76,9 +81,15 @@ function App() {
             <Route index element={<Admin_Dashboard></Admin_Dashboard>} />
             <Route path="allusers" element={<Allusers></Allusers>} />
             <Route path="createtask" element={<TaskCreate></TaskCreate>}></Route>
+            <Route path="moduleUpload" element={<ModuleUpload></ModuleUpload>}></Route>
+            <Route path="editTask" element={<TaskEdit></TaskEdit>}></Route>
             <Route path="taskEvaluate" element={<TaskEvaluate></TaskEvaluate>}></Route>
             <Route path="taskEvaluateCompleted" element={<CompletedTaskEvalute />}></Route>
             <Route path="createBlog" element={<CreateBlog></CreateBlog>}></Route>
+
+            <Route path="allBlogs" element={<AllBlogs></AllBlogs>}></Route>
+
+
 
 
 
@@ -89,8 +100,7 @@ function App() {
 
           {/* mozahid task  */}
           <Route path="/createBlog/:blogId" element={<BlogDetails />} />
-          <Route path="/blog/reactjs" element={<BlogDetails2 />} />
-          <Route path="/blog/javaScript" element={<BlogDetails3 />} />
+
           {/* mozahid task  */}
           <Route path="/contact" element={<ContactUs></ContactUs>}></Route>
           <Route path="/addReview" element={<AddReview />}></Route>
@@ -101,8 +111,7 @@ function App() {
 
           {/* mozahid task  */}
           <Route path="/createBlog/:blogId" element={<BlogDetails />} />
-          <Route path="/blog/reactjs" element={<BlogDetails2 />} />
-          <Route path="/blog/javaScript" element={<BlogDetails3 />} />
+
           {/* mozahid task  */}
           <Route path="/contact" element={<ContactUs></ContactUs>}></Route>
           <Route path="/addReview" element={<AddReview />}></Route>
