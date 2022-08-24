@@ -1,19 +1,19 @@
 import React from 'react';
 
-const SignleEditTask = ({ taskEvalute, index }) => {
-    // console.log(taskEvalute)
-    const { taskName, taskMassage, taskNo, taskDeadline, _id } = taskEvalute;
+const SignleEditTask = ({ taskEvalute, index, seteditvideoModal }) => {
+    console.log(taskEvalute)
+    const { MilstoneName } = taskEvalute;
 
 
     return (
         <>
             <tr>
-                <th>{index + 1}</th>
                 {/* <td>{taskNo}</td> */}
-                <td>{taskName}</td>
-                <td><button>Details</button></td>
-                <td>{taskDeadline}</td>
-                <td><button>Edit</button></td>
+                <td>{MilstoneName}</td>
+
+                <td><label htmlFor="module-edit"
+                    onClick={() => seteditvideoModal(taskEvalute)}
+                    className=' bg-blue-700 border-0 px-3 py-1 button  rounded text-white modal-button' >Details </label></td>
 
 
                 {/* <td><label htmlFor="Evalutedetails-modal"

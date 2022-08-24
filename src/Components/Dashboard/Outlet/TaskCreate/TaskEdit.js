@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import ModuleEditModal from './ModuleEditModal';
 import SignleEditTask from './SignleEditTask';
 
 const TaskEdit = () => {
     const [singleTask, setSingleTask] = useState([]);
+    const [editvideoModal, seteditvideoModal] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:5000/alltaskEdit')
+        fetch('http://localhost:5000/alltasks')
             .then(res => res.json())
             .then(data => setSingleTask(data))
     }, [])
@@ -15,14 +17,13 @@ const TaskEdit = () => {
 
                 <thead>
                     <tr>
-                        <th>Serial</th>
+                        <th>Milestone Name</th>
                         {/* <th>Task no</th> */}
-                        <th>Task name</th>
-                        <th>Details</th>
-                        <th>Deadline</th>
 
-                        <th>Update</th>
-                        <th></th>
+
+
+                        <th>Edit</th>
+
 
                     </tr>
                 </thead>
@@ -34,12 +35,17 @@ const TaskEdit = () => {
                             taskEvalute={taskEvalute}
                             index={index}
                             setSingleTask={setSingleTask}
+                            seteditvideoModal={seteditvideoModal}
                         ></SignleEditTask>)
                     }
                 </tbody>
 
 
+
             </table>
+            {seteditvideoModal && <ModuleEditModal
+                singleTask={singleTask}
+                editvideoModal={editvideoModal} ></ModuleEditModal>}
         </div>
     );
 };

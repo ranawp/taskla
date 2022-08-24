@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Navbar.css'
 import logo from '../asset/logo.png'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
 import { signOut } from 'firebase/auth';
-import down from '../asset/down-filled-triangular-arrow.png'
 import notificationIcon from '../asset/notification.png'
 import axios from 'axios';
 
@@ -195,7 +194,7 @@ const Navbar = () => {
     </>
 
 
-    const locatin = useLocation()
+
     const [open, setOpen] = useState(null)
     return (
         <div className='shadow-md fixed z-50 bg-white w-full'>
@@ -214,14 +213,14 @@ const Navbar = () => {
 
                             }
                         </div>
-                        <span className='lg:hidden'>
-                            <svg onClick={() => setOpen(true)} xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" > <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg >
-                        </span>
+
                         {/* sidebar end*/}
                         <img className='w-16' src={logo} alt="" /> <p className=" normal-case  ml-3 font-bold text-2xl text-[#383D8A]" > <Link to='/'>TASKLA</Link ></p >
+
                     </div >
 
                     <div className="navbar hidden lg:flex" >
+
                         <ul className="menu-horizontal gap-5 text-primary font-bold" >
                             {menuItems}
                         </ul >
@@ -232,17 +231,13 @@ const Navbar = () => {
                         <ul className=" menu-horizontal p-0 text-black font-bold flex justify-center items-center" >
                             {menuItem2}
                         </ul >
+
                     </div >
 
-                    {
-                        location.pathname == '/dashboard' &&
-                        <div className='navbar-end lg:hidden' >
-                            <label tabIndex="1" htmlFor="my-drawer-2" className="btn btn-ghost lg:hidden" >
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" > <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                            </label >
-                        </div >
-                    }
-
+                    {/* small device navbar */}
+                    <span className='lg:hidden ml-32'>
+                        <svg onClick={() => setOpen(true)} xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" > <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg >
+                    </span>
                 </div >
             </div >
         </div>

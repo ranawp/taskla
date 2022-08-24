@@ -16,6 +16,8 @@ const MyTask = () => {
     const [submit, setSubmit] = useState([])
     const [refresh, setRefresh] = useState(null)
     const [user] = useAuthState(auth)
+    const [watchVideo, setWatchVideo] = useState(false)
+    const [watchVideo2, setWatchVideo2] = useState(false)
 
     const email = user?.email;
 
@@ -52,7 +54,8 @@ const MyTask = () => {
                             setTaskData={setTaskData}
                             setToogle={setToogle}
                             setSubmit={setSubmit}
-
+                            setWatchVideo={setWatchVideo}
+                            setWatchVideo2={setWatchVideo2}
                         ></SingleTasks>
                     )}
                 </div>
@@ -61,7 +64,7 @@ const MyTask = () => {
 
                     {toogle === true &&
                         <>
-                            <h1 className="title">Task Name:{taskData.taskName}</h1>
+                            {/* <h1 className="title">Task Name:{taskData.taskName}</h1>
                             <p className="details">Task no:{taskData.taskSerial}</p>
 
                             <p classNeme="details">Task Posted time:{taskData.questionDeliverDate}</p>
@@ -69,15 +72,47 @@ const MyTask = () => {
                             <p className="details">Task Posted time:{taskData.questionDeliverDate}</p>
 
                             <p className="details">Deadline:{taskData.taskDeadline}</p>
-                            <p className="details">Task Details : {taskData.taskMassage} </p>
+                            <p className="details">Task Details : {taskData.taskMassage} </p> */}
+                            {watchVideo == "00" && <p>{taskData.moduleIntroduction}</p>
 
-                            <iframe className=""
-                                src={taskData.video}
+                            }
+
+                            {watchVideo == "01" && <iframe className=""
+                                src={taskData.Modulevideo1}
                                 frameborder="0"
                                 allow="autoplay; encrypted-media"
                                 allowfullscreen
                                 title="video"
                             />
+
+                            }
+                            {watchVideo == "02" && <p>video 2</p>
+
+                            }
+                            {watchVideo == "03" && <p>video 3</p>
+
+                            }
+                            {watchVideo == "04" && <p>video 4</p>
+
+                            }
+                            {watchVideo == "05" && <p>video 5</p>
+
+                            }
+                            {watchVideo == "06" && <p>video 6</p>
+
+                            }
+
+                            {watchVideo == "assignment" && <div>
+                                <p>Qusetion Delivery time:{taskData.questionDeliverDate},{taskData.questionDeliverHour}</p>
+                                <p>Task deadline:{taskData.taskDeadline} </p>
+
+
+
+                                {taskData.assignmentInstruction}</div>
+
+                            }
+
+
 
                             {/* <p className="details"> <img src={taskData.img} alt="" /> */}
 

@@ -44,7 +44,9 @@
 import React from 'react';
 import './MyTask.css';
 
-const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit }) => {
+const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit, setWatchVideo }) => {
+
+    console.log(singleTask)
 
     const handleClick = task => {
         setTaskData(task);
@@ -62,9 +64,7 @@ const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit }) => {
             <div>
                 <div className='py-2 text-sm'>
 
-                    <div
-
-                        tabindex="0" className="collapse group collapse-arrow border border-base-300 bg-base-100 rounded-box">
+                    <div tabindex="0" className="collapse group collapse-arrow border border-base-300 bg-base-100 rounded-box">
 
                         <div onClick={(e) => setToogle(true)}>
                             <div
@@ -73,12 +73,12 @@ const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit }) => {
                                 }}
                                 className="collapse-title  font-medium flex justify-between">
                                 <div>
-                                    {singleTask.taskSerial}  -  {singleTask.taskName}
-                                    {singleTask.ModuleName}
+                                    {singleTask.MilstoneSerialNo}
+                                    {singleTask.MilstoneName}
                                 </div>
-                                <div>
+                                {/* <div>
                                     Due {singleTask.taskDeadline}
-                                </div>
+                                </div> */}
 
 
                             </div>
@@ -86,16 +86,29 @@ const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit }) => {
                         {/* onClick={() => handleSubmit(singleTask)} */}
 
 
-                        {/* <div className=" collapse-content">
-                            <p>Module 1 </p>
-                            
+                        <div className=" collapse-content">
+                            <p disabled={true} onClick={() => setWatchVideo('00')} >Module Introduction text </p>
+                            <p onClick={() => setWatchVideo('01')} className='border mt-3 cursor-pointer'>{singleTask.ModuleNameserial1} </p>
+
+                            <p onClick={() => setWatchVideo('02')} className='border mt-3 cursor-pointer'>{singleTask.ModuleNameserial2} </p>
+
+                            <p onClick={() => setWatchVideo('03')} className='border mt-3 cursor-pointer'>{singleTask.ModuleNameserial3} </p>
+
+                            <p disabled={true} onClick={() => setWatchVideo('04')} className='border mt-3 cursor-pointer'>{singleTask.ModuleNameserial4} </p>
+                            <p onClick={() => setWatchVideo('05')} className='border mt-3 cursor-pointer'>{singleTask.ModuleNameserial5} </p>
+
+                            <p onClick={() => setWatchVideo('06')} className='border mt-3 cursor-pointer'>{singleTask.ModuleNameserial6} </p>
+
+                            <p onClick={() => setWatchVideo('assignment')} className='border mt-3 mb-5 cursor-pointer'>{singleTask.asignmentName} </p>
+
+
 
                             <label
 
                                 onClick={(e) => { setToogle(false); handleSubmit(singleTask); }}
-                                className="bg-blue-700 border-0 px-3 py-1 button  rounded text-white modal-button cursor-pointer">Submit</label>
+                                className="bg-blue-700 border-0 px-3 py-1  button  rounded text-white modal-button cursor-pointer">Assignment Submit</label>
 
-                        </div> */}
+                        </div>
 
                     </div>
                 </div>
