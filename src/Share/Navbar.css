@@ -1,12 +1,91 @@
-.navbar-bg {
-    background-color: #152742;
+/* .navbar-bg {
+    background-color: #00a5cf;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 10;
 
+} */
+
+.Nav {
+    position: -webkit-sticky;
+    z-index: 1;
 }
 
 html {
     scroll-behavior: smooth;
+}
+
+
+
+/* sidebar */
+.sidenav {
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #f8f8f8;
+    overflow-x: hidden;
+    box-shadow: 0 0 20px 0;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+
+
+.sidenav1 {
+    width: 0;
+    overflow-x: hidden;
+
+}
+
+.sidenav>ul {
+    display: grid;
+    grid-template-columns: auto;
+    margin-left: 10px;
+    margin-top: 40px;
+}
+
+.closebtn {
+    color: #1E266D;
+    border: 1px solid rgb(236, 222, 222);
+    padding: 0 15px 0 15px;
+    margin-top: 5px;
+}
+
+* li {
+    list-style: none;
+}
+
+.sidenav a {
+
+    padding: 8px 8px 8px 0px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #1E266D;
+    border-bottom: 1px solid #8a8c9a;
+    display: block;
+    transition: 0.3s;
+}
+
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+
 }

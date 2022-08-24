@@ -1,28 +1,32 @@
 import React from 'react';
-import './Header.css'
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+// import moment from 'moment';
+import banner from '../../../asset/hero-bg.png'
+import hero from '../../../asset/hero.png'
+
 
 const Header = () => {
     return (
+        <div className='mt-[40px] bg-cover h-[550px]  relative' style={{ backgroundImage: `url(${banner})` }}>
+            <div className='max-w-screen-xl mx-auto '>
+                <div className='grid-cols-2'>
+                    <div className='p-5 lg:top-[20px] w-full pb-32'>
+                        <h1 className='text-[32px] lg:text-[45px] text-primary font-bold md:mt-20 mt-4 tracking-wide' > Believe Bigger, Aim Higher </h1 >
+                        <h2 className='text-[32px] font-bold text-secondary tracking-wide'>Taskla <span className='text-primary'>are with you</span></h2>
+                        <p className='text-lg mt-3 tracking-wide leading-7 text-[#1e266d]' >
+                            Taskla is an online platform to facilitate peer feedback sessions <br /> with students
 
-        <div className=' header  grid md:grid-cols-2  banner  '>
-            <div className='ml-20 my-auto left-side-info left-side'>
+                            Get started</p >
 
-                <h1 className='md:text-3xl font-bold md:mt-20 mt-4'>Learn by giving feedback </h1>
-
-                <a href="https://drive.google.com/file/d/10XyLv0K1zxlxTXgLKRGnD-ZwVxeBRSuP/view?usp=sharing" target="_blank"><button className=' mt-4 button mr-5 rounded text-accent px-3 py-1'>Get Started</button>
-                </a>
-                {/* 
-                <a href='#contact' className='hier-button  px-3 py-1 rounded-full text-accent'>Register</a> */}
-
-
+                        <Link to='/register'><button className='btn btn-secondary mt-5 text-white'>Get Started</button></Link>
+                    </div >
+                    <div className='absolute my-auto bottom-0 right-0'>
+                        <img className='w-[700px]' src={hero} alt="" />
+                    </div>
+                </div>
             </div>
-            <div className='mr-10 my-auto right-side'>
-                <img src="https://i.ibb.co/LQ7Hzpx/banner-img.png" alt="" />
-            </div>
-        </div>
-
-
-
+        </div >
     );
 };
 

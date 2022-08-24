@@ -1,0 +1,28 @@
+.card-style{
+    /* border-right: 1px solid black;
+    border-bottom: 1px solid black; */
+    padding: 50PX;
+    display: grid;
+    justify-content: center;
+
+
+}
+
+.animation{
+    /* transform: translateY(10px) ; */
+    transition: 1s;
+}
+
+
+
+.animation:hover{
+    transform:scale(1.2);
+    z-index: 2;
+
+}
+
+.font{
+    font-size: 20px;
+}
+
+/* mozahid task */

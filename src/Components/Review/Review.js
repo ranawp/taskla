@@ -1,21 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
-import "./Review.css";
+// import "./Review.css";
+import './Review.css'
 
-import { EffectCoverflow, Pagination } from "swiper";
+import { Autoplay, EffectCoverflow, Pagination, Navigation, FreeMode } from "swiper";
+import ReviewCard from './ReviewCard';
 
 const Review = () => {
+
+    const [reviewCard, setReviewCard] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/review')
+            .then(res => res.json())
+            .then(data => setReviewCard(data))
+    }, [])
+
     return (
-        <div className='h-[600px] mt-20'>
-            <h1 className='text-center text-4xl font-bold text-gray-500 pt-10'>What people are saying
-            </h1>
+        <div className='h-[600px] mt-32' >
+            <h1 className='text-center capitalize text-[32px] font-bold text-primary pt-10' > What <span className='text-secondary'>People</span> are saying
+            </h1 >
             <Swiper
-                effect={"coverflow"}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
+                freeMode={true}
+                // effect={"coverflow"}
                 grabCursor={true}
                 centeredSlides={true}
                 slidesPerView={"auto"}
@@ -24,81 +40,21 @@ const Review = () => {
                     stretch: 0,
                     depth: 100,
                     modifier: 1,
-                    slideShadows: true,
+                    slideShadows: false,
                 }}
+
                 pagination={true}
-                modules={[EffectCoverflow, Pagination]}
+                modules={[Autoplay, FreeMode, EffectCoverflow, Pagination, Navigation]}
                 className="mySwiper"
             >
 
-                <SwiperSlide>
-                    <div className="card w-96 bg-base-100 shadow-xl">
-                        <figure className="px-10 pt-10">
-                            <div className="avatar">
-                                <div className="w-24 rounded-full">
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIqYGTo0fiyIaEafNboSfDqqoVwbMGj8sqxFDrRBcm8m5pAgkfr29BcuK1-Lu_0C1TqpU&usqp=CAU" />
-                                </div>
-                            </div>
-                        </figure>
-                        <div className="card-body items-center text-center">
-                            <h2 className="text-2xl font-bold">Willard Volding</h2>
-                            <p className='text-lg'>English Teacher</p>
-                            <p>Taskla is a good learning website for ever. It maintain student to give learning task. It use so comfortable. We can give a student everyday task.</p>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="card w-96 bg-base-100 shadow-xl">
-                        <figure className="px-10 pt-10">
-                            <div className="avatar">
-                                <div className="w-24 rounded-full">
-                                    <img src="https://t3.ftcdn.net/jpg/02/48/15/86/360_F_248158608_0ErNeAWWx6GZVDCg66jNRoPGEhHCSpaJ.jpg" />
-                                </div>
-                            </div>
-                        </figure>
-                        <div className="card-body items-center text-center">
-                            <h2 className="text-2xl font-bold">Chris Cole</h2>
-                            <p className='text-lg'>Educational Technology Coordinator</p>
-                            <p>Taskla is the best thing to happen to writing in a long, long time. With a well-designed, I can teach students to become editors themselves.</p>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="card w-96 bg-base-100 shadow-xl">
-                        <figure className="px-10 pt-10">
-                            <div className="avatar">
-                                <div className="w-24 rounded-full">
-                                    <img src="https://i.pinimg.com/736x/38/93/07/389307d6af5c4be0051b7d3c4f93bf3d.jpg" />
-                                </div>
-                            </div>
-                        </figure>
-                        <div className="card-body items-center text-center">
-                            <h2 className="text-2xl font-bold">Morten Taboe Nybor</h2>
-                            <p className='text-lg'>Assistant Professor</p>
-                            <p>It is a good way for students to become familiar with the criteria, providing feedback sharpens their thinking, it's useful for both receivers and givers of feedback and it's good for learning together.</p>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="card w-96 bg-base-100 shadow-xl">
-                        <figure className="px-10 pt-10">
-                            <div className="avatar">
-                                <div className="w-24 rounded-full">
-                                    <img src="https://st.depositphotos.com/1371851/1256/i/600/depositphotos_12560182-stock-photo-handsome-man-with-eyeglasses.jpg" />
-                                </div>
-                            </div>
-                        </figure>
-                        <div className="card-body items-center text-center">
-                            <h2 className="text-2xl font-bold">William Mark</h2>
-                            <p className='text-lg'>English Teacher</p>
-                            <p>Taskla is a good learning website for ever. It maintain student to give learning task. It use so comfortable. We can give a student everyday task.</p>
-                        </div>
-                    </div>
-                </SwiperSlide>
-            </Swiper>
-
-
-        </div>
+                {reviewCard.map((review, index) => <SwiperSlide>
+                    <ReviewCard
+                        key={review._id}
+                        review={review
+                        } /></SwiperSlide>)}
+            </Swiper >
+        </div >
     );
 };
 

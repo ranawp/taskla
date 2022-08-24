@@ -1,0 +1,25 @@
+.image-style img {
+  width: 50%;
+}
+
+.image-style {
+  display: flex;
+  justify-content: center;
+  margin-top: -110px;
+}
+
+.background-style {
+  padding-top: 50px;
+  padding-bottom: 220px;
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(to left, rgb(190, 178, 178), #e9f8e9);
+}
+
+.back-button {
+  background-image: linear-gradient(to left, rgb(190, 178, 178), #e9f8e9);
+}
+
+.back-button:hover {
+  background-image: linear-gradient(to left, #e9f8e9, rgb(190, 178, 178));
+}
