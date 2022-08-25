@@ -102,6 +102,7 @@ const MyTask = () => {
                             {watchVideo == "assignment" && <div>
                                 <p>Qusetion Delivery time:{taskData.questionDeliverDate},{taskData.questionDeliverHour}</p>
                                 <p>Task deadline:{taskData.taskDeadline} </p>
+                                <p>Assignment Name and serial:{taskData.asignmentName}</p>
 
 
 
