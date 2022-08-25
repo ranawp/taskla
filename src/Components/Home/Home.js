@@ -37,7 +37,7 @@ const Home = () => {
                         <div className='bg-[#FCF7F1] px-8 py-20
                         text-left lg:text-center '>
 
-                            <h1 className='text-5xl font-serif leading-[1.3]
+                            <h1 className='text-3xl font-serif leading-[1.3]
                             '>Taskla helps to improve discipline and make student hard worker by using Remind education solutions</h1>
                             <Link to='/register'><button className='btn btn-secondary mt-5'>Get Started</button></Link>
                         </div >

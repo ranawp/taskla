@@ -157,6 +157,9 @@ const ModuleUpload = () => {
                                 })}
                             ></textarea> <br />
 
+                            <p>Will you lock this milestone? write: lock<br /></p>
+                            <input class="input input-bordered w-full max-w-xs" placeholder='Write lock'  {...register("submit", { required: true })} /> <br />
+
 
                             <input type="submit" value='Submit' className='mt-4 text-white btn-secondary px-4 py-1   max-w-xs' />
                         </form>

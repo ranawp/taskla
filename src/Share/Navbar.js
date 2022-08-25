@@ -69,8 +69,8 @@ const Navbar = () => {
             user &&
             <>
                 {match.student == 'enrolled' &&
-                    <>  <li className='hover:text-secondary'><Link className='pl-5' to='/mytask'>MyTask</Link></li>
-                        <li className='hover:text-secondary'><Link className='pl-5' to="/classroom">Classroom</Link></li ></>
+                    <>  <li className='hover:text-secondary'><Link className='pl-5' to='/mytask'>Clasroom</Link></li>
+                        </>
                 }
                 <li className='hover:text-secondary'><Link className='pl-5' to="/courses">Courses</Link></li>
                 <li className='hover:text-secondary' > <Link className='pl-5' to='/contact' > Contact Us</Link ></li >
