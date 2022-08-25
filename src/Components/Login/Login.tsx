@@ -16,11 +16,11 @@ const Login = () => {
         user,
         loading,
         error,
-    ] : any = useSignInWithEmailAndPassword(auth);
-   
+    ]: any = useSignInWithEmailAndPassword(auth);
+
 
     const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
-    const onSubmit = (data:any):void => {
+    const onSubmit = (data: any): void => {
         signInWithEmailAndPassword(data.email, data.password);
         reset();
     };
@@ -31,7 +31,7 @@ const Login = () => {
     }
 
 
-    const handelResetPassword = async ()  => {
+    const handelResetPassword = async () => {
         if (email) {
             await sendPasswordResetEmail(email);
             toast("Sent Email");
@@ -56,7 +56,7 @@ const Login = () => {
     // password show/hide 
     const [state, setState] = useState<boolean>(false);
 
-    const btnValue = ():void => {
+    const btnValue = (): void => {
         setState(click => !click);
     }
     return (
