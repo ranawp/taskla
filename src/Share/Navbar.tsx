@@ -105,7 +105,10 @@ const Navbar = () => {
     //userProfile info srart
     const userProfileNameLogo = <>
         {/* {match?.image} */}
-        <img src={match?.image || dummyImage} className='w-8 border-red-800 border-2 rounded-full mx-auto items-center image' alt="" />
+
+
+
+        <img src={match?.image || dummyImage} className='w-9 border-red-800 border-2 rounded-full mx-auto items-center h-9' alt="" />
 
     </>
 
@@ -199,7 +202,7 @@ const Navbar = () => {
         {/* large device user proil end */}
 
         <>
-            {match?.role == 'admin' && < li className='hover:text-black text-center' > <Link className='pl-5' to='/dashboard' >CPanel</Link ></li >}
+            {match?.role == 'admin' && < li className='hover:text-secondary text-center c-Pannel' > <Link className='pl-5' to='/dashboard' >CPanel</Link ></li >}
 
         </>
 

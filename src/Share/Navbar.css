@@ -55,6 +55,10 @@ html {
     margin-top: 5px;
 }
 
+.c-Pannel {
+    color: #1E266D;
+}
+
 * li {
     list-style: none;
 }

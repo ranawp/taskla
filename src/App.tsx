@@ -55,7 +55,7 @@ const App = () => {
 
 
   return (
-    <div>
+    <div className="bg-white overflow-x-hidden">
       <Navbar />
       <TimeContext.Provider value={[Mydate, Mytime]}>
 
@@ -79,8 +79,8 @@ const App = () => {
           <Route path='dashboard' element={<Dashboard />}>
             <Route index element={<Admin_Dashboard />} />
             <Route path="allusers" element={<Allusers />} />
-            <Route path="createtask" element={<TaskCreate />} /> 
-            <Route path="taskEvaluate" element={<TaskEvaluate />}/>
+            <Route path="createtask" element={<TaskCreate />} />
+            <Route path="taskEvaluate" element={<TaskEvaluate />} />
             <Route path="taskEvaluateCompleted" element={<CompletedTaskEvalute />} />
             <Route path="createBlog" element={<CreateBlog />} />
             <Route path="notice" element={<NoticePublish />} />
