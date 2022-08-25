@@ -8,6 +8,29 @@ import SingleTasks from './SingleTasks';
 import './MyTask.css';
 import TaskSubmit from './TaskSubmit';
 
+// interface Task {
+//     _id: string
+//     questionDeliverDate: string
+//     questionDeliverHour: string
+//     taskName: string
+//     taskSerial: string
+//     taskDeadline: string
+//     taskMassage: string
+//     submit?: string
+// }
+
+// interface Mark {
+//     _id: string
+//     mark: string
+//     scriptfeedback: string
+//     email: string
+//     taskDescription: string
+//     taskName: string
+//     deadline: string
+//     taskNo: string
+//     feedbackDate: string
+//     feedbackHour: string
+// }
 
 const MyTask = () => {
     const [singleTask, setSingleTask] = useState([]);
@@ -24,12 +47,12 @@ const MyTask = () => {
     // console.log(submit)
     console.log(taskData)
 
-    const pendingTask = singleTask.filter(task => {
-        return task.submit !== "submited"
-    })
+    // const pendingTask = singleTask.filter(task => {
+    //     return task.submit !== "submited"
+    // })
 
 
-
+    console.log(singleTask.reverse())
     useEffect(() => {
         fetch('http://localhost:5000/alltasks')
             .then(res => res.json())
@@ -47,7 +70,7 @@ const MyTask = () => {
             <section className="grid sm:grid-cols-2 px-10 mt-5 task-list">
 
                 <div className='w-[300px] mb-3 sm:w-4/5 border h-80 overflow-y-auto' >
-                    {pendingTask.map((singleTask) =>
+                    {singleTask.map((singleTask) =>
                         <SingleTasks
                             key={singleTask._id}
                             singleTask={singleTask}
@@ -66,11 +89,8 @@ const MyTask = () => {
                         <>
                             {/* <h1 className="title">Task Name:{taskData.taskName}</h1>
                             <p className="details">Task no:{taskData.taskSerial}</p>
-
                             <p classNeme="details">Task Posted time:{taskData.questionDeliverDate}</p>
-
                             <p className="details">Task Posted time:{taskData.questionDeliverDate}</p>
-
                             <p className="details">Deadline:{taskData.taskDeadline}</p>
                             <p className="details">Task Details : {taskData.taskMassage} </p> */}
                             {watchVideo == "00" && <p>{taskData.moduleIntroduction}</p>
@@ -86,7 +106,7 @@ const MyTask = () => {
                             />
 
                             }
-                            {watchVideo == "02" && <p>video 2</p>
+                            {watchVideo == "02" && <p>video 2 {taskData.Modulevideo2}</p>
 
                             }
                             {watchVideo == "03" && <p>video 3</p>
@@ -105,6 +125,7 @@ const MyTask = () => {
                             {watchVideo == "assignment" && <div>
                                 <p>Qusetion Delivery time:{taskData.questionDeliverDate},{taskData.questionDeliverHour}</p>
                                 <p>Task deadline:{taskData.taskDeadline} </p>
+                                <p>Assignment Name and serial:{taskData.asignmentName}</p>
 
 
 
@@ -123,7 +144,7 @@ const MyTask = () => {
                         {toogle === false &&
                             <TaskSubmit
                                 setRefresh={setRefresh}
-                                submit={submit}></TaskSubmit>
+                                submit={submit} singleTask={singleTask}></TaskSubmit>
 
                         }
                     </>

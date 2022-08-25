@@ -3,8 +3,22 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import auth from '../../../../firebase.init';
 
-const TaskSubmit = ({ submit, setRefresh }) => {
+const TaskSubmit = ({ submit, setRefresh, singleTask }) => {
     const taskId = submit?._id
+    // console.log(submit)
+    // console.log(submit?._id)
+
+
+    var index;
+    console.log(index)
+    for (var i = 0; i <= singleTask.length; i++)
+        if (singleTask[i]._id === taskId) {
+            index = i + 1;
+            console.log(index)
+            break;
+        }
+
+    const id = singleTask[index]?._id
     const { taskDeadline, taskMassage, asignmentName, MilstoneSerialNo, assignmentInstruction } = submit
     const [user] = useAuthState(auth)
     const email = user?.email
@@ -54,13 +68,13 @@ const TaskSubmit = ({ submit, setRefresh }) => {
         event.target.reset();
 
         //put method in alltask for submit roll 
-        fetch(` http://localhost:5000/alltasks/${taskId}`, {
+        fetch(` http://localhost:5000/alltasks/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify({
-                submit: "submited"
+                submit: "unlock"
             })
 
         }).then(res => res.json())
