@@ -91,7 +91,7 @@ const TaskSubmit = ({ submit, setRefresh, singleTask, setToogle }) => {
         <div>
             <h4 className='text-lg font-bold font-meidum text-center text-dark mb-3 mt-5' > Submit Your Script Here</h4 >
             <form onSubmit={handleForm} className='w-3/4 mx-auto' >
-                <div>
+                <div className='hidden'>
                     <span>Email:</span>
                     <input size='20' className='h-5 mb-2 ml-1' name='email' type="text" readOnly value={user?.email} /> <br />
 

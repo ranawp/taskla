@@ -83,6 +83,10 @@ html {
     margin-left: 50px;
 }
 
+.image {
+    height: 44px;
+}
+
 @media screen and (max-height: 450px) {
     .sidenav {
         padding-top: 15px;

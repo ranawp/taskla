@@ -5,12 +5,12 @@ import auth from '../../firebase.init';
 
 const EditProfile = ({ data, setReset }) => {
     const [user] = useAuthState(auth);
-    const emails: any= user?.email
+    const emails: any = user?.email
     const [imgLoad, setImgload] = useState<boolean>(false)
     const [image, setImage] = useState<string>('')
-    const imageStoreKey:string = 'b13c2fea1530fdaae420c7d48efd3bdc';
+    const imageStoreKey: string = 'b13c2fea1530fdaae420c7d48efd3bdc';
 
-    const handleFileChange = (event):void => {
+    const handleFileChange = (event): void => {
         if (event.bubbles) {
             setImgload(true)
         }
@@ -34,7 +34,7 @@ const EditProfile = ({ data, setReset }) => {
 
     }
 
-    const handleSubmit = (e: any):void => {
+    const handleSubmit = (e: any): void => {
         e.preventDefault()
         const name = e.target.name.value
         const email = e.target.email.value
@@ -67,7 +67,7 @@ const EditProfile = ({ data, setReset }) => {
         <>
             {/* <!-- The button to open modal --> */}
 
-            <label htmlFor="my-modal-6" className="btn btn-secondary modal-button ">Edit profile</label>
+            <label htmlFor="my-modal-6" className="text-white px-3 py-3 btn-primary modal-button ">Edit profile</label>
 
 
 
@@ -76,6 +76,7 @@ const EditProfile = ({ data, setReset }) => {
             <input type="checkbox" id="my-modal-6" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle" >
                 <div className="modal-box text-center" >
+                    <label htmlFor="my-modal-6" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <h2 className='text-2xl font-bold my-3'>User Profile</h2>
 
                     <form onSubmit={handleSubmit} className='mx-auto border-gray border-2 p-3 w-80 sm:w-96 flex justify-center flex-col items-center'>
@@ -109,17 +110,15 @@ const EditProfile = ({ data, setReset }) => {
 
                         <div className="form-control w-full max-w-xs" >
                             <label className="label" >
-                                <span className="label-text" > profile Image</span >
+                                <span className="label-text" > Upload profile Image</span >
                             </label >
                             <input onChange={handleFileChange} type="file" name='file' placeholder="Type here" className=" input-bordered w-full max-w-xs" />
                         </div >
                         <div className="form-control w-full max-w-xs mt-3" >
-                            <input htmlFor="my-modal-6" type="submit" disabled={imgLoad} className=" btn w-full max-w-xs" />
+                            <input htmlFor="my-modal-6" type="submit" disabled={imgLoad} className=" btn-primary w-full max-w-xs py-2 text-white rounded-md" />
                         </div >
                     </form >
-                    <div className="modal-action" >
-                        <label htmlFor="my-modal-6" className="btn" > Close</label >
-                    </div >
+
                 </div >
             </div >
         </>

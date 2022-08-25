@@ -89,8 +89,8 @@ const Navbar = () => {
             user &&
             <>
                 {match.student == 'enrolled' &&
-                    <>  <li className='hover:text-secondary'><Link className='pl-5' to='/mytask'>MyTask</Link></li>
-                        <li className='hover:text-secondary'><Link className='pl-5' to="/classroom">Classroom</Link></li ></>
+                    <>  <li className='hover:text-secondary'><Link className='pl-5' to='/mytask'>Classroom</Link></li>
+                    </>
                 }
                 <li className='hover:text-secondary'><Link className='pl-5' to="/courses">Courses</Link></li>
                 <li className='hover:text-secondary' > <Link className='pl-5' to='/contact' > Contact Us</Link ></li >
@@ -105,8 +105,11 @@ const Navbar = () => {
     //userProfile info srart
     const userProfileNameLogo = <>
         {/* {match?.image} */}
+
+
+
         <img src={match?.image || dummyImage} className='w-9 border-red-800 border-2 rounded-full mx-auto items-center h-9' alt="" />
-        {/* <img className='w-2 cursor-pointer ml-3 inline-block' src={down} alt="" /> */}
+
     </>
 
     const userProfileDes = <>

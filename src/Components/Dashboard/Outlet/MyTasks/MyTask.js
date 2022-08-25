@@ -67,21 +67,9 @@ const MyTask = () => {
 
             <h1 className='text-2xl text-center mt-10'>Your Assignment</h1>
 
-            <section className="grid sm:grid-cols-2 px-10 mt-5 task-list">
+            <section className="grid sm:grid-cols-2 gap-6 px-10 mt-5 task-list">
 
-                <div className='w-[300px] mb-3 sm:w-4/5 border h-80 overflow-y-auto' >
-                    {singleTask.map((singleTask) =>
-                        <SingleTasks
-                            key={singleTask._id}
-                            singleTask={singleTask}
-                            setTaskData={setTaskData}
-                            setToogle={setToogle}
-                            setSubmit={setSubmit}
-                            setWatchVideo={setWatchVideo}
-                            setWatchVideo2={setWatchVideo2}
-                        ></SingleTasks>
-                    )}
-                </div>
+
 
                 <div className=" overflow-y-auto border  pt-3 pl-2 text-base">
 
@@ -152,6 +140,19 @@ const MyTask = () => {
                         }
                     </>
 
+                </div>
+                <div className='w-[300px] mb-3 sm:w-4/5 border h-80 overflow-y-auto' >
+                    {singleTask.map((singleTask) =>
+                        <SingleTasks
+                            key={singleTask._id}
+                            singleTask={singleTask}
+                            setTaskData={setTaskData}
+                            setToogle={setToogle}
+                            setSubmit={setSubmit}
+                            setWatchVideo={setWatchVideo}
+                            setWatchVideo2={setWatchVideo2}
+                        ></SingleTasks>
+                    )}
                 </div>
             </section>
         </>
