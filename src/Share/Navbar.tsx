@@ -52,14 +52,14 @@ const Navbar = () => {
     }, [email])
 
     // console.log(match)
-    useEffect(() : void => {
+    useEffect((): void => {
         fetch(`https://cryptic-stream-86241.herokuapp.com/notice`)
             .then((response) => response.json())
             .then((json) => setNotifications(json));
     }, [])
 
 
-    const newArray : Notice[] = notifications.filter((ele) => {
+    const newArray: Notice[] = notifications.filter((ele) => {
         return ele.read == false
     })
 
@@ -89,8 +89,8 @@ const Navbar = () => {
             user &&
             <>
                 {match.student == 'enrolled' &&
-                    <>  <li className='hover:text-secondary'><Link className='pl-5' to='/mytask'>Clasroom</Link></li>
-                        </>
+                    <>  <li className='hover:text-secondary'><Link className='pl-5' to='/mytask'>Classroom</Link></li>
+                    </>
                 }
                 <li className='hover:text-secondary'><Link className='pl-5' to="/courses">Courses</Link></li>
                 <li className='hover:text-secondary' > <Link className='pl-5' to='/contact' > Contact Us</Link ></li >
@@ -105,8 +105,8 @@ const Navbar = () => {
     //userProfile info srart
     const userProfileNameLogo = <>
         {/* {match?.image} */}
-        <img src={match?.image || dummyImage} className='w-8 border-red-800 border-2 rounded-full mx-auto items-center' alt="" />
-        {/* <img className='w-2 cursor-pointer ml-3 inline-block' src={down} alt="" /> */}
+        <img src={match?.image || dummyImage} className='w-8 border-red-800 border-2 rounded-full mx-auto items-center image' alt="" />
+
     </>
 
     const userProfileDes = <>
@@ -218,49 +218,49 @@ const Navbar = () => {
     const [open, setOpen] = useState<boolean | null>(null)
     return (
         <div className='shadow-md fixed z-50 bg-white w-full'>
-        <div className='max-w-screen-xl mx-auto' >
-            <div className="navbar bg-white bg-opacity-70 Nav" >
-                <div className="navbar-start" >
+            <div className='max-w-screen-xl mx-auto' >
+                <div className="navbar bg-white bg-opacity-70 Nav" >
+                    <div className="navbar-start" >
 
-                    {/* sidebar small device*/}
-                    <div id="mySidenav" className={open == true ? 'sidenav shadow-lg' : 'sidenav1'}>
-                        <span className="closebtn" onClick={() => setOpen(false)}>&times;</span>
-                        {open && <><ul className="" >
+                        {/* sidebar small device*/}
+                        <div id="mySidenav" className={open == true ? 'sidenav shadow-lg' : 'sidenav1'}>
+                            <span className="closebtn" onClick={() => setOpen(false)}>&times;</span>
+                            {open && <><ul className="" >
+                                {menuItems}
+                            </ul >
+                                {menuItem2}
+                            </>
+
+                            }
+                        </div>
+
+                        {/* sidebar end*/}
+                        <img className='w-16' src={logo} alt="" /> <p className=" normal-case  ml-3 font-bold text-2xl text-[#383D8A]" > <Link to='/'>TASKLA</Link ></p >
+
+                    </div >
+
+                    <div className="navbar hidden lg:flex" >
+
+                        <ul className="menu-horizontal gap-5 text-primary font-bold" >
                             {menuItems}
                         </ul >
+                    </div >
+
+                    {/* menuItem End  */}
+                    <div className="navbar-end hidden lg:flex" >
+                        <ul className=" menu-horizontal p-0 text-black font-bold flex justify-center items-center" >
                             {menuItem2}
-                        </>
+                        </ul >
 
-                        }
-                    </div>
+                    </div >
 
-                    {/* sidebar end*/}
-                    <img className='w-16' src={logo} alt="" /> <p className=" normal-case  ml-3 font-bold text-2xl text-[#383D8A]" > <Link to='/'>TASKLA</Link ></p >
-
+                    {/* small device navbar */}
+                    <span className='lg:hidden ml-32'>
+                        <svg onClick={() => setOpen(true)} xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" > <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg >
+                    </span>
                 </div >
-
-                <div className="navbar hidden lg:flex" >
-
-                    <ul className="menu-horizontal gap-5 text-primary font-bold" >
-                        {menuItems}
-                    </ul >
-                </div >
-
-                {/* menuItem End  */}
-                <div className="navbar-end hidden lg:flex" >
-                    <ul className=" menu-horizontal p-0 text-black font-bold flex justify-center items-center" >
-                        {menuItem2}
-                    </ul >
-
-                </div >
-
-                {/* small device navbar */}
-                <span className='lg:hidden ml-32'>
-                    <svg onClick={() => setOpen(true)} xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" > <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg >
-                </span>
             </div >
-        </div >
-    </div>
+        </div>
     );
 };
 
