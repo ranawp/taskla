@@ -169,7 +169,7 @@ const Navbar = () => {
                 <div className="collapse-title text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content pl-5 cursor-pointer inline-block">
                     {userProfileNameLogo}
                 </div>
-                <div className="collapse-content bg-primary peer-checked:text-secondary-content">
+                <div className="collapse-content  peer-checked:text-secondary-content">
                     {userProfileDes}
                 </div>
             </div>
@@ -214,53 +214,49 @@ const Navbar = () => {
     const [open, setOpen] = useState<boolean | null>(null)
     return (
         <div className='shadow-md fixed z-50 bg-white w-full'>
-            <div className='max-w-screen-xl mx-auto' >
-                <div className="navbar bg-white bg-opacity-70 Nav" >
-                    <div className="navbar-start" >
+        <div className='max-w-screen-xl mx-auto' >
+            <div className="navbar bg-white bg-opacity-70 Nav" >
+                <div className="navbar-start" >
 
-                        {/* sidebar small device*/}
-                        <div id="mySidenav" className={open == true ? 'sidenav shadow-lg' : 'sidenav1'}>
-                            <span className="closebtn" onClick={() => setOpen(false)}>&times;</span>
-                            {open && <><ul className="" >
-                                {menuItems}
-                            </ul >
-                                {menuItem2}
-                            </>
-
-                            }
-                        </div>
-                        <span className='lg:hidden'>
-                            <svg onClick={() => setOpen(true)} xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" > <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg >
-                        </span>
-                        {/* sidebar end*/}
-                        <img className='w-16' src={logo} alt="" /> <p className=" normal-case  ml-3 font-bold text-2xl text-[#383D8A]" > <Link to='/'>TASKLA</Link ></p >
-                    </div >
-
-                    <div className="navbar hidden lg:flex" >
-                        <ul className="menu-horizontal gap-5 text-primary font-bold" >
+                    {/* sidebar small device*/}
+                    <div id="mySidenav" className={open == true ? 'sidenav shadow-lg' : 'sidenav1'}>
+                        <span className="closebtn" onClick={() => setOpen(false)}>&times;</span>
+                        {open && <><ul className="" >
                             {menuItems}
                         </ul >
-                    </div >
-
-                    {/* menuItem End  */}
-                    <div className="navbar-end hidden lg:flex" >
-                        <ul className=" menu-horizontal p-0 text-black font-bold flex justify-center items-center" >
                             {menuItem2}
-                        </ul >
-                    </div >
+                        </>
 
-                    {
-                        location.pathname == '/dashboard' &&
-                        <div className='navbar-end lg:hidden' >
-                            <label tabIndex={1} htmlFor="my-drawer-2" className="btn btn-ghost lg:hidden" >
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" > <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                            </label >
-                        </div >
-                    }
+                        }
+                    </div>
+
+                    {/* sidebar end*/}
+                    <img className='w-16' src={logo} alt="" /> <p className=" normal-case  ml-3 font-bold text-2xl text-[#383D8A]" > <Link to='/'>TASKLA</Link ></p >
 
                 </div >
+
+                <div className="navbar hidden lg:flex" >
+
+                    <ul className="menu-horizontal gap-5 text-primary font-bold" >
+                        {menuItems}
+                    </ul >
+                </div >
+
+                {/* menuItem End  */}
+                <div className="navbar-end hidden lg:flex" >
+                    <ul className=" menu-horizontal p-0 text-black font-bold flex justify-center items-center" >
+                        {menuItem2}
+                    </ul >
+
+                </div >
+
+                {/* small device navbar */}
+                <span className='lg:hidden ml-32'>
+                    <svg onClick={() => setOpen(true)} xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" > <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg >
+                </span>
             </div >
-        </div>
+        </div >
+    </div>
     );
 };
 

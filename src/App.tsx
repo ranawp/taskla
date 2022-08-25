@@ -39,7 +39,7 @@ interface Time {
 const App = () => {
 
 
-  var options: Time = { weekday: 'long', year: 'numeric', day: 'numeric', month: 'long' };
+  var options: Time | any = { weekday: 'long', year: 'numeric', day: 'numeric', month: 'long' };
   const dateFunction = new Date().toLocaleDateString("en-UK", options);
 
   // time 

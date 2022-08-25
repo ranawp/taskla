@@ -37,7 +37,7 @@ const Announcement = () => {
     return (
         <div className="hero bg-base-200 mt-20">
             <div className="hero-content flex-col lg:flex-row mt-10">
-                <div className='flex flex-col gap-4 w-[500px] overflow-y-auto h-96'>
+                <div className='flex flex-col gap-4 lg:w-[500px] sm:w-[300px] overflow-y-auto h-96'>
                     {announcementFilter.map(announcement => <Detail
                         key={announcement._id}
                         announcement={announcement}
@@ -45,7 +45,7 @@ const Announcement = () => {
                     />)}
                 </div>
                 <div>
-                    <div className="card flex-shrink-0 w-[700px] max-w-sm shadow-2xl bg-base-100 mx-auto h-[500px]">
+                    <div className="card flex-shrink-0 lg:w-[700px] sm:w-[600px] max-w-sm shadow-2xl bg-base-100 mx-auto h-[500px]">
                         <div className="card-body">
                             <h2 className="card-title">{notice}</h2>
                             <p>{announcement}</p>
