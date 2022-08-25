@@ -19,8 +19,8 @@ const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit, setWatchVi
 
     return (
         <>
-            <div>
-                <div className='py-2 text-sm'>
+            <div className=''>
+                <div className='py-2 px-2 text-sm'>
 
                     <div tabindex="0" className="collapse group collapse-arrow border border-base-300 bg-base-100 rounded-box ">
 
@@ -29,7 +29,7 @@ const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit, setWatchVi
                                 onClick={() => {
                                     handleClick(singleTask)
                                 }}
-                                className="collapse-title  font-medium flex justify-between pointer-event-none">
+                                className=" collapse-title  font-medium flex justify-between pointer-event-none">
                                 <div>
                                     {singleTask.MilstoneSerialNo}
                                     {singleTask.MilstoneName}
@@ -45,25 +45,25 @@ const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit, setWatchVi
 
 
                         <div className={singleTask.submit == 'lock' ? " collapse-content pointer-events-none " : " collapse-content"}>
-                            <p onClick={() => setWatchVideo('00')} >Module Introduction text </p>
-                            <p onClick={() => setWatchVideo('01')} className='pointer-events-none border mt-3 cursor-pointer bg-gray-700'>{singleTask.ModuleNameserial1} </p>
+                            <p className='bg-primary py-3 text-white px-2 rounded-md' onClick={() => setWatchVideo('00')} >Module Introduction text </p>
+                            <p onClick={() => setWatchVideo('01')} className='pointer-events-none  mt-3 cursor-pointer bg-primary py-3 text-white px-2 rounded-md'>{singleTask.ModuleNameserial1} </p>
 
-                            <p onClick={() => setWatchVideo('02')} className='border mt-3 cursor-pointer bg-gray-700'>{singleTask.ModuleNameserial2} </p>
+                            <p onClick={() => setWatchVideo('02')} className=' mt-3 cursor-pointer bg-primary py-3 text-white px-2 rounded-md'>{singleTask.ModuleNameserial2} </p>
 
-                            <p onClick={() => setWatchVideo('03')} className='border mt-3 cursor-pointer bg-gray-700'>{singleTask.ModuleNameserial3} </p>
+                            <p onClick={() => setWatchVideo('03')} className=' mt-3 cursor-pointer bg-primary py-3 text-white px-2 rounded-md'>{singleTask.ModuleNameserial3} </p>
 
-                            <p onClick={() => setWatchVideo('04')} className='border mt-3 cursor-pointer bg-gray-700'>{singleTask.ModuleNameserial4} </p>
-                            <p onClick={() => setWatchVideo('05')} className='border mt-3 cursor-pointer bg-gray-700'>{singleTask.ModuleNameserial5} </p>
+                            <p onClick={() => setWatchVideo('04')} className=' mt-3 cursor-pointer bg-primary py-3 text-white px-2 rounded-md'>{singleTask.ModuleNameserial4} </p>
+                            <p onClick={() => setWatchVideo('05')} className=' mt-3 cursor-pointer bg-primary py-3 text-white px-2 rounded-md'>{singleTask.ModuleNameserial5} </p>
 
-                            <p onClick={() => setWatchVideo('06')} className='border mt-3 cursor-pointer bg-gray-700'>{singleTask.ModuleNameserial6} </p>
+                            <p onClick={() => setWatchVideo('06')} className=' mt-3 cursor-pointer bg-primary py-3 text-white px-2 rounded-md'>{singleTask.ModuleNameserial6} </p>
 
-                            <p onClick={() => setWatchVideo('assignment')} className='border mt-3 mb-5 cursor-pointer bg-gray-700'>{singleTask.asignmentName} </p>
+                            <p onClick={() => setWatchVideo('assignment')} className=' mt-3 mb-5 cursor-pointer bg-primary py-3 text-white px-2 rounded-md'>{singleTask.asignmentName} </p>
 
 
                             <label
 
                                 onClick={(e) => { setToogle(false); handleSubmit(singleTask); }}
-                                className="bg-blue-700 border-0 px-3 py-1  button  rounded text-white modal-button cursor-pointer">Assignment Submit</label>
+                                className="bg-primary border-0 px-24 py-3  w-98 rounded text-white cursor-pointer">Assignment Submit</label>
 
                         </div>
 
