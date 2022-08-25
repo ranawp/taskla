@@ -22,7 +22,7 @@ const Review = () => {
     }, [])
 
     return (
-        <div className='h-[600px] mt-32' >
+        <div className=' mt-32' >
             <h1 className='text-center capitalize text-[32px] font-bold text-primary pt-10' > What <span className='text-secondary'>People</span> are saying
             </h1 >
             <Swiper
