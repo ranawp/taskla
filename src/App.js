@@ -98,7 +98,7 @@ function App() {
           </Route>
 
 
-          {/* mozahid task  */}
+          {/* mozahid gggggg task  */}
           <Route path="/createBlog/:blogId" element={<BlogDetails />} />
 
           {/* mozahid task  */}
