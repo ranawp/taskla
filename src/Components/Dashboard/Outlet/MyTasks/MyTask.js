@@ -8,6 +8,29 @@ import SingleTasks from './SingleTasks';
 import './MyTask.css';
 import TaskSubmit from './TaskSubmit';
 
+// interface Task {
+//     _id: string
+//     questionDeliverDate: string
+//     questionDeliverHour: string
+//     taskName: string
+//     taskSerial: string
+//     taskDeadline: string
+//     taskMassage: string
+//     submit?: string
+// }
+
+// interface Mark {
+//     _id: string
+//     mark: string
+//     scriptfeedback: string
+//     email: string
+//     taskDescription: string
+//     taskName: string
+//     deadline: string
+//     taskNo: string
+//     feedbackDate: string
+//     feedbackHour: string
+// }
 
 const MyTask = () => {
     const [singleTask, setSingleTask] = useState([]);
