@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SingleTaskEvalute = ({ taskEvalute, index, setEvaluteModalDetails, setEvaluteFeedbackModal }) => {
-    // console.log(taskEvalute)
+    console.log(taskEvalute)
 
     const { taskName, taskNo, email, deadline, taskDescription, taskSubmitedDate, taskSubmitedHour } = taskEvalute;
 

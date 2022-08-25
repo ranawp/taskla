@@ -28,7 +28,7 @@ const Allusers = () => {
         isLoading(true)
         console.log('singaluser')
         const fetchSideeffect = async () => {
-            const res = await axios('https://cryptic-stream-86241.herokuapp.com/user')
+            const res = await axios('http://localhost:5000/user')
             setData(res.data)
             isLoading(false)
         }
@@ -38,7 +38,7 @@ const Allusers = () => {
     return (
         <div>
             <h2 className='text-lg text-center font-bold my-5'>All users</h2>
-
+            {loading && <Loading></Loading>}
             <div className="overflow-x-auto" >
                 <table className="table w-full" >
                     <thead>
@@ -50,7 +50,7 @@ const Allusers = () => {
                             <th>User Details</th>
                             <th></th>
                         </tr>
-                        {loading && <Loading></Loading>}
+
                     </thead>
                     <tbody>
 

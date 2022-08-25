@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useForm } from "react-hook-form";
 import auth from '../../firebase.init';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import registerImg from '../../imgages/register.png';
 import { useNavigate, Link } from 'react-router-dom';
 import useToken from '../../hooks/useToken';
@@ -17,9 +17,12 @@ const Login = () => {
         loading,
         error,
     ] : any = useSignInWithEmailAndPassword(auth);
+   
+
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
     const onSubmit = (data:any):void => {
         signInWithEmailAndPassword(data.email, data.password);
-        // reset();
+        reset();
     };
 
     const [token] = useToken(user)
@@ -28,7 +31,15 @@ const Login = () => {
     }
 
 
-
+    const handelResetPassword = async ()  => {
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast("Sent Email");
+        }
+        else {
+            toast("Please Enter Your Email");
+        }
+    }
 
     let errorElement;
     if (error) {
@@ -106,7 +117,9 @@ const Login = () => {
                         <input className='my-2 py-2 border rounded-lg text-dark font-semibold hover:bg-white hover:text-black cursor-pointer' value="Sign In" type="submit" />
                         {errorElement}
                     </form >
-                    <p className='my-3 text-dark' > New to Taskla ?? <Link to='/register'>Please Register</Link></p >
+
+                    <p className='my-3 text-dark text-xs' > New to Taskla ?? <Link to='/register'>Please Register</Link></p >
+                    <p className='my-3 text-dark text-xs'>Forget Password?? <span className='link no-underline' onClick={handelResetPassword}>Reset Password</span></p>
                 </div >
             </div >
         </div >

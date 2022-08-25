@@ -12,14 +12,14 @@ interface BlogType {
 const UseNewBlog = () => {
     const [newBlogs, setNewBlogs] = useState<BlogType[]>([]);
     useEffect(() => {
-        fetch('https://cryptic-stream-86241.herokuapp.com/createBlog')
+        fetch('http://localhost:5000/createBlog')
             .then(res => res.json())
             .then(data => {
                 setNewBlogs(data);
             })
     }, []);
 
-    return [newBlogs]
+    return [newBlogs, setNewBlogs];
 }
 
 

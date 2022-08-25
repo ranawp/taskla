@@ -3,8 +3,8 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../../firebase.init';
 import FeedbackDetails from './FeedbackDetails';
 import SingleTasks from './SingleTasks';
-import TaskDetails from './TaskDetails';
-import TaskModal from './TaskModal';
+// import TaskDetails from './TaskDetails';
+// import TaskModal from './TaskModal';
 import './MyTask.css';
 import TaskSubmit from './TaskSubmit';
 
@@ -39,37 +39,28 @@ const MyTask = () => {
     const [submit, setSubmit] = useState([])
     const [refresh, setRefresh] = useState(null)
     const [user] = useAuthState(auth)
+    const [watchVideo, setWatchVideo] = useState(false)
+    const [watchVideo2, setWatchVideo2] = useState(false)
 
     const email = user?.email;
 
-    console.log(submit)
-    // console.log(toogle)
+    // console.log(submit)
+    console.log(taskData)
 
-    const pendingTask = singleTask.filter(task => {
-        return task.submit !== "submited"
-    })
+    // const pendingTask = singleTask.filter(task => {
+    //     return task.submit !== "submited"
+    // })
 
 
-
+    console.log(singleTask.reverse())
     useEffect(() => {
-        fetch('https://cryptic-stream-86241.herokuapp.com/alltasks')
+        fetch('http://localhost:5000/alltasks')
             .then(res => res.json())
             .then(data => setSingleTask(data))
 
     }, [refresh])
-    const [marks, setMarks] = useState([]);
-    useEffect(() => {
-        fetch(`https://cryptic-stream-86241.herokuapp.com/allMarks/${email}`)
-            .then(res => res.json())
-            .then(data => setMarks(data))
-    }, [])
 
-    // const [marks, setMarks] = useState([]);
-    // useEffect(() => {
-    //     fetch(` https://cryptic-stream-86241.herokuapp.com/allMarks/${email}`)
-    //         .then(res => res.json())
-    //         .then(data => setMarks(data))
-    // }, [])
+
 
     return (
         <>
@@ -79,33 +70,81 @@ const MyTask = () => {
             <section className="grid sm:grid-cols-2 px-10 mt-5 task-list">
 
                 <div className='w-[300px] mb-3 sm:w-4/5 border h-80 overflow-y-auto' >
-                    {pendingTask.map((singleTask) =>
+                    {singleTask.map((singleTask) =>
                         <SingleTasks
                             key={singleTask._id}
                             singleTask={singleTask}
                             setTaskData={setTaskData}
                             setToogle={setToogle}
                             setSubmit={setSubmit}
-
+                            setWatchVideo={setWatchVideo}
+                            setWatchVideo2={setWatchVideo2}
                         ></SingleTasks>
                     )}
                 </div>
 
-                <div className=" overflow-y-auto border h-80 pt-3 pl-2 text-base">
+                <div className=" overflow-y-auto border  pt-3 pl-2 text-base">
 
                     {toogle === true &&
                         <>
-                            <h1 className="title">Task Name:{taskData.taskName}</h1>
+                            {/* <h1 className="title">Task Name:{taskData.taskName}</h1>
                             <p className="details">Task no:{taskData.taskSerial}</p>
+                            <p classNeme="details">Task Posted time:{taskData.questionDeliverDate}</p>
                             <p className="details">Task Posted time:{taskData.questionDeliverDate}</p>
                             <p className="details">Deadline:{taskData.taskDeadline}</p>
-                            <p className="details">Task Details : {taskData.taskMassage} </p> </>
+                            <p className="details">Task Details : {taskData.taskMassage} </p> */}
+                            {watchVideo == "00" && <p>{taskData.moduleIntroduction}</p>
+
+                            }
+
+                            {watchVideo == "01" && <iframe className=""
+                                src={taskData.Modulevideo1}
+                                frameborder="0"
+                                allow="autoplay; encrypted-media"
+                                allowfullscreen
+                                title="video"
+                            />
+
+                            }
+                            {watchVideo == "02" && <p>video 2 {taskData.Modulevideo2}</p>
+
+                            }
+                            {watchVideo == "03" && <p>video 3</p>
+
+                            }
+                            {watchVideo == "04" && <p>video 4</p>
+
+                            }
+                            {watchVideo == "05" && <p>video 5</p>
+
+                            }
+                            {watchVideo == "06" && <p>video 6</p>
+
+                            }
+
+                            {watchVideo == "assignment" && <div>
+                                <p>Qusetion Delivery time:{taskData.questionDeliverDate},{taskData.questionDeliverHour}</p>
+                                <p>Task deadline:{taskData.taskDeadline} </p>
+                                <p>Assignment Name and serial:{taskData.asignmentName}</p>
+
+
+
+                                {taskData.assignmentInstruction}</div>
+
+                            }
+
+
+
+                            {/* <p className="details"> <img src={taskData.img} alt="" /> */}
+
+
+                        </>
                     }
                     <>
                         {toogle === false &&
                             <TaskSubmit
                                 setRefresh={setRefresh}
-                                submit={submit}></TaskSubmit>
+                                submit={submit} singleTask={singleTask}></TaskSubmit>
 
                         }
                     </>
@@ -147,14 +186,14 @@ export default MyTask;
 //     const email = user?.email;
 
 //     useEffect(() => {
-//         fetch('https://cryptic-stream-86241.herokuapp.com/alltasks')
+//         fetch('http://localhost:5000/alltasks')
 //             .then(res => res.json())
 //             .then(data => setSingleTask(data))
 //     }, [])
 
 //     const [marks, setMarks] = useState([]);
 //     useEffect(() => {
-//         fetch(`https://cryptic-stream-86241.herokuapp.com/allMarks/${email}`)
+//         fetch(`http://localhost:5000/allMarks/${email}`)
 //             .then(res => res.json())
 //             .then(data => setMarks(data))
 //     }, [])

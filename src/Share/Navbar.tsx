@@ -5,9 +5,12 @@ import logo from '../asset/logo.png'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
 import { signOut } from 'firebase/auth';
-import down from '../asset/down-filled-triangular-arrow.png'
 import notificationIcon from '../asset/notification.png'
 import axios from 'axios';
+
+// import moment from 'moment';
+// import dummyImage from '../asset/dummy-iamge.png'
+
 import dummyImage from '../asset/dummy-iamge.png'
 
 interface Notice {
@@ -32,6 +35,7 @@ interface Profile {
     image?: string
 }
 
+
 const Navbar = () => {
     const [user] = useAuthState(auth);
     const email = user?.email;
@@ -41,7 +45,7 @@ const Navbar = () => {
     //fetching those kind of people who is enrolled
     useEffect(() => {
         const fetchSideeffect = async () => {
-            const res = await axios(`https://cryptic-stream-86241.herokuapp.com/user/${email}`)
+            const res = await axios(`http://localhost:5000/user/${email}`)
             setMatch(res.data)
         }
         fetchSideeffect()
@@ -61,7 +65,7 @@ const Navbar = () => {
 
     const setNoti = (id) => {
         console.log(id)
-        fetch(`https://cryptic-stream-86241.herokuapp.com/notice/${id}`, {
+        fetch(`http://localhost:5000/notice/${id}`, {
             method: 'PUT'
         })
             .then(res => res.json())
@@ -88,7 +92,7 @@ const Navbar = () => {
                     <>  <li className='hover:text-secondary'><Link className='pl-5' to='/mytask'>MyTask</Link></li>
                         <li className='hover:text-secondary'><Link className='pl-5' to="/classroom">Classroom</Link></li ></>
                 }
-                <li className='hover:text-secondary'><Link className='pl-5' to="/courses">Courses</Link></li >
+                <li className='hover:text-secondary'><Link className='pl-5' to="/courses">Courses</Link></li>
                 <li className='hover:text-secondary' > <Link className='pl-5' to='/contact' > Contact Us</Link ></li >
 
             </>

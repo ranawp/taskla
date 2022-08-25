@@ -34,7 +34,7 @@ const Register = () => {
             email: data.email,
             name: data.name
         }
-        fetch('https://cryptic-stream-86241.herokuapp.com/user', {
+        fetch('http://localhost:5000/user', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -123,6 +123,9 @@ const Register = () => {
 
                         <input className='my-2 py-2 border rounded-lg text-dark font-semibold hover:bg-white hover:text-black cursor-pointer' value="Register" type="submit" />
                     </form >
+
+                    <p className='my-3 text-white text-xs' > Already Have an Account?? <Link to='/login'> Please Login</Link ></p >
+
                     <p className='my-3 text-dark' > Already Have an Account? <Link to='/login' className='ml-3' > Please Login</Link ></p >
                 </div >
             </div >
