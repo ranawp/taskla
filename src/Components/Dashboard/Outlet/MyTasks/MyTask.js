@@ -144,7 +144,10 @@ const MyTask = () => {
                         {toogle === false &&
                             <TaskSubmit
                                 setRefresh={setRefresh}
-                                submit={submit} singleTask={singleTask}></TaskSubmit>
+                                submit={submit}
+                                singleTask={singleTask}
+                                setToogle={setToogle}
+                            ></TaskSubmit>
 
                         }
                     </>

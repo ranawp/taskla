@@ -3,7 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import auth from '../../../../firebase.init';
 
-const TaskSubmit = ({ submit, setRefresh, singleTask }) => {
+const TaskSubmit = ({ submit, setRefresh, singleTask, setToogle }) => {
     const taskId = submit?._id
     // console.log(submit)
     // console.log(submit?._id)
@@ -122,7 +122,7 @@ const TaskSubmit = ({ submit, setRefresh, singleTask }) => {
 
 
 
-                <input type="submit" value="Submit" className="bg-blue-700 border-0 px-3 py-1 button  rounded text-white modal-button cursor-pointer mt-3" />
+                <input onClick={() => setToogle(true)} type="submit" value="Submit" className="bg-blue-700 border-0 px-3 py-1 button  rounded text-white modal-button cursor-pointer mt-3" />
             </form >
         </div>
     );
