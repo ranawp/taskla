@@ -114,11 +114,12 @@ const EditProfile = ({ data, setReset }) => {
                             <input onChange={handleFileChange} type="file" name='file' placeholder="Type here" className=" input-bordered w-full max-w-xs" />
                         </div >
                         <div className="form-control w-full max-w-xs mt-3" >
-                            <input htmlFor="my-modal-6" type="submit" disabled={imgLoad} className=" btn w-full max-w-xs" />
+                            <input htmlFor="my-modal-6" type="submit" disabled={imgLoad} className=" btn btn-secondary w-full max-w-xs" />
                         </div >
                     </form >
                     <div className="modal-action" >
-                        <label htmlFor="my-modal-6" className="btn" > Close</label >
+                        {/* <label htmlFor="my-modal-" className="btn btn-primary" > Close</label > */}
+                        <label htmlFor="my-modal-6" className="btn btn-accent btn-sm btn-circle absolute right-2 top-2">✕</label>
                     </div >
                 </div >
             </div >

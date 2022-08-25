@@ -23,7 +23,7 @@ const Home = () => {
     return (
         <div>
 
-            <div className=''>
+            <div className='mt-[100px]'>
                 <Header></Header>
                 <Benifit />
                 <CourseDetails></CourseDetails>

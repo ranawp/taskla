@@ -35,7 +35,7 @@ const ViewProfile = () => {
 
     const { name, email, phone, district, division, street, image } = data;
     return (
-        <div className="mt-12">
+        <div className="mt-[100px]">
             <h2 className='text-3xl font-bold text-center'>Your  <span className='text-secondary'>Profile</span></h2>
             <div className='card py-12 mt-6 justify-center items-center grid sm:grid-cols-2'>
                 <div>

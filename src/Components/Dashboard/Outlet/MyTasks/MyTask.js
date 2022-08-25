@@ -65,7 +65,7 @@ const MyTask = () => {
     return (
         <>
 
-            <h1 className='text-2xl text-center mt-10'>Your Assignment</h1>
+            <h1 className='text-2xl text-center mt-[100px]'>Your Assignment</h1>
 
             <section className="grid sm:grid-cols-2 px-10 mt-5 task-list">
 
