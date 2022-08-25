@@ -24,12 +24,14 @@ const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit, setWatchVi
 
                     <div tabindex="0" className="collapse group collapse-arrow border border-base-300 bg-base-100 rounded-box ">
 
+
                         <div onClick={(e) => setToogle(true)}>
                             <div
                                 onClick={() => {
                                     handleClick(singleTask)
                                 }}
                                 className="collapse-title  font-medium flex justify-between pointer-event-none">
+
                                 <div>
                                     {singleTask.MilstoneSerialNo}
                                     {singleTask.MilstoneName}
