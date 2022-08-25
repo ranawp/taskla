@@ -44,9 +44,9 @@ const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit, setWatchVi
                         {/* onClick={() => handleSubmit(singleTask)} */}
 
 
-                        <div className={singleTask.submit == 'lock' ? " collapse-content pointer-events-none " : " collapse-content"}>
+                        <div className={singleTask.submit == 'lock' ? " collapse-content pointer-events-none cursor-not-allowed" : " collapse-content"}>
                             <p onClick={() => setWatchVideo('00')} >Module Introduction text </p>
-                            <p onClick={() => setWatchVideo('01')} className='pointer-events-none border mt-3 cursor-pointer bg-gray-700'>{singleTask.ModuleNameserial1} </p>
+                            <p onClick={() => setWatchVideo('01')} className='border mt-3 cursor-pointer bg-gray-700'>{singleTask.ModuleNameserial1} </p>
 
                             <p onClick={() => setWatchVideo('02')} className='border mt-3 cursor-pointer bg-gray-700'>{singleTask.ModuleNameserial2} </p>
 
