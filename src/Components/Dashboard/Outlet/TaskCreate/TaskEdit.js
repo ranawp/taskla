@@ -7,7 +7,7 @@ const TaskEdit = () => {
     const [editvideoModal, seteditvideoModal] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:5000/alltasks')
+        fetch('https://cryptic-stream-86241.herokuapp.com/alltasks')
             .then(res => res.json())
             .then(data => setSingleTask(data))
     }, [])

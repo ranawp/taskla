@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react"
 
 
-const useToken = (user) : string[] => {
+const useToken = (user): string[] => {
     const [token, setToken] = useState<string>('');
-    useEffect(() : void => {
+    useEffect((): void => {
         const email = user?.user?.email;
         const currentUser = { email: email };
         if (email) {
-            fetch(`http://localhost:5000/user/${email}`, {
+            fetch(`https://cryptic-stream-86241.herokuapp.com/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

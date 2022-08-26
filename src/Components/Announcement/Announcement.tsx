@@ -17,22 +17,22 @@ const Announcement = () => {
     const [data, setAnnouncement] = useState<Announcement[]>([]);
     const [announcementDetail, setAnnouncementDetail] = useState<Announcement | any>({});
 
-    const { notice, time, announcement } : any = announcementDetail;
+    const { notice, time, announcement }: any = announcementDetail;
 
     useEffect(() => {
-        fetch('http://localhost:5000/announcement')
+        fetch('https://cryptic-stream-86241.herokuapp.com/announcement')
             .then(res => res.json())
             .then(data => setAnnouncement(data))
     }, [])
 
-    const handleAnnounceDetail = (id) : void => {
-        fetch(`http://localhost:5000/announcement/${id}`)
+    const handleAnnounceDetail = (id): void => {
+        fetch(`https://cryptic-stream-86241.herokuapp.com/announcement/${id}`)
             .then(res => res.json())
             .then(data => setAnnouncementDetail(data))
-        
+
     }
 
-    const announcementFilter : Announcement[] = data.filter(a => (a.announcement && a.announcement));
+    const announcementFilter: Announcement[] = data.filter(a => (a.announcement && a.announcement));
 
     return (
         <div className="hero bg-base-200 mt-20">

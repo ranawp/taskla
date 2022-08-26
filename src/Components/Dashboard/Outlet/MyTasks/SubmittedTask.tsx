@@ -24,18 +24,18 @@ const SubmittedTask = () => {
     const [submitedTask, setSubmiitedTask] = useState<Answer[]>([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/answers/${email}`)
+        fetch(`https://cryptic-stream-86241.herokuapp.com/answers/${email}`)
             .then(res => res.json())
             .then(data => setAnswerScript(data))
     }, [])
 
-    const submitted = submitedTask.filter((task:Answer | any) => {
+    const submitted = submitedTask.filter((task: Answer | any) => {
         return task.submit == "submited"
     })
     // console.log(submitedTask)
 
     useEffect(() => {
-        fetch(' http://localhost:5000/alltasks')
+        fetch(' https://cryptic-stream-86241.herokuapp.com/alltasks')
             .then(res => res.json())
             .then(data => setSubmiitedTask(data))
     }, [])
@@ -48,7 +48,7 @@ const SubmittedTask = () => {
             <section className="w-50 mx-auto px-10 mt-5 task-list">
 
                 <div className='w-[300px] mb-3 sm:w-4/5 border h-80 overflow-y-auto' >
-                    {submitted.map((taskDone : Answer) => <SingleSubmittedTask
+                    {submitted.map((taskDone: Answer) => <SingleSubmittedTask
                         key={taskDone._id}
                         taskDone={taskDone}
                         answerScript={answerScript}

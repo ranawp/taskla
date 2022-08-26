@@ -47,7 +47,7 @@ const ViewProfile = () => {
                     </div>
 
                     <div className='my-3 sm:my-0' >
-                        <div className="card w-96 bg-base-100 shadow-xl">
+                        <div className="card w-96 bg-base-100 shadow-xl mt-3">
                             <div className="card-body">
 
                                 <h2 className="text-lg">Student Id:  <span className='text-lg'>9483jcnei98</span></h2>

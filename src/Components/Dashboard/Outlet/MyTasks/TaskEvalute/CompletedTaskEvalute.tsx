@@ -14,7 +14,7 @@ const CompletedTaskEvalute = () => {
     }
         , [])
 
-    const doneFeedbackTask : Object[] = taskEvaluate.filter((task : Object | any) => {
+    const doneFeedbackTask: Object[] = taskEvaluate.filter((task: Object | any) => {
         return task.feedbackSubmit == "feedbacksubmited"
     })
 
@@ -40,7 +40,7 @@ const CompletedTaskEvalute = () => {
                             key={taskEvalute._id}
                             taskEvalute={taskEvalute}
                             index={index}
-                            // setEvaluteModalDetails={setEvaluteModalDetails}
+                        // setEvaluteModalDetails={setEvaluteModalDetails}
 
 
                         ></DoneSignleEvaluate>)

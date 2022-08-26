@@ -13,14 +13,14 @@ const UserRow = ({ user: users, index, setSingelUser }) => {
 
     const [user] = useAuthState(auth)
     const emails = user?.email
-    const makeAdmin = () :void => {
+    const makeAdmin = (): void => {
         fetch(`https://cryptic-stream-86241.herokuapp.com/user/admin/${email}`, {
             method: 'PUT'
         })
             .then(res => res.json())
             .then(data => data)
     }
-    const paidStudent = () : void => {
+    const paidStudent = (): void => {
         fetch(`https://cryptic-stream-86241.herokuapp.com/user/student/${email}`, {
             method: 'PUT'
         })

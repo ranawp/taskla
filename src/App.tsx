@@ -25,6 +25,9 @@ import TaskEvaluate from './Components/Dashboard/Outlet/MyTasks/TaskEvalute/Task
 import CompletedTaskEvalute from './Components/Dashboard/Outlet/MyTasks/TaskEvalute/CompletedTaskEvalute';
 import CreateBlog from './Components/Dashboard/Outlet/CreateBlog/CreateBlog';
 import NoticePublish from './Components/Dashboard/NoticePublish/NoticePublish';
+import ModuleUpload from './Components/Dashboard/Outlet/TaskCreate/ModuleUpload';
+import TaskEdit from './Components/Dashboard/Outlet/TaskCreate/TaskEdit';
+
 
 
 export const TimeContext = createContext('default');
@@ -81,6 +84,9 @@ const App = () => {
             <Route path="allusers" element={<Allusers />} />
             <Route path="createtask" element={<TaskCreate />} />
             <Route path="taskEvaluate" element={<TaskEvaluate />} />
+            <Route path="moduleupload" element={<ModuleUpload />} />
+            <Route path="editTask" element={<TaskEdit />} />
+            {/* <Route path="allblogs" element={<AllBlog />} /> */}
             <Route path="taskEvaluateCompleted" element={<CompletedTaskEvalute />} />
             <Route path="createBlog" element={<CreateBlog />} />
             <Route path="notice" element={<NoticePublish />} />

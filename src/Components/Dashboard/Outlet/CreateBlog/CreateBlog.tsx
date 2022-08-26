@@ -9,13 +9,13 @@ const CreateBlog = () => {
     const blogUser: string | null | undefined = user?.displayName;
     const date = new Date();
     const currentDate: string = date.toLocaleDateString();
-    const imageStoragekey : string = '3cf84befed9b9bcd8f1d01c2b4412701';
+    const imageStoragekey: string = '3cf84befed9b9bcd8f1d01c2b4412701';
 
-    const onSubmit = (data) : void => {
+    const onSubmit = (data): void => {
         const image = data.image[0];
         const formData = new FormData();
         formData.append('image', image);
-        const url : string = `https://api.imgbb.com/1/upload?key=${imageStoragekey}`;
+        const url: string = `https://api.imgbb.com/1/upload?key=${imageStoragekey}`;
         fetch(url, {
             method: 'POST',
             body: formData
@@ -33,7 +33,7 @@ const CreateBlog = () => {
                     }
 
                     //send to database 
-                    fetch('http://localhost:5000/createBlog', {
+                    fetch('https://cryptic-stream-86241.herokuapp.com/createBlog', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'

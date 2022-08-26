@@ -5,17 +5,17 @@ import UserDetails from './UserDetails';
 import UserRow from './UserRow';
 
 interface User {
-    _id ?: string
-    email ?: string
-    name ?: string
-    role ?: string
-    student ?: string
-    district ?: string
-    division ?: string
-    street ?: string
-    enroll ?: string
-    phone ?: string
-    image ?: string
+    _id?: string
+    email?: string
+    name?: string
+    role?: string
+    student?: string
+    district?: string
+    division?: string
+    street?: string
+    enroll?: string
+    phone?: string
+    image?: string
 }
 
 const Allusers = () => {
@@ -24,11 +24,11 @@ const Allusers = () => {
     const [singelUser, setSingelUser] = useState<any[]>([]);
 
 
-    useEffect(() : void => {
+    useEffect((): void => {
         isLoading(true)
         console.log('singaluser')
         const fetchSideeffect = async () => {
-            const res = await axios('http://localhost:5000/user')
+            const res = await axios('https://cryptic-stream-86241.herokuapp.com/user')
             setData(res.data)
             isLoading(false)
         }

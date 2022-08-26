@@ -10,7 +10,7 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { strict } from 'assert';
 
 const Register = () => {
-    const { register, formState: { errors }, handleSubmit, reset }:any = useForm();
+    const { register, formState: { errors }, handleSubmit, reset }: any = useForm();
     const [updateProfile, updating, updateerror] = useUpdateProfile(auth);
 
     const navigate = useNavigate();
@@ -21,20 +21,20 @@ const Register = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
 
-    const [token ] = useToken(user)
+    const [token] = useToken(user)
 
     if (token) {
         navigate('/');
 
     }
-    const onSubmit = async (data:any) => {
+    const onSubmit = async (data: any) => {
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
         const userData = {
             email: data.email,
             name: data.name
         }
-        fetch('http://localhost:5000/user', {
+        fetch('https://cryptic-stream-86241.herokuapp.com/user', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -48,7 +48,7 @@ const Register = () => {
     // password show/hide 
     const [show, setShow] = useState<string | boolean>(false);
 
-    const btnValue = ():void => {
+    const btnValue = (): void => {
         setShow(click => !click);
     }
     return (

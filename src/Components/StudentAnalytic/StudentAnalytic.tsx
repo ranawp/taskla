@@ -72,7 +72,7 @@ const studentAnalytic = () => {
     const [marks, setMarks] = useState<Mark[]>([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allMarks/${email}`)
+        fetch(`https://cryptic-stream-86241.herokuapp.com/allMarks/${email}`)
             .then(res => res.json())
             .then(data => setMarks(data))
     }, [marks])

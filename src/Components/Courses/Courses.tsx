@@ -9,11 +9,11 @@ const Courses = () => {
     const [text, setText] = useState<string>('')
     const [user] = useAuthState(auth)
     const email = user?.email
-    const enRoll = ():void => {
+    const enRoll = (): void => {
         setText('we are working.......')
         toast('Wow! you are enrolled')
 
-        fetch(`http://localhost:5000/user/enroll/${email}`, {
+        fetch(`https://cryptic-stream-86241.herokuapp.com/user/enroll/${email}`, {
             method: 'PUT'
         })
             .then(res => res.json())

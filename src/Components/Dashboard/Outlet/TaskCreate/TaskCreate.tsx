@@ -5,13 +5,13 @@ import taskSvg from '../../../../imgages/taskCreate.svg'
 
 const TaskCreate = () => {
 
-    const { register, formState: { errors }, handleSubmit, reset } : any = useForm();
+    const { register, formState: { errors }, handleSubmit, reset }: any = useForm();
     // var options = { weekday: 'long', year: 'numeric', day: 'numeric', month: 'long' };
     const date = new Date()
     const currentDate = date.toLocaleDateString();
     const currentHour = date.toLocaleTimeString();
 
-    const onSubmit = (data) : void  => {
+    const onSubmit = (data): void => {
         const url = `https://cryptic-stream-86241.herokuapp.com/tasks`
         fetch(url, {
             method: 'POST',

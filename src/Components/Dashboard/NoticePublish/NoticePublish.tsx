@@ -9,32 +9,32 @@ interface Date {
 const NoticePublish = () => {
 
 
-    const options : Date = { month: 'short', day: 'numeric', year: 'numeric' };
+    const options: Date = { month: 'short', day: 'numeric', year: 'numeric' };
     const dateFunction = new Date().toLocaleDateString("en-UK", options);
 
     // time 
     let time = new Date().toLocaleTimeString();
     const [cTime, setCTime] = useState<String>(time);
-    const updateTime = () : void => {
+    const updateTime = (): void => {
         time = new Date().toLocaleTimeString();
         setCTime(time);
     }
     setInterval(updateTime, 1000);
-    const Mydate : string = dateFunction;
-    const Mytime : String = cTime;
+    const Mydate: string = dateFunction;
+    const Mytime: String = cTime;
 
 
     const dateTime = Mydate + "," + Mytime;
 
     // console.log(dateTime);
 
-    const handleNoticeForm = (event : any) : void => {
+    const handleNoticeForm = (event: any): void => {
         event.preventDefault();
         const notice = event.target.title.value;
         const announcement = event.target.announcement.value;
         // const read = false;
         const data = { notice, announcement, time: dateTime }
-        fetch(`http://localhost:5000/notice`, {
+        fetch(`https://cryptic-stream-86241.herokuapp.com/notice`, {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {

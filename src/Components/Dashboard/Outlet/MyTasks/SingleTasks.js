@@ -49,8 +49,8 @@ const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit, setWatchVi
 
                         <div className={singleTask.submit == 'lock' ? " collapse-content pointer-events-none " : " collapse-content"}>
                             <p className='bg-primary py-3 text-white px-2 rounded-md' onClick={() => setWatchVideo('00')} >Module Introduction text </p>
-                            <p onClick={() => setWatchVideo('01')} className='pointer-events-none  mt-3 cursor-pointer bg-primary py-3 text-white px-2 rounded-md'>{singleTask.ModuleNameserial1} </p>
 
+                            <p onClick={() => setWatchVideo('01')} className=' mt-3 cursor-pointer bg-primary py-3 text-white px-2 rounded-md'>{singleTask.ModuleNameserial1} </p>
                             <p onClick={() => setWatchVideo('02')} className=' mt-3 cursor-pointer bg-primary py-3 text-white px-2 rounded-md'>{singleTask.ModuleNameserial2} </p>
 
                             <p onClick={() => setWatchVideo('03')} className=' mt-3 cursor-pointer bg-primary py-3 text-white px-2 rounded-md'>{singleTask.ModuleNameserial3} </p>
@@ -63,10 +63,9 @@ const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit, setWatchVi
                             <p onClick={() => setWatchVideo('assignment')} className=' mt-3 mb-5 cursor-pointer bg-primary py-3 text-white px-2 rounded-md'>{singleTask.asignmentName} </p>
 
 
-                            <label
 
-                                onClick={(e) => { setToogle(false); handleSubmit(singleTask); }}
-                                className="bg-primary border-0 px-24 py-3  w-98 rounded text-white cursor-pointer">Assignment Submit</label>
+
+                            <p onClick={(e) => { setToogle(false); handleSubmit(singleTask); }} className=' mt-3 mb-5 cursor-pointer bg-primary py-3 text-white px-2 text-center rounded-md'>Assignment Submit</p>
 
                         </div>
 

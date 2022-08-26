@@ -44,17 +44,15 @@ const MyTask = () => {
 
     const email = user?.email;
 
-    // console.log(submit)
-    console.log(taskData)
+
 
     // const pendingTask = singleTask.filter(task => {
     //     return task.submit !== "submited"
     // })
 
 
-    console.log(singleTask.reverse())
     useEffect(() => {
-        fetch('http://localhost:5000/alltasks')
+        fetch('https://cryptic-stream-86241.herokuapp.com/alltasks')
             .then(res => res.json())
             .then(data => setSingleTask(data))
 
@@ -75,38 +73,27 @@ const MyTask = () => {
 
                     {toogle === true &&
                         <>
-                            {/* <h1 className="title">Task Name:{taskData.taskName}</h1>
-                            <p className="details">Task no:{taskData.taskSerial}</p>
-                            <p classNeme="details">Task Posted time:{taskData.questionDeliverDate}</p>
-                            <p className="details">Task Posted time:{taskData.questionDeliverDate}</p>
-                            <p className="details">Deadline:{taskData.taskDeadline}</p>
-                            <p className="details">Task Details : {taskData.taskMassage} </p> */}
+
                             {watchVideo == "00" && <p>{taskData.moduleIntroduction}</p>
 
                             }
 
-                            {watchVideo == "01" && <iframe className=""
-                                src={taskData.Modulevideo1}
-                                frameborder="0"
-                                allow="autoplay; encrypted-media"
-                                allowfullscreen
-                                title="video"
-                            />
+                            {watchVideo == "01" && <img src='https://i.ibb.co/QdfMmLn/Frame-1.jpg?fbclid=IwAR1-qxVd74jcKSKmZ-iYm4lWoJfzQYJI1YjYr49vLNUtBsICMituyFLvSZ4' alt="" />
 
                             }
-                            {watchVideo == "02" && <p>video 2 {taskData.Modulevideo2}</p>
+                            {watchVideo == "02" && <img src="https://i.ibb.co/C7JK4gp/Frame-2.jpg?fbclid=IwAR0Fz5Jdl3tRw-muYmJgMOPyHwEFXB4B0umv24Qj7bKSoWOKsNYgRvEVffY" alt="" />
 
                             }
-                            {watchVideo == "03" && <p>video 3</p>
+                            {watchVideo == "03" && <img src="https://i.ibb.co/G22DX30/Frame-3.jpg?fbclid=IwAR2pr69mUpHc7OyYQ5BVzTndz206usOLH14AVomIx-GU82riKvqD0eACRu4" alt="" />
 
                             }
-                            {watchVideo == "04" && <p>video 4</p>
+                            {watchVideo == "04" && <img src="https://i.ibb.co/7KrTqDf/Frame-4.jpg?fbclid=IwAR0PYNg8qnKE9e1HeDapUbiqDbVMlyl_V7Kpl47BpwQZ2DC92CprXD6qjXk" alt="" />
 
                             }
-                            {watchVideo == "05" && <p>video 5</p>
+                            {watchVideo == "05" && <img src="https://i.ibb.co/LrTYL60/Frame-6.jpg?fbclid=IwAR2cP88pAUlbLKgLK-eqm7L_V4e04frOkIRJ5z5AksTJL3TwYsQtwHVQYRA" alt="" />
 
                             }
-                            {watchVideo == "06" && <p>video 6</p>
+                            {watchVideo == "06" && <img src="https://i.ibb.co/Rg8Wx59/Frame-8.jpg?fbclid=IwAR12tphfzvEijEH_QVhVZbl3JKIelR9NJHhv3ke0kTtX_CMpjUrI88k3Lsk" alt="" />
 
                             }
 
@@ -114,17 +101,9 @@ const MyTask = () => {
                                 <p>Qusetion Delivery time:{taskData.questionDeliverDate},{taskData.questionDeliverHour}</p>
                                 <p>Task deadline:{taskData.taskDeadline} </p>
                                 <p>Assignment Name and serial:{taskData.asignmentName}</p>
-
-
-
                                 {taskData.assignmentInstruction}</div>
 
                             }
-
-
-
-                            {/* <p className="details"> <img src={taskData.img} alt="" /> */}
-
 
                         </>
                     }
@@ -190,14 +169,14 @@ export default MyTask;
 //     const email = user?.email;
 
 //     useEffect(() => {
-//         fetch('http://localhost:5000/alltasks')
+//         fetch('https://cryptic-stream-86241.herokuapp.com/alltasks')
 //             .then(res => res.json())
 //             .then(data => setSingleTask(data))
 //     }, [])
 
 //     const [marks, setMarks] = useState([]);
 //     useEffect(() => {
-//         fetch(`http://localhost:5000/allMarks/${email}`)
+//         fetch(`https://cryptic-stream-86241.herokuapp.com/allMarks/${email}`)
 //             .then(res => res.json())
 //             .then(data => setMarks(data))
 //     }, [])

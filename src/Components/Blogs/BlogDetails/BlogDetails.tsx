@@ -5,8 +5,8 @@ import './BlogDetails.css';
 const BlogDetails = () => {
     const { blogId } = useParams<string>();
     const [blogDetail, setBlogDetail] = useState<Object>({});
-    const { blogTitle, img, blogDescription, currentDate, blogUser } : any = blogDetail;
-    useEffect(() : void => {
+    const { blogTitle, img, blogDescription, currentDate, blogUser }: any = blogDetail;
+    useEffect((): void => {
         fetch(`https://cryptic-stream-86241.herokuapp.com/createBlog/${blogId}`)
         fetch(` https://cryptic-stream-86241.herokuapp.com/createBlog/${blogId}`)
             .then(res => res.json())
