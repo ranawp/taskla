@@ -16,21 +16,21 @@ const Footer = () => {
           <p className="link link-hover" > Marks</p >
         </div >
         <div className='mx-auto' >
-          <span className="footer-title text-primary" > Teacher</span >
+          <span className="footer-title" > Teacher</span >
           <p className="link link-hover" > Mozahid </p >
           <p className="link link-hover" > Masud Rana</p >
           <p className="link link-hover" > Rana Akash</p >
           <p className="link link-hover" > Hridoy Ahmed</p >
         </div >
         <div className='mx-auto' >
-          <span className="footer-title text-primary" > recourde</span >
+          <span className="footer-title" > recourde</span >
           <p className="link link-hover" > google </p >
           <p className="link link-hover" > linkIn</p >
           <p className="link link-hover" > facebook</p >
           <p className="link link-hover" > Hridoy Ahmed</p >
         </div >
         <div className='mx-auto' >
-          <span className="footer-title text-primary" >Contact</span >
+          <span className="footer-title" >Contact</span >
           <p className="link link-hover" > taskal.com </p >
           <p className="link link-hover" > 01308893937</p >
           <p className="link link-hover" > sylhet</p >

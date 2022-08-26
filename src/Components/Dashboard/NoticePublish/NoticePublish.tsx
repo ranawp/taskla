@@ -52,20 +52,13 @@ const NoticePublish = () => {
             <h2 className='text-3xl p-6 font-bold  text-center'>Important <span className='text-secondary'>Notice</span></h2>
 
 
-            <div className=" mx-auto  mb-10 grid lg:grid-cols-2 justify-center align-center gap-2 mt-4">
-
-
+            <div className='mb-10 grid lg:grid-cols-2 gap-4'>
                 <div className="p-16">
 
                     <img className="w-96" src="https://i.ibb.co/XJbLX4f/3784896-removebg-preview.png" alt="" />
 
                 </div>
-
-
-                {/* <form onSubmit={handleNoticeForm} action=""> */}
-
-
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 lg:mx-16">
+                <div className="sm:ml-10 mt-5 mx-auto w-80 sm:w-96 card bg-base-100 shadow-2xl">
                     <div className="card-body">
                         <form action="" onSubmit={handleNoticeForm}>
                             <div className="form-control">
