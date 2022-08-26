@@ -5,7 +5,7 @@ import Courses from './Components/Courses/Courses';
 import Payment from './Components/Courses/Payment';
 import MyTask from './Components/Dashboard/Outlet/MyTasks/MyTask';
 import Home from './Components/Home/Home';
-import Login from './Components/Login/Login';
+// import Login from './Components/Login/Login';
 import MyClass from './Components/MyClass/MyClass';
 import Register from './Components/Register/Register';
 import ViewProfile from './Components/ViewProfile/ViewProfile';
@@ -27,6 +27,7 @@ import CreateBlog from './Components/Dashboard/Outlet/CreateBlog/CreateBlog';
 import NoticePublish from './Components/Dashboard/NoticePublish/NoticePublish';
 import ModuleUpload from './Components/Dashboard/Outlet/TaskCreate/ModuleUpload';
 import TaskEdit from './Components/Dashboard/Outlet/TaskCreate/TaskEdit';
+import Login from './Components/Login/Login';
 
 
 

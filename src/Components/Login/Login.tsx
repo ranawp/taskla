@@ -10,17 +10,16 @@ import { useState } from 'react';
 
 const Login = () => {
     const navigate = useNavigate()
-    const { register, formState: { errors }, handleSubmit, reset }: any = useForm();
+    const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [
         signInWithEmailAndPassword,
         user,
         loading,
         error,
-    ]: any = useSignInWithEmailAndPassword(auth);
-
+    ] = useSignInWithEmailAndPassword(auth);
 
     const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
-    const onSubmit = (data: any): void => {
+    const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password);
         reset();
     };
@@ -53,10 +52,10 @@ const Login = () => {
         }
     }, [user, navigate]);
 
-    // password show/hide 
-    const [state, setState] = useState<boolean>(false);
+    // password show/hide
+    const [state, setState] = useState(false);
 
-    const btnValue = (): void => {
+    const btnValue = () => {
         setState(click => !click);
     }
     return (
