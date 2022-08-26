@@ -49,16 +49,16 @@ const Login = () => {
         setState(click => !click);
     }
     return (
-        <div className='px-48 mt-10 register-page lg:flex items-center ' >
-            <div className='text-center p-10 mx-auto flex-1 w-64' >
-                <img src={registerImg} alt="" />
+        <div className='sm:px-48 mt-10 register-page sm:flex items-center ' >
+            <div className='text-center p-10 mx-auto md:w-80' >
+                <img src={registerImg} className='w-80' alt="" />
             </div >
             <div>
-                <div className='lg:w-80 p-10 mx-auto shadow-lg border'>
-                    <h1 className='text-center font-bold text-3xl my-4'>Sign In</h1>
+                <div className='w-80 p-10 mx-auto shadow-lg border border-[#293343]'>
+                    <h1 className='text-center font-bold text-3xl my-4 dark:text-slate-50'>Sign In</h1>
                     <form className='flex flex-col' onSubmit={handleSubmit(onSubmit)} >
                         <input
-                            className='my-2 p-2 rounded-lg background-color inline'
+                            className='my-2 p-2 rounded-lg  inline dark:bg-[#1E293B] dark:text-slate-50'
                             type='email'
                             placeholder='Your Email'
                             {...register("email", {
@@ -79,7 +79,7 @@ const Login = () => {
 
                         <div className='flex'>
                             <input
-                                className='my-2 p-2 rounded-lg background-color w-full inline'
+                                className='my-2 p-2 rounded-lg  w-full inline  dark:bg-[#1E293B] dark:text-slate-50'
                                 placeholder='Password'
                                 type={state ? 'text' : 'password'}
                                 {...register("password", {
@@ -95,18 +95,18 @@ const Login = () => {
                                 }
                                 )
                                 } />
-                            <button onClick={btnValue} className='inline text-[18px] p-[10px] ml-[-35px]'>
+                            <button onClick={btnValue} className='inline text-[18px] p-[10px] ml-[-35px] text-slate-50'>
                                 {state ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
                             </button>
                         </div>
                         {errors.password?.type === 'required' && <p className='' > {errors.password?.message}</p >}
 
                         {errors.password?.type === 'minLength' && <p className='' > {errors.password?.message}</p >}
-                        
-                        <input className='my-2 py-2 border rounded-lg text-dark font-semibold hover:bg-white hover:text-black cursor-pointer' value="Sign In" type="submit" />
+
+                        <input className='my-2 py-2 border-none rounded-lg text-dark font-semibold dark:bg-[#0284C7] dark:text-slate-50 cursor-pointer' value="Sign In" type="submit" />
                         {errorElement}
                     </form >
-                    <p className='my-3 text-dark' > New to Taskla ?? <Link to='/register'>Please Register</Link></p >
+                    <p className='my-3 text-dark dark:text-[#505E74] font-bold' > New to Taskla ?? <Link to='/register'>Please Register</Link></p >
                 </div >
             </div >
         </div >

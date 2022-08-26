@@ -7,7 +7,7 @@ const NewBlogs = ({ newBlog }) => {
 
     return (
         <Link to={'/createBlog/' + _id}>
-            <div className="card lg:w-80 mx-auto sm:w-96 bg-base-100 shadow-xl">
+            <div className="card lg:w-80 mx-auto sm:w-96 shadow-xl bg-white dark:bg-[#182233] text-black dark:text-slate-50">
                 <figure><img src={img} alt="blogImg" className='w-full max-h-[300px]' /></figure>
                 <div className="card-body">
                     <h2 className="card-title mx-auto">{blogTitle}</h2>

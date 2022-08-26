@@ -58,7 +58,7 @@ const studentAnalytic = () => {
 
     return (
         <>
-            <div className='ml-5'>
+            <div className='ml-5 mt-20'>
                 <h2 className='font-semibold text-lg mb-5 text-center'>Mark distribution</h2>
                 <table className="table mx-auto">
 

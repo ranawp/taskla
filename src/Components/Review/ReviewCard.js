@@ -14,7 +14,7 @@ const ReviewCard = ({ review }) => {
     // };
 
     return (
-        <div className="card w-96 bg-base-100 shadow-xl relative">
+        <div className="card w-96  shadow-xl relative bg-white dark:bg-[#182233]">
             <div className='absolute top-5 left-5 text-5xl text-secondary font-extrabold'><RiDoubleQuotesL/></div>
             <figure className="px-10 pt-10">
                 <div className="avatar">
@@ -23,7 +23,7 @@ const ReviewCard = ({ review }) => {
                     </div>
                 </div >
             </figure >
-            <div className="card-body items-center text-center" >
+            <div className="card-body items-center text-center dark:text-slate-50" >
                 <ReactStars
                     count={5}
                     size={25}

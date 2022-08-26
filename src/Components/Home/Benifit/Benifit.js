@@ -17,8 +17,8 @@ const Benifit = () => {
             <div className='w-[200px] h-[200px] opacity-30 filter blur rounded-full bg-[#0F67B7] absolute bottom-[160px] right-10'></div>
             <div className='w-[200px] h-[200px] opacity-30 blur rounded-full bg-green-500 absolute bottom-[200px] -right-16'></div>
             <div className='mt-[70px] max-w-screen-xl mx-auto relative'>
-                <h1 className='text-[32px] font-bold text-center text-primary'>So Much More <span className=' text-secondary'>Than A Binder</span></h1 >
-                <div className="grid gap-x-8 gap-y-8 lg:grid-cols-2 mt-14" >
+                <h1 className='text-[32px] font-bold text-center text-primary dark:text-slate-50'>So Much More <span className=' text-secondary'>Than A Binder</span></h1 >
+                <div className="grid gap-x-8 gap-y-8 lg:grid-cols-2 mt-14 dark:text-slate-100" >
 
                     <div className="flex p-5" >
                         <div className='pr-5' >

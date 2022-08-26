@@ -9,20 +9,20 @@ const Dashboard = () => {
     const [user] = useAuthState(auth)
     const emails = user?.email
     const [match, setMatch] = useState([])
-    useEffect(() => {
-        fetch(`http://localhost:5000/user/${emails}`,  {
-            method: 'GET',
-            header: {
-                'content-type': 'application/json'
-            }
-        })
-            .then((res) => res.json())
-            .then((data) => setMatch(data));
+    // useEffect(() => {
+    //     fetch(`http://localhost:5000/user/${emails}`, {
+    //         method: 'GET',
+    //         header: {
+    //             'content-type': 'application/json'
+    //         }
+    //     })
+    //         .then((res) => res.json())
+    //         .then((data) => setMatch(data));
 
-    }, [emails])
+    // }, [emails])
 
     return (
-        <div className='h-screen' >
+        <div className='h-screen mt-20' >
             <div className="drawer drawer-mobile" >
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content" >
@@ -30,7 +30,7 @@ const Dashboard = () => {
                     {/* <!-- Page content here --> */}
                     < Outlet ></Outlet >
                 </div >
-                <div className="drawer-side border ml-5 shadow-lg mt-5 mr-3" >
+                <div className="drawer-side border dark:border-[#2A3343] ml-5 shadow-lg mt-5 mr-3" >
                     <label htmlFor="my-drawer-2" className="drawer-overlay" ></label >
                     <ul className="menu p-4 overflow-y-auto w-48 bg-base-100
                     lg:bg-transparent text-base-content" >

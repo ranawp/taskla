@@ -12,8 +12,8 @@ const Allacordian = () => {
                 <div className='flex h-full flex-col gap-10 lg:flex-row lg:gap-28 py-[60px]'>
                     <div className=''>
                         <img className='w-[250px]' src={image} alt="" />
-                        <h2 className='text-[40px] text-bold leading-10 text-primary'>Common Question<br /><span className='text-secondary'> And It's Answer</span> </h2>
-                        <p className='text-[18px] text-primary leading-6 mt-8'>We have listed here the answers to some of your common questions. We request you to read this list once before asking questions. Then you don't have to wait for our reply and save your precious time.</p>
+                        <h2 className='text-[40px] text-bold leading-10 text-primary dark:text-slate-50'>Common Question<br /><span className='text-secondary'> And It's Answer</span> </h2>
+                        <p className='text-[18px] text-primary leading-6 mt-8 dark:text-slate-50'>We have listed here the answers to some of your common questions. We request you to read this list once before asking questions. Then you don't have to wait for our reply and save your precious time.</p>
                     </div>
                     <div className='w-full h-[450px] overflow-auto'>
 

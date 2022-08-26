@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 // import "./Review.css";
 import './Review.css'
 
-import { Autoplay,EffectCoverflow, Pagination, Navigation, FreeMode } from "swiper";
+import { Autoplay, EffectCoverflow, Pagination, Navigation, FreeMode } from "swiper";
 import ReviewCard from './ReviewCard';
 
 const Review = () => {
@@ -23,7 +23,7 @@ const Review = () => {
 
     return (
         <div className='h-[600px] mt-32' >
-            <h1 className='text-center capitalize text-[32px] font-bold text-primary pt-10' > What <span className='text-secondary'>People</span> are saying
+            <h1 className='text-center capitalize text-[32px] font-bold text-primary dark:text-slate-50 pt-10' > What <span className='text-secondary'>People</span> are saying
             </h1 >
             <Swiper
                 autoplay={{
@@ -44,12 +44,13 @@ const Review = () => {
                 }}
 
                 pagination={true}
-                modules={[Autoplay,FreeMode,EffectCoverflow, Pagination, Navigation]}
+                modules={[Autoplay, FreeMode, EffectCoverflow, Pagination, Navigation]}
                 className="mySwiper"
             >
 
                 {reviewCard.map((review, index) => <SwiperSlide>
                     <ReviewCard
+                        key={review._id}
                         review={review
                         } /></SwiperSlide>)}
             </Swiper >
