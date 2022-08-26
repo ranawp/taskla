@@ -114,11 +114,11 @@ const studentAnalytic = () => {
             </div>
 
             <div className='my-5 flex flex-wrap'>
-                <div className="grid gap-x-8 gap-y-8 lg:grid-cols-2 mt-14 ">
+                <div className="grid gap-x-8 gap-y-8 lg:grid-cols-2 mt-14 mx-auto ">
 
                     <div className='box-content border-4 rounded-lg p-5'>
                         <h2 className='text-center font-semibold text-lg'>Attendence</h2>
-                        <LineChart width={500} height={400} data={chartData}>
+                        <LineChart width={300} height={350} data={chartData}>
                             <Line type="monotone" dataKey="sell" stroke="#8884d8" />
                             <CartesianGrid stroke="#ccc" />
                             <XAxis dataKey="month" />
@@ -128,10 +128,10 @@ const studentAnalytic = () => {
 
                     </div>
                     <div className='box-content border-4'>
-                        <h2 className='font-semibold text-lg'>Perfomance</h2>
+                        <h2 className='font-semibold text-lg text-center'>Perfomance</h2>
                         <AreaChart
-                            width={500}
-                            height={400}
+                            width={300}
+                            height={350}
                             data={chartData}
                             margin={{
                                 top: 10,

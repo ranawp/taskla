@@ -13,18 +13,13 @@ const TaskEdit = () => {
     }, [])
     return (
         <div className='mt-20'>
-            <table className="table w-full">
+            <h1 className='text-2xl mb-4 text-center font-bold text-primary'>Task <span className='text-secondary'>Edit </span> </h1>
+            <table className="table w-80 mx-auto sm:w-full">
 
-                <thead>
+                <thead className='mx-auto'>
                     <tr>
                         <th>Milestone Name</th>
-                        {/* <th>Task no</th> */}
-
-
-
                         <th>Edit</th>
-
-
                     </tr>
                 </thead>
 

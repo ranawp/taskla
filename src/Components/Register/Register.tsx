@@ -52,10 +52,12 @@ const Register = () => {
         setShow(click => !click);
     }
     return (
-        <div className='mt-10 lg:flex items-center px-48' >
-
-            <div>
-                <div className='lg:w-80 p-10 mx-auto shadow-lg border'>
+        <div className='mt-32 lg:flex justify-between items-center sm:px-48' >
+            <div className='' >
+                <img src={registerImg} alt="" />
+            </div >
+            <div className='lg:order-first' >
+                <div className='w-80 p-10 mx-auto shadow-lg border'>
                     <h1 className='text-center font-bold text-3xl my-4'>Sign Up</h1>
                     <form className='flex flex-col' onSubmit={handleSubmit(onSubmit)} >
 
@@ -129,9 +131,8 @@ const Register = () => {
                     <p className='my-3 text-dark' > Already Have an Account? <Link to='/login' className='ml-3' > Please Login</Link ></p >
                 </div >
             </div >
-            <div className='text-center flex-1 w-64 ml-10' >
-                <img src={registerImg} alt="" />
-            </div >
+
+
         </div >
     );
 };

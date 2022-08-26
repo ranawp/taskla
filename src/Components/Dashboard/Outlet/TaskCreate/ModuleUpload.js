@@ -29,12 +29,12 @@ const ModuleUpload = () => {
 
     return (
         <div>
-            <h2 className='text-lg text-center text-primary font-bold mt-7'>
-                Upload module video
+            <h2 className='text-2xl text-center text-primary font-bold mt-7'>
+                Upload  <span className='text-secondary'>Module Video</span>
             </h2>
-            <div className=' mx-auto  mb-10 grid lg:grid-cols-2 gap-4'>
+            <div className='mx-auto  mb-10 grid lg:grid-cols-2 gap-4'>
 
-                <div className="ml-10 mt-5 w-96 card bg-base-100 shadow-2xl">
+                <div className="sm:ml-10 mt-5 mx-auto w-80 sm:w-96 card bg-base-100 shadow-2xl">
                     <div className="card-body">
                         <form onSubmit={handleSubmit(onSubmit)}>
 
@@ -169,7 +169,6 @@ const ModuleUpload = () => {
 
                 <div className='mt-36'>
                     <img className='w-96' src="https://i.ibb.co/XJbLX4f/3784896-removebg-preview.png" alt="" />
-
                 </div>
             </div>
 

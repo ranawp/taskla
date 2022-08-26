@@ -65,7 +65,7 @@ const NoticePublish = () => {
                 {/* <form onSubmit={handleNoticeForm} action=""> */}
 
 
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mx-16">
+                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 lg:mx-16">
                     <div className="card-body">
                         <form action="" onSubmit={handleNoticeForm}>
                             <div className="form-control">

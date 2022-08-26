@@ -46,7 +46,7 @@ const Announcement = () => {
                 </div>
                 <div>
                     <div className="card flex-shrink-0 lg:w-[700px] sm:w-[600px] max-w-sm shadow-2xl bg-base-100 mx-auto h-[500px]">
-                        <div className="card-body">
+                        <div className="card-body w-80 lg-w-full">
                             <h2 className="card-title">{notice}</h2>
                             <p>{announcement}</p>
                         </div>

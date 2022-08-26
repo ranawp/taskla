@@ -59,9 +59,9 @@ const Login = () => {
         setState(click => !click);
     }
     return (
-        <div className='sm:px-48 mt-10 register-page sm:flex items-center ' >
-            <div className='text-center p-10 mx-auto md:w-80' >
-                <img src={registerImg} className='w-80' alt="" />
+        <div className='sm:px-48 mt-32 register-page lg:flex justify-between items-center ' >
+            <div className='' >
+                <img src={registerImg} alt="" />
             </div >
             <div>
                 <div className='w-80 p-10 mx-auto shadow-lg border'>

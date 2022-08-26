@@ -206,10 +206,10 @@ const Navbar = () => {
 
         </>
 
-        {!user && <li><Link className='pl-5' to="/login"><button className='btn btn-secondary'>Login</button></Link></li>}
+        {!user && <li><Link className='ml-4 sm:ml-0 pl-5' to="/login"><button className='btn btn-secondary'>Login</button></Link></li>}
         {
             !(match.role == 'admin') && <>
-                {!(match.student == 'enrolled') && !user && <li><Link className='pl-5' to="/register"><button className='btn btn-primary'>Register</button></Link></li >}
+                {!(match.student == 'enrolled') && !user && <li><Link className='pl-5 ml-4 sm:ml-0' to="/register"><button className='btn btn-primary'>Register</button></Link></li >}
 
             </>
 
