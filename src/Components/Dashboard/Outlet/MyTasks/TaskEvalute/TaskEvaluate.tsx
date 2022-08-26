@@ -23,7 +23,7 @@ const TaskEvaluate = () => {
     })
     return (
         <div>
-            <h1 className='font-bold text-2xl'>Student Submitted tasks</h1>
+            <h1 className='font-bold text-2xl my-10 text-center'>Student  <span className='text-secondary'>Submitted tasks</span> </h1>
             <table className="table w-full">
 
                 <thead>

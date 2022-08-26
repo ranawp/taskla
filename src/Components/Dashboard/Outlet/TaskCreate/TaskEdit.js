@@ -12,7 +12,7 @@ const TaskEdit = () => {
             .then(data => setSingleTask(data))
     }, [])
     return (
-        <div>
+        <div className='mt-20'>
             <table className="table w-full">
 
                 <thead>

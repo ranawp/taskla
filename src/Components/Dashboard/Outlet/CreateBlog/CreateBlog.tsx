@@ -54,6 +54,7 @@ const CreateBlog = () => {
 
     return (
         <div>
+            <h1 className='my-10 text-primary text-2xl text-center font-bold'>Write <span className='text-secondary'> Blog</span> </h1>
             <div className='bg-base-100 lg:shadow-2xl mx-auto py-4 mt-2 rounded-md px-10 lg:w-9/12 '>
                 <form
                     className=''
@@ -69,7 +70,7 @@ const CreateBlog = () => {
                     <p className='font-bold mt-5'>Blog Description</p><br />
                     <textarea className=" p-2 rounded-lg background-color w-full h-64" placeholder='Share your Blog Description'  {...register("blogDescription")} /> <br />
 
-                    <input type="submit" value='Submit' className='bg-blue-700 border-0 py-2 px-4 button  rounded text-white' />
+                    <input type="submit" value='Submit' className='bg-secondary border-0 py-2 px-4 button  rounded text-white' />
                 </form>
 
 

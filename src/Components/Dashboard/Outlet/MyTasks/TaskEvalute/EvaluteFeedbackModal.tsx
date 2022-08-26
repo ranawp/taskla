@@ -61,9 +61,9 @@ const EvaluteFeedbackModal = ({ evaluteFeedbackModal, setRefresh }) => {
 
 
     return (
-        <div>
+        <div className='mt-[80px]'>
             <input type="checkbox" id="evalute-feedback-details" className="modal-toggle" />
-            <div className="modal modal-bottom sm:modal-middle">
+            <div className="modal modal-bottom sm:modal-middle mt-[80px]">
                 <div className="modal-box">
                     <label htmlFor="evalute-feedback-details" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <h3 className="font-bold text-lg">Please Give FeedBack of this task</h3>

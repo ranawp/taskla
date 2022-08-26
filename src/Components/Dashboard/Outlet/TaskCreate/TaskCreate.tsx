@@ -28,7 +28,7 @@ const TaskCreate = () => {
     };
     return (
         <div>
-            <h2 className='text-lg text-center font-bold'>Give task to Students</h2>
+            <h2 className='text-2xl text-center font-bold mt-14 text-primary'>Give task to  <span className='text-secondary'>Students</span> </h2>
             <div className=' mx-auto  mb-10 grid lg:grid-cols-2 gap-4'>
 
                 <div className="ml-10 mt-5 w-96 card bg-base-100 shadow-2xl">

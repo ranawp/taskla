@@ -37,7 +37,7 @@ const Allusers = () => {
 
     return (
         <div>
-            <h2 className='text-lg text-center font-bold my-5'>All users</h2>
+            <h2 className='text-2xl text-center font-bold my-5'>All <span className='text-secondary'> users</span> </h2>
             {loading && <Loading></Loading>}
             <div className="overflow-x-auto" >
                 <table className="table w-full" >
