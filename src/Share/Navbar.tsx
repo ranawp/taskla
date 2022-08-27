@@ -96,8 +96,8 @@ const Navbar = () => {
             user &&
             <>
                 {match.student == 'enrolled' &&
-                    <>  <li className='hover:text-secondary dark:text-slate-50'><Link className='pl-5' to='/mytask'>MyTask</Link></li>
-                        <li className='hover:text-secondary dark:text-slate-50'><Link className='pl-5' to="/classroom">Classroom</Link></li ></>
+                    <>  <li className='hover:text-secondary dark:text-slate-50'><Link className='pl-5' to='/mytask'>Classroom</Link></li>
+                        </>
                 }
                 <li className='hover:text-secondary dark:text-slate-50'><Link className='pl-5' to="/courses">Courses</Link></li >
 
@@ -146,7 +146,7 @@ const Navbar = () => {
     const userNotificationIndicator = <>
         <div className="indicator">
             <span className="indicator-item  badge bg-red-600 border-0 w-5 text-[10px]">{newArray?.length}</span>
-            <div className="grid place-items-center dark:text-slate-50 text-[24px]"><BiBell /></div>
+            <div className="grid place-items-center text-primary dark:text-slate-50 text-[24px]"><BiBell /></div>
         </div>
     </>
     const userNotificationDescrip = <>
@@ -244,13 +244,13 @@ const Navbar = () => {
                     <div className="navbar-start" >
 
                         {/* sidebar small device*/}
-                        <div id="mySidenav" className={open == true ? 'sidenav shadow-lg' : 'sidenav1'}>
-                            <span className="closebtn " onClick={() => setOpen(false)}>&times;</span>
-                            {open && <><ul className="" >
+                        <div id="mySidenav" className={open == true ? 'sidenav shadow-lg bg-white dark:bg-[#182233]' : 'sidenav1'}>
+                            <span className="closebtn text-primary dark:text-slate-50" onClick={() => setOpen(false)}>&times;</span>
+                            {open && <div className='text-primary dark:text-slate-50'><ul className="text-primary dark:text-slate-50" >
                                 {menuItems}
                             </ul >
                                 {menuItem2}
-                            </>
+                            </div>
 
                             }
                         </div>
@@ -261,21 +261,21 @@ const Navbar = () => {
 
                     <div className="navbar hidden lg:flex" >
 
-                        <ul className="menu-horizontal gap-5 text-primary font-bold" >
+                        <ul className="menu-horizontal gap-5 text-primary dark:text-slate-50 font-bold" >
                             {menuItems}
                         </ul >
                     </div >
 
                     {/* menuItem End  */}
                     <div className="navbar-end hidden lg:flex" >
-                        <ul className=" menu-horizontal p-0 text-black font-bold flex justify-center items-center" >
+                        <ul className=" menu-horizontal p-0 text-primary dark:text-slate-50 font-bold flex justify-center items-center" >
                             {menuItem2}
                         </ul >
 
                     </div >
 
                     {/* small device navbar */}
-                    <span className='lg:hidden ml-32'>
+                    <span className='lg:hidden ml-32 text-primary dark:text-slate-50'>
                         <svg onClick={() => setOpen(true)} xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" > <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg >
                     </span>
                 </div >

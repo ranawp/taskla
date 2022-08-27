@@ -26,7 +26,7 @@ html {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #f8f8f8;
+    /* background-color: #f8f8f8; */
     overflow-x: hidden;
     box-shadow: 0 0 20px 0;
     transition: 0.5s;
@@ -68,8 +68,8 @@ html {
 
     padding: 8px 8px 8px 0px;
     text-decoration: none;
-    font-size: 25px;
-    color: #1E266D;
+    font-size: 16px;
+    /* color: #1E266D; */
     border-bottom: 1px solid #8a8c9a;
     display: block;
     transition: 0.3s;

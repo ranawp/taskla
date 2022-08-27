@@ -129,7 +129,7 @@ const Dashboard = () => {
 
     return (
         <div className='h-screen mt-20' >
-            <div className="drawer drawer-mobile" >
+            <div className="drawer drawer-mobile dark:border-[#2A3343]" >
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content relative" >
                     {<div onClick={() => setArrow(!arrow)} className='lg:hidden absolute left-0 top-[-3px] z-50' >
@@ -157,3 +157,5 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+
