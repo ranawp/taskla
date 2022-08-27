@@ -5,8 +5,6 @@ import Courses from './Components/Courses/Courses';
 import Payment from './Components/Courses/Payment';
 import MyTask from './Components/Dashboard/Outlet/MyTasks/MyTask';
 import Home from './Components/Home/Home';
-// import Login from './Components/Login/Login';
-import MyClass from './Components/MyClass/MyClass';
 import Register from './Components/Register/Register';
 import ViewProfile from './Components/ViewProfile/ViewProfile';
 import StudentAnalytic from './Components/StudentAnalytic/StudentAnalytic';
@@ -67,7 +65,6 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='/blog' element={<Blogs />} />
           <Route path="/createBlog/:blogId" element={<BlogDetails />} />
-          <Route path="/classroom" element={<MyClass />} />
           <Route path="/mytask" element={<MyTask />} />
           <Route path="/viewprofile" element={<ViewProfile />} />
           <Route path='/courses' element={<Courses />} />

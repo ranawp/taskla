@@ -8,8 +8,8 @@ import hero from '../../../asset/hero.png'
 
 const Header = () => {
     return (
-        <div className='mt-[40px] bg-cover h-[550px]  relative' style={{ backgroundImage: `url(${banner})` }}>
-            <div className='max-w-screen-xl mx-auto '>
+        <div className='mt-[40px] bg-cover h-[600px] lg:h-[550px]  relative' style={{ backgroundImage: `url(${banner})` }}>
+            <div className='max-w-screen-xl mx-auto'>
                 <div className='grid-cols-2'>
                     <div className='p-5 lg:top-[20px] w-full pb-32'>
                         <h1 className='text-[32px] lg:text-[45px] text-primary font-bold md:mt-20 mt-4 tracking-wide' > Believe Bigger, Aim Higher </h1 >
