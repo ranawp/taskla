@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import bg1 from '../../asset/bg1.jpg';
 import dummyImage from '../../asset/dummy-iamge.png'
 import auth from '../../firebase.init';
 import EditProfile from './EditProfile';
-
 interface Profile {
     _id?: string
     email?: string
@@ -67,16 +65,6 @@ const ViewProfile = () => {
                             </div >
                         </div >
                     </div >
-
-                    {/* <div className="bg-base-100 shadow-xl  form-control w-full max-w-[350px] mx-auto mt-6">
-                        <fieldset className=" flex flex-wrap border border-solid border-white-300 p-2">
-                            <legend className="text-sm mx-auto font-bold">Addresses</legend>
-                            <input type="text" defaultValue={division} readOnly name='division' placeholder="Division" className="input input-bordered w-40 max-w-xs mr-2" />
-                            <input type="text" defaultValue={district} readOnly name='district' placeholder="District" className="input input-bordered w-40 max-w-xs" />
-                            <input type="text" defaultValue={street} readOnly name='street' placeholder="Street" className="input input-bordered w-40 max-w-xs mr-2 mt-2" />
-                            <input type="text" defaultValue={phone} readOnly name='phone' placeholder="Phone" className="input input-bordered w-40 max-w-xs mt-2" />
-                        </fieldset>
-                    </div > */}
                 </div >
 
 

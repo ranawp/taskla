@@ -63,6 +63,7 @@ const Navbar = () => {
         return ele.read == false
     })
 
+    console.log(newArray)
     const setNoti = (id) => {
         console.log(id)
         fetch(`https://cryptic-stream-86241.herokuapp.com/notice/${id}`, {

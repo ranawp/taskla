@@ -32,8 +32,8 @@ const NoticePublish = () => {
         event.preventDefault();
         const notice = event.target.title.value;
         const announcement = event.target.announcement.value;
-        // const read = false;
-        const data = { notice, announcement, time: dateTime }
+        const read = false;
+        const data = { notice, announcement, time: dateTime, read }
         fetch(`https://cryptic-stream-86241.herokuapp.com/notice`, {
             method: 'POST',
             body: JSON.stringify(data),
