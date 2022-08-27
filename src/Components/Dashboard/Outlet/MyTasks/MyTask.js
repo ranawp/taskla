@@ -3,11 +3,34 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../../firebase.init';
 import FeedbackDetails from './FeedbackDetails';
 import SingleTasks from './SingleTasks';
-import TaskDetails from './TaskDetails';
-import TaskModal from './TaskModal';
+// import TaskDetails from './TaskDetails';
+// import TaskModal from './TaskModal';
 import './MyTask.css';
 import TaskSubmit from './TaskSubmit';
 
+// interface Task {
+//     _id: string
+//     questionDeliverDate: string
+//     questionDeliverHour: string
+//     taskName: string
+//     taskSerial: string
+//     taskDeadline: string
+//     taskMassage: string
+//     submit?: string
+// }
+
+// interface Mark {
+//     _id: string
+//     mark: string
+//     scriptfeedback: string
+//     email: string
+//     taskDescription: string
+//     taskName: string
+//     deadline: string
+//     taskNo: string
+//     feedbackDate: string
+//     feedbackHour: string
+// }
 
 const MyTask = () => {
     const [singleTask, setSingleTask] = useState([]);
@@ -16,16 +39,16 @@ const MyTask = () => {
     const [submit, setSubmit] = useState([])
     const [refresh, setRefresh] = useState(null)
     const [user] = useAuthState(auth)
+    const [watchVideo, setWatchVideo] = useState(false)
+    const [watchVideo2, setWatchVideo2] = useState(false)
 
     const email = user?.email;
 
-    console.log(submit)
-    // console.log(toogle)
 
-    const pendingTask = singleTask.filter(task => {
-        return task.submit !== "submited"
-    })
 
+    // const pendingTask = singleTask.filter(task => {
+    //     return task.submit !== "submited"
+    // })
 
 
     useEffect(() => {
@@ -53,40 +76,73 @@ const MyTask = () => {
 
             <h1 className='text-2xl text-center mt-10'>Your Assignment</h1>
 
-            <section className="grid sm:grid-cols-2 px-10 mt-5 task-list">
+            <section className="grid sm:grid-cols-2 gap-6 px-10 mt-5 task-list">
 
+
+
+                <div className=" overflow-y-auto border  pt-3 pl-2 text-base">
+
+                    {toogle === true &&
+                        <>
+
+                            {watchVideo == "00" && <p>{taskData.moduleIntroduction}</p>
+
+                            }
+
+                            {watchVideo == "01" && <img src='https://i.ibb.co/QdfMmLn/Frame-1.jpg?fbclid=IwAR1-qxVd74jcKSKmZ-iYm4lWoJfzQYJI1YjYr49vLNUtBsICMituyFLvSZ4' alt="" />
+
+                            }
+                            {watchVideo == "02" && <img src="https://i.ibb.co/C7JK4gp/Frame-2.jpg?fbclid=IwAR0Fz5Jdl3tRw-muYmJgMOPyHwEFXB4B0umv24Qj7bKSoWOKsNYgRvEVffY" alt="" />
+
+                            }
+                            {watchVideo == "03" && <img src="https://i.ibb.co/G22DX30/Frame-3.jpg?fbclid=IwAR2pr69mUpHc7OyYQ5BVzTndz206usOLH14AVomIx-GU82riKvqD0eACRu4" alt="" />
+
+                            }
+                            {watchVideo == "04" && <img src="https://i.ibb.co/7KrTqDf/Frame-4.jpg?fbclid=IwAR0PYNg8qnKE9e1HeDapUbiqDbVMlyl_V7Kpl47BpwQZ2DC92CprXD6qjXk" alt="" />
+
+                            }
+                            {watchVideo == "05" && <img src="https://i.ibb.co/LrTYL60/Frame-6.jpg?fbclid=IwAR2cP88pAUlbLKgLK-eqm7L_V4e04frOkIRJ5z5AksTJL3TwYsQtwHVQYRA" alt="" />
+
+                            }
+                            {watchVideo == "06" && <img src="https://i.ibb.co/Rg8Wx59/Frame-8.jpg?fbclid=IwAR12tphfzvEijEH_QVhVZbl3JKIelR9NJHhv3ke0kTtX_CMpjUrI88k3Lsk" alt="" />
+
+                            }
+
+                            {watchVideo == "assignment" && <div>
+                                <p>Qusetion Delivery time:{taskData.questionDeliverDate},{taskData.questionDeliverHour}</p>
+                                <p>Task deadline:{taskData.taskDeadline} </p>
+                                <p>Assignment Name and serial:{taskData.asignmentName}</p>
+                                {taskData.assignmentInstruction}</div>
+
+                            }
+
+                        </>
+                    }
+                    <>
+                        {toogle === false &&
+                            <TaskSubmit
+                                setRefresh={setRefresh}
+                                submit={submit}
+                                singleTask={singleTask}
+                                setToogle={setToogle}
+                            ></TaskSubmit>
+
+                        }
+                    </>
+
+                </div>
                 <div className='w-[300px] mb-3 sm:w-4/5 border h-80 overflow-y-auto' >
-                    {pendingTask.map((singleTask) =>
+                    {singleTask.map((singleTask) =>
                         <SingleTasks
                             key={singleTask._id}
                             singleTask={singleTask}
                             setTaskData={setTaskData}
                             setToogle={setToogle}
                             setSubmit={setSubmit}
-
+                            setWatchVideo={setWatchVideo}
+                            setWatchVideo2={setWatchVideo2}
                         ></SingleTasks>
                     )}
-                </div>
-
-                <div className=" overflow-y-auto border h-80 pt-3 pl-2 text-base">
-
-                    {toogle === true &&
-                        <>
-                            <h1 className="title">Task Name:{taskData.taskName}</h1>
-                            <p className="details">Task no:{taskData.taskSerial}</p>
-                            <p className="details">Task Posted time:{taskData.questionDeliverDate}</p>
-                            <p className="details">Deadline:{taskData.taskDeadline}</p>
-                            <p className="details">Task Details : {taskData.taskMassage} </p> </>
-                    }
-                    <>
-                        {toogle === false &&
-                            <TaskSubmit
-                                setRefresh={setRefresh}
-                                submit={submit}></TaskSubmit>
-
-                        }
-                    </>
-
                 </div>
             </section>
         </>

@@ -56,6 +56,10 @@ html {
     cursor: pointer;
 }
 
+.c-Pannel {
+    color: #1E266D;
+}
+
 * li {
     list-style: none;
 }
@@ -78,6 +82,10 @@ html {
     right: 25px;
     font-size: 28px;
     margin-left: 50px;
+}
+
+.image {
+    height: 44px;
 }
 
 @media screen and (max-height: 450px) {
