@@ -20,9 +20,9 @@ const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit, setWatchVi
     return (
         <>
             <div className=''>
-                <div className='py-2 px-2 text-sm'>
+                <div className='py-2 px-2'>
 
-                    <div tabindex="0" className="collapse group collapse-arrow border border-base-300 bg-base-100 rounded-box ">
+                    <div tabindex="0" className="collapse group collapse-arrow border border-base-300 bg-white dark:bg-[#182233] rounded-box overflow-auto">
 
 
                         <div onClick={(e) => setToogle(true)}>
@@ -33,7 +33,7 @@ const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit, setWatchVi
 
                                 className="collapse-title  font-medium flex justify-between pointer-event-none">
 
-                                <div>
+                                <div className='text-lg font-bold'>
                                     {singleTask.MilstoneSerialNo}
                                     {singleTask.MilstoneName}
                                 </div>

@@ -13,8 +13,8 @@ const TaskEdit = () => {
     }, [])
     return (
         <div className='mt-20'>
-            <h1 className='text-2xl mb-4 text-center font-bold text-primary'>Task <span className='text-secondary'>Edit </span> </h1>
-            <table className="table w-80 mx-auto sm:w-full">
+            <h1 className='text-2xl mb-4 text-center font-bold text-primary dark:text-slate-50'>Task <span className='text-secondary'>Edit </span> </h1>
+            <table className="table w-80 mx-auto sm:w-full text-slate-50">
 
                 <thead className='mx-auto'>
                     <tr>

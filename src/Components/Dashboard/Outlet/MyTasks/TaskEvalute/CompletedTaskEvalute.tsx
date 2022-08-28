@@ -20,8 +20,8 @@ const CompletedTaskEvalute = () => {
 
     return (
         <div>
-            <h1 className='text-center text-2xl my-10 dark:text-slate-50'> Evaluted <span className='text-secondary'>done task</span> </h1>
-            <table className="table w-full">
+            <h1 className='text-center text-2xl font-bold my-10 dark:text-slate-50'> Evaluted <span className='text-secondary'>done task</span> </h1>
+            <table className="table w-full text-white">
                 <thead>
                     <tr>
                         <th>Serial</th>
