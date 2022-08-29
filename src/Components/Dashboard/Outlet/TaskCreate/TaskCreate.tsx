@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import './TaskCreate.css';
 import taskSvg from '../../../../imgages/taskCreate.svg'
+import { toast } from 'react-toastify';
 
 const TaskCreate = () => {
 
@@ -22,13 +23,15 @@ const TaskCreate = () => {
         })
             .then(res => res.json())
             .then(result => {
-                result
+                if (result) {
+                    toast.success('Task Added')
+                }
             })
         reset()
     };
     return (
-        <div>
-            <h2 className='text-lg text-center font-bold'>Give task to Students</h2>
+        <div className='mt-[50px]'>
+            <h2 className='text-3xl text-secondary text-center font-bold'>Give task to Students</h2>
             <div className=' mx-auto  mb-10 grid lg:grid-cols-2 gap-4'>
 
                 <div className="ml-10 mt-5 w-96 card bg-base-100 shadow-2xl">

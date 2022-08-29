@@ -7,21 +7,23 @@ import { useNavigate, Link } from 'react-router-dom';
 import useToken from '../../hooks/useToken';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 
 const Login = () => {
-    const navigate = useNavigate()
-    const { register, formState: { errors }, handleSubmit, reset }: any = useForm();
+    const navigate = useNavigate();
+    const [resetEmail, setEmail] = useState<String>('')
+    const { register, formState: { errors }, handleSubmit, reset } : any = useForm();
     const [
         signInWithEmailAndPassword,
         user,
         loading,
         error,
-    ] : any = useSignInWithEmailAndPassword(auth);
-   
+    ] = useSignInWithEmailAndPassword(auth);
 
     const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
-    const onSubmit = (data:any):void => {
+    const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password);
+        setEmail(data.email)
         reset();
     };
 
@@ -31,7 +33,7 @@ const Login = () => {
     }
 
 
-    const handelResetPassword = async ()  => {
+    const handelResetPassword = async (email) => {
         if (email) {
             await sendPasswordResetEmail(email);
             toast("Sent Email");
@@ -43,7 +45,7 @@ const Login = () => {
 
     let errorElement;
     if (error) {
-        errorElement = <p className='text-center my-3' > {error.massage}</p >
+        errorElement = <p className='text-center my-3' > {error.message}</p >
     }
     useEffect(() => {
         if (user) {
@@ -53,14 +55,14 @@ const Login = () => {
         }
     }, [user, navigate]);
 
-    // password show/hide 
-    const [state, setState] = useState<boolean>(false);
+    // password show/hide
+    const [state, setState] = useState(false);
 
-    const btnValue = ():void => {
+    const btnValue = () => {
         setState(click => !click);
     }
     return (
-        <div className='sm:px-48 mt-10 register-page sm:flex items-center ' >
+        <div className='sm:px-48 mt-[100px] register-page sm:flex items-center ' >
             <div className='text-center p-10 mx-auto md:w-80' >
                 <img src={registerImg} className='w-80' alt="" />
             </div >
@@ -119,7 +121,7 @@ const Login = () => {
                     </form >
 
                     <p className='my-3 text-dark text-xs' > New to Taskla ?? <Link to='/register'>Please Register</Link></p >
-                    <p className='my-3 text-dark text-xs'>Forget Password?? <span className='link no-underline' onClick={handelResetPassword}>Reset Password</span></p>
+                    <p className='my-3 text-dark text-xs'>Forget Password?? <span className='link no-underline' onClick={() => handelResetPassword(resetEmail)}>Reset Password</span></p>
                 </div >
             </div >
         </div >

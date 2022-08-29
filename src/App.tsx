@@ -5,7 +5,6 @@ import Courses from './Components/Courses/Courses';
 import Payment from './Components/Courses/Payment';
 import MyTask from './Components/Dashboard/Outlet/MyTasks/MyTask';
 import Home from './Components/Home/Home';
-import Login from './Components/Login/Login';
 import MyClass from './Components/MyClass/MyClass';
 import Register from './Components/Register/Register';
 import ViewProfile from './Components/ViewProfile/ViewProfile';
@@ -25,6 +24,12 @@ import TaskEvaluate from './Components/Dashboard/Outlet/MyTasks/TaskEvalute/Task
 import CompletedTaskEvalute from './Components/Dashboard/Outlet/MyTasks/TaskEvalute/CompletedTaskEvalute';
 import CreateBlog from './Components/Dashboard/Outlet/CreateBlog/CreateBlog';
 import NoticePublish from './Components/Dashboard/NoticePublish/NoticePublish';
+import ModuleUpload from './Components/Dashboard/Outlet/TaskCreate/ModuleUpload';
+import AllBlogs from './Components/Dashboard/AllBlogs/AllBlogs';
+import TaskEdit from './Components/Dashboard/Outlet/TaskCreate/TaskEdit';
+import Login from './Components/Login/Login';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export const TimeContext = createContext('default');
@@ -55,7 +60,7 @@ const App = () => {
 
 
   return (
-    <div>
+    <div className="bg-white overflow-x-hidden">
       <Navbar />
       <TimeContext.Provider value={[Mydate, Mytime]}>
 
@@ -79,20 +84,24 @@ const App = () => {
           <Route path='dashboard' element={<Dashboard />}>
             <Route index element={<Admin_Dashboard />} />
             <Route path="allusers" element={<Allusers />} />
-            <Route path="createtask" element={<TaskCreate />} /> 
-            <Route path="taskEvaluate" element={<TaskEvaluate />}/>
+            <Route path="createtask" element={<TaskCreate />} />
+            <Route path="taskEvaluate" element={<TaskEvaluate />} />
             <Route path="taskEvaluateCompleted" element={<CompletedTaskEvalute />} />
             <Route path="createBlog" element={<CreateBlog />} />
+            <Route path="moduleUpload" element={<ModuleUpload />} />
+            <Route path="allblogs" element={<AllBlogs/>} />
+            <Route path="editTask" element={<TaskEdit/>} />
             <Route path="notice" element={<NoticePublish />} />
           </Route>
 
 
-          <Route path="/login" element={<Login></Login>}></Route>
+          <Route path="/login" element={<Login/>}></Route>
           <Route path="/register" element={<Register></Register>}></Route>
         </Routes>
 
         <Footer></Footer>
       </TimeContext.Provider>
+      <ToastContainer />
     </div>
   );
 };

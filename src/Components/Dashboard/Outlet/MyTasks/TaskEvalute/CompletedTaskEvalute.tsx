@@ -19,7 +19,7 @@ const CompletedTaskEvalute = () => {
     })
 
     return (
-        <div>
+        <div className='mt-[40px]'>
             <h1 className='text-center text-2xl'> Evaluted done task</h1>
             <table className="table w-full">
                 <thead>

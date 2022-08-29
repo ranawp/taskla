@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../../firebase.init';
 
-const SingleSubmittedTask = ({ taskDone, answerScript }) => {
+const SingleSubmittedTask = ({ taskDone, answerScript }:any) => {
     // console.log(answerScript)
 
     return (

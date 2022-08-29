@@ -4,7 +4,7 @@ import NewBlogs from './NewBlogs';
 
 
 const Blogs = () => {
-    const [newBlogs] = UseNewBlog();
+    const [newBlogs] : any = UseNewBlog();
     return (
         <div className='grid sm:grid-cols-3 gap-4 my-20 mx-5 mt-32' >
             {

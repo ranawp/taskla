@@ -8,16 +8,16 @@ import SingleTasks from './SingleTasks';
 import './MyTask.css';
 import TaskSubmit from './TaskSubmit';
 
-// interface Task {
-//     _id: string
-//     questionDeliverDate: string
-//     questionDeliverHour: string
-//     taskName: string
-//     taskSerial: string
-//     taskDeadline: string
-//     taskMassage: string
-//     submit?: string
-// }
+interface Task {
+    _id?: string
+    questionDeliverDate?: string
+    questionDeliverHour?: string
+    taskName?: string
+    taskSerial?: string
+    taskDeadline?: string
+    taskMassage?: string
+    submit?: string
+}
 
 // interface Mark {
 //     _id: string
@@ -33,14 +33,13 @@ import TaskSubmit from './TaskSubmit';
 // }
 
 const MyTask = () => {
-    const [singleTask, setSingleTask] = useState([]);
-    const [taskData, setTaskData] = useState([]);
-    const [toogle, setToogle] = useState(true);
+    const [singleTask, setSingleTask] = useState<Task[]>([]);
+    const [taskData, setTaskData] = useState<Object[] | any>([]);
+    const [toogle, setToogle] = useState<Boolean>(true);
     const [submit, setSubmit] = useState([])
-    const [refresh, setRefresh] = useState(null)
+    const [refresh, setRefresh] = useState<Object | null>(null)
     const [user] = useAuthState(auth)
-    const [watchVideo, setWatchVideo] = useState(false)
-    const [watchVideo2, setWatchVideo2] = useState(false)
+    const [watchVideo, setWatchVideo] = useState<Boolean | String>(false)
 
     const email = user?.email;
 
@@ -53,7 +52,7 @@ const MyTask = () => {
 
 
     console.log(singleTask.reverse())
-    useEffect(() => {
+    useEffect(() : void => {
         fetch('http://localhost:5000/alltasks')
             .then(res => res.json())
             .then(data => setSingleTask(data))
@@ -67,21 +66,9 @@ const MyTask = () => {
 
             <h1 className='text-2xl text-center mt-[100px]'>Your Assignment</h1>
 
-            <section className="grid sm:grid-cols-2 px-10 mt-5 task-list">
+            <section className="grid sm:grid-cols-2 gap-6 px-10 mt-5 task-list">
 
-                <div className='w-[300px] mb-3 sm:w-4/5 border h-80 overflow-y-auto' >
-                    {singleTask.map((singleTask) =>
-                        <SingleTasks
-                            key={singleTask._id}
-                            singleTask={singleTask}
-                            setTaskData={setTaskData}
-                            setToogle={setToogle}
-                            setSubmit={setSubmit}
-                            setWatchVideo={setWatchVideo}
-                            setWatchVideo2={setWatchVideo2}
-                        ></SingleTasks>
-                    )}
-                </div>
+
 
                 <div className=" overflow-y-auto border  pt-3 pl-2 text-base">
 
@@ -144,11 +131,26 @@ const MyTask = () => {
                         {toogle === false &&
                             <TaskSubmit
                                 setRefresh={setRefresh}
-                                submit={submit} singleTask={singleTask}></TaskSubmit>
+                                submit={submit}
+                                singleTask={singleTask}
+                                setToogle={setToogle}
+                            ></TaskSubmit>
 
                         }
                     </>
 
+                </div>
+                <div className='w-[300px] mb-3 sm:w-4/5 border h-80 overflow-y-auto' >
+                    {singleTask.map((singleTask) =>
+                        <SingleTasks
+                            key={singleTask._id}
+                            singleTask={singleTask}
+                            setTaskData={setTaskData}
+                            setToogle={setToogle}
+                            setSubmit={setSubmit}
+                            setWatchVideo={setWatchVideo}
+                        ></SingleTasks>
+                    )}
                 </div>
             </section>
         </>

@@ -3,7 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import auth from '../../../../firebase.init';
 
-const TaskSubmit = ({ submit, setRefresh, singleTask }) => {
+const TaskSubmit = ({ submit, setRefresh, singleTask, setToogle }) => {
     const taskId = submit?._id
     // console.log(submit)
     // console.log(submit?._id)
@@ -23,11 +23,11 @@ const TaskSubmit = ({ submit, setRefresh, singleTask }) => {
     const [user] = useAuthState(auth)
     const email = user?.email
     const date = new Date()
-    const currentDate = date.toLocaleDateString();
-    const currentHour = date.toLocaleTimeString();
+    const currentDate : string = date.toLocaleDateString();
+    const currentHour : string = date.toLocaleTimeString();
 
 
-    const handleForm = event => {
+    const handleForm = (event) : void => {
         event.preventDefault();
         const email = event.target.email.value;
         const taskName = event.target.taskName.value;
@@ -91,38 +91,38 @@ const TaskSubmit = ({ submit, setRefresh, singleTask }) => {
         <div>
             <h4 className='text-lg font-bold font-meidum text-center text-dark mb-3 mt-5' > Submit Your Script Here</h4 >
             <form onSubmit={handleForm} className='w-3/4 mx-auto' >
-                <div>
+                <div className='hidden'>
                     <span>Email:</span>
-                    <input size='20' className='h-5 mb-2 ml-1' name='email' type="text" readOnly value={user?.email} /> <br />
+                    <input size={20} className='h-5 mb-2 ml-1' name='email' type="text" readOnly value={user?.email} /> <br />
 
                     <span> Asignment Name and serial: </span>
-                    <input size='20' className='h-5 mb-2 ml-1' name='taskName' type="text" readOnly value={asignmentName} />
+                    <input size={20} className='h-5 mb-2 ml-1' name='taskName' type="text" readOnly value={asignmentName} />
                     <br />
                     <span>Milestone serial:.</span>
-                    <input name='taskNo' size='20' className='h-5 mb-2 ml-1' type="text" readOnly value={MilstoneSerialNo} />
+                    <input name='taskNo' size={20} className='h-5 mb-2 ml-1' type="text" readOnly value={MilstoneSerialNo} />
                     <br />
                     <span>Deadline</span>
-                    <input size='20' className='h-5 mb-2 ml-1' name='deadline' type="text" readOnly value={taskDeadline} />
+                    <input size={20} className='h-5 mb-2 ml-1' name='deadline' type="text" readOnly value={taskDeadline} />
                     <br />
 
                     <span>Submisson Date: </span>
-                    <input size='20' className='h-5 mb-2 ml-1' name='taskSubmittedDate' type="text" readOnly value={currentDate} />
+                    <input size={20} className='h-5 mb-2 ml-1' name='taskSubmittedDate' type="text" readOnly value={currentDate} />
                     <br />
                     <span>Submisson Time:</span>
-                    <input size='20' className='h-5 mb-2 ml-1' name='taskSubmitedHour' type="text" readOnly value={currentHour} />
+                    <input size={20} className='h-5 mb-2 ml-1' name='taskSubmitedHour' type="text" readOnly value={currentHour} />
                     <br />
                     <span>Assignement description:</span>
-                    <input size='20' className='h-5 mb-2 ml-1' name='assignmentInstruction' type="text" readOnly value={assignmentInstruction} />
+                    <input size={20} className='h-5 mb-2 ml-1' name='assignmentInstruction' type="text" readOnly value={assignmentInstruction} />
                     <br />
                 </div>
 
                 {/* <span>Massage:</span> */}
                 <small className='text-sm'>Submission Time:{currentHour},{currentDate} </small>
-                <textarea className='border mt-2 p-2' required placeholder="Give your doc file link here or put answer here" id="" cols="45" rows="5" name='assignmentAnswer'></textarea>
+                <textarea className='border mt-2 p-2' required placeholder="Give your doc file link here or put answer here" id="" cols={45} rows={5} name='assignmentAnswer'></textarea>
 
 
 
-                <input type="submit" value="Submit" className="bg-blue-700 border-0 px-3 py-1 button  rounded text-white modal-button cursor-pointer mt-3" />
+                <input onClick={() => setToogle(true)} type="submit" value="Submit" className="bg-blue-700 border-0 px-3 py-1 button  rounded text-white modal-button cursor-pointer mt-3" />
             </form >
         </div>
     );

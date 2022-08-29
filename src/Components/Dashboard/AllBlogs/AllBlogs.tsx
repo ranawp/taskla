@@ -5,8 +5,8 @@ import AllBlog from './AllBlog';
 import EditBlogModal from './EditBlogModal';
 
 const AllBlogs = () => {
-    const [newBlogs, setNewBlogs] = UseNewBlog();
-    const [blogEditModal, setEditModal] = useState(null);
+    const [newBlogs, setNewBlogs] : any = UseNewBlog();
+    const [blogEditModal, setEditModal] = useState<Object | null>(null);
     return (
         <>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-3 ml-20 my-5'>

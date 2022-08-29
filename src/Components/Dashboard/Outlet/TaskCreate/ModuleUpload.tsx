@@ -1,14 +1,15 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
 
 const ModuleUpload = () => {
-    const { register, handleSubmit, reset } = useForm();
+    const { register, handleSubmit, reset } : any = useForm();
     // const [review, setReview] = useState({});
     // const imageStoragekey = '3cf84befed9b9bcd8f1d01c2b4412701';
     const date = new Date()
-    const currentDate = date.toLocaleDateString();
-    const currentHour = date.toLocaleTimeString();
+    const currentDate: string = date.toLocaleDateString();
+    const currentHour: string = date.toLocaleTimeString();
 
     const onSubmit = data => {
         const url = `http://localhost:5000/tasks`
@@ -21,7 +22,9 @@ const ModuleUpload = () => {
         })
             .then(res => res.json())
             .then(result => {
-                result
+                if (result) {
+                    toast.success('Module Uploaded')
+                }
                 console.log(result)
             })
         reset()
@@ -29,7 +32,7 @@ const ModuleUpload = () => {
 
     return (
         <div>
-            <h2 className='text-lg text-center text-primary font-bold mt-7'>
+            <h2 className='text-3xl text-center text-primary font-bold mt-7'>
                 Upload module video
             </h2>
             <div className=' mx-auto  mb-10 grid lg:grid-cols-2 gap-4'>
@@ -39,10 +42,10 @@ const ModuleUpload = () => {
                         <form onSubmit={handleSubmit(onSubmit)}>
 
                             <p className='mt-5'>Milestone Serial:</p>
-                            <input class="input input-bordered w-full max-w-xs" placeholder='Write milestone serial'  {...register("MilstoneSerialNo", { required: true })} /> <br />
+                            <input className="input input-bordered w-full max-w-xs" placeholder='Write milestone serial'  {...register("MilstoneSerialNo", { required: true })} /> <br />
 
                             <p>Milstone Name:  <br /></p>
-                            <input class="input input-bordered w-full max-w-xs" placeholder='Write milestone Name'  {...register("MilstoneName", { required: true })} /> <br />
+                            <input className="input input-bordered w-full max-w-xs" placeholder='Write milestone Name'  {...register("MilstoneName", { required: true })} /> <br />
 
                             <p>Module Text introduction:  <br /></p>
                             <textarea name="" id="" cols="35" rows="7" placeholder='Write student task'
@@ -57,46 +60,46 @@ const ModuleUpload = () => {
 
 
                             <p>Module Name and serial:  <br /></p>
-                            <input class="input input-bordered w-full max-w-xs" placeholder='Write module Name'  {...register("ModuleNameserial1", { required: true })} /> <br />
+                            <input className="input input-bordered w-full max-w-xs" placeholder='Write module Name'  {...register("ModuleNameserial1", { required: true })} /> <br />
 
                             <p>Module video 1:  <br /></p>
-                            <input class="input input-bordered w-full max-w-xs" placeholder='Write video link'  {...register("Modulevideo1", { required: true })} /> <br />
+                            <input className="input input-bordered w-full max-w-xs" placeholder='Write video link'  {...register("Modulevideo1", { required: true })} /> <br />
 
                             {/* second module name and video */}
 
                             <p>Module Name and serial 2:  <br /></p>
-                            <input class="input input-bordered w-full max-w-xs" placeholder='Write module Name'  {...register("ModuleNameserial2", { required: true })} /> <br />
+                            <input className="input input-bordered w-full max-w-xs" placeholder='Write module Name'  {...register("ModuleNameserial2", { required: true })} /> <br />
 
                             <p>Module video 2:  <br /></p>
-                            <input class="input input-bordered w-full max-w-xs" placeholder='Write video link'  {...register("Modulevideo2", { required: true })} /> <br />
+                            <input className="input input-bordered w-full max-w-xs" placeholder='Write video link'  {...register("Modulevideo2", { required: true })} /> <br />
 
                             {/* third module name and video */}
 
                             <p>Module Name and serial3:  <br /></p>
-                            <input class="input input-bordered w-full max-w-xs" placeholder='Write module Name'  {...register("ModuleNameserial3", { required: true })} /> <br />
+                            <input className="input input-bordered w-full max-w-xs" placeholder='Write module Name'  {...register("ModuleNameserial3", { required: true })} /> <br />
 
                             <p>Module video 3:  <br /></p>
-                            <input class="input input-bordered w-full max-w-xs" placeholder='Write video link'  {...register("Modulevideo3", { required: true })} /> <br />
+                            <input className="input input-bordered w-full max-w-xs" placeholder='Write video link'  {...register("Modulevideo3", { required: true })} /> <br />
 
                             {/* fourth module name and video */}
                             <p>Module Name and serial4:  <br /></p>
-                            <input class="input input-bordered w-full max-w-xs" placeholder='Write module Name'  {...register("ModuleNameserial4", { required: true })} /> <br />
+                            <input className="input input-bordered w-full max-w-xs" placeholder='Write module Name'  {...register("ModuleNameserial4", { required: true })} /> <br />
 
                             <p>Module video 4:  <br /></p>
-                            <input class="input input-bordered w-full max-w-xs" placeholder='Write video link'  {...register("Modulevideo4", { required: true })} /> <br />
+                            <input className="input input-bordered w-full max-w-xs" placeholder='Write video link'  {...register("Modulevideo4", { required: true })} /> <br />
 
                             {/* fifth module name and video */}
                             <p>Module Name and serial5:  <br /></p>
-                            <input class="input input-bordered w-full max-w-xs" placeholder='Write module Name'  {...register("ModuleNameserial5", { required: true })} /> <br />
+                            <input className="input input-bordered w-full max-w-xs" placeholder='Write module Name'  {...register("ModuleNameserial5", { required: true })} /> <br />
                             <p>Module video 5:  <br /></p>
-                            <input class="input input-bordered w-full max-w-xs" placeholder='Write video link'  {...register("Modulevideo5", { required: true })} /> <br />
+                            <input className="input input-bordered w-full max-w-xs" placeholder='Write video link'  {...register("Modulevideo5", { required: true })} /> <br />
 
                             {/* sixth module name and video */}
                             <p>Module Name and serial6:  <br /></p>
-                            <input class="input input-bordered w-full max-w-xs" placeholder='Write module Name'  {...register("ModuleNameserial6", { required: true })} /> <br />
+                            <input className="input input-bordered w-full max-w-xs" placeholder='Write module Name'  {...register("ModuleNameserial6", { required: true })} /> <br />
 
                             <p>Module video 6:  <br /></p>
-                            <input class="input input-bordered w-full max-w-xs" placeholder='Write video link'  {...register("Modulevideo6", { required: true })} /> <br />
+                            <input className="input input-bordered w-full max-w-xs" placeholder='Write video link'  {...register("Modulevideo6", { required: true })} /> <br />
 
                             {/* assignment created time  */}
                             <div className='grid lg:grid-cols-2'>
@@ -144,7 +147,7 @@ const ModuleUpload = () => {
                             </div>
                             {/* assignment instruction   */}
                             <p>Assignment Name and serial  <br /></p>
-                            <input class="input input-bordered w-full max-w-xs" placeholder='Write module Name'  {...register("asignmentName", { required: true })} /> <br />
+                            <input className="input input-bordered w-full max-w-xs" placeholder='Write module Name'  {...register("asignmentName", { required: true })} /> <br />
 
                             <p>Assignment instruction massage</p>
                             <textarea name="" id="" cols="30" rows="10"
@@ -158,7 +161,7 @@ const ModuleUpload = () => {
                             ></textarea> <br />
 
                             <p>Will you lock this milestone? write: lock<br /></p>
-                            <input class="input input-bordered w-full max-w-xs" placeholder='Write lock'  {...register("submit", { required: true })} /> <br />
+                            <input className="input input-bordered w-full max-w-xs" placeholder='Write lock'  {...register("submit", { required: true })} /> <br />
 
 
                             <input type="submit" value='Submit' className='mt-4 text-white btn-secondary px-4 py-1   max-w-xs' />

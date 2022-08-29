@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FeedbackDetails = ({ feedbackModal }) => {
+const FeedbackDetails = ({ feedbackModal } : any) => {
     console.log(feedbackModal.mark)
     return (
         <div>

@@ -22,7 +22,7 @@ const TaskEvaluate = () => {
         return task.feedbackSubmit !== "feedbacksubmited"
     })
     return (
-        <div>
+        <div className='mt-[50px]'>
             <h1 className='font-bold text-2xl'>Student Submitted tasks</h1>
             <table className="table w-full">
 

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 interface Date {
     month: string
@@ -42,7 +43,11 @@ const NoticePublish = () => {
             },
         })
             .then((response) => response.json())
-            .then((json) => console.log(json));
+            .then((json) => {
+                if (json) {
+                    toast.success("Notice Published")
+                }
+            });
 
         event.target.reset();
     }

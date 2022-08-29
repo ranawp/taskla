@@ -18,7 +18,11 @@ const UserRow = ({ user: users, index, setSingelUser }) => {
             method: 'PUT'
         })
             .then(res => res.json())
-            .then(data => data)
+            .then(data => {
+                if (data) {
+                    toast.success('Admin Selected')
+                }
+            })
     }
     const paidStudent = () : void => {
         fetch(`https://cryptic-stream-86241.herokuapp.com/user/student/${email}`, {
@@ -39,7 +43,7 @@ const UserRow = ({ user: users, index, setSingelUser }) => {
         <tr>
             <th>{index + 1}</th>
             <td>{email}</td>
-            <td>{role !== 'admin' && <button onClick={makeAdmin} className="btn btn-xs">Make Admin</button>}</td>
+            <td>{role !== 'admin' && <button onClick={makeAdmin} className="btn btn-xs btn-secondary">Make Admin</button>}</td>
             <td> {
                 ((enroll == 'enrollPending') && (student == 'enrolled')) ?
                     <>

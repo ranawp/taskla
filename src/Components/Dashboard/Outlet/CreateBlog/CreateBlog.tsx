@@ -53,7 +53,9 @@ const CreateBlog = () => {
 
 
     return (
-        <div>
+        <div className='mt-[50px]'>
+            
+            <h1 className='text-center lg:text-4xl sm:text-3xl text-secondary font-bold'>Write a blog</h1>
             <div className='bg-base-100 lg:shadow-2xl mx-auto py-4 mt-2 rounded-md px-10 lg:w-9/12 '>
                 <form
                     className=''

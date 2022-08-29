@@ -3,8 +3,8 @@ import ModuleEditModal from './ModuleEditModal';
 import SignleEditTask from './SignleEditTask';
 
 const TaskEdit = () => {
-    const [singleTask, setSingleTask] = useState([]);
-    const [editvideoModal, seteditvideoModal] = useState(null);
+    const [singleTask, setSingleTask] : any = useState<Object[] | any>([]);
+    const [editvideoModal, seteditvideoModal] : any = useState<Object | null | any>(null);
 
     useEffect(() => {
         fetch('http://localhost:5000/alltasks')
@@ -12,7 +12,7 @@ const TaskEdit = () => {
             .then(data => setSingleTask(data))
     }, [])
     return (
-        <div>
+        <div className='mt-[50px]'>
             <table className="table w-full">
 
                 <thead>
