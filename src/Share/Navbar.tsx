@@ -93,6 +93,7 @@ const Navbar = () => {
                     <>  <li className='hover:text-secondary'><Link className='pl-5' to='/mytask'>Classroom</Link></li>
                     </>
                 }
+
                 <li className='hover:text-secondary'><Link className='pl-5' to="/courses">Courses</Link></li>
                 <li className='hover:text-secondary' > <Link className='pl-5' to='/contact' > Contact Us</Link ></li >
 
