@@ -14,14 +14,14 @@ const UserRow = ({ user: users, index, setSingelUser }) => {
     const [user] = useAuthState(auth)
     const emails = user?.email
     const makeAdmin = (): void => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://cryptic-stream-86241.herokuapp.com/user/admin/${email}`, {
             method: 'PUT'
         })
             .then(res => res.json())
             .then(data => data)
     }
     const paidStudent = (): void => {
-        fetch(`http://localhost:5000/user/student/${email}`, {
+        fetch(`https://cryptic-stream-86241.herokuapp.com/user/student/${email}`, {
             method: 'PUT'
         })
             .then(res => res.json())
@@ -36,14 +36,14 @@ const UserRow = ({ user: users, index, setSingelUser }) => {
     }
     return (
 
-        <tr>
-            <th>{index + 1}</th>
+        <tr className='border dark:border-[#293241]'>
+            <th className='p-3'>{index + 1}</th>
             <td>{email}</td>
             <td>{role !== 'admin' && <button onClick={makeAdmin} className="btn btn-xs">Make Admin</button>}</td>
             <td> {
                 ((enroll == 'enrollPending') && (student == 'enrolled')) ?
                     <>
-                        <button disabled className="btn btn-xs">enrolled</button> </> :
+                        <button disabled className="btn btn-xs dark:text-slate-400">enrolled</button> </> :
 
                     <> {enroll == 'enrollPending' && <button onClick={paidStudent} className="btn btn-xs">enrollPending</button>}</>
             }</td>

@@ -77,23 +77,23 @@ const Admin_Dashboard = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/user')
+        fetch('https://cryptic-stream-86241.herokuapp.com/user')
             .then(res => res.json())
             .then(data => setStudents(data))
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:5000/alltasks')
+        fetch('https://cryptic-stream-86241.herokuapp.com/alltasks')
             .then(res => res.json())
             .then(data => setTask(data))
     }, []);
     return (
         <div className='p-10'>
-            <div className='flex justify-between'>
-                <div>
+            <div className='flex md:justify-between md:flex-row flex-col'>
+                <div className='mb-10 text-center'>
                     <h1 className='text-4xl font-bold dark:text-slate-50'>Dashboard</h1>
                 </div>
-                <div className="card w-96 bg-white dark:bg-[#182233] rounded-full shadow-xl">
+                <div className="card md:w-96 bg-white dark:bg-[#182233] rounded-full shadow-xl">
                     <div className="text-center dark:text-slate-50">
                         <h2 className="text-center text-lg font-bold">Period </h2>
                         <p>29/5/2022- 29/12/2022</p>
@@ -128,7 +128,7 @@ const Admin_Dashboard = () => {
                     <div className="stat">
                         <div className='text-4xl font-bold mb-3'>2</div>
 
-                        <div className=" text-[18px] font-semibold text-black">Total Teacher</div>
+                        <div className=" text-[18px] font-semibold text-black dark:text-slate-50">Total Teacher</div>
 
                         <div className=" text-[16px] font-semibold"><span className='text-red-600'>-2% </span>than last month</div>
                     </div>

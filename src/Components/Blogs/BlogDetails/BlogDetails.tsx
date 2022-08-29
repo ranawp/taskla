@@ -13,7 +13,7 @@ const BlogDetails = () => {
             .then(data => setBlogDetail(data));
     }, []);
     return (
-        <div className='w-50 '>
+        <div className='w-50 text-black dark:text-slate-50'>
             <div className='background-style' >
                 <h1 className='text-3xl mt-7' >{blogTitle}</h1>
             </div >

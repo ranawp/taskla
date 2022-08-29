@@ -28,6 +28,8 @@ import NoticePublish from './Components/Dashboard/NoticePublish/NoticePublish';
 import ModuleUpload from './Components/Dashboard/Outlet/TaskCreate/ModuleUpload';
 import TaskEdit from './Components/Dashboard/Outlet/TaskCreate/TaskEdit';
 import Login from './Components/Login/Login';
+import Elibrary from './Elibrary/Elibrary';
+import BookPublish from './Components/Dashboard/Outlet/BookPublish/BookPublish';
 
 
 
@@ -91,11 +93,13 @@ const App = () => {
             <Route path="taskEvaluateCompleted" element={<CompletedTaskEvalute />} />
             <Route path="createBlog" element={<CreateBlog />} />
             <Route path="notice" element={<NoticePublish />} />
+            <Route path="bookUpload" element={<BookPublish />} />
           </Route>
 
 
           <Route path="/login" element={<Login></Login>}></Route>
           <Route path="/register" element={<Register></Register>}></Route>
+          <Route path="/elibrary" element={<Elibrary/>}></Route>
         </Routes>
 
         <Footer></Footer>

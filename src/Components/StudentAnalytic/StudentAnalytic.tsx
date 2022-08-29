@@ -72,7 +72,7 @@ const studentAnalytic = () => {
     const [marks, setMarks] = useState<Mark[]>([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allMarks/${email}`)
+        fetch(`https://cryptic-stream-86241.herokuapp.com/allMarks/${email}`)
             .then(res => res.json())
             .then(data => setMarks(data))
     }, [marks])
@@ -80,17 +80,17 @@ const studentAnalytic = () => {
     return (
         <>
             <div className='ml-5 mt-20'>
-                <h2 className='font-semibold text-lg mb-5 text-center'>Mark distribution</h2>
-                <table className="table mx-auto">
+                <h2 className='font-semibold text-lg mb-5 text-center text-primary dark:text-slate-50'>Mark distribution</h2>
+                <table className="mx-auto text-left  dark:text-slate-50 border dark:border-[#293241]">
 
-                    <thead>
+                    <thead className='bg-gray-200 dark:bg-[#182233]'>
                         <tr>
-                            <th>Serial</th>
-                            <th>Task Name</th>
-                            <th>Task no.</th>
-                            <th>Mark</th>
-                            <th>Feedback</th>
-                            <th>Mark Upadate date</th>
+                            <th className='p-3'>Serial</th>
+                            <th className='p-3'>Task Name</th>
+                            <th className='p-3'>Task no.</th>
+                            <th className='p-3'>Mark</th>
+                            <th className='p-3'>Feedback</th>
+                            <th className='p-3'>Mark Upadate date</th>
                         </tr>
                     </thead>
 
@@ -116,7 +116,7 @@ const studentAnalytic = () => {
             <div className='my-5 flex flex-wrap'>
                 <div className="grid gap-x-8 gap-y-8 lg:grid-cols-2 mt-14 mx-auto ">
 
-                    <div className='box-content border-4 rounded-lg p-5'>
+                    <div className='box-content border-4 rounded-lg p-5 text-primary dark:text-slate-50'>
                         <h2 className='text-center font-semibold text-lg'>Attendence</h2>
                         <LineChart width={300} height={350} data={chartData}>
                             <Line type="monotone" dataKey="sell" stroke="#8884d8" />
@@ -127,7 +127,7 @@ const studentAnalytic = () => {
                         </LineChart>
 
                     </div>
-                    <div className='box-content border-4'>
+                    <div className='box-content border-4 text-primary dark:text-slate-50'>
                         <h2 className='font-semibold text-lg text-center'>Perfomance</h2>
                         <AreaChart
                             width={300}

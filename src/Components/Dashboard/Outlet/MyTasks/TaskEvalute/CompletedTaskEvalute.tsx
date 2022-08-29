@@ -8,7 +8,7 @@ const CompletedTaskEvalute = () => {
     const [evaluteModalDetails, setEvaluteModalDetails] = useState<object | any>(null);
 
     useEffect(() => {
-        fetch(' http://localhost:5000/answers')
+        fetch(' https://cryptic-stream-86241.herokuapp.com/answers')
             .then(res => res.json())
             .then(data => setTaskEvalute(data))
     }
@@ -21,10 +21,10 @@ const CompletedTaskEvalute = () => {
     return (
         <div>
             <h1 className='text-center text-2xl font-bold my-10 dark:text-slate-50'> Evaluted <span className='text-secondary'>done task</span> </h1>
-            <table className="table w-full text-white">
-                <thead>
+            <table className="w-full text-left border dark:border-[#293241] dark:text-slate-50">
+                <thead className='bg-gray-200 dark:bg-[#182233]'>
                     <tr>
-                        <th>Serial</th>
+                        <th className='p-3'>Serial</th>
                         <th>Task no</th>
                         <th>Task name</th>
                         <th>User Email</th>

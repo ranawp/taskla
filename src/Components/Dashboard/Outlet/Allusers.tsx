@@ -28,7 +28,7 @@ const Allusers = () => {
         isLoading(true)
         console.log('singaluser')
         const fetchSideeffect = async () => {
-            const res = await axios('http://localhost:5000/user')
+            const res = await axios('https://cryptic-stream-86241.herokuapp.com/user')
             setData(res.data)
             isLoading(false)
         }
@@ -39,20 +39,19 @@ const Allusers = () => {
         <div>
             <h2 className='text-lg text-center font-bold my-5 dark:text-slate-50'>All users</h2>
 
-            <div className="overflow-x-auto text-white dark:text-slate-50" >
-                <table className="table w-full" >
-                    <thead>
-                        <tr>
+            <div className="overflow-x-auto text-primary dark:text-slate-50" >
+                <table className="table w-full border dark:border-[#293241]" >
+                    
+                        <tr className='bg-gray-200  dark:bg-[#182233]'>
                             <th>No.</th>
                             <th>Email</th>
                             <th>select admin</th>
                             <th>Enroll Status</th>
                             <th>User Details</th>
-                            <th></th>
                         </tr>
 
-                    </thead>
-                    <tbody>
+                    
+                    
 
                         {
 
@@ -64,7 +63,7 @@ const Allusers = () => {
                             ></UserRow>)
                         }
                         {singelUser && <UserDetails singelUser={singelUser}></UserDetails>}
-                    </tbody>
+                    
                 </table >
             </div >
         </div >

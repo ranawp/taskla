@@ -6,8 +6,8 @@ const DoneSignleEvaluate = ({ taskEvalute, index }) => {
 
     return (
         <>
-            <tr>
-                <th>{index + 1}</th>
+            <tr className='border dark:border-[#293241]'>
+                <th className='p-3'>{index + 1}</th>
                 <td>{taskNo}</td>
                 <td>{taskName}</td>
 

@@ -5,7 +5,7 @@ import './Allacordian.css'
 
 const Allacordian = () => {
     return (
-        <div className='mt-[70px] lg:h-[600px] border-y-[1px] p-5 relative background'>
+        <div className='mt-[70px] lg:h-[600px] border-y-[1px] p-5 relative background dark:bg-none'>
             {/* <div className='w-full h-4 opacity-20 -rotate-[12px] bac blur bg-red-200 absolute top-[50%]' ></div>
             <div className='w-full h-5 opacity-20 -rotate-[20px] blur bg-green-300 absolute top-[52%]' ></div>
             <div className='w-full h-5 opacity-20 blur bg-blue-300 absolute top-[54%]' ></div> */}

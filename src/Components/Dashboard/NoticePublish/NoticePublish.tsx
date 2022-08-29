@@ -34,7 +34,7 @@ const NoticePublish = () => {
         const announcement = event.target.announcement.value;
         const read = false;
         const data = { notice, announcement, time: dateTime }
-        fetch(`http://localhost:5000/notice`, {
+        fetch(`https://cryptic-stream-86241.herokuapp.com/notice`, {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
@@ -68,14 +68,14 @@ const NoticePublish = () => {
                         <form className='' action="" onSubmit={handleNoticeForm}>
                             <div className="form-control dark:bg-[#182233]">
                                 <label className="label">
-                                    <span className="label-text font-bold">Title</span>
+                                    <span className="label-text font-bold  text-primary dark:text-slate-50">Title</span>
                                 </label>
-                                <input type="text" placeholder="Title" name='title' className="input input-bordered bg-slate-100 dark:bg-[#182233] dark:text-slate-50" />
+                                <input type="text" placeholder="Title" name='title' className="input border dark:border-[#293241] bg-slate-100 dark:bg-[#182233] dark:text-slate-50" />
 
                                 <label className="label">
-                                    <span className="label-text font-bold">Announcement</span>
+                                    <span className="label-text text-primary dark:text-slate-50 font-bold">Announcement</span>
                                 </label>
-                                <textarea className="textarea textarea-bordered h-[200px] bg-slate-100 dark:bg-[#182233] dark:text-slate-50" placeholder="Announcement" name='announcement'></textarea>
+                                <textarea className="textarea border dark:border-[#293241] h-[200px] bg-slate-100 dark:bg-[#182233] dark:text-slate-50" placeholder="Announcement" name='announcement'></textarea>
                                 <button className="btn btn-secondary mt-5">Submit</button>
                             </div>
                         </form>

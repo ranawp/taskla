@@ -14,16 +14,16 @@ const TaskEdit = () => {
     return (
         <div className='mt-20'>
             <h1 className='text-2xl mb-4 text-center font-bold text-primary dark:text-slate-50'>Task <span className='text-secondary'>Edit </span> </h1>
-            <table className="table w-80 mx-auto sm:w-full text-slate-50">
+            <table className=" w-80 mx-auto sm:w-full dark:text-slate-50 border dark:border-[#293241]">
 
-                <thead className='mx-auto'>
-                    <tr>
-                        <th>Milestone Name</th>
+                
+                    <tr className='text-left bg-gray-200  dark:bg-[#182233] '>
+                        <th className='p-3'>Milestone Name</th>
                         <th>Edit</th>
                     </tr>
-                </thead>
+               
 
-                <tbody>
+                
                     {
                         singleTask.map((taskEvalute, index) => <SignleEditTask
                             key={taskEvalute._id}
@@ -33,7 +33,7 @@ const TaskEdit = () => {
                             seteditvideoModal={seteditvideoModal}
                         ></SignleEditTask>)
                     }
-                </tbody>
+                
 
 
 

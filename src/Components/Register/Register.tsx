@@ -34,7 +34,7 @@ const Register = () => {
             email: data.email,
             name: data.name
         }
-        fetch('http://localhost:5000/user', {
+        fetch('https://cryptic-stream-86241.herokuapp.com/user', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -57,13 +57,13 @@ const Register = () => {
                 <img src={registerImg} alt="" />
             </div >
             <div className='lg:order-first' >
-                <div className='w-80 p-10 mx-auto shadow-lg border'>
-                    <h1 className='text-center font-bold text-3xl my-4'>Sign Up</h1>
+                <div className='w-80 p-10 mx-auto shadow-lg border border-[#293343]'>
+                    <h1 className='text-center font-bold text-3xl my-4 text-black dark:text-slate-50'>Sign Up</h1>
                     <form className='flex flex-col' onSubmit={handleSubmit(onSubmit)} >
 
                         <input required type="text"
                             placeholder="Your Name"
-                            className=" mt-2 p-2 rounded-lg background-color"
+                            className=" mt-2 p-2 rounded-lg dark:bg-[#1E293B] dark:text-slate-50"
                             {...register("name", {
                                 required: {
                                     value: true,
@@ -79,7 +79,7 @@ const Register = () => {
 
                         </label >
                         <input
-                            className='my-2 p-2 rounded-lg background-color'
+                            className='my-2 p-2 rounded-lg dark:bg-[#1E293B] dark:text-slate-50'
                             type='email'
                             placeholder='Your Email'
                             {...register("email", {
@@ -99,7 +99,7 @@ const Register = () => {
 
                         <div className='flex'>
                             <input
-                                className='my-2 p-2 rounded-lg background-color w-full'
+                                className='my-2 p-2 rounded-lg dark:bg-[#1E293B] dark:text-slate-50 w-full'
                                 placeholder='Password'
                                 type={show ? 'text' : 'password'}
                                 {...register("password", {
@@ -115,7 +115,7 @@ const Register = () => {
                                 }
                                 )
                                 } />
-                            <button onClick={btnValue} className='inline text-[18px] p-[10px] ml-[-35px]'>
+                            <button onClick={btnValue} className='inline text-[18px] p-[10px] ml-[-35px] text-black dark:text-slate-50'>
                                 {show ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
                             </button>
                         </div>
@@ -123,12 +123,12 @@ const Register = () => {
 
                         {errors.password?.type === 'minLength' && <p className='' > {errors.password?.message}</p >}
 
-                        <input className='my-2 py-2 border rounded-lg text-dark font-semibold hover:bg-white hover:text-black cursor-pointer' value="Register" type="submit" />
+                        <input className='my-2 py-2 border rounded-lg text-dark font-semibold dark:bg-[#1E293B] dark:text-slate-50 hover:bg-white hover:text-black cursor-pointer' value="Register" type="submit" />
                     </form >
 
-                    <p className='my-3 text-white text-xs' > Already Have an Account?? <Link to='/login'> Please Login</Link ></p >
+                    <p className='my-3 text-primary dark:text-slate-50 text-xs' > Already Have an Account?? <Link to='/login'> Please Login</Link ></p >
 
-                    <p className='my-3 text-dark' > Already Have an Account? <Link to='/login' className='ml-3' > Please Login</Link ></p >
+                    <p className='my-3 text-dark dark:text-slate-50' > Already Have an Account? <Link to='/login' className='ml-3' > Please Login</Link ></p >
                 </div >
             </div >
 

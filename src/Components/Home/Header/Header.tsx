@@ -19,7 +19,7 @@ const Header = () => {
 
                             Get started</p >
 
-                        <Link to='/register'><button className='btn btn-secondary mt-5 text-white'>Get Started</button></Link>
+                        <Link to='/courses'><button className='btn btn-secondary mt-5 text-white'>Enroll Now</button></Link>
                     </div >
                     <div className='absolute my-auto bottom-0 right-0'>
                         <img className='w-[700px]' src={hero} alt="" />

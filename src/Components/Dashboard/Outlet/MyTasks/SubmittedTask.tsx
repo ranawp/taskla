@@ -24,7 +24,7 @@ const SubmittedTask = () => {
     const [submitedTask, setSubmiitedTask] = useState<Answer[]>([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/answers/${email}`)
+        fetch(`https://cryptic-stream-86241.herokuapp.com/answers/${email}`)
             .then(res => res.json())
             .then(data => setAnswerScript(data))
     }, [])
@@ -35,15 +35,15 @@ const SubmittedTask = () => {
     // console.log(submitedTask)
 
     useEffect(() => {
-        fetch(' http://localhost:5000/alltasks')
+        fetch(' https://cryptic-stream-86241.herokuapp.com/alltasks')
             .then(res => res.json())
             .then(data => setSubmiitedTask(data))
     }, [])
 
     return (
-        <>
+        <div className='text-black dark:text-slate-50'>
 
-            <h1 className='text-2xl text-center mt-10'>You already Submmited Assignment</h1>
+            <h1 className='text-2xl text-center mt-28'>You already Submmited Assignment</h1>
 
             <section className="w-50 mx-auto px-10 mt-5 task-list">
 
@@ -60,7 +60,7 @@ const SubmittedTask = () => {
 
 
             </section>
-        </>
+        </div>
     );
 };
 

@@ -97,6 +97,7 @@ const Navbar = () => {
             <>
                 {match.student == 'enrolled' &&
                     <>  <li className='hover:text-secondary dark:text-slate-50'><Link className='pl-5' to='/mytask'>Classroom</Link></li>
+                    <li className='hover:text-secondary dark:text-slate-50'><Link className='pl-5' to='/elibrary'>E-Library</Link></li>
                         </>
                 }
                 <li className='hover:text-secondary dark:text-slate-50'><Link className='pl-5' to="/courses">Courses</Link></li >
@@ -285,3 +286,10 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+
+
+
+
+{/* <li className='hover:text-secondary dark:text-slate-50'><Link className='pl-5' to='/elibrary'>E-Library</Link></li> */}

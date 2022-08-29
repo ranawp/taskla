@@ -12,7 +12,7 @@ const TaskEvaluate = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/answers')
+        fetch('https://cryptic-stream-86241.herokuapp.com/answers')
             .then(res => res.json())
             .then(data => setTaskEvalute(data))
     }
@@ -24,11 +24,11 @@ const TaskEvaluate = () => {
     return (
         <div>
             <h1 className='font-bold text-2xl my-10 text-center text-primary dark:text-slate-50'>Student  <span className='text-secondary'>Submitted tasks</span> </h1>
-            <table className="table w-full text-slate-50">
+            <table className="w-full text-left text-primary dark:text-slate-50 border dark:border-[#293241] dark:bg-transparent">
 
-                <thead>
-                    <tr>
-                        <th>Serial</th>
+                
+                    <tr className='bg-gray-200  dark:bg-[#182233]'>
+                        <th className='p-3'>Serial</th>
                         <th>Task no</th>
                         <th>Task name</th>
                         <th>User Email</th>
@@ -39,9 +39,9 @@ const TaskEvaluate = () => {
                         <th>Give Feedback</th>
                         {/* <th>Upadte</th> */}
                     </tr>
-                </thead>
+               
 
-                <tbody>
+               
                     {
                         pendingFeedbackTask.map((taskEvalute, index) => <SingleTaskEvalute
                             key={taskEvalute._id}
@@ -52,7 +52,7 @@ const TaskEvaluate = () => {
 
                         ></SingleTaskEvalute>)
                     }
-                </tbody>
+                
                 {evaluteModalDetails && <EvaluteDetails evaluteModalDetails={evaluteModalDetails} ></EvaluteDetails>}
                 {evaluteFeedbackModal && <EvaluteFeedbackModal
                     setRefresh={setRefresh}
