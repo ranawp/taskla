@@ -33,7 +33,7 @@ const BookPublish = () => {
                             <textarea name="description" className='w-full p-5 dark:text-slate-50 bg-slate-100 dark:bg-[#182233]' id="description" cols="30" rows="10" placeholder='Write Short Description'></textarea>
 
                             <label htmlFor="image" className='my-2  cursor-pointer dark:text-slate-50'>Image</label>
-                            <input type="file" className='input w-full dark:text-slate-50 bg-slate-100 dark:bg-[#182233]' name='img' id="image" />
+                            <input type="file" className='input w-full dark:text-slate-50 bg-slate-100 dark:bg-[#182233]' onChange={i} id="image" />
 
                             <label htmlFor="book" className='my-2 cursor-pointer dark:text-slate-50'>Book Link</label>
                             <input type="text" className='input w-full dark:text-slate-50 bg-slate-100 dark:bg-[#182233]' name="link" id="book" placeholder='Input Book Link'/>
