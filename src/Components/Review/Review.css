@@ -1,4 +1,7 @@
-#app { height: 100% }
+#app {
+  height: 100%
+}
+
 html,
 body {
   position: relative;
@@ -23,11 +26,14 @@ body {
 .swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 300px;
 }
 
 /* .swiper-slide img {
   display: block;
   width: 100%;
 } */
+.swiper-backface-hidden .swiper-slide {
+  margin-left: 2rem;
+}
