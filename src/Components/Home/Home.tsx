@@ -4,12 +4,12 @@ import Allacordian from './AccordianSection/Allacordian';
 
 import Benifit from './Benifit/Benifit';
 
-import ContactUs from './ContactUs';
+
 
 import Header from './Header/Header';
 import SignupBanner from './SignupBanner/SignupBanner';
-import laptop from '../../asset/laptop.svg';
-import football from '../../asset/football.svg';
+
+
 import { Link } from 'react-router-dom';
 
 import CourseDetails from './CourseDetails/CourseDetails';
@@ -18,6 +18,7 @@ import Certificate from './certificate/Certificate';
 
 import Gallery from './Gallery/Gallery';
 import AboutDeveloper from './AboutDeveloper/AboutDeveloper';
+import ModuleOverview from './ModuleOverview/ModuleOverview';
 
 const Home = () => {
     return (
@@ -27,6 +28,7 @@ const Home = () => {
                 <Header></Header>
                 <Benifit />
                 <CourseDetails></CourseDetails>
+                <ModuleOverview></ModuleOverview>
                 <Certificate></Certificate>
                 <Gallery />
 
@@ -42,8 +44,8 @@ const Home = () => {
                         </div >
 
                     </div >
-                    <img src={football} className="block absolute right-[-110px] bottom-[-90px]" alt="" />
-                    <img src={laptop} className="hidden lg:block absolute left-[-300px] bottom-[-100px]" alt="" />
+                    {/* <img src={football} className="block absolute right-[-110px] bottom-[-90px]" alt="" />
+                    <img src={laptop} className="hidden lg:block absolute left-[-300px] bottom-[-100px]" alt="" /> */}
                 </div >
             </div >
             <Review />
