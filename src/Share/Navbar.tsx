@@ -68,7 +68,7 @@ const Navbar = () => {
         return ele.read == false
     })
 
-    console.log(newArray)
+    // console.log(newArray)
     const setNoti = (id) => {
         console.log(id)
         fetch(`http://localhost:5000/notice/${id}`, {
