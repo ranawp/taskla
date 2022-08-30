@@ -26,7 +26,7 @@ const WhatWeLearn = () => {
     return (
         <div className="hero min-h-screen bg-slate-50">
             <div className="hero-content flex-col lg:flex-row">
-                <div className='mt-[-30px]'>
+                <div className='lg:mt-[-60px]'>
                     <img className='w-96' src="https://i.ibb.co/hB9qgKk/learn.png" alt="" />
                     <h1 className='text-center text-3xl font-bold text-sky-400 mb-5'>What we can <span className='text-secondary'>learn?</span></h1>
                     <p className='w-96 text-left text-xl text-gray-500'>This course is provide the learning ability for a beginner. This course made for create a web developer. We are start our lesson first HTML. it can start learning beginner to advance. And then we are continue CSS, JS, React JS, Node js and MongoDB.</p>
