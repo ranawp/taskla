@@ -8,30 +8,7 @@ import SingleTasks from './SingleTasks';
 import './MyTask.css';
 import TaskSubmit from './TaskSubmit';
 import Loading from '../../../../Share/Loading';
-
-// interface Task {
-//     _id: string
-//     questionDeliverDate: string
-//     questionDeliverHour: string
-//     taskName: string
-//     taskSerial: string
-//     taskDeadline: string
-//     taskMassage: string
-//     submit?: string
-// }
-
-// interface Mark {
-//     _id: string
-//     mark: string
-//     scriptfeedback: string
-//     email: string
-//     taskDescription: string
-//     taskName: string
-//     deadline: string
-//     taskNo: string
-//     feedbackDate: string
-//     feedbackHour: string
-// }
+import Resubmit from './Resubmit';
 
 const MyTask = () => {
     const [singleTask, setSingleTask] = useState([]);
@@ -42,17 +19,31 @@ const MyTask = () => {
     const [user] = useAuthState(auth)
     const [watchVideo, setWatchVideo] = useState(false)
     const [watchVideo2, setWatchVideo2] = useState(false)
+
     const [loading, isLoading] = useState(false)
+
+    const [taskEvaluate, setTaskEvalute] = useState([]);
+    const [ans, setAnswer] = useState({})
+    const [marks, setMarks] = useState([]);
+
     const email = user?.email;
 
 
 
-    // const pendingTask = singleTask.filter(task => {
-    //     return task.submit !== "submited"
-    // })
+    useEffect(() => {
+        fetch('http://localhost:5000/answers')
+            .then(res => res.json())
+            .then(data => setTaskEvalute(data))
+    }
+        , [])
 
+    //find exact match data from taskEvaluate by submit data
+    const fill = taskEvaluate.find((com) => {
+        return com.taskNo == submit.MilstoneSerialNo
+    })
 
     useEffect(() => {
+
         isLoading(true)
         fetch('https://cryptic-stream-86241.herokuapp.com/alltasks')
             .then(res => res.json())
@@ -63,6 +54,16 @@ const MyTask = () => {
     }, [refresh])
 
 
+    useEffect(() => {
+        fetch(`http://localhost:5000/allMarks`)
+            .then(res => res.json())
+            .then(data => setMarks(data))
+    }, [])
+
+    //find exact match data from taskEvaluate by submit data
+    const feed = marks.find((com) => {
+        return com.taskNo == submit.MilstoneSerialNo
+    })
 
     return (
         <>
@@ -113,7 +114,7 @@ const MyTask = () => {
                         </>
                     }
                     <>
-                        {toogle === false &&
+                        {!fill?.assignmentAnswer ? <>{toogle === false &&
                             <TaskSubmit
                                 setRefresh={setRefresh}
                                 submit={submit}
@@ -121,8 +122,15 @@ const MyTask = () => {
                                 setToogle={setToogle}
                             ></TaskSubmit>
 
-                        }
+                        }</> : <>{toogle === !true &&
+                            <Resubmit
+                                toogle={toogle}
+                                feed={feed}
+                                fill={fill}
+                            ></Resubmit>
+                        }</>}
                     </>
+
 
                 </div>
                 <div className='w-[300px] mb-3 sm:w-4/5 border h-80 overflow-y-auto' >

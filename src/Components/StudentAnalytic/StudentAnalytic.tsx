@@ -28,6 +28,23 @@ interface Mark {
 
 
 const studentAnalytic = () => {
+    const [user] = useAuthState(auth)
+    const email: string | null | undefined = user?.email
+    const [marks, setMarks] = useState<Mark[]>([]);
+    const [loading, isLoading] = useState(false);
+
+    useEffect(() => {
+        isLoading(true)
+        fetch(`https://cryptic-stream-86241.herokuapp.com/allMarks/${email}`)
+            .then(res => res.json())
+            .then(data => {
+                setMarks(data)
+                isLoading(false)
+            })
+    }, [marks])
+
+
+
     const chartData: CardData[] = [
         {
             "month": "Mar",
@@ -67,22 +84,8 @@ const studentAnalytic = () => {
         }
     ]
 
-    const [user] = useAuthState(auth)
-    const email: string | null | undefined = user?.email
 
-    const [marks, setMarks] = useState<Mark[]>([]);
-    const [loading, isLoading] = useState(false);
 
-    useEffect(() => {
-
-        isLoading(true)
-        fetch(`https://cryptic-stream-86241.herokuapp.com/allMarks/${email}`)
-            .then(res => res.json())
-            .then(data => {
-                setMarks(data)
-                isLoading(false)
-            })
-    }, [marks])
 
     return (
         <>

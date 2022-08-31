@@ -7,7 +7,7 @@ const useToken = (user): string[] => {
         const email = user?.user?.email;
         const currentUser = { email: email };
         if (email) {
-            fetch(`https://cryptic-stream-86241.herokuapp.com/user/${email}`, {
+            fetch(`http://localhost:5000/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -17,6 +17,7 @@ const useToken = (user): string[] => {
                 .then(res => res.json())
                 .then(data => {
                     const accessToken = data.token;
+                    // console.log(data)
                     localStorage.setItem('accessToken', accessToken);
                     setToken(accessToken);
                 })

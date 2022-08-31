@@ -13,7 +13,7 @@ const Courses = () => {
         setText('we are working.......')
         toast('Wow! you are enrolled')
 
-        fetch(`https://cryptic-stream-86241.herokuapp.com/user/enroll/${email}`, {
+        fetch(`http://localhost:5000/user/enroll/${email}`, {
             method: 'PUT'
         })
             .then(res => res.json())

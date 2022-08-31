@@ -9,6 +9,7 @@ const BlogDetails = () => {
     const { blogTitle, img, blogDescription, currentDate, blogUser }: any = blogDetail;
     const [loading, isLoading] = useState(false)
     useEffect((): void => {
+
         isLoading(true)
         fetch(` https://cryptic-stream-86241.herokuapp.com/createBlog/${blogId}`)
             .then(res => res.json())
