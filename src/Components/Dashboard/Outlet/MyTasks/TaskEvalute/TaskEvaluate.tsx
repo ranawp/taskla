@@ -9,12 +9,21 @@ const TaskEvaluate = () => {
     const [evaluteModalDetails, setEvaluteModalDetails] = useState<Object | null>(null);
     const [evaluteFeedbackModal, setEvaluteFeedbackModal] = useState<Object | null>(null);
     const [refresh, setRefresh] = useState<Object | null>(null)
+    const [loading, isLoading] = useState(false)
 
 
     useEffect(() => {
-        fetch('https://cryptic-stream-86241.herokuapp.com/answers')
+        isLoading(true)
+
+        fetch('http://localhost:5000/answers')
             .then(res => res.json())
-            .then(data => setTaskEvalute(data))
+            .then(data => {
+                setTaskEvalute(data)
+                isLoading(false)
+            })
+
+
+
     }
         , [refresh])
 
@@ -24,8 +33,8 @@ const TaskEvaluate = () => {
     return (
         <div>
             <h1 className='font-bold text-2xl my-10 text-center'>Student  <span className='text-secondary'>Submitted tasks</span> </h1>
+            {loading == true && <p>loading</p>}
             <table className="table w-full">
-
                 <thead>
                     <tr>
                         <th>Serial</th>
@@ -37,6 +46,7 @@ const TaskEvaluate = () => {
                         <th>Answer Script</th>
                         {/* <th>Mark</th> */}
                         <th>Give Feedback</th>
+                        <th>Submit Status</th>
                         {/* <th>Upadte</th> */}
                     </tr>
                 </thead>

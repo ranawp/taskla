@@ -27,6 +27,17 @@ interface Mark {
 
 
 const studentAnalytic = () => {
+    const [user] = useAuthState(auth)
+    const email: string | null | undefined = user?.email
+    const [marks, setMarks] = useState<Mark[]>([]);
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/allMarks/${email}`)
+            .then(res => res.json())
+            .then(data => setMarks(data))
+    }, [email])
+
+
     const chartData: CardData[] = [
         {
             "month": "Mar",
@@ -66,16 +77,6 @@ const studentAnalytic = () => {
         }
     ]
 
-    const [user] = useAuthState(auth)
-    const email: string | null | undefined = user?.email
-
-    const [marks, setMarks] = useState<Mark[]>([]);
-
-    useEffect(() => {
-        fetch(`https://cryptic-stream-86241.herokuapp.com/allMarks/${email}`)
-            .then(res => res.json())
-            .then(data => setMarks(data))
-    }, [marks])
 
     return (
         <>

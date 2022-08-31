@@ -23,8 +23,8 @@ const Login = () => {
         signInWithEmailAndPassword(data.email, data.password);
         reset();
     };
-
     const [token] = useToken(user)
+
     if (token) {
         navigate('/')
     }

@@ -11,7 +11,7 @@ const ModuleEditModal = ({ editvideoModal, singleTask }) => {
         const Modulevideo7 = e.target.Modulevideo7.value
 
 
-        fetch(`https://cryptic-stream-86241.herokuapp.com/tasks/${taskId}`, {
+        fetch(`http://localhost:5000/tasks/${taskId}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

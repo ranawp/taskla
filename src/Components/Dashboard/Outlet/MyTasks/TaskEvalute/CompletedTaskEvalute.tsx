@@ -8,7 +8,7 @@ const CompletedTaskEvalute = () => {
     const [evaluteModalDetails, setEvaluteModalDetails] = useState<object | any>(null);
 
     useEffect(() => {
-        fetch('https://cryptic-stream-86241.herokuapp.com/answers')
+        fetch('http://localhost:5000/answers')
             .then(res => res.json())
             .then(data => setTaskEvalute(data))
     }

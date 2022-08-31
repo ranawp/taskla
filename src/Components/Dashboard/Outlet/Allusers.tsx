@@ -28,12 +28,17 @@ const Allusers = () => {
         isLoading(true)
         console.log('singaluser')
         const fetchSideeffect = async () => {
-            const res = await axios('https://cryptic-stream-86241.herokuapp.com/user')
+            const res = await axios('http://localhost:5000/user', {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('accessTokenz')}`
+                }
+            })
             setData(res.data)
             isLoading(false)
         }
         fetchSideeffect()
     }, [])
+
 
     return (
         <div>
