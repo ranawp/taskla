@@ -45,7 +45,7 @@ const Navbar = () => {
     //fetching those kind of people who is enrolled
     useEffect(() => {
         const fetchSideeffect = async () => {
-            const res = await axios(`https://cryptic-stream-86241.herokuapp.com/user/${email}`)
+            const res = await axios(`http://localhost:5000/user/${email}`)
             setMatch(res.data)
         }
         fetchSideeffect()
@@ -53,7 +53,7 @@ const Navbar = () => {
 
     // console.log(match)
     useEffect((): void => {
-        fetch(`https://cryptic-stream-86241.herokuapp.com/notice`)
+        fetch(`http://localhost:5000/notice`)
             .then((response) => response.json())
             .then((json) => setNotifications(json));
     }, [])
@@ -63,10 +63,9 @@ const Navbar = () => {
         return ele.read == false
     })
 
-    console.log(newArray)
     const setNoti = (id) => {
         console.log(id)
-        fetch(`https://cryptic-stream-86241.herokuapp.com/notice/${id}`, {
+        fetch(`http://localhost:5000/notice/${id}`, {
             method: 'PUT'
         })
             .then(res => res.json())

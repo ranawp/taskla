@@ -29,17 +29,17 @@ const Allusers = () => {
     useEffect((): void => {
         isLoading(true)
         const fetchSideeffect = async () => {
-            const res = await axios('https://cryptic-stream-86241.herokuapp.com/user')
+            const res = await axios('http://localhost:5000/user', {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('accessTokenz')}`
+                }
+            })
             setData(res.data)
             isLoading(false)
         }
         fetchSideeffect()
     }, [])
 
-    // const pendingTask = singleTask.filter(task => {
-    //     return task.submit !== "submited"
-    // })
-    console.log(query)
 
 
     const students = data.filter(task => {

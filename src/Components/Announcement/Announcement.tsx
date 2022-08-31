@@ -22,6 +22,7 @@ const Announcement = () => {
     const [loading, isLoading] = useState(false)
 
     useEffect(() => {
+
         isLoading(true)
         fetch('https://cryptic-stream-86241.herokuapp.com/announcement')
             .then(res => res.json())
@@ -33,7 +34,7 @@ const Announcement = () => {
     }, [])
 
     const handleAnnounceDetail = (id): void => {
-        fetch(`https://cryptic-stream-86241.herokuapp.com/announcement/${id}`)
+        fetch(`http://localhost:5000/announcement/${id}`)
             .then(res => res.json())
             .then(data => setAnnouncementDetail(data))
 
