@@ -11,7 +11,7 @@ const ModuleEditModal = ({ editvideoModal, singleTask }) => {
         const Modulevideo7 = e.target.Modulevideo7.value
 
 
-        fetch(`http://localhost:5000/tasks/${taskId}`, {
+        fetch(`https://cryptic-stream-86241.herokuapp.com/tasks/${taskId}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -35,9 +35,9 @@ const ModuleEditModal = ({ editvideoModal, singleTask }) => {
         <div>
             <input type="checkbox" id="module-edit" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
-                <div className="modal-box">
+                <div className="modal-box w-80 sm:w-full">
                     <label htmlFor="module-edit" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <h3 className="font-bold text-lg">Please update milestone</h3>
+                    <h3 className="font-bold text-lg text-center">Please update milestone</h3>
 
                     <form onSubmit={handleSubmit} className='mx-auto border-gray border-2 p-3 w-80 sm:w-96 flex justify-center flex-col items-center'>
 

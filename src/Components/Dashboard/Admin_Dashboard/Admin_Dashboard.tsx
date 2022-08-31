@@ -16,17 +16,17 @@ interface Data {
 }
 
 interface Student {
-    _id ?: string
-    email ?: string
-    name ?: string
-    role ?: string
-    student ?: string
-    district ?: string
-    division ?: string
-    street ?: string
-    enroll ?: string
-    phone ?: string
-    image ?: string
+    _id?: string
+    email?: string
+    name?: string
+    role?: string
+    student?: string
+    district?: string
+    division?: string
+    street?: string
+    enroll?: string
+    phone?: string
+    image?: string
 }
 
 const Admin_Dashboard = () => {
@@ -77,13 +77,13 @@ const Admin_Dashboard = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/user')
+        fetch('https://cryptic-stream-86241.herokuapp.com/user')
             .then(res => res.json())
             .then(data => setStudents(data))
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:5000/alltasks')
+        fetch('https://cryptic-stream-86241.herokuapp.com/alltasks')
             .then(res => res.json())
             .then(data => setTask(data))
     }, []);

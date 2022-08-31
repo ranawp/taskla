@@ -9,13 +9,13 @@ const CreateBlog = () => {
     const blogUser: string | null | undefined = user?.displayName;
     const date = new Date();
     const currentDate: string = date.toLocaleDateString();
-    const imageStoragekey : string = '3cf84befed9b9bcd8f1d01c2b4412701';
+    const imageStoragekey: string = '3cf84befed9b9bcd8f1d01c2b4412701';
 
-    const onSubmit = (data) : void => {
+    const onSubmit = (data): void => {
         const image = data.image[0];
         const formData = new FormData();
         formData.append('image', image);
-        const url : string = `https://api.imgbb.com/1/upload?key=${imageStoragekey}`;
+        const url: string = `https://api.imgbb.com/1/upload?key=${imageStoragekey}`;
         fetch(url, {
             method: 'POST',
             body: formData
@@ -33,7 +33,7 @@ const CreateBlog = () => {
                     }
 
                     //send to database 
-                    fetch('http://localhost:5000/createBlog', {
+                    fetch('https://cryptic-stream-86241.herokuapp.com/createBlog', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'
@@ -54,6 +54,7 @@ const CreateBlog = () => {
 
     return (
         <div>
+            <h1 className='my-10 text-primary text-2xl text-center font-bold'>Write <span className='text-secondary'> Blog</span> </h1>
             <div className='bg-base-100 lg:shadow-2xl mx-auto py-4 mt-2 rounded-md px-10 lg:w-9/12 '>
                 <form
                     className=''
@@ -69,7 +70,7 @@ const CreateBlog = () => {
                     <p className='font-bold mt-5'>Blog Description</p><br />
                     <textarea className=" p-2 rounded-lg background-color w-full h-64" placeholder='Share your Blog Description'  {...register("blogDescription")} /> <br />
 
-                    <input type="submit" value='Submit' className='bg-blue-700 border-0 py-2 px-4 button  rounded text-white' />
+                    <input type="submit" value='Submit' className='bg-secondary border-0 py-2 px-4 button  rounded text-white' />
                 </form>
 
 

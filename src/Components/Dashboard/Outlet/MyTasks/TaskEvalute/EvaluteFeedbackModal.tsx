@@ -23,7 +23,7 @@ const EvaluteFeedbackModal = ({ evaluteFeedbackModal, setRefresh }) => {
         const scriptfeedback = e.target.scriptfeedback.value;
         console.log(email, taskDescription, taskName, deadline, taskNo, currentDate, currentHour, mark, scriptfeedback);
 
-        fetch(`http://localhost:5000/studentMarks`, {
+        fetch(`https://cryptic-stream-86241.herokuapp.com/studentMarks`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -41,7 +41,7 @@ const EvaluteFeedbackModal = ({ evaluteFeedbackModal, setRefresh }) => {
                 feedbackHour: feedbackHour
             })
         });
-        fetch(` http://localhost:5000/answers/${taskId}`, {
+        fetch(` https://cryptic-stream-86241.herokuapp.com/answers/${taskId}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -61,10 +61,10 @@ const EvaluteFeedbackModal = ({ evaluteFeedbackModal, setRefresh }) => {
 
 
     return (
-        <div>
+        <div className='mt-[80px]'>
             <input type="checkbox" id="evalute-feedback-details" className="modal-toggle" />
-            <div className="modal modal-bottom sm:modal-middle">
-                <div className="modal-box">
+            <div className="modal modal-bottom sm:modal-middle ">
+                <div className="modal-box mt-[200px]">
                     <label htmlFor="evalute-feedback-details" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <h3 className="font-bold text-lg">Please Give FeedBack of this task</h3>
 
@@ -107,7 +107,7 @@ const EvaluteFeedbackModal = ({ evaluteFeedbackModal, setRefresh }) => {
                             className=" mt-2 p-2 rounded-lg background-color"
                         ></textarea>
                         <br />
-                        <input className=' bg-blue-700 border-0 px-3 py-1 button  rounded text-white' type="submit" value="Submit" />
+                        <input className=' bg-primary border-0 px-3 py-1 button  rounded text-white' type="submit" value="Submit" />
                     </form>
 
                 </div>

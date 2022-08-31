@@ -9,32 +9,32 @@ interface Date {
 const NoticePublish = () => {
 
 
-    const options : Date = { month: 'short', day: 'numeric', year: 'numeric' };
+    const options: Date = { month: 'short', day: 'numeric', year: 'numeric' };
     const dateFunction = new Date().toLocaleDateString("en-UK", options);
 
     // time 
     let time = new Date().toLocaleTimeString();
     const [cTime, setCTime] = useState<String>(time);
-    const updateTime = () : void => {
+    const updateTime = (): void => {
         time = new Date().toLocaleTimeString();
         setCTime(time);
     }
     setInterval(updateTime, 1000);
-    const Mydate : string = dateFunction;
-    const Mytime : String = cTime;
+    const Mydate: string = dateFunction;
+    const Mytime: String = cTime;
 
 
     const dateTime = Mydate + "," + Mytime;
 
     // console.log(dateTime);
 
-    const handleNoticeForm = (event : any) : void => {
+    const handleNoticeForm = (event: any): void => {
         event.preventDefault();
         const notice = event.target.title.value;
         const announcement = event.target.announcement.value;
-        // const read = false;
-        const data = { notice, announcement, time: dateTime }
-        fetch(`http://localhost:5000/notice`, {
+        const read = false;
+        const data = { notice, announcement, time: dateTime, read }
+        fetch(`https://cryptic-stream-86241.herokuapp.com/notice`, {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
@@ -52,20 +52,13 @@ const NoticePublish = () => {
             <h2 className='text-3xl p-6 font-bold  text-center'>Important <span className='text-secondary'>Notice</span></h2>
 
 
-            <div className=" mx-auto  mb-10 grid lg:grid-cols-2 justify-center align-center gap-2 mt-4">
-
-
+            <div className='mb-10 grid lg:grid-cols-2 gap-4'>
                 <div className="p-16">
 
                     <img className="w-96" src="https://i.ibb.co/XJbLX4f/3784896-removebg-preview.png" alt="" />
 
                 </div>
-
-
-                {/* <form onSubmit={handleNoticeForm} action=""> */}
-
-
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mx-16">
+                <div className="sm:ml-10 mt-5 mx-auto w-80 sm:w-96 card bg-base-100 shadow-2xl">
                     <div className="card-body">
                         <form action="" onSubmit={handleNoticeForm}>
                             <div className="form-control">

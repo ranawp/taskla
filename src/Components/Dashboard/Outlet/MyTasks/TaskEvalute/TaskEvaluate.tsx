@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import Loading from '../../../../../Share/Loading'
 import EvaluteDetails from './EvaluteDetails';
 import EvaluteFeedbackModal from './EvaluteFeedbackModal';
 import SingleTaskEvalute from './SingleTaskEvalute';
@@ -9,21 +11,35 @@ const TaskEvaluate = () => {
     const [evaluteModalDetails, setEvaluteModalDetails] = useState<Object | null>(null);
     const [evaluteFeedbackModal, setEvaluteFeedbackModal] = useState<Object | null>(null);
     const [refresh, setRefresh] = useState<Object | null>(null)
-
+    const [loading, isLoading] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/answers')
+
+        isLoading(true)
+        fetch('https://cryptic-stream-86241.herokuapp.com/answers')
             .then(res => res.json())
-            .then(data => setTaskEvalute(data))
+            .then(data => {
+                setTaskEvalute(data)
+                isLoading(false)
+            })
+
     }
         , [refresh])
 
-    const pendingFeedbackTask = taskEvaluate.filter((task) : boolean => {
+    const pendingFeedbackTask = taskEvaluate.filter((task): boolean => {
         return task.feedbackSubmit !== "feedbacksubmited"
     })
     return (
         <div>
-            <h1 className='font-bold text-2xl'>Student Submitted tasks</h1>
+            <h1 className='font-bold text-2xl my-10 text-center'>Student  <span className='text-secondary'>Evalution tasks</span> </h1>
+            {loading && <Loading />}
+            <div className='lg:ml-96 md:ml-60 ml-10'>
+                <button className=" mb-2"> <NavLink className="px-2 py-1 rounded" to="/dashboard/taskEvaluate">Pending Evalute </NavLink> </button>
+                <button className="px-3 py-2 rounded mb-2"> <NavLink className="px-2 py-1 rounded" to="/dashboard/taskEvaluateCompleted">Evalute done</NavLink> </button>
+
+
+            </div>
+
             <table className="table w-full">
 
                 <thead>

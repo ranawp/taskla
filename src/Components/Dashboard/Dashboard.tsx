@@ -49,16 +49,17 @@ const Dashboard = () => {
                 <li className=''><span>AllUsers</span></li>
 
             </NavLink>
-            <NavLink to='createtask' className='flex w-[150px] items-center scroll hover:bg-secondary hover:text-white mt-2 rounded-lg'>
+            {/* <NavLink to='createtask' className='flex w-[150px] items-center scroll hover:bg-secondary hover:text-white mt-2 rounded-lg'>
                 <span className='ml-4'><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
                 </svg></span>
                 <li className=''><span>TaskCreate</span></li>
-            </NavLink>
+            </NavLink> */}
             <NavLink to='moduleUpload' className='flex w-[170px] items-center scroll hover:bg-secondary hover:text-white mt-2 rounded-lg'>
-                <span className='ml-4'><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
-                </svg></span>
+                <span className='ml-4'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
+                </svg>
+                </span>
                 <li className=''><span>Module Upload</span></li> <br />
 
             </NavLink>
@@ -79,12 +80,12 @@ const Dashboard = () => {
                 </svg></span>
                 <li className=''><span>Task Evaluate</span></li>
             </NavLink>
-            <NavLink to='taskEvaluateCompleted' className='flex w-[170px] items-center scroll hover:bg-secondary hover:text-white mt-2 rounded-lg'>
+            {/*       <NavLink to='taskEvaluateCompleted' className='flex w-[170px] items-center scroll hover:bg-secondary hover:text-white mt-2 rounded-lg'>
                 <span className='ml-4'><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                 </svg></span>
                 <li className=''><span>Completed Evaluate</span></li>
-            </NavLink>
+            </NavLink> */}
 
             <NavLink to='createBlog' className='flex w-[150px] items-center scroll hover:bg-secondary hover:text-white mt-2 rounded-lg'>
                 <span className='ml-4'><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -93,13 +94,13 @@ const Dashboard = () => {
                 <li className=''><span>Create Blog</span></li>
             </NavLink>
 
-            <NavLink to='allblogs' className='flex w-[150px] items-center scroll hover:bg-secondary hover:text-white mt-2 rounded-lg'>
+            {/* <NavLink to='allblogs' className='flex w-[150px] items-center scroll hover:bg-secondary hover:text-white mt-2 rounded-lg'>
                 <span className='ml-4'><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
                 </svg></span>
                 <li className=''><span>All Blogs</span></li>
 
-            </NavLink>
+            </NavLink> */}
             <NavLink to='notice' className='flex w-[150px] items-center scroll hover:bg-secondary hover:text-white mt-2 rounded-lg'>
                 <span className='ml-4'><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />

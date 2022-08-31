@@ -10,7 +10,7 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { strict } from 'assert';
 
 const Register = () => {
-    const { register, formState: { errors }, handleSubmit, reset }:any = useForm();
+    const { register, formState: { errors }, handleSubmit, reset }: any = useForm();
     const [updateProfile, updating, updateerror] = useUpdateProfile(auth);
 
     const navigate = useNavigate();
@@ -21,20 +21,20 @@ const Register = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
 
-    const [token ] = useToken(user)
+    const [token] = useToken(user)
 
     if (token) {
         navigate('/');
 
     }
-    const onSubmit = async (data:any) => {
+    const onSubmit = async (data: any) => {
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
         const userData = {
             email: data.email,
             name: data.name
         }
-        fetch('http://localhost:5000/user', {
+        fetch('https://cryptic-stream-86241.herokuapp.com/user', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -48,14 +48,16 @@ const Register = () => {
     // password show/hide 
     const [show, setShow] = useState<string | boolean>(false);
 
-    const btnValue = ():void => {
+    const btnValue = (): void => {
         setShow(click => !click);
     }
     return (
-        <div className='mt-10 lg:flex items-center px-48' >
-
-            <div>
-                <div className='lg:w-80 p-10 mx-auto shadow-lg border'>
+        <div className='mt-32 lg:flex justify-between items-center sm:px-48' >
+            <div className='' >
+                <img src={registerImg} alt="" />
+            </div >
+            <div className='lg:order-first' >
+                <div className='w-80 p-10 mx-auto shadow-lg border'>
                     <h1 className='text-center font-bold text-3xl my-4'>Sign Up</h1>
                     <form className='flex flex-col' onSubmit={handleSubmit(onSubmit)} >
 
@@ -129,9 +131,8 @@ const Register = () => {
                     <p className='my-3 text-dark' > Already Have an Account? <Link to='/login' className='ml-3' > Please Login</Link ></p >
                 </div >
             </div >
-            <div className='text-center flex-1 w-64 ml-10' >
-                <img src={registerImg} alt="" />
-            </div >
+
+
         </div >
     );
 };

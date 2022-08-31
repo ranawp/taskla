@@ -11,7 +11,7 @@ const ModuleUpload = () => {
     const currentHour = date.toLocaleTimeString();
 
     const onSubmit = data => {
-        const url = `http://localhost:5000/tasks`
+        const url = `https://cryptic-stream-86241.herokuapp.com/tasks`
         fetch(url, {
             method: 'POST',
             headers: {
@@ -29,22 +29,22 @@ const ModuleUpload = () => {
 
     return (
         <div>
-            <h2 className='text-lg text-center text-primary font-bold mt-7'>
-                Upload module video
+            <h2 className='text-2xl text-center text-primary font-bold mt-7'>
+                Upload  <span className='text-secondary'>Module Video</span>
             </h2>
-            <div className=' mx-auto  mb-10 grid lg:grid-cols-2 gap-4'>
+            <div className='mb-10 grid lg:grid-cols-2 gap-4'>
 
-                <div className="ml-10 mt-5 w-96 card bg-base-100 shadow-2xl">
+                <div className="sm:ml-10 mt-5 mx-auto w-80 sm:w-96 card bg-base-100 shadow-2xl">
                     <div className="card-body">
                         <form onSubmit={handleSubmit(onSubmit)}>
 
-                            <p className='mt-5'>Milestone Serial:</p>
+                            <p className='mt-5'>Milestone Serial:</p> <small>Ex:Milestone 01</small>
                             <input class="input input-bordered w-full max-w-xs" placeholder='Write milestone serial'  {...register("MilstoneSerialNo", { required: true })} /> <br />
 
-                            <p>Milstone Name:  <br /></p>
+                            <p>Milstone Name: <br /> <small>Ex: Personal portfolio </small> <br /></p>
                             <input class="input input-bordered w-full max-w-xs" placeholder='Write milestone Name'  {...register("MilstoneName", { required: true })} /> <br />
 
-                            <p>Module Text introduction:  <br /></p>
+                            <p>Module Text introduction: <br /><small>Write here introduction</small>  <br /></p>
                             <textarea name="" id="" cols="35" rows="7" placeholder='Write student task'
                                 className=" mt-2 p-2 rounded-lg background-color"
                                 {...register("moduleIntroduction", {
@@ -56,18 +56,18 @@ const ModuleUpload = () => {
 
 
 
-                            <p>Module Name and serial:  <br /></p>
+                            <p>Module Name and serial: <br /><small>Ex: Module 1-1: HTMl tag</small>  <br /></p>
                             <input class="input input-bordered w-full max-w-xs" placeholder='Write module Name'  {...register("ModuleNameserial1", { required: true })} /> <br />
 
-                            <p>Module video 1:  <br /></p>
-                            <input class="input input-bordered w-full max-w-xs" placeholder='Write video link'  {...register("Modulevideo1", { required: true })} /> <br />
+                            <p>Module video 1: <br /> <small>Ex: https://www.youtube.com/embed/iHUfq-t3zkE</small>  <br /></p>
+                            <input class="input input-bordered w-full max-w-xs" placeholder='Write youtube video embeded link'  {...register("Modulevideo1", { required: true })} /> <br />
 
                             {/* second module name and video */}
 
-                            <p>Module Name and serial 2:  <br /></p>
+                            <p>Module Name and serial 2: <br /><small>Ex: Module 1-2: Html History</small>  <br /></p>
                             <input class="input input-bordered w-full max-w-xs" placeholder='Write module Name'  {...register("ModuleNameserial2", { required: true })} /> <br />
 
-                            <p>Module video 2:  <br /></p>
+                            <p>Module video 2: <br /><small>Ex: https://www.youtube.com/embed/iHUfq-t3zkE</small>  <br /></p>
                             <input class="input input-bordered w-full max-w-xs" placeholder='Write video link'  {...register("Modulevideo2", { required: true })} /> <br />
 
                             {/* third module name and video */}
@@ -157,8 +157,8 @@ const ModuleUpload = () => {
                                 })}
                             ></textarea> <br />
 
-                            <p>Will you lock this milestone? write: lock<br /></p>
-                            <input class="input input-bordered w-full max-w-xs" placeholder='Write lock'  {...register("submit", { required: true })} /> <br />
+                            <p>Will you lock this milestone? write: lock<br /> <small>Note:only first Milstone video write unlock and other milestone need to write lock</small> </p>
+                            <input class="input input-bordered w-full max-w-xs" placeholder=' lock'  {...register("submit", { required: true })} /> <br />
 
 
                             <input type="submit" value='Submit' className='mt-4 text-white btn-secondary px-4 py-1   max-w-xs' />
@@ -169,7 +169,6 @@ const ModuleUpload = () => {
 
                 <div className='mt-36'>
                     <img className='w-96' src="https://i.ibb.co/XJbLX4f/3784896-removebg-preview.png" alt="" />
-
                 </div>
             </div>
 
@@ -199,7 +198,7 @@ export default ModuleUpload;
 //                 }
 
 //                 //send to database
-//                 fetch('http://localhost:5000/tasks', {
+//                 fetch('https://cryptic-stream-86241.herokuapp.com/tasks', {
 //                     method: 'POST',
 //                     headers: {
 //                         'content-type': 'application/json'

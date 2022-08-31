@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import DoneSignleEvaluate from './DoneSignleEvaluate';
 import EvaluteDetails from './EvaluteDetails';
 
@@ -14,13 +15,17 @@ const CompletedTaskEvalute = () => {
     }
         , [])
 
-    const doneFeedbackTask : Object[] = taskEvaluate.filter((task : Object | any) => {
+    const doneFeedbackTask: Object[] = taskEvaluate.filter((task: Object | any) => {
         return task.feedbackSubmit == "feedbacksubmited"
     })
 
     return (
         <div>
-            <h1 className='text-center text-2xl'> Evaluted done task</h1>
+            <h1 className='text-center text-2xl my-10'> Evaluted <span className='text-secondary'>done task</span> </h1>
+            <div className='lg:ml-96 md:ml-60 ml-10'>
+                <button className=" mb-2"> <NavLink className="px-2 py-1 rounded" to="/dashboard/taskEvaluate">Pending Evalute </NavLink> </button>
+                <button className="px-3 py-2 rounded mb-2"> <NavLink className="px-2 py-1 rounded" to="/dashboard/taskEvaluateCompleted">Evalute done</NavLink> </button>
+            </div>
             <table className="table w-full">
                 <thead>
                     <tr>
@@ -40,7 +45,7 @@ const CompletedTaskEvalute = () => {
                             key={taskEvalute._id}
                             taskEvalute={taskEvalute}
                             index={index}
-                            // setEvaluteModalDetails={setEvaluteModalDetails}
+                        // setEvaluteModalDetails={setEvaluteModalDetails}
 
 
                         ></DoneSignleEvaluate>)

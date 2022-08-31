@@ -10,17 +10,16 @@ import { useState } from 'react';
 
 const Login = () => {
     const navigate = useNavigate()
-    const { register, formState: { errors }, handleSubmit, reset }: any = useForm();
+    const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [
         signInWithEmailAndPassword,
         user,
         loading,
         error,
-    ]: any = useSignInWithEmailAndPassword(auth);
-
+    ] = useSignInWithEmailAndPassword(auth);
 
     const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
-    const onSubmit = (data: any): void => {
+    const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password);
         reset();
     };
@@ -53,16 +52,16 @@ const Login = () => {
         }
     }, [user, navigate]);
 
-    // password show/hide 
-    const [state, setState] = useState<boolean>(false);
+    // password show/hide
+    const [state, setState] = useState(false);
 
-    const btnValue = (): void => {
+    const btnValue = () => {
         setState(click => !click);
     }
     return (
-        <div className='sm:px-48 mt-10 register-page sm:flex items-center ' >
-            <div className='text-center p-10 mx-auto md:w-80' >
-                <img src={registerImg} className='w-80' alt="" />
+        <div className='sm:px-48 mt-32 register-page lg:flex justify-between items-center ' >
+            <div className='' >
+                <img src={registerImg} alt="" />
             </div >
             <div>
                 <div className='w-80 p-10 mx-auto shadow-lg border'>
