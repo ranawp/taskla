@@ -3,26 +3,7 @@ import React, { useState } from 'react';
 const BookPublish = () => {
     const imageStoragekey = 'b2898afe89c6cab65b047e7f8e7453c1';
     const [imgData, setImgdata] = useState();
-    // console.log(imgData)
 
-    // const handleFile = e=> {
-
-    //     const file = e.target.files[0]
-
-    //     const formData = new FormData();
-    //     formData.append('imgData', file)
-    //     const url = `https://api.imgbb.com/1/upload?key=${imageStoragekey}`
-    //     fetch(url, {
-    //         method: 'POST',
-    //         body: formData
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-
-    //             setImgdata(data.data.url)
-    //         })
-
-    // }
     const handleFile = e => {
         const image = e.target.files[0];
         const url = `https://api.imgbb.com/1/upload?key=${imageStoragekey}`;
@@ -47,16 +28,17 @@ const BookPublish = () => {
         const author = event.target.author.value;
         const description = event.target.description.value;
         const link = event.target.link.value;
-        const data = { name, author, description, link }
-        console.log(data)
 
-        fetch('http://localhost:5000/booksUpload', {
+        fetch('https://cryptic-stream-86241.herokuapp.com/booksUpload', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
             },
             body: JSON.stringify({
-                data: data,
+                name: name,
+                author: author,
+                description: description,
+                link: link,
                 img: imgData
             })
         })
