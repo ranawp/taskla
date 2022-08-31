@@ -70,7 +70,7 @@ const Resubmit = ({ fill, feed, toogle }) => {
 
             </div>
 
-            <div className='flex justify-evenly'>
+            <div className='flex justify-evenly mt-2'>
                 <button onClick={() => setToggle('MySubmission')} className='rounded bg-primary text-white p-1 sm:p-3'>My Submission</button>
                 {feed?.scriptfeedback && <> <button onClick={() => setToggle('MyFeedBack')} className='rounded bg-primary text-white px-2 py-1 '>FeedBack</button>
                     <button onClick={() => setToggle('Recheck')} className='rounded bg-primary text-white p-1 sm:p-3'>Recheck</button></>}
