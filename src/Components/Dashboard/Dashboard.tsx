@@ -47,12 +47,12 @@ const Dashboard = () => {
                 <li className=''><span>AllUsers</span></li>
 
             </NavLink>
-            <NavLink to='createtask' className='flex w-[150px] items-center scroll hover:bg-secondary hover:text-white mt-2 rounded-lg'>
+            {/* <NavLink to='createtask' className='flex w-[150px] items-center scroll hover:bg-secondary hover:text-white mt-2 rounded-lg'>
                 <span className='ml-4'><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
                 </svg></span>
                 <li className=''><span>TaskCreate</span></li>
-            </NavLink>
+            </NavLink> */}
             <NavLink to='moduleUpload' className='flex w-[170px] items-center scroll hover:bg-secondary hover:text-white mt-2 rounded-lg'>
                 <span className='ml-4'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
