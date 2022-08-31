@@ -3,9 +3,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 import './Dashboard.css'
 
 const Dashboard = () => {
-
     const [arrow, setArrow] = useState(false)
-    console.log(arrow)
     //toggle and windowInnerwidth start
     const [width, setWidth] = useState(false)
     const [windowSize, setWindowSize] = useState(getWindowSize());
