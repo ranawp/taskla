@@ -75,7 +75,7 @@ const MyTask = () => {
 
 
 
-                <div className=" overflow-y-auto border  pt-3 pl-2 text-base">
+                <div className=" overflow-y-auto border  pt-3 pl-2 text-base h-80">
 
                     {toogle === true &&
                         <>
