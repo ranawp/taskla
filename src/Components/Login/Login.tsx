@@ -10,7 +10,6 @@ import { useNavigate, Link } from "react-router-dom";
 import useToken from "../../hooks/useToken";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { useState } from "react";
-import { toast, ToastContainer } from "react-toastify";
 
 const Login = () => {
   const navigate = useNavigate();
