@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import './TaskCreate.css';
 import taskSvg from '../../../../imgages/taskCreate.svg'
-import { toast } from 'react-toastify';
+import swal from 'sweetalert';
 
 const TaskCreate = () => {
 
@@ -24,7 +24,7 @@ const TaskCreate = () => {
             .then(res => res.json())
             .then(result => {
                 if (result) {
-                    toast.success('Task Added')
+                    swal("Good job!", "Task Added", "success");
                 }
             })
         reset()

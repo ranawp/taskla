@@ -3,6 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import ReactStars from "react-rating-stars-component";
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
+import swal from 'sweetalert';
 
 const AddReview = () => {
 
@@ -25,8 +26,6 @@ const AddReview = () => {
     };
 
 
-
-
     const handleAddReview = (event: any): void => {
         event.preventDefault();
         const name = event.target.name.value;
@@ -45,7 +44,7 @@ const AddReview = () => {
             .then(res => res.json())
             .then(data => {
                 if (data) {
-                    toast.success("Successfully Feedback Added!!")
+                    swal("Good job!", "Successfully Review added", "success");
                 }
             })
         event.target.reset();
@@ -89,7 +88,6 @@ const AddReview = () => {
                                     <button className="btn btn-secondary mt-1">Submit</button>
                                 </div>
                             </form>
-
                         </div>
                     </div>
                 </div>

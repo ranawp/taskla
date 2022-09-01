@@ -1,5 +1,6 @@
 import React from 'react';
 import { toast } from 'react-toastify';
+import swal from 'sweetalert';
 
 const AllBlog = ({ allBlog, setNewBlogs, newBlogs, setEditModal }) => {
     const { blogTitle, img, blogDescription, blogUser, currentDate, _id } = allBlog;
@@ -14,7 +15,7 @@ const AllBlog = ({ allBlog, setNewBlogs, newBlogs, setEditModal }) => {
                 if (data.acknowledged === true) {
                     const remaining = newBlogs?.filter(item => item._id !== id);
                     setNewBlogs(remaining);
-                    toast.error("Deleted");
+                    swal("Deleted!", "warning");
                 }
 
             })

@@ -2,6 +2,7 @@ import React, { ChangeEvent, FormEvent, HTMLInputTypeAttribute, useState } from 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
+import swal from 'sweetalert';
 
 
 const EditProfile = ({ data, setReset }) => {
@@ -64,7 +65,7 @@ const EditProfile = ({ data, setReset }) => {
         }).then(res => res.json())
             .then(data => {
                 if (data) {
-                    toast.success('Profile Updated')
+                    swal("Successfully", "Profile Updated", "success");
                 }
             })
         e.target.reset()

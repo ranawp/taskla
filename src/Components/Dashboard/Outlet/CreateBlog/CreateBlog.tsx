@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import auth from '../../../../firebase.init';
+import swal from 'sweetalert';
 
 const CreateBlog = () => {
     const { register, handleSubmit, reset } = useForm();
@@ -43,6 +44,7 @@ const CreateBlog = () => {
                         .then(res => res.json())
                         .then(result => {
                             console.log('products', result)
+                            swal("WOW!", "Blog Published", "success");
                         })
                 }
 

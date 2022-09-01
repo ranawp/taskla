@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { toast } from 'react-toastify';
+import swal from 'sweetalert';
 
 
 const ModuleUpload = () => {
@@ -23,7 +23,7 @@ const ModuleUpload = () => {
             .then(res => res.json())
             .then(result => {
                 if (result) {
-                    toast.success('Module Uploaded')
+                    swal("WOW!", "Module Uploaded", "success");
                 }
                 console.log(result)
             })

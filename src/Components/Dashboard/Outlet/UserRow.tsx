@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
-import { toast } from 'react-toastify';
 // import userDetails from '../../../asset/userDetails.jpg'
 import Loading from '../../../Share/Loading';
 import UserDetails from './UserDetails';
+import swal from 'sweetalert';
 
 
 const UserRow = ({ user: users, index, setSingelUser }) => {
@@ -20,7 +20,7 @@ const UserRow = ({ user: users, index, setSingelUser }) => {
             .then(res => res.json())
             .then(data => {
                 if (data) {
-                    toast.success('Admin Selected')
+                    swal("Wow!", "Admin Selected", "success");
                 }
             })
     }
@@ -33,7 +33,7 @@ const UserRow = ({ user: users, index, setSingelUser }) => {
 
                 data
 
-                toast('Enrolled successfully')
+                swal("Congratulation", "Enrolled successfully", "success");
 
             })
 

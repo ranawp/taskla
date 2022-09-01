@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { toast } from 'react-toastify';
+import swal from 'sweetalert';
 
 interface Date {
     month: string
@@ -10,7 +10,7 @@ interface Date {
 const NoticePublish = () => {
 
 
-    const options: Date = { month: 'short', day: 'numeric', year: 'numeric' };
+    const options: Date | any = { month: 'short', day: 'numeric', year: 'numeric' };
     const dateFunction = new Date().toLocaleDateString("en-UK", options);
 
     // time 
@@ -45,7 +45,7 @@ const NoticePublish = () => {
             .then((response) => response.json())
             .then((json) => {
                 if (json) {
-                    toast.success("Notice Published")
+                    swal("Notice Published",  "success");
                 }
             });
 
