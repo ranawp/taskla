@@ -1,12 +1,16 @@
 import React, { useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import auth from "../../firebase.init";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useSignInWithEmailAndPassword,
+  useSendPasswordResetEmail,
+} from "react-firebase-hooks/auth";
 // import registerImg from "../../imgages/register.png";
 import { useNavigate, Link } from "react-router-dom";
 import useToken from "../../hooks/useToken";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -16,9 +20,11 @@ const Login = () => {
     formState: { errors },
     handleSubmit,
     reset,
+    watch,
   } = useForm();
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+  const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
   const onSubmit = (data: any) => {
     signInWithEmailAndPassword(data?.email, data.password);
     reset();
@@ -45,6 +51,12 @@ const Login = () => {
 
   const btnValue = () => {
     setState((click) => !click);
+  };
+
+  const restPasswordEmail = watch("email");
+  const handelResetPassword = async () => {
+    await sendPasswordResetEmail(restPasswordEmail);
+    alert("Please Check Your Email");
   };
   return (
     <div className="sm:px-48 mt-32 register-page lg:flex justify-between items-center ">
@@ -107,7 +119,10 @@ const Login = () => {
             New to Taskla ?? <Link to="/register">Please Register</Link>
           </p>
           <p className="my-3 text-dark text-xs">
-            Forget Password?? <span className="link">Reset Password</span>
+            Forget Password??{" "}
+            <span className="link" onClick={handelResetPassword}>
+              Reset Password
+            </span>
           </p>
         </div>
       </div>
