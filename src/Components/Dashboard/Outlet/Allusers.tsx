@@ -33,6 +33,7 @@ const Allusers = () => {
                     authorization: `Bearer ${localStorage.getItem('accessTokenz')}`
                 }
             })
+
             setData(res.data)
             isLoading(false)
         }
@@ -42,34 +43,33 @@ const Allusers = () => {
 
     return (
         <div>
-            <h2 className='text-2xl text-center font-bold my-5'>All <span className='text-secondary'> users</span> </h2>
-            {loading && <Loading></Loading>}
-            <div className="overflow-x-auto" >
-                <table className="table w-full" >
-                    <thead>
-                        <tr>
-                            <th>No.</th>
-                            <th>Email</th>
-                            <th>select admin</th>
-                            <th>Enroll Status</th>
-                            <th>User Details</th>
-                            <th></th>
-                        </tr>
+            <h2 className='text-lg text-center font-bold my-5 dark:text-slate-50'>All users</h2>
 
-                    </thead>
-                    <tbody>
+            <div className="overflow-x-auto text-primary dark:text-slate-50" >
+                <table className="table w-full border dark:border-[#293241]" >
 
-                        {
+                    <tr className='bg-gray-200  dark:bg-[#182233]'>
+                        <th>No.</th>
+                        <th>Email</th>
+                        <th>select admin</th>
+                        <th>Enroll Status</th>
+                        <th>User Details</th>
+                    </tr>
 
-                            data.map((user, index) => <UserRow
-                                key={user._id}
-                                user={user}
-                                index={index}
-                                setSingelUser={setSingelUser}
-                            ></UserRow>)
-                        }
-                        {singelUser && <UserDetails singelUser={singelUser}></UserDetails>}
-                    </tbody>
+
+
+
+                    {
+
+                        data.map((user, index) => <UserRow
+                            key={user._id}
+                            user={user}
+                            index={index}
+                            setSingelUser={setSingelUser}
+                        ></UserRow>)
+                    }
+                    {singelUser && <UserDetails singelUser={singelUser}></UserDetails>}
+
                 </table >
             </div >
         </div >

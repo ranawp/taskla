@@ -55,20 +55,20 @@ const CreateBlog = () => {
     return (
         <div>
             <h1 className='my-10 text-primary text-2xl text-center font-bold'>Write <span className='text-secondary'> Blog</span> </h1>
-            <div className='bg-base-100 lg:shadow-2xl mx-auto py-4 mt-2 rounded-md px-10 lg:w-9/12 '>
+            <div className='bg-white dark:bg-[#182233] lg:shadow-2xl mx-auto py-4 mt-2 rounded-md px-10 lg:w-9/12'>
                 <form
                     className=''
                     onSubmit={handleSubmit(onSubmit)}>
 
 
-                    <p className=' font-bold'>Blog Title</p><br />
-                    <input className=" p-2 rounded-lg background-color w-full" placeholder='Write Blog Title'  {...register("blogTitle", { required: true })} /> <br />
+                    <p className=' font-bold dark:text-slate-50'>Blog Title</p><br />
+                    <input className=" p-2 rounded-lg w-full dark:text-slate-50 border dark:border-[#293343] bg-white dark:bg-[#182233]" placeholder='Write Blog Title'  {...register("blogTitle", { required: true, maxLength: 20 })} /> <br />
 
-                    <p className='mt-3 font-bold'>Image</p> <br />
-                    <input className="p-2 rounded-lg background-color w-full" placeholder='Quantity' type="file" {...register("image")} /> <br />
+                    <p className='mt-3 font-bold dark:text-slate-50'>Image</p> <br />
+                    <input className="p-2 rounded-lg background-color w-full dark:text-slate-50 border dark:border-[#293343] bg-white dark:bg-[#182233]" placeholder='Quantity' type="file" {...register("image")} /> <br />
 
-                    <p className='font-bold mt-5'>Blog Description</p><br />
-                    <textarea className=" p-2 rounded-lg background-color w-full h-64" placeholder='Share your Blog Description'  {...register("blogDescription")} /> <br />
+                    <p className='font-bold mt-5 dark:text-slate-50'>Blog Description</p><br />
+                    <textarea className=" p-2 rounded-lg background-color w-full h-64 dark:text-slate-50 border dark:border-[#293343] bg-white dark:bg-[#182233]" placeholder='Share your Blog Description'  {...register("blogDescription")} /> <br />
 
                     <input type="submit" value='Submit' className='bg-secondary border-0 py-2 px-4 button  rounded text-white' />
                 </form>

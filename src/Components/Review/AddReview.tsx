@@ -49,30 +49,30 @@ const AddReview = () => {
 
     return (
         <div>
-            <div className="hero h-[700px] bg-base-200" style={{ backgroundImage: `url(https://alphagypsumboard.com/wp-content/uploads/2019/07/Background-website-01.jpg)` }}>
+            <div className="hero h-[700px]" style={{ backgroundImage: `url(https://alphagypsumboard.com/wp-content/uploads/2019/07/Background-website-01.jpg)` }}>
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
                         <h1 className="text-3xl font-bold">Give Feedback</h1>
                         <p className="py-6">You give a important review, that's helps to grow us?</p>
                     </div>
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl text-primary dark:text-slate-50 bg-white dark:bg-[#182233]">
                         <div className="card-body">
                             <form action="" onSubmit={handleAddReview}>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Your Name</span>
                                     </label>
-                                    <input type="text" placeholder="Name" name='name' className="input input-bordered" />
+                                    <input type="text" placeholder="Name" name='name' className="input input-bordered bg-white dark:bg-[#1E293B] text-primary dark:text-slate-50" />
 
                                     <label className="label">
                                         <span className="label-text">Your Course</span>
                                     </label>
-                                    <input type="text" placeholder="Course" name='course' className="input input-bordered" />
+                                    <input type="text" placeholder="Course" name='course' className="input input-bordered bg-white dark:bg-[#1E293B] text-primary dark:text-slate-50" />
 
                                     <label className="label">
                                         <span className="label-text">Your Opinion</span>
                                     </label>
-                                    <textarea className="textarea textarea-bordered" placeholder="Message" name='message'></textarea>
+                                    <textarea className="textarea textarea-bordered bg-white dark:bg-[#1E293B] text-primary dark:text-slate-50" placeholder="Message" name='message'></textarea>
                                     <label className="label">
                                         <span className="label-text">Your Rating</span>
                                     </label>

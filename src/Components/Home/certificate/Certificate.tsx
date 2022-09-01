@@ -15,7 +15,7 @@ const Certificate = () => {
                 <FaGraduationCap />
             </div>
             <div className='container mx-auto pt-12'>
-                <h1 className=" text-3xl text-center text-primary font-bold">We will get <span className='text-secondary'>End of Course</span></h1>
+                <h1 className=" text-3xl text-center text-primary dark:text-slate-50 font-bold">We will get <span className='text-secondary'>End of Course</span></h1>
 
 
                 <div className="grid justify-center gap-6">

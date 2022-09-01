@@ -1,25 +1,18 @@
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
+  darkMode: 'class',
   theme: {
-    extend: {},
-  },
-  //.....................................................
-  daisyui: {
-    themes: [
-      {
-        light: {
-          primary: "#1E266D",
-          secondary: "#C11A7E",
-          accent: "#37cdbe",
-          neutral: "#3d4451",
-          "base-100": "#ffffff",
-        },
-      },
-      "cupcake",
-    ],
-    //....................................................
+    extend: {
+      colors:{
+        primary: "#1E266D",
+        secondary: "#C11A7E",
+      }
+    },
   },
   plugins: [require("daisyui")],
 }
+
+
+// dark color code 
+// card color: #182233
+// border color: #293241

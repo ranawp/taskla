@@ -7,9 +7,9 @@ const SignleEditTask = ({ taskEvalute, index, seteditvideoModal }) => {
 
     return (
         <>
-            <tr>
+            <tr className='border dark:border-[#293241] dark:bg-transparent'>
                 {/* <td>{taskNo}</td> */}
-                <td>{MilstoneName}</td>
+                <td className='p-3'>{MilstoneName}</td>
 
                 <td><label htmlFor="module-edit"
                     onClick={() => seteditvideoModal(taskEvalute)}

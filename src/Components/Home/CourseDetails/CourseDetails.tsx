@@ -10,13 +10,13 @@ const CourseDetails = () => {
             {/* <div className='w-[50px] h-[50px] opacity-20 blur rounded-full bg-purple-500 absolute top-[90px]'></div> */}
 
             <div className='max-w-screen-xl mx-auto'>
-                <h1 className="text-[32px] text-center text-primary font-bold">Everything in this<span className='text-secondary'> Course</span></h1>
-                <div className='card   border-2 shadow-inner mt-6   grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  justify-center p-6'>
+                <h1 className="text-[32px] text-center text-primary dark:text-slate-50 font-bold">Everything in this<span className='text-secondary'> Course</span></h1>
+                <div className='card dark:border-[#2A3343]  border-2 shadow-inner mt-6   grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  justify-center p- dark:text-slate-200'>
 
 
-                    <div className="lg:max-w-lg bg-base-100  items-center text-center grid justify-center card-style  lg:border-r-2 lg:border-b-2 sm:border-b-4">
+                    <div className="lg:max-w-lg bg-white  items-center text-center grid justify-center card-style dark:border-[#2A3343]  lg:border-r-2 lg:border-b-2 sm:border-b-4 dark:bg-[#182233] ">
                         <div className="animation">
-                            <div className='grid justify-center hover:text-[#C11A7E] text-blue-400'>
+                            <div className='grid justify-center hover:text-[#C11A7E] text-blue-400 '>
                                 <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 16 16" className="text-colorful" height="48" width="48" xmlns="http://www.w3.org/2000/svg"><path d="M14.25 4.74L11 6.62V4.5l-.5-.5h-9l-.5.5v7l.5.5h9l.5-.5v-2l3.25 1.87.75-.47V5.18l-.75-.44zM10 11H2V5h8v6zm4-1l-3-1.7v-.52L14 6v4z"></path></svg>
 
 
@@ -33,7 +33,7 @@ const CourseDetails = () => {
 
 
 
-                    <div className="lg:max-w-lg bg-base-100  items-center text-center grid justify-center card-style  lg:border-r-2 lg:border-b-2 sm:border-b-4">
+                    <div className="lg:max-w-lg bg-white  items-center text-center grid justify-center card-style dark:border-[#2A3343]  lg:border-r-2 lg:border-b-2 sm:border-b-4 dark:bg-[#182233] ">
                         <div className="animation">
                             <div className='grid justify-center hover:text-[#C11A7E] text-red-500'>
                                 <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 16 16" className="text-colorful" height="48" width="48" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M4 15v-1c2 0 2-.6 2-1H1.5l-.5-.5v-10l.5-.5h13l.5.5v9.24l-1-1V3H2v9h5.73l-.5.5 2.5 2.5H4zm7.86 0l2.5-2.5-.71-.7L12 13.45V7h-1v6.44l-1.64-1.65-.71.71 2.5 2.5h.71z"></path></svg>
@@ -53,7 +53,7 @@ const CourseDetails = () => {
 
 
 
-                    <div className="lg:max-w-lg bg-base-100 items-center text-center grid justify-center card-style  lg:border-b-2">
+                    <div className="lg:max-w-lg bg-white items-center text-center grid justify-center card-style dark:border-[#2A3343]  lg:border-b-2 dark:bg-[#182233] ">
                         <div className="animation">
                             <div className='grid justify-center hover:text-[#C11A7E] text-green-600 text-colorful'>
                                 <svg stroke="currentColor" className='grid text-center' fill="currentColor" strokeWidth="0" viewBox="0 0 16 16" height="48" width="48" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M3.57 6.699l5.693-4.936L8.585 1 3.273 5.596l-1.51-1.832L1 4.442l1.85 2.214.72.043zM15 5H6.824l2.307-2H15v2zM6 7h9v2H6V7zm9 4H6v2h9v-2z"></path></svg>
@@ -76,7 +76,7 @@ const CourseDetails = () => {
 
 
 
-                    <div className="lg:max-w-lg bg-base-100 items-center text-center grid justify-center card-style lg:border-r-2 ">
+                    <div className="lg:max-w-lg bg-white items-center text-center grid justify-center card-style dark:border-[#2A3343] lg:border-r-2 dark:bg-[#182233] ">
                         <div className="animation">
                             <div className='grid justify-center text-orange-500'>
                                 <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 16 16" className="text-colorful" height="48" width="48" xmlns="http://www.w3.org/2000/svg"><path d="M4.708 5.578L2.061 8.224l2.647 2.646-.708.708-3-3V7.87l3-3 .708.708zm7-.708L11 5.578l2.647 2.646L11 10.87l.708.708 3-3V7.87l-3-3zM4.908 13l.894.448 5-10L9.908 3l-5 10z"></path></svg>
@@ -98,7 +98,7 @@ const CourseDetails = () => {
 
 
 
-                    <div className="lg:max-w-lg bg-base-100 items-center text-center grid justify-center card-style lg:border-r-2  ">
+                    <div className="lg:max-w-lg bg-white items-center text-center grid justify-center card-style dark:border-[#2A3343] lg:border-r-2  dark:bg-[#182233] ">
 
                         <div className="animation">
                             <div className='grid justify-center text-purple-600'>
@@ -117,7 +117,7 @@ const CourseDetails = () => {
                     </div>
 
 
-                    <div className="lg:max-w-lg bg-base-100 items-center text-center grid justify-center card-style">
+                    <div className="lg:max-w-lg bg-white items-center text-center grid justify-center card-style dark:bg-[#182233] ">
 
                         <div className="animation ">
                             <div className='grid justify-center text-pink-700 font-bold text-5xl'>

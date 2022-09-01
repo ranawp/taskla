@@ -28,10 +28,10 @@ const TaskCreate = () => {
     };
     return (
         <div>
-            <h2 className='text-2xl text-center font-bold mt-14 text-primary'>Give task to  <span className='text-secondary'>Students</span> </h2>
-            <div className='mb-10 grid lg:grid-cols-2 gap-4'>
+            <h2 className='text-lg text-center font-bold dark:text-slate-50'>Give task to Students</h2>
+            <div className=' mx-auto  mb-10 grid lg:grid-cols-2 gap-4'>
 
-                <div className="sm:ml-10 mt-5 mx-auto w-80 sm:w-96 card bg-base-100 shadow-2xl">
+                <div className="ml-10 mt-5 w-96 card dark:text-slate-50 bg-white dark:bg-[#182233] shadow-2xl ">
                     <div className="card-body">
                         <form className=' ' onSubmit={handleSubmit(onSubmit)}>
 
@@ -40,7 +40,7 @@ const TaskCreate = () => {
                                 <div>
                                     <p className='mt-2'>Task Created Date</p>
                                     <input readOnly value={currentDate}
-                                        className=" mt-2 p-2 rounded-lg background-color" size='15'
+                                        className=" mt-2 p-2 rounded-lg border dark:bg-[#182233]" size="15"
                                         {...register("questionDeliverDate", {
                                             required: {
                                                 value: true,
@@ -52,7 +52,7 @@ const TaskCreate = () => {
                                 <div>
                                     <p className='mt-2'>Task Created Hour</p>
                                     <input readOnly value={currentHour}
-                                        className=" mt-2 p-2 rounded-lg background-color" size='15'
+                                        className=" mt-2 p-2 rounded-lg border dark:bg-[#182233]" size="15"
                                         {...register("questionDeliverHour", {
                                             required: {
                                                 value: true,
@@ -67,9 +67,8 @@ const TaskCreate = () => {
                                 <div>
                                     <p className='mt-5'>Task Serial:</p>
                                     <input placeholder='Please provide task Serial'
-
-                                        className="mt-2 p-2 rounded-lg background-color" size="15"
-                                        {...register("taskNo", {
+                                        className="mt-2 p-2 rounded-lg border dark:bg-[#182233]" size="15"
+                                        {...register("taskSerial", {
                                             required: {
                                                 value: true,
                                                 message: "Task serial"
@@ -85,7 +84,7 @@ const TaskCreate = () => {
                                 <div>
                                     <p className=''>Task submission Deadline:</p>
                                     <input placeholder='Please provide task deadline'
-                                        className="mt-2 p-2 rounded-lg background-color" size="15"
+                                        className="mt-2 p-2 rounded-lg border dark:bg-[#182233]" size="15"
                                         {...register("taskDeadline", {
                                             required: {
                                                 value: true,
@@ -103,7 +102,7 @@ const TaskCreate = () => {
 
                             <p className='mt-3 mb-2'>Task Name:</p>
                             <input placeholder='Input task name'
-                                className=" p-2 rounded-lg background-color" size="30"
+                                className=" p-2 rounded-lg border dark:bg-[#182233]" size="30"
                                 {...register("taskName", {
                                     required: {
                                         value: true,
@@ -116,7 +115,7 @@ const TaskCreate = () => {
                             </label>
                             <p className=''>Task Description:</p>
                             <textarea name="" id="" cols="35" rows="7" placeholder='Write student task'
-                                className=" mt-2 p-2 rounded-lg background-color"
+                                className=" mt-2 p-2 rounded-lg border dark:bg-[#182233]"
                                 {...register("taskMassage", {
                                     required: {
                                         value: true,
@@ -127,7 +126,7 @@ const TaskCreate = () => {
                             <label className="label text-red-600">
                                 {errors.taskMassage?.type === 'required' && <span className="label-text-alt ">{errors.taskMassage.message}</span>}
                             </label>
-                            <input className=' bg-blue-700 border-0 px-3 py-1 button  rounded text-white' type="submit" value="Submit" />
+                            <input className=' bg-blue-700 border-0 px-3 py-1 button  rounded text-white ' type="submit" value="Submit" />
 
                         </form>
 

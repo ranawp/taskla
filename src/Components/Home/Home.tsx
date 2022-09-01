@@ -1,5 +1,5 @@
 import React from 'react';
-import Review from '../Review/Review';
+
 import Allacordian from './AccordianSection/Allacordian';
 import Benifit from './Benifit/Benifit';
 import Header from './Header/Header';
@@ -10,12 +10,15 @@ import CourseDetails from './CourseDetails/CourseDetails';
 import Certificate from './certificate/Certificate';
 import Gallery from './Gallery/Gallery';
 import AboutDeveloper from './AboutDeveloper/AboutDeveloper';
+import Review from '../Review/Review';
+
+
 
 const Home = () => {
     return (
-        <div>
+        <div className=''>
 
-            <div className=''>
+            <div className='mt-28'>
                 <Header></Header>
                 <Benifit />
                 <CourseDetails></CourseDetails>
@@ -25,11 +28,11 @@ const Home = () => {
                 <div className='mt-32 lg:w-4/5 mx-auto relative'>
 
                     <div>
-                        <div className='bg-[#FCF7F1] px-8 py-20
+                        <div className='bg-[#FCF7F1] dark:bg-[#182233] px-8 py-20
                         text-left lg:text-center '>
 
-                            <h1 className='text-3xl font-serif leading-[1.3]
-                            '>Taskla helps to improve discipline and make student hard worker by using Remind education solutions</h1>
+                            <h1 className='text-5xl font-serif leading-[1.3]
+                            dark:text-slate-50'>Taskla helps to improve discipline and make student hard worker by using Remind education solutions</h1>
                             <Link to='/register'><button className='btn btn-secondary mt-5'>Get Started</button></Link>
                         </div >
 

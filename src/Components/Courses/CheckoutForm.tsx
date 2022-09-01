@@ -114,7 +114,7 @@ const CheckoutForm = () => {
                         },
                     }}
                 />
-                <button type="submit " className='bg-sky-500 ml-30 cursor rounded mt-3 px-6 py-4 ml-10' disabled={!stripe || !clientSecret}>
+                <button type="submit" className='bg-sky-500 ml-30 cursor rounded mt-3 px-6 py-4 ml-10' disabled={!stripe || !clientSecret}>
                     Pay
                 </button>
             </form>

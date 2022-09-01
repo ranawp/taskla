@@ -5,7 +5,7 @@ import React from 'react';
 const Gallery = () => {
     return (
         <div className='mt-[100px]'>
-            <h1 className='text-[32px] text-primary text-center font-bold mt-10'><span className='text-secondary'>Course </span> Overview</h1>
+            <h1 className='text-[32px] text-primary text-center font-bold mt-10 dark:text-slate-50'><span className='text-secondary'>Course </span> Overview</h1>
             <section className="overflow-hidden">
                 <div className="max-w-screen-xl px-5 py-20 mx-auto ">
                     <div className="flex flex-wrap -m-1 md:-m-2">

@@ -6,7 +6,7 @@ const UserDetails = ({ singelUser }) => {
     const { district, division, email, image, name, street } = singelUser;
 
     return (
-        <>
+        <div className=''>
             <input type="checkbox" id="my-modal-6" className="modal-toggle" />
             {<div className="modal modal-middle sm:modal-middle px-5 sm:p-0" >
                 <div className="modal-box text-center" style={{ backgroundImage: `url(${bg}) ` }}>
@@ -31,7 +31,7 @@ const UserDetails = ({ singelUser }) => {
                 </div>
             </div>}
 
-        </>
+        </div>
     );
 };
 

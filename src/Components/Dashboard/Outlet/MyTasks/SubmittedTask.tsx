@@ -41,9 +41,9 @@ const SubmittedTask = () => {
     }, [])
 
     return (
-        <>
+        <div className='text-black dark:text-slate-50'>
 
-            <h1 className='text-2xl text-center mt-10'>You already Submmited Assignment</h1>
+            <h1 className='text-2xl text-center mt-28'>You already Submmited Assignment</h1>
 
             <section className="w-50 mx-auto px-10 mt-5 task-list">
 
@@ -60,7 +60,7 @@ const SubmittedTask = () => {
 
 
             </section>
-        </>
+        </div>
     );
 };
 

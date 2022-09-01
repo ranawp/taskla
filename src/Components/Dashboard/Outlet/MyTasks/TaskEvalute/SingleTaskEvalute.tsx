@@ -7,8 +7,8 @@ const SingleTaskEvalute = ({ taskEvalute, index, setEvaluteModalDetails, setEval
 
     return (
         <>
-            <tr>
-                <th>{index + 1}</th>
+            <tr className='border dark:border-[#293241] dark:bg-transparent'>
+                <th className=' p-3'>{index + 1}</th>
                 <td>{taskNo}</td>
                 <td>{taskName}</td>
 

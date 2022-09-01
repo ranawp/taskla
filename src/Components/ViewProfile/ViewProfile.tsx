@@ -34,18 +34,18 @@ const ViewProfile = () => {
     const { name, email, phone, district, division, street, image } = data;
     return (
         <div className="mt-[100px]">
-            <h2 className='text-3xl font-bold text-center'>Your  <span className='text-secondary'>Profile</span></h2>
+            <h2 className='text-3xl font-bold text-center text-primary dark:text-slate-50'>Your  <span className='text-secondary'>Profile</span></h2>
             <div className='card py-12 mt-6 justify-center items-center'>
                 <div>
                     <div className="avatar flex justify-center  sm:mt-0">
-                        <div className="w-52 mx-auto rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                        <div className="w-52 mx-auto rounded-full ring ring-primary dark:ring-blue-300 ring-offset-purple-100 ring-offset-2">
                             <img className='' src={image || dummyImage} />
                         </div>
 
                     </div>
 
                     <div className='my-3 sm:my-0' >
-                        <div className="card w-80 lg:w-96 bg-base-100 shadow-xl mt-3">
+                        <div className="card w-80 lg:w-96 text-primary dark:text-slate-50 bg-white dark:bg-[#182233] shadow-xl mt-3">
                             <div className="card-body">
 
                                 <h2 className="text-lg">Student Id:  <span className='text-lg'>9483jcnei98</span></h2>

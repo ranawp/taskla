@@ -17,15 +17,15 @@ const Payment = () => {
                 <div className='sm:min-h-screen px-10 flex justify-between relative mt-10'>
                     <div className='absolute z-10 top-[40%] right-[50%]'>
                     </div>
-                    <div className="card w-80 h-96 bg-base-100 shadow-xl">
-                        <figure><img src="https://i.ibb.co/c1gTgV5/website-development.jpg" alt="Shoes" /></figure>
+                    <div className="card w-80 h-96 text-primary dark:text-slate-50 bg-white dark:bg-[#182233] shadow-xl">
+                        <figure><img src="https://i.ibb.co/c1gTgV5/website-development.jpg" alt="course_thumbnail" /></figure>
                         <div className="card-body relative">
                             <h1 className='text-2xl font-bold'>Web Development crash course.Build Your carrear with tech. <span className='ml-[100px]'>$ 100</span></h1>
                         </div>
                     </div>
                 </div>
-                <div className='mt-10 px-10 flex justify-between order-first '>
-                    <div className="card w-80 h-96 flex bg-base-100">
+                <div className='mt-10 px-10 flex justify-between order-first'>
+                    <div className="card w-80 h-96 flex text-primary dark:text-slate-50 bg-white dark:bg-[#182233]">
                         <div className="card-body mt-3">
                             <div>
                                 <h1 className='text-2xl font-bold mb-4'>Web Development crash course</h1>

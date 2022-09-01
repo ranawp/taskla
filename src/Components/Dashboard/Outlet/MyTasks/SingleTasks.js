@@ -23,11 +23,8 @@ const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit, setWatchVi
     return (
         <>
             <div className=''>
-                <div className='py-2 px-2 text-sm'>
-
-                    <div tabIndex="0" className="collapse group collapse-arrow border border-base-300 bg-base-100 rounded-box ">
-
-
+                <div className='py-2 px-2'>
+                    <div tabindex="0" className="collapse group collapse-arrow border border-base-300 bg-white dark:bg-[#182233] rounded-box overflow-auto">
                         <div onClick={(e) => setToogle(true)}>
                             <div
                                 onClick={() => {
@@ -35,11 +32,7 @@ const SingleTasks = ({ singleTask, setTaskData, setToogle, setSubmit, setWatchVi
                                 }}
 
                                 className={singleTask.submit == 'lock' ? "collapse-title  font-medium flex justify-between items-center pointer-events-none" : "collapse-title  font-medium flex justify-between items-center"}>
-
                                 <span> {singleTask.MilstoneSerialNo}{singleTask.MilstoneName}</span>
-
-
-
                                 {singleTask.submit == 'lock' && <span> {lockIcon}</span>}
 
                             </div>

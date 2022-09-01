@@ -67,7 +67,7 @@ const EditProfile = ({ data, setReset }) => {
         <>
             {/* <!-- The button to open modal --> */}
 
-            <label htmlFor="my-modal-6" className="text-white px-3 py-3 btn-primary modal-button ">Edit profile</label>
+            <label htmlFor="my-modal-6" className="text-white px-3 py-3 btn btn-primary modal-button ">Edit profile</label>
 
 
 

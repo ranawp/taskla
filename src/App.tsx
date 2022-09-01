@@ -26,6 +26,8 @@ import NoticePublish from './Components/Dashboard/NoticePublish/NoticePublish';
 import ModuleUpload from './Components/Dashboard/Outlet/TaskCreate/ModuleUpload';
 import TaskEdit from './Components/Dashboard/Outlet/TaskCreate/TaskEdit';
 import Login from './Components/Login/Login';
+import Elibrary from './Elibrary/Elibrary';
+import BookPublish from './Components/Dashboard/Outlet/BookPublish/BookPublish';
 
 
 
@@ -57,7 +59,7 @@ const App = () => {
 
 
   return (
-    <div className="bg-white overflow-x-hidden">
+    <div className="bg-white dark:bg-gradient-to-r from-[#0E1629] via-[#0D1425] to-[#0B1120] overflow-x-hidden" >
       <Navbar />
       <TimeContext.Provider value={[Mydate, Mytime]}>
 
@@ -88,11 +90,13 @@ const App = () => {
             <Route path="taskEvaluateCompleted" element={<CompletedTaskEvalute />} />
             <Route path="createBlog" element={<CreateBlog />} />
             <Route path="notice" element={<NoticePublish />} />
+            <Route path="bookUpload" element={<BookPublish />} />
           </Route>
 
 
           <Route path="/login" element={<Login></Login>}></Route>
           <Route path="/register" element={<Register></Register>}></Route>
+          <Route path="/elibrary" element={<Elibrary/>}></Route>
         </Routes>
 
         <Footer></Footer>

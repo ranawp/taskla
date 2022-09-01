@@ -69,7 +69,6 @@ const MyTask = () => {
 
     }, [refresh])
 
-
     useEffect(() => {
         fetch(`http://localhost:5000/allMarks`)
             .then(res => res.json())
@@ -81,12 +80,13 @@ const MyTask = () => {
         return com.taskNo == submit.MilstoneSerialNo
     })
 
+
     return (
-        <>
+        <div className='text-primary dark:text-slate-50'>
+            <h1 className='text-2xl font-bold text-center mt-24 mb-10'>Web Development Crash Course</h1>
 
-            <h1 className='text-2xl text-center mt-10'>Your Assignment</h1>
+            <section className="grid sm:grid-cols-2 gap-6 px-10 mt-22 task-list">
 
-            <section className="grid sm:grid-cols-2 gap-6 px-10 mt-5 task-list">
 
 
 
@@ -148,7 +148,7 @@ const MyTask = () => {
 
 
                 </div>
-                <div className='w-[300px] mb-3 sm:w-4/5 border h-80 overflow-y-auto' >
+                <div className='w-[300px] mb-3 sm:w-4/5 border h-[383px] overflow-auto' >
                     {singleTask.map((singleTask) =>
                         <SingleTasks
                             key={singleTask._id}
@@ -162,13 +162,8 @@ const MyTask = () => {
                     )}
                 </div>
             </section>
-        </>
+        </div>
     );
 };
 
 export default MyTask;
-
-
-
-
-

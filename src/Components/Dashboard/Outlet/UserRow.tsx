@@ -36,14 +36,14 @@ const UserRow = ({ user: users, index, setSingelUser }) => {
     }
     return (
 
-        <tr>
-            <th>{index + 1}</th>
+        <tr className='border dark:border-[#293241]'>
+            <th className='p-3'>{index + 1}</th>
             <td>{email}</td>
             <td>{role !== 'admin' && <button onClick={makeAdmin} className="btn btn-xs">Make Admin</button>}</td>
             <td> {
                 ((enroll == 'enrollPending') && (student == 'enrolled')) ?
                     <>
-                        <button disabled className="btn btn-xs">enrolled</button> </> :
+                        <button disabled className="btn btn-xs dark:text-slate-400">enrolled</button> </> :
 
                     <> {enroll == 'enrollPending' && <button onClick={paidStudent} className="btn btn-xs">enrollPending</button>}</>
             }</td>

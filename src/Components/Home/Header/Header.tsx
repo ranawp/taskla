@@ -12,14 +12,14 @@ const Header = () => {
             <div className='max-w-screen-xl mx-auto'>
                 <div className='grid-cols-2'>
                     <div className='p-5 lg:top-[20px] w-full pb-32'>
-                        <h1 className='text-[32px] lg:text-[45px] text-primary font-bold md:mt-20 mt-4 tracking-wide' > Believe Bigger, Aim Higher </h1 >
-                        <h2 className='text-[32px] font-bold text-secondary tracking-wide'>Taskla <span className='text-primary'>are with you</span></h2>
-                        <p className='text-lg mt-3 tracking-wide leading-7 text-[#1e266d]' >
+                        <h1 className='text-[32px] lg:text-[45px] text-primary dark:text-[#E2E8F0] font-bold md:mt-20 mt-4 tracking-wide' > Believe Bigger,<span className='dark:text-secondary'> Aim Higher</span>  </h1 >
+                        <h2 className='text-[32px] font-bold text-secondary tracking-wide'>Taskla <span className='text-primary dark:text-slate-50'>are with you</span></h2>
+                        <p className='text-lg mt-3 tracking-wide leading-7 text-[#1e266d] dark:text-[#E2E8F0]' >
                             Taskla is an online platform to facilitate peer feedback sessions <br /> with students
 
                             Get started</p >
 
-                        <Link to='/register'><button className='btn btn-secondary mt-5 text-white'>Get Started</button></Link>
+                        <Link to='/courses'><button className='btn btn-secondary mt-5 text-white'>Enroll Now</button></Link>
                     </div >
                     <div className='absolute my-auto bottom-0 right-0'>
                         <img className='w-[700px]' src={hero} alt="" />

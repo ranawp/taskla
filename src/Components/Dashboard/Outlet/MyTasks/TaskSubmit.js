@@ -71,6 +71,7 @@ const TaskSubmit = ({ submit, setRefresh, singleTask, setToogle }) => {
 
         //put method in alltask for submit roll 
         fetch(` http://localhost:5000/alltasks/${id}`, {
+
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
