@@ -26,8 +26,8 @@ const Login = () => {
         setEmail(data.email)
         reset();
     };
-
     const [token] = useToken(user)
+
     if (token) {
         navigate('/')
     }

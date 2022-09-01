@@ -6,14 +6,14 @@ import { toast } from 'react-toastify';
 
 const TaskCreate = () => {
 
-    const { register, formState: { errors }, handleSubmit, reset } : any = useForm();
+    const { register, formState: { errors }, handleSubmit, reset }: any = useForm();
     // var options = { weekday: 'long', year: 'numeric', day: 'numeric', month: 'long' };
     const date = new Date()
     const currentDate = date.toLocaleDateString();
     const currentHour = date.toLocaleTimeString();
 
-    const onSubmit = (data) : void  => {
-        const url = `https://cryptic-stream-86241.herokuapp.com/tasks`
+    const onSubmit = (data): void => {
+        const url = `http://localhost:5000/tasks`
         fetch(url, {
             method: 'POST',
             headers: {
@@ -30,11 +30,10 @@ const TaskCreate = () => {
         reset()
     };
     return (
-        <div className='mt-[50px]'>
-            <h2 className='text-3xl text-secondary text-center font-bold'>Give task to Students</h2>
-            <div className=' mx-auto  mb-10 grid lg:grid-cols-2 gap-4'>
-
-                <div className="ml-10 mt-5 w-96 card bg-base-100 shadow-2xl">
+        <div>
+            <h2 className='text-2xl text-center font-bold mt-14 text-primary'>Give task to  <span className='text-secondary'>Students</span> </h2>
+            <div className='mb-10 grid lg:grid-cols-2 gap-4'>
+                <div className="sm:ml-10 mt-5 mx-auto w-80 sm:w-96 card bg-base-100 shadow-2xl">
                     <div className="card-body">
                         <form className=' ' onSubmit={handleSubmit(onSubmit)}>
 

@@ -13,21 +13,21 @@ const AddReview = () => {
     const email: string | null | undefined = user?.email;
 
     useEffect(() => {
-        fetch(`https://cryptic-stream-86241.herokuapp.com/user/${email}`)
+        fetch(`http://localhost:5000/user/${email}`)
             .then((res) => res.json())
             .then((data) => getData(data));
 
     }, [email])
 
 
-    const ratingChanged = (newRating : number) => {
+    const ratingChanged = (newRating: number): void => {    
         setRating(newRating);
     };
 
 
 
 
-    const handleAddReview = (event : any) : void => {
+    const handleAddReview = (event: any): void => {
         event.preventDefault();
         const name = event.target.name.value;
         const course = event.target.course.value;

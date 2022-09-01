@@ -16,17 +16,17 @@ interface Data {
 }
 
 interface Student {
-    _id ?: string
-    email ?: string
-    name ?: string
-    role ?: string
-    student ?: string
-    district ?: string
-    division ?: string
-    street ?: string
-    enroll ?: string
-    phone ?: string
-    image ?: string
+    _id?: string
+    email?: string
+    name?: string
+    role?: string
+    student?: string
+    district?: string
+    division?: string
+    street?: string
+    enroll?: string
+    phone?: string
+    image?: string
 }
 
 const Admin_Dashboard = () => {

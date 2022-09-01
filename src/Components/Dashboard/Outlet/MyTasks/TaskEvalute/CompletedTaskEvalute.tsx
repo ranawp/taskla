@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import Loading from '../../../../../Share/Loading';
 import DoneSignleEvaluate from './DoneSignleEvaluate';
 import EvaluteDetails from './EvaluteDetails';
 
@@ -6,21 +8,32 @@ const CompletedTaskEvalute = () => {
 
     const [taskEvaluate, setTaskEvalute] = useState<Object[]>([]);
     const [evaluteModalDetails, setEvaluteModalDetails] = useState<object | any>(null);
+    const [loading, isLoading] = useState(false)
 
     useEffect(() => {
-        fetch('https://cryptic-stream-86241.herokuapp.com/answers')
+        isLoading(true)
+        fetch('http://localhost:5000/answers')
             .then(res => res.json())
-            .then(data => setTaskEvalute(data))
+            .then(data => {
+                setTaskEvalute(data)
+                isLoading(false)
+            })
     }
         , [])
 
-    const doneFeedbackTask : Object[] = taskEvaluate.filter((task : Object | any) => {
+    const doneFeedbackTask: Object[] = taskEvaluate.filter((task: Object | any) => {
         return task.feedbackSubmit == "feedbacksubmited"
     })
 
     return (
-        <div className='mt-[40px]'>
-            <h1 className='text-center text-2xl'> Evaluted done task</h1>
+        <div className=''>
+            <h1 className='font-bold text-2xl my-10 text-center'>Student  <span className='text-secondary'>Evalution tasks</span> </h1>
+
+            <div className='lg:ml-96 md:ml-60 ml-10'>
+                <button className=" mb-2"> <NavLink className="px-2 py-1 rounded" to="/dashboard/taskEvaluate">Pending Evalute </NavLink> </button>
+                <button className="px-3 py-2 rounded mb-2"> <NavLink className="px-2 py-1 rounded" to="/dashboard/taskEvaluateCompleted">Evalute done</NavLink> </button>
+            </div>
+            {loading && <Loading />}
             <table className="table w-full">
                 <thead>
                     <tr>
@@ -40,7 +53,7 @@ const CompletedTaskEvalute = () => {
                             key={taskEvalute._id}
                             taskEvalute={taskEvalute}
                             index={index}
-                            // setEvaluteModalDetails={setEvaluteModalDetails}
+                        // setEvaluteModalDetails={setEvaluteModalDetails}
 
 
                         ></DoneSignleEvaluate>)

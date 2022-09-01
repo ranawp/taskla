@@ -53,7 +53,7 @@ const Navbar = () => {
 
     // console.log(match)
     useEffect((): void => {
-        fetch(`https://cryptic-stream-86241.herokuapp.com/notice`)
+        fetch(`http://localhost:5000/notice`)
             .then((response) => response.json())
             .then((json) => setNotifications(json));
     }, [])
@@ -92,6 +92,7 @@ const Navbar = () => {
                     <>  <li className='hover:text-secondary'><Link className='pl-5' to='/mytask'>Classroom</Link></li>
                     </>
                 }
+
                 <li className='hover:text-secondary'><Link className='pl-5' to="/courses">Courses</Link></li>
                 <li className='hover:text-secondary' > <Link className='pl-5' to='/contact' > Contact Us</Link ></li >
 
@@ -207,10 +208,10 @@ const Navbar = () => {
 
         </>
 
-        {!user && <li><Link className='pl-5' to="/login"><button className='btn btn-secondary'>Login</button></Link></li>}
+        {!user && <li><Link className='ml-4 sm:ml-0 pl-5' to="/login"><button className='btn btn-secondary'>Login</button></Link></li>}
         {
             !(match.role == 'admin') && <>
-                {!(match.student == 'enrolled') && !user && <li><Link className='pl-5' to="/register"><button className='btn btn-primary'>Register</button></Link></li >}
+                {!(match.student == 'enrolled') && !user && <li><Link className='pl-5 ml-4 sm:ml-0' to="/register"><button className='btn btn-primary'>Register</button></Link></li >}
 
             </>
 

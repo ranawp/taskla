@@ -9,12 +9,12 @@ import UserDetails from './UserDetails';
 
 const UserRow = ({ user: users, index, setSingelUser }) => {
     const { email, role, enroll, student } = users
-
+    // console.log(email)
 
     const [user] = useAuthState(auth)
     const emails = user?.email
-    const makeAdmin = () :void => {
-        fetch(`https://cryptic-stream-86241.herokuapp.com/user/admin/${email}`, {
+    const makeAdmin = (): void => {
+        fetch(`http://localhost:5000/user/admin/${email}`, {
             method: 'PUT'
         })
             .then(res => res.json())
@@ -24,8 +24,8 @@ const UserRow = ({ user: users, index, setSingelUser }) => {
                 }
             })
     }
-    const paidStudent = () : void => {
-        fetch(`https://cryptic-stream-86241.herokuapp.com/user/student/${email}`, {
+    const paidStudent = (): void => {
+        fetch(`http://localhost:5000/user/student/${email}`, {
             method: 'PUT'
         })
             .then(res => res.json())

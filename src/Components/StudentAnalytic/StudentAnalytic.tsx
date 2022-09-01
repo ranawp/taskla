@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Area, AreaChart, CartesianGrid, Cell, Line, LineChart, Pie, PieChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import auth from '../../firebase.init';
+import Loading from '../../Share/Loading';
 import StudentMark from './StudentMark';
 
 
@@ -27,6 +28,23 @@ interface Mark {
 
 
 const studentAnalytic = () => {
+    const [user] = useAuthState(auth)
+    const email: string | null | undefined = user?.email
+    const [marks, setMarks] = useState<Mark[]>([]);
+    const [loading, isLoading] = useState(false);
+
+    useEffect(() => {
+        isLoading(true)
+        fetch(`https://cryptic-stream-86241.herokuapp.com/allMarks/${email}`)
+            .then(res => res.json())
+            .then(data => {
+                setMarks(data)
+                isLoading(false)
+            })
+    }, [marks])
+
+
+
     const chartData: CardData[] = [
         {
             "month": "Mar",
@@ -66,21 +84,14 @@ const studentAnalytic = () => {
         }
     ]
 
-    const [user] = useAuthState(auth)
-    const email: string | null | undefined = user?.email
 
-    const [marks, setMarks] = useState<Mark[]>([]);
 
-    useEffect(() => {
-        fetch(`http://localhost:5000/allMarks/${email}`)
-            .then(res => res.json())
-            .then(data => setMarks(data))
-    }, [marks])
 
     return (
         <>
-            <div className='ml-5 mt-20'>
-                <h2 className='font-semibold text-lg mb-5 text-center'>Mark distribution</h2>
+            <div className='ml-5 mt-32'>
+                <h2 className='font-semibold text-lg mb-5 text-center'>Mark <span className='text-secondary'>distribution</span></h2>
+                {/* {loading && <Loading />} */}
                 <table className="table mx-auto">
 
                     <thead>
@@ -114,11 +125,11 @@ const studentAnalytic = () => {
             </div>
 
             <div className='my-5 flex flex-wrap'>
-                <div className="grid gap-x-8 gap-y-8 lg:grid-cols-2 mt-14 ">
+                <div className="grid gap-x-8 gap-y-8 lg:grid-cols-2 mt-14 mx-auto ">
 
                     <div className='box-content border-4 rounded-lg p-5'>
                         <h2 className='text-center font-semibold text-lg'>Attendence</h2>
-                        <LineChart width={500} height={400} data={chartData}>
+                        <LineChart width={300} height={350} data={chartData}>
                             <Line type="monotone" dataKey="sell" stroke="#8884d8" />
                             <CartesianGrid stroke="#ccc" />
                             <XAxis dataKey="month" />
@@ -128,10 +139,10 @@ const studentAnalytic = () => {
 
                     </div>
                     <div className='box-content border-4'>
-                        <h2 className='font-semibold text-lg'>Perfomance</h2>
+                        <h2 className='font-semibold text-lg text-center'>Perfomance</h2>
                         <AreaChart
-                            width={500}
-                            height={400}
+                            width={300}
+                            height={350}
                             data={chartData}
                             margin={{
                                 top: 10,

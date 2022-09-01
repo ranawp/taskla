@@ -1,22 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import Loading from '../../../Share/Loading';
 import './BlogDetails.css';
 
 const BlogDetails = () => {
     const { blogId } = useParams<string>();
     const [blogDetail, setBlogDetail] = useState<Object>({});
-    const { blogTitle, img, blogDescription, currentDate, blogUser } : any = blogDetail;
-    useEffect(() : void => {
-        fetch(`https://cryptic-stream-86241.herokuapp.com/createBlog/${blogId}`)
+    const { blogTitle, img, blogDescription, currentDate, blogUser }: any = blogDetail;
+    const [loading, isLoading] = useState(false)
+    useEffect((): void => {
+
+        isLoading(true)
         fetch(` https://cryptic-stream-86241.herokuapp.com/createBlog/${blogId}`)
             .then(res => res.json())
-            .then(data => setBlogDetail(data));
+            .then(data => {
+                setBlogDetail(data)
+                isLoading(false)
+            });
     }, []);
     return (
         <div className='w-50 '>
             <div className='background-style' >
                 <h1 className='text-3xl mt-7' >{blogTitle}</h1>
             </div >
+
+            {loading && <Loading />}
 
             <div className='image-style' >
                 <img src={img} alt='blogImage'></img>

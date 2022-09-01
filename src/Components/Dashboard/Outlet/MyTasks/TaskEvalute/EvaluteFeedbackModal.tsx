@@ -40,7 +40,9 @@ const EvaluteFeedbackModal = ({ evaluteFeedbackModal, setRefresh }) => {
                 feedbackDate: feedbackDate,
                 feedbackHour: feedbackHour
             })
-        });
+        }).then(res => res.json())
+            .then(data => console.log(data))
+
         fetch(` http://localhost:5000/answers/${taskId}`, {
             method: 'PUT',
             headers: {
@@ -55,48 +57,50 @@ const EvaluteFeedbackModal = ({ evaluteFeedbackModal, setRefresh }) => {
                 console.log(data)
                 setRefresh(data.acknowledged == true)
             })
-        event?.target?.reset()
+        e?.target?.reset()
 
     }
 
 
     return (
-        <div>
+        <div className='mt-[80px]'>
             <input type="checkbox" id="evalute-feedback-details" className="modal-toggle" />
-            <div className="modal modal-bottom sm:modal-middle">
-                <div className="modal-box">
+            <div className="modal modal-bottom sm:modal-middle ">
+                <div className="modal-box mt-[200px]">
                     <label htmlFor="evalute-feedback-details" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <h3 className="font-bold text-lg">Please Give FeedBack of this task</h3>
 
                     <form onSubmit={handleFeedback}>
-                        <p className="pt-4">Email</p>
-                        <input readOnly name='email' value={evaluteFeedbackModal.email} placeholder='Please Give Mark'
-                            className=" mt-2 p-2 rounded-lg background-color" size={30}
-                        ></input>
-                        <p className="pt-4">TaskDescription</p>
-                        <input readOnly value={evaluteFeedbackModal.taskDescription} name='taskDescription' placeholder='Please Give Mark'
-                            className=" mt-2 p-2 rounded-lg background-color" size={30}
-                        ></input>
-                        <p className="pt-4">TaskName</p>
-                        <input readOnly value={evaluteFeedbackModal.taskName} name='taskName' placeholder='Please Give Mark'
-                            className=" mt-2 p-2 rounded-lg background-color" size={30}
-                        ></input>
-                        <p className="pt-4">Deadline</p>
-                        <input readOnly value={evaluteFeedbackModal.deadline} name='deadline' placeholder='Please Give Mark'
-                            className=" mt-2 p-2 rounded-lg background-color" size={30}
-                        ></input>
-                        <p className="pt-4">taskNo</p>
-                        <input value={evaluteFeedbackModal.taskNo} name='taskNo' placeholder='Please Give Mark'
-                            className=" mt-2 p-2 rounded-lg background-color" size={30}
-                        ></input>
-                        <p className="pt-4">Feedback Date:</p>
-                        <input readOnly value={currentDate} name='feedbackDate'
-                            className=" mt-2 p-2 rounded-lg background-color" size={30}
-                        ></input>
-                        <p className="pt-4">Feedback Hour:</p>
-                        <input readOnly value={currentHour} name='feedbackHour'
-                            className=" mt-2 p-2 rounded-lg background-color" size={30}
-                        ></input>
+                        <div className='hidden'>
+                            <p className="pt-4">Email</p>
+                            <input readOnly name='email' value={evaluteFeedbackModal.email} placeholder='Please Give Mark'
+                                className=" mt-2 p-2 rounded-lg background-color" size={30}
+                            ></input>
+                            <p className="pt-4">TaskDescription</p>
+                            <input readOnly value={evaluteFeedbackModal.taskDescription} name='taskDescription' placeholder='Please Give Mark'
+                                className=" mt-2 p-2 rounded-lg background-color" size={30}
+                            ></input>
+                            <p className="pt-4">TaskName</p>
+                            <input readOnly value={evaluteFeedbackModal.taskName} name='taskName' placeholder='Please Give Mark'
+                                className=" mt-2 p-2 rounded-lg background-color" size={30}
+                            ></input>
+                            <p className="pt-4">Deadline</p>
+                            <input readOnly value={evaluteFeedbackModal.deadline} name='deadline' placeholder='Please Give Mark'
+                                className=" mt-2 p-2 rounded-lg background-color" size={30}
+                            ></input>
+                            <p className="pt-4">taskNo</p>
+                            <input value={evaluteFeedbackModal.taskNo} name='taskNo' placeholder='Please Give Mark'
+                                className=" mt-2 p-2 rounded-lg background-color" size={30}
+                            ></input>
+                            <p className="pt-4">Feedback Date:</p>
+                            <input readOnly value={currentDate} name='feedbackDate'
+                                className=" mt-2 p-2 rounded-lg background-color" size={30}
+                            ></input>
+                            <p className="pt-4">Feedback Hour:</p>
+                            <input readOnly value={currentHour} name='feedbackHour'
+                                className=" mt-2 p-2 rounded-lg background-color" size={30}
+                            ></input>
+                        </div>
                         <p className="pt-4">Mark</p>
                         <input name='mark' placeholder='Please Give Mark'
                             className=" mt-2 p-2 rounded-lg background-color" size={30}
@@ -107,7 +111,7 @@ const EvaluteFeedbackModal = ({ evaluteFeedbackModal, setRefresh }) => {
                             className=" mt-2 p-2 rounded-lg background-color"
                         ></textarea>
                         <br />
-                        <input className=' bg-blue-700 border-0 px-3 py-1 button  rounded text-white' type="submit" value="Submit" />
+                        <input className=' bg-primary border-0 px-3 py-1 button  rounded text-white' type="submit" value="Submit" />
                     </form>
 
                 </div>

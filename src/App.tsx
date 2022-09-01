@@ -5,7 +5,7 @@ import Courses from './Components/Courses/Courses';
 import Payment from './Components/Courses/Payment';
 import MyTask from './Components/Dashboard/Outlet/MyTasks/MyTask';
 import Home from './Components/Home/Home';
-import MyClass from './Components/MyClass/MyClass';
+// import MyClass from './Components/MyClass/MyClass';
 import Register from './Components/Register/Register';
 import ViewProfile from './Components/ViewProfile/ViewProfile';
 import StudentAnalytic from './Components/StudentAnalytic/StudentAnalytic';
@@ -68,7 +68,6 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='/blog' element={<Blogs />} />
           <Route path="/createBlog/:blogId" element={<BlogDetails />} />
-          <Route path="/classroom" element={<MyClass />} />
           <Route path="/mytask" element={<MyTask />} />
           <Route path="/viewprofile" element={<ViewProfile />} />
           <Route path='/courses' element={<Courses />} />
@@ -85,12 +84,13 @@ const App = () => {
             <Route index element={<Admin_Dashboard />} />
             <Route path="allusers" element={<Allusers />} />
             <Route path="createtask" element={<TaskCreate />} />
+            <Route path="moduleUpload" element={<ModuleUpload></ModuleUpload>}></Route>
             <Route path="taskEvaluate" element={<TaskEvaluate />} />
+            <Route path="moduleupload" element={<ModuleUpload />} />
+            <Route path="editTask" element={<TaskEdit />} />
+            <Route path="allblogs" element={<AllBlogs />} />
             <Route path="taskEvaluateCompleted" element={<CompletedTaskEvalute />} />
             <Route path="createBlog" element={<CreateBlog />} />
-            <Route path="moduleUpload" element={<ModuleUpload />} />
-            <Route path="allblogs" element={<AllBlogs/>} />
-            <Route path="editTask" element={<TaskEdit/>} />
             <Route path="notice" element={<NoticePublish />} />
           </Route>
 

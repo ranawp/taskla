@@ -29,7 +29,7 @@ const SubmittedTask = () => {
             .then(data => setAnswerScript(data))
     }, [])
 
-    const submitted = submitedTask.filter((task:Answer | any) => {
+    const submitted = submitedTask.filter((task: Answer | any) => {
         return task.submit == "submited"
     })
     // console.log(submitedTask)
@@ -48,7 +48,7 @@ const SubmittedTask = () => {
             <section className="w-50 mx-auto px-10 mt-5 task-list">
 
                 <div className='w-[300px] mb-3 sm:w-4/5 border h-80 overflow-y-auto' >
-                    {submitted.map((taskDone : Answer) => <SingleSubmittedTask
+                    {submitted.map((taskDone: Answer) => <SingleSubmittedTask
                         key={taskDone._id}
                         taskDone={taskDone}
                         answerScript={answerScript}

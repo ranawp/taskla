@@ -13,8 +13,8 @@ const CheckoutForm = () => {
     const [cardsuccess, setcardSuccess] = useState<string>('')
     const [clientSecret, setClientSecret] = useState<string>('')
     const [user] = useAuthState(auth)
-    const email : string | null | undefined = user?.email
-    const displayName : string | null | undefined = user?.displayName
+    const email: string | null | undefined = user?.email
+    const displayName: string | null | undefined = user?.displayName
 
 
 
@@ -47,7 +47,7 @@ const CheckoutForm = () => {
             return;
         }
 
-        const { error, paymentMethod }:any = await stripe.createPaymentMethod({
+        const { error, paymentMethod }: any = await stripe.createPaymentMethod({
             type: 'card',
             card,
         })

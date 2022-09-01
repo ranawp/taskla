@@ -20,3 +20,4 @@ const FeedbackDetails = ({ feedbackModal } : any) => {
 };
 
 export default FeedbackDetails;
+// https://cryptic-stream-86241.herokuapp.com/

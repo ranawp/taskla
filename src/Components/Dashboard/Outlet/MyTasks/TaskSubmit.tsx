@@ -10,11 +10,9 @@ const TaskSubmit = ({ submit, setRefresh, singleTask, setToogle }) => {
 
 
     var index;
-    console.log(index)
     for (var i = 0; i <= singleTask.length; i++)
         if (singleTask[i]._id === taskId) {
             index = i + 1;
-            console.log(index)
             break;
         }
 
@@ -41,6 +39,7 @@ const TaskSubmit = ({ submit, setRefresh, singleTask, setToogle }) => {
         // const scriptfeedback = event.target.scriptfeedback.value;
 
         // console.log(task)
+        console.log(event)
 
         fetch(` http://localhost:5000/answer`, {
             method: 'POST',
@@ -56,14 +55,17 @@ const TaskSubmit = ({ submit, setRefresh, singleTask, setToogle }) => {
                 // mark,
                 // scriptfeedback
             }),
+
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
             },
         })
             .then((response) => response.json())
 
-            .then((json) => console.log(json));
-
+            .then((json) => {
+                console.log(json)
+                setToogle(true)
+            });
 
         event.target.reset();
 
@@ -79,7 +81,6 @@ const TaskSubmit = ({ submit, setRefresh, singleTask, setToogle }) => {
 
         }).then(res => res.json())
             .then(data => {
-                console.log(data)
                 setRefresh(data.acknowledged == true)
 
             })
@@ -122,10 +123,11 @@ const TaskSubmit = ({ submit, setRefresh, singleTask, setToogle }) => {
 
 
 
-                <input onClick={() => setToogle(true)} type="submit" value="Submit" className="bg-blue-700 border-0 px-3 py-1 button  rounded text-white modal-button cursor-pointer mt-3" />
+                <input type="submit" value="Submit" className="bg-primary border-0 px-3 py-1 button  rounded text-white modal-button cursor-pointer mt-3" />
             </form >
         </div>
     );
 };
 
 export default TaskSubmit;
+// onClick={() => setToogle(true)}

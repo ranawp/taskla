@@ -9,7 +9,7 @@ const Courses = () => {
     const [text, setText] = useState<string>('')
     const [user] = useAuthState(auth)
     const email = user?.email
-    const enRoll = ():void => {
+    const enRoll = (): void => {
         setText('we are working.......')
         toast('Wow! you are enrolled')
 

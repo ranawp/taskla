@@ -11,12 +11,12 @@ import './Review.css'
 import { Autoplay, EffectCoverflow, Pagination, Navigation, FreeMode } from "swiper";
 import ReviewCard from './ReviewCard';
 
-type Review ={
+type Review = {
     _id: string,
     name: string,
     course: string,
-    message:string,
-    rating:number,
+    message: string,
+    rating: number,
     image: string
 }
 
@@ -30,7 +30,7 @@ const Review = () => {
             .then(data => setReviewCard(data))
     }, [])
 
-    
+
 
     return (
         <div className=' mt-32' >
