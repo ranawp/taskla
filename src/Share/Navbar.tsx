@@ -221,7 +221,7 @@ const Navbar = () => {
         {/* large device user profile end */}
 
         <>
-            {match?.role == 'admin' && < li className='hover:text-secondary text-left dark:text-slate-50' > <Link className='pl-5' to='/dashboard' >CPanel</Link ></li >}
+            {match?.role == 'admin' && < li className='hover:text-secondary text-left dark:text-slate-50 pl-5 lg:pl-0' > <Link className='pl-5' to='/dashboard' >CPanel</Link ></li >}
 
         </>
 
