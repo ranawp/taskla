@@ -1,14 +1,13 @@
 import React from 'react';
 
 const EditBlogModal = ({ blogEditModal }) => {
-    console.log(blogEditModal)
     const id = blogEditModal?._id;
     const handleSubmit = (e) => {
         e.preventDefault()
         const blogTitle = e.target.blogTitle.value;
         const blogDescription = e.target.blogDescription.value;
 
-        fetch(`https://cryptic-stream-86241.herokuapp.com/createBlog/${id}`, {
+        fetch(`http://localhost:5000/createBlog/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -27,7 +26,7 @@ const EditBlogModal = ({ blogEditModal }) => {
         <div>
             <input type="checkbox" id="Edit-blog-modal" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
-                <div className="modal-box">
+                <div className="modal-box mt-28 mb-10 pb-4">
                     <label htmlFor="Edit-blog-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <h3 className="font-bold text-lg">Edit Blog</h3>
 

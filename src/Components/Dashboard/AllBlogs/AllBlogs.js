@@ -19,12 +19,14 @@ const AllBlogs = () => {
                         setEditModal={setEditModal}
                     ></AllBlog>)
                 }
-            </div >
-            {
-                blogEditModal && <EditBlogModal
-                    blogEditModal={blogEditModal}
-                ></EditBlogModal>
-            }
+            </div>
+            <div>
+                {
+                    blogEditModal && <EditBlogModal
+                        blogEditModal={blogEditModal}
+                    ></EditBlogModal>
+                }
+            </div>
         </>
     );
 };
