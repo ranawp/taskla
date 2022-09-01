@@ -9,8 +9,8 @@ const ReviewCard = ({ review }) => {
 
 
     return (
-        <div className="card w-96  shadow-xl relative bg-white dark:bg-[#182233]">
-            <div className='absolute top-5 left-5 text-5xl text-secondary font-extrabold'><RiDoubleQuotesL/></div>
+        <div className="card w-90  shadow-xl relative bg-white dark:bg-[#182233]">
+            <div className='absolute top-5 left-5 text-5xl dark:text-[#38BDF8] text-secondary font-extrabold'><RiDoubleQuotesL/></div>
             <figure className="px-10 pt-10">
                 <div className="avatar">
                     <div className="w-16 rounded-full">

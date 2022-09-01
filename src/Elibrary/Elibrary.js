@@ -5,7 +5,7 @@ const Elibrary = () => {
     const [search,setSearch] = useState("");
     const [books, setBooks] = useState([{}]);
     useEffect(() => {
-        fetch('https://cryptic-stream-86241.herokuapp.com/books')
+        fetch('http://localhost:5000/books')
             .then(res => res.json())
             .then(data => setBooks(data))
     }, [])

@@ -31,7 +31,7 @@ const Dashboard = () => {
     //sidebar manu 
     const menuItems = <>
         <label htmlFor="my-drawer-2" className="drawer-overlay" ></label >
-        <ul className="menu px-4 pb-4 pt-8 rounded-md overflow-y-auto lg:bg-transparent dark:bg-[#182233] text-base-content overflow-hidden" >
+        <ul className="menu px-4 pb-4 pt-8 rounded-md overflow-y-auto lg:bg-transparent bg-white dark:bg-[#182233] text-base-content overflow-hidden" >
 
             <NavLink to='' className='flex w-[150px] items-center scroll hover:bg-secondary hover:text-white dark:text-slate-50 mt-2 rounded-lg'>
                 <span className='ml-4'><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">

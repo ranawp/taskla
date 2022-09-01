@@ -50,7 +50,7 @@ const Navbar = () => {
     //fetching those kind of people who is enrolled
     useEffect(() => {
         const fetchSideeffect = async () => {
-            const res = await axios(`https://cryptic-stream-86241.herokuapp.com/user/${email}`)
+            const res = await axios(`http://localhost:5000/user/${email}`)
             setMatch(res.data)
         }
         fetchSideeffect()
@@ -58,7 +58,7 @@ const Navbar = () => {
 
     // console.log(match)
     useEffect((): void => {
-        fetch(`https://cryptic-stream-86241.herokuapp.com/notice`)
+        fetch(`http://localhost:5000/notice`)
             .then((response) => response.json())
             .then((json) => setNotifications(json));
     }, [])
@@ -71,7 +71,7 @@ const Navbar = () => {
     // console.log(newArray)
     const setNoti = (id) => {
         console.log(id)
-        fetch(`https://cryptic-stream-86241.herokuapp.com/notice/${id}`, {
+        fetch(`http://localhost:5000/notice/${id}`, {
             method: 'PUT'
         })
             .then(res => res.json())
@@ -97,8 +97,8 @@ const Navbar = () => {
             <>
                 {match.student == 'enrolled' &&
                     <>  <li className='hover:text-secondary dark:text-slate-50'><Link className='pl-5' to='/mytask'>Classroom</Link></li>
-                    <li className='hover:text-secondary dark:text-slate-50'><Link className='pl-5' to='/elibrary'>E-Library</Link></li>
-                        </>
+                        <li className='hover:text-secondary dark:text-slate-50'><Link className='pl-5' to='/elibrary'>E-Library</Link></li>
+                    </>
                 }
                 <li className='hover:text-secondary dark:text-slate-50'><Link className='pl-5' to="/courses">Courses</Link></li >
 
@@ -112,9 +112,9 @@ const Navbar = () => {
 
             {
                 colorTheme === 'light' ?
-                    (<span className='text-[28px] text-yellow-300'><WiDaySunny /></span>)
+                    (<span className='text-[28px] text-yellow-300 mt-5 lg:mt-0'><WiDaySunny /></span>)
 
-                    : (<span className='text-[18px] '><BsMoon /></span>)
+                    : (<span className='text-[18px] mt-5 lg:mt-0'><BsMoon /></span>)
 
             }
         </label>
@@ -132,12 +132,12 @@ const Navbar = () => {
     </>
 
     const userProfileDes = <>
-        <li><Link to='/viewprofile' className='pl-5'> View Profile</Link></li >
-        {match.student == 'enrolled' && (<><li><Link to='/submittedTask' className='pl-5'> Submitted Task</Link></li >
-            <li><Link to='/analytics' className='pl-5'>Students Analytics</Link></li >
-            <li><Link to='/addReview' className='pl-5'>Students Review</Link></li >
-            <li><Link to='/announcement' className='pl-5'>Announcement</Link></li ></>)}
-        <li><Link className='pl-5' to='' onClick={logout} >Sign Out</Link></li >
+        <li><Link to='/viewprofile' className='pl-5 text-primary dark:text-slate-200'> View Profile</Link></li >
+        {match.student == 'enrolled' && (<><li><Link to='/submittedTask' className='pl-5 text-primary dark:text-slate-200'> Submitted Task</Link></li >
+            <li><Link to='/analytics' className='pl-5 text-primary dark:text-slate-200'>Students Analytics</Link></li >
+            <li><Link to='/addReview' className='pl-5 text-primary dark:text-slate-200'>Students Review</Link></li >
+            <li><Link to='/announcement' className='pl-5 text-primary dark:text-slate-200'>Announcement</Link></li ></>)}
+        <li><Link className='pl-5 text-primary dark:text-slate-200' to='' onClick={logout} >Sign Out</Link></li >
     </>
     //userProfile info end
 
@@ -151,7 +151,7 @@ const Navbar = () => {
         </div>
     </>
     const userNotificationDescrip = <>
-        {notifications.map(notification => <li key={notification._id} onClick={() => setNoti(notification._id)} className={notification.read == true ? 'line-through p-2 border  hover:bg-blue-100 cursor-pointer dark:text-slate-50' : 'p-2 border  hover:bg-blue-100 cursor-pointer dark:text-slate-50'}>{notification.notice} <span className='text-xs'> {notification.time}</span> </li>)}
+        {notifications.map(notification => <li key={notification._id} onClick={() => setNoti(notification._id)} className={notification.read == true ? 'line-through p-2 border text-primary  hover:bg-gray-200 hover:dark:bg-[#19253b] hover:dark:text-slate-200  cursor-pointer dark:text-slate-50' : 'p-2 border  hover:bg-blue-100 cursor-pointer dark:text-slate-50'}>{notification.notice} <span className='text-xs'> {notification.time}</span> </li>)}
     </>
     //notification info start
 
@@ -174,12 +174,12 @@ const Navbar = () => {
         {/* notification large device end*/}
 
         {/* notification small device start*/}
-        {(user && match.student == 'enrolled') && < div className="collapse md:hidden text-center">
+        {(user && match.student == 'enrolled') && < div className="collapse md:hidden text-left">
             <input type="checkbox" className="peer" />
-            <div className="collapse-title text-white peer-checked:bg-secondary peer-checked:text-secondary-content pl-5 cursor-pointer inline-block">
+            <div className="collapse-title dark:text-slate-200 peer-checked:bg-transparent peer-checked:text-secondary-content  cursor-pointer inline-block">
                 {userNotificationIndicator}
             </div>
-            <div className="collapse-content bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
+            <div className="collapse-content bg-primary text-primary-content peer-checked:bg-transparent peer-checked:text-secondary-content">
                 {userNotificationDescrip}
             </div>
         </div>
@@ -192,7 +192,7 @@ const Navbar = () => {
         {
             user && <div className="collapse md:hidden">
                 <input type="checkbox" className="peer" />
-                <div className="collapse-title text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content pl-5 cursor-pointer inline-block">
+                <div className="collapse-title text-primary-content peer-checked:bg-transparent peer-checked:text-secondary-content  cursor-pointer inline-block">
                     {userProfileNameLogo}
                 </div>
                 <div className="collapse-content  peer-checked:text-secondary-content">
@@ -221,7 +221,7 @@ const Navbar = () => {
         {/* large device user profile end */}
 
         <>
-            {match?.role == 'admin' && < li className='hover:text-secondary text-center dark:text-slate-50' > <Link className='pl-5' to='/dashboard' >CPanel</Link ></li >}
+            {match?.role == 'admin' && < li className='hover:text-secondary text-left dark:text-slate-50' > <Link className='pl-5' to='/dashboard' >CPanel</Link ></li >}
 
         </>
 
@@ -247,10 +247,12 @@ const Navbar = () => {
                         {/* sidebar small device*/}
                         <div id="mySidenav" className={open == true ? 'sidenav shadow-lg bg-white dark:bg-[#182233]' : 'sidenav1'}>
                             <span className="closebtn text-primary dark:text-slate-50" onClick={() => setOpen(false)}>&times;</span>
-                            {open && <div className='text-primary dark:text-slate-50'><ul className="text-primary dark:text-slate-50" >
+                            {open && <div className='text-primary dark:text-slate-50'><ul className="text-primary dark:text-slate-50 pl-5" >
                                 {menuItems}
                             </ul >
-                                {menuItem2}
+                                <ul className='pl-5'>
+                                    {menuItem2}
+                                </ul>
                             </div>
 
                             }
@@ -291,5 +293,3 @@ export default Navbar;
 
 
 
-
-{/* <li className='hover:text-secondary dark:text-slate-50'><Link className='pl-5' to='/elibrary'>E-Library</Link></li> */}

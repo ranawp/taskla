@@ -29,7 +29,7 @@ const BookPublish = () => {
         const description = event.target.description.value;
         const link = event.target.link.value;
 
-        fetch('https://cryptic-stream-86241.herokuapp.com/booksUpload', {
+        fetch('http://localhost:5000/booksUpload', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',

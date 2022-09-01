@@ -20,13 +20,13 @@ const Announcement = () => {
     const { notice, time, announcement }: any = announcementDetail;
 
     useEffect(() => {
-        fetch('https://cryptic-stream-86241.herokuapp.com/announcement')
+        fetch('http://localhost:5000/announcement')
             .then(res => res.json())
             .then(data => setAnnouncement(data))
     }, [])
 
     const handleAnnounceDetail = id => {
-        fetch(`https://cryptic-stream-86241.herokuapp.com/announcement/${id}`)
+        fetch(`http://localhost:5000/announcement/${id}`)
             .then(res => res.json())
             .then(data => setAnnouncementDetail(data))
 

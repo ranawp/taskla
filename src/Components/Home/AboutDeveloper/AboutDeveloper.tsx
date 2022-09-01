@@ -13,7 +13,7 @@ const AboutDeveloper = () => {
 
 
                 {/* ......................... */}
-                <div className="card w-96 bg-white dark:bg-[#182233] shadow-xl">
+                <div className="card w-90 bg-white dark:bg-[#182233] shadow-xl">
                     <figure className="px-10 pt-10">
                         <img className="mask mask-circle w-[120px]" src="https://i.ibb.co/nMYfnL9/download.jpg" />
                     </figure>
@@ -22,10 +22,10 @@ const AboutDeveloper = () => {
                         <p className="text-primary dark:text-slate-50 font-bold">CEO & Founder</p>
 
                         <div className="flex justify-center">
-                            <i className="fa-brands fa-facebook text-primary p-4 text-2xl "></i>
+                            <i className="fa-brands fa-facebook dark:text-slate-200 text-primary p-4 text-2xl "></i>
                             <i className="fa-brands fa-instagram text-red-500 font-bold p-4 text-2xl "></i>
-                            <i className="fa-brands fa-github text-black p-4 text-2xl  "></i>
-                            <i className="fa-brands fa-linkedin text-primary p-4 text-2xl "></i>
+                            <i className="fa-brands fa-github dark:text-slate-200 text-black p-4 text-2xl  "></i>
+                            <i className="fa-brands fa-linkedin dark:text-[#0B63BD] text-primary p-4 text-2xl "></i>
 
                         </div>
 
@@ -44,10 +44,10 @@ const AboutDeveloper = () => {
 
 
                         <div className="flex justify-center">
-                            <i className="fa-brands fa-facebook text-primary p-4 text-2xl "></i>
+                            <i className="fa-brands fa-facebook dark:text-slate-200 text-primary p-4 text-2xl "></i>
                             <i className="fa-brands fa-instagram text-red-500 font-bold p-4 text-2xl "></i>
-                            <i className="fa-brands fa-github text-black p-4 text-2xl  "></i>
-                            <i className="fa-brands fa-linkedin text-primary p-4 text-2xl "></i>
+                            <i className="fa-brands fa-github dark:text-slate-200 text-black p-4 text-2xl  "></i>
+                            <i className="fa-brands fa-linkedin dark:text-[#0B63BD] text-primary p-4 text-2xl "></i>
 
                         </div>
                     </div>
@@ -65,10 +65,10 @@ const AboutDeveloper = () => {
 
 
                         <div className="flex justify-center">
-                            <i className="fa-brands fa-facebook text-primary p-4 text-2xl "></i>
+                            <i className="fa-brands fa-facebook dark:text-slate-200 text-primary p-4 text-2xl "></i>
                             <i className="fa-brands fa-instagram text-red-500 font-bold p-4 text-2xl "></i>
-                            <i className="fa-brands fa-github text-black p-4 text-2xl  "></i>
-                            <i className="fa-brands fa-linkedin text-primary p-4 text-2xl "></i>
+                            <i className="fa-brands fa-github dark:text-slate-200 text-black p-4 text-2xl  "></i>
+                            <i className="fa-brands fa-linkedin dark:text-[#0B63BD] text-primary p-4 text-2xl "></i>
 
                         </div>
                     </div>

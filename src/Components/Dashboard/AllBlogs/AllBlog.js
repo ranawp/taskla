@@ -5,7 +5,7 @@ const AllBlog = ({ allBlog, setNewBlogs, newBlogs, setEditModal }) => {
     const { blogTitle, img, blogDescription, blogUser, currentDate, _id } = allBlog;
     const blogDetail = blogDescription?.slice(0, 100);
     const handelDeleteButton = id => {
-        const url = `https://cryptic-stream-86241.herokuapp.com/createBlog/${id}`;
+        const url = `http://localhost:5000/createBlog/${id}`;
         fetch(url, {
             method: 'DELETE'
         })
