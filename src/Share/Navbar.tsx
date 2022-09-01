@@ -127,7 +127,7 @@ const Navbar = () => {
 
 
 
-        <img src={match?.image || dummyImage} className='w-9 border-red-800 border-2 rounded-full mx-auto items-center h-9' alt="" />
+        <img src={match?.image || dummyImage} className='w-9 border-red-800 border-2 rounded-full  items-center h-9' alt="" />
 
     </>
 
@@ -191,7 +191,7 @@ const Navbar = () => {
         {/* small device user profile info start */}
         {
             user && <div className="collapse md:hidden">
-                <input type="checkbox" className="peer" />
+                <input type="checkbox" className="" />
                 <div className="collapse-title text-primary-content peer-checked:bg-transparent peer-checked:text-secondary-content  cursor-pointer inline-block">
                     {userProfileNameLogo}
                 </div>
@@ -247,7 +247,7 @@ const Navbar = () => {
                         {/* sidebar small device*/}
                         <div id="mySidenav" className={open == true ? 'sidenav shadow-lg bg-white dark:bg-[#182233]' : 'sidenav1'}>
                             <span className="closebtn text-primary dark:text-slate-50" onClick={() => setOpen(false)}>&times;</span>
-                            {open && <div className='text-primary dark:text-slate-50'><ul className="text-primary dark:text-slate-50 pl-5" >
+                            {open && <div className='text-primary dark:text-slate-50'><ul className="text-primary dark:text-slate-50 pl-10" >
                                 {menuItems}
                             </ul >
                                 <ul className='pl-5'>
