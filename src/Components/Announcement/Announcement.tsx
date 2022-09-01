@@ -34,7 +34,7 @@ const Announcement = () => {
     }, [])
 
     const handleAnnounceDetail = (id): void => {
-        fetch(`http://localhost:5000/announcement/${id}`)
+        fetch(`https://cryptic-stream-86241.herokuapp.com/announcement/${id}`)
             .then(res => res.json())
             .then(data => setAnnouncementDetail(data))
 

@@ -4,7 +4,7 @@ import swal from 'sweetalert';
 
 
 const ModuleUpload = () => {
-    const { register, handleSubmit, reset } : any = useForm();
+    const { register, handleSubmit, reset }: any = useForm();
     // const [review, setReview] = useState({});
     // const imageStoragekey = '3cf84befed9b9bcd8f1d01c2b4412701';
     const date = new Date()
@@ -12,7 +12,7 @@ const ModuleUpload = () => {
     const currentHour: string = date.toLocaleTimeString();
 
     const onSubmit = data => {
-        const url = `http://localhost:5000/tasks`
+        const url = `https://cryptic-stream-86241.herokuapp.com/tasks`
         fetch(url, {
             method: 'POST',
             headers: {
@@ -201,7 +201,7 @@ export default ModuleUpload;
 //                 }
 
 //                 //send to database
-//                 fetch('http://localhost:5000/tasks', {
+//                 fetch('https://cryptic-stream-86241.herokuapp.com/tasks', {
 //                     method: 'POST',
 //                     headers: {
 //                         'content-type': 'application/json'

@@ -43,9 +43,9 @@ const Navbar = () => {
     const [notifications, setNotifications] = useState<Notice[]>([]);
 
     //fetching those kind of people who is enrolled
-    useEffect(() : void => {
+    useEffect((): void => {
         const fetchSideeffect = async () => {
-            const res = await axios(`http://localhost:5000/user/${email}`)
+            const res = await axios(`https://cryptic-stream-86241.herokuapp.com/user/${email}`)
             setMatch(res.data)
         }
         fetchSideeffect()
@@ -53,7 +53,7 @@ const Navbar = () => {
 
     // console.log(match)
     useEffect((): void => {
-        fetch(`http://localhost:5000/notice`)
+        fetch(`https://cryptic-stream-86241.herokuapp.com/notice`)
             .then((response) => response.json())
             .then((json) => setNotifications(json));
     }, [])
@@ -65,7 +65,7 @@ const Navbar = () => {
 
     const setNoti = (id) => {
         console.log(id)
-        fetch(`http://localhost:5000/notice/${id}`, {
+        fetch(`https://cryptic-stream-86241.herokuapp.com/notice/${id}`, {
             method: 'PUT'
         })
             .then(res => res.json())
@@ -119,7 +119,7 @@ const Navbar = () => {
             <li><Link to='/analytics' className='pl-5'>Students Analytics</Link></li >
             <li><Link to='/announcement' className='pl-5'>Announcement</Link></li >
             <li><Link to='/addReview' className='pl-5'>Give Feedback</Link></li >
-            </>)}
+        </>)}
         <li><Link className='pl-5' to='' onClick={logout} >Sign Out</Link></li >
     </>
     //userProfile info end

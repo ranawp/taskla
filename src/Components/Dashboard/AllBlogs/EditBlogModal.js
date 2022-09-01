@@ -8,7 +8,7 @@ const EditBlogModal = ({ blogEditModal }) => {
         const blogTitle = e.target.blogTitle.value;
         const blogDescription = e.target.blogDescription.value;
 
-        fetch(`http://localhost:5000/createBlog/${id}`, {
+        fetch(`https://cryptic-stream-86241.herokuapp.com/createBlog/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

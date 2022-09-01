@@ -32,7 +32,7 @@ const EditProfile = ({ data, setReset }) => {
                 setImage(data.data.url)
                 setImgload(false)
 
-              
+
 
             })
 
@@ -47,7 +47,7 @@ const EditProfile = ({ data, setReset }) => {
         const street = e.target.street.value
         const phone = e.target.phone.value
 
-        fetch(`http://localhost:5000/update/${emails}`, {
+        fetch(`https://cryptic-stream-86241.herokuapp.com/update/${emails}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -123,7 +123,7 @@ const EditProfile = ({ data, setReset }) => {
                             <input onChange={handleFileChange} type="file" name='file' placeholder="Type here" className=" input-bordered w-full max-w-xs" />
                         </div >
                         <div className="form-control w-full max-w-xs mt-3" >
-                             <input htmlFor="my-modal-6" type="submit" disabled={imgLoad} className=" btn-primary w-full max-w-xs py-2 text-white rounded-md" />
+                            <input htmlFor="my-modal-6" type="submit" disabled={imgLoad} className=" btn-primary w-full max-w-xs py-2 text-white rounded-md" />
                         </div >
                     </form >
                     <div className="modal-action" >

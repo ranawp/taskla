@@ -29,7 +29,7 @@ const Allusers = () => {
     useEffect((): void => {
         isLoading(true)
         const fetchSideeffect = async () => {
-            const res = await axios('http://localhost:5000/user', {
+            const res = await axios('https://cryptic-stream-86241.herokuapp.com/user', {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessTokenz')}`
                 }

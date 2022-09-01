@@ -23,7 +23,7 @@ const EvaluteFeedbackModal = ({ evaluteFeedbackModal, setRefresh }) => {
         const scriptfeedback = e.target.scriptfeedback.value;
         console.log(email, taskDescription, taskName, deadline, taskNo, currentDate, currentHour, mark, scriptfeedback);
 
-        fetch(`http://localhost:5000/studentMarks`, {
+        fetch(`https://cryptic-stream-86241.herokuapp.com/studentMarks`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -43,7 +43,7 @@ const EvaluteFeedbackModal = ({ evaluteFeedbackModal, setRefresh }) => {
         }).then(res => res.json())
             .then(data => console.log(data))
 
-        fetch(` http://localhost:5000/answers/${taskId}`, {
+        fetch(` https://cryptic-stream-86241.herokuapp.com/answers/${taskId}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

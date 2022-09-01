@@ -67,7 +67,7 @@ const MyTask = () => {
 
     console.log(singleTask.reverse())
     useEffect((): void => {
-        fetch('http://localhost:5000/answers')
+        fetch('https://cryptic-stream-86241.herokuapp.com/answers')
             .then(res => res.json())
             .then(data => setTaskEvalute(data))
     }
@@ -91,7 +91,7 @@ const MyTask = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allMarks`)
+        fetch(`https://cryptic-stream-86241.herokuapp.com/allMarks`)
             .then(res => res.json())
             .then(data => setMarks(data))
     }, [])
