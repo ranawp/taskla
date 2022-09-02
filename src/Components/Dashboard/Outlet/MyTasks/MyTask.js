@@ -51,7 +51,7 @@ const MyTask = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/answers')
+        fetch('https://cryptic-stream-86241.herokuapp.com/answers')
             .then(res => res.json())
             .then(data => setTaskEvalute(data))
     }
@@ -63,14 +63,14 @@ const MyTask = () => {
     })
 
     useEffect(() => {
-        fetch('http://localhost:5000/alltasks')
+        fetch('https://cryptic-stream-86241.herokuapp.com/alltasks')
             .then(res => res.json())
             .then(data => setSingleTask(data))
 
     }, [refresh])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allMarks`)
+        fetch(`https://cryptic-stream-86241.herokuapp.com/allMarks`)
             .then(res => res.json())
             .then(data => setMarks(data))
     }, [])

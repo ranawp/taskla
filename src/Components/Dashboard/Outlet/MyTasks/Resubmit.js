@@ -11,7 +11,7 @@ const Resubmit = ({ fill, feed, toogle }) => {
         const assignmentAnswer = event.target.assignmentAnswer.value;
         console.log(assignmentAnswer)
 
-        fetch(`http://localhost:5000/resubmit/${id}`, {
+        fetch(`https://cryptic-stream-86241.herokuapp.com/resubmit/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -27,7 +27,7 @@ const Resubmit = ({ fill, feed, toogle }) => {
             })
         event.target.reset()
 
-        fetch(` http://localhost:5000/answers/${id}`, {
+        fetch(` https://cryptic-stream-86241.herokuapp.com/answers/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

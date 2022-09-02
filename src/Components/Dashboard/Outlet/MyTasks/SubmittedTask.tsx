@@ -24,7 +24,7 @@ const SubmittedTask = () => {
     const [submitedTask, setSubmiitedTask] = useState<Answer[]>([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/answers/${email}`)
+        fetch(`https://cryptic-stream-86241.herokuapp.com/answers/${email}`)
             .then(res => res.json())
             .then(data => setAnswerScript(data))
     }, [])
@@ -35,7 +35,7 @@ const SubmittedTask = () => {
     // console.log(submitedTask)
 
     useEffect(() => {
-        fetch(' http://localhost:5000/alltasks')
+        fetch(' https://cryptic-stream-86241.herokuapp.com/alltasks')
             .then(res => res.json())
             .then(data => setSubmiitedTask(data))
     }, [])

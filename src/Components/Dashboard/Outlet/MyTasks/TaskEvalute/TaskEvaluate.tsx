@@ -14,7 +14,7 @@ const TaskEvaluate = () => {
 
     useEffect(() => {
         isLoading(true)
-        fetch('http://localhost:5000/answers')
+        fetch('https://cryptic-stream-86241.herokuapp.com/answers')
             .then(res => res.json())
             .then(data => {
                 setTaskEvalute(data)

@@ -41,7 +41,7 @@ const TaskSubmit = ({ submit, setRefresh, singleTask, setToogle }) => {
         // console.log(task)
         console.log(event)
 
-        fetch(` http://localhost:5000/answer`, {
+        fetch(` https://cryptic-stream-86241.herokuapp.com/answer`, {
             method: 'POST',
             body: JSON.stringify({
                 email,
@@ -70,7 +70,7 @@ const TaskSubmit = ({ submit, setRefresh, singleTask, setToogle }) => {
         event.target.reset();
 
         //put method in alltask for submit roll 
-        fetch(` http://localhost:5000/alltasks/${id}`, {
+        fetch(` https://cryptic-stream-86241.herokuapp.com/alltasks/${id}`, {
 
             method: 'PUT',
             headers: {

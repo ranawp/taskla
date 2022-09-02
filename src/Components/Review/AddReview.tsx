@@ -12,7 +12,7 @@ const AddReview = () => {
     const email: string | null | undefined = user?.email;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/user/${email}`)
+        fetch(`https://cryptic-stream-86241.herokuapp.com/user/${email}`)
             .then((res) => res.json())
             .then((data) => getData(data));
 
@@ -33,7 +33,7 @@ const AddReview = () => {
         const message = event.target.message.value;
         const image = data.image || 'https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png';
         const review = { name, course, message, rating, image }
-        fetch('http://localhost:5000/review', {
+        fetch('https://cryptic-stream-86241.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

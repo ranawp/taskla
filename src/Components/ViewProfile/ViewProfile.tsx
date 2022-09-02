@@ -25,7 +25,7 @@ const ViewProfile = () => {
     const emails = user?.email
 
     useEffect(() => {
-        fetch(`http://localhost:5000/user/${emails}`)
+        fetch(`https://cryptic-stream-86241.herokuapp.com/user/${emails}`)
             .then((res) => res.json())
             .then((data) => getData(data));
 

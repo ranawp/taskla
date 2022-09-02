@@ -12,7 +12,7 @@ const TaskCreate = () => {
     const currentHour = date.toLocaleTimeString();
 
     const onSubmit = (data): void => {
-        const url = `http://localhost:5000/tasks`
+        const url = `https://cryptic-stream-86241.herokuapp.com/tasks`
         fetch(url, {
             method: 'POST',
             headers: {

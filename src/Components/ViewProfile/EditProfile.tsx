@@ -43,7 +43,7 @@ const EditProfile = ({ data, setReset }) => {
         const street = e.target.street.value
         const phone = e.target.phone.value
 
-        fetch(`http://localhost:5000/update/${emails}`, {
+        fetch(`https://cryptic-stream-86241.herokuapp.com/update/${emails}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
