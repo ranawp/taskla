@@ -21,11 +21,11 @@ const TaskSubmit = ({ submit, setRefresh, singleTask, setToogle }) => {
     const [user] = useAuthState(auth)
     const email = user?.email
     const date = new Date()
-    const currentDate = date.toLocaleDateString();
-    const currentHour = date.toLocaleTimeString();
+    const currentDate : string = date.toLocaleDateString();
+    const currentHour : string = date.toLocaleTimeString();
 
 
-    const handleForm = event => {
+    const handleForm = (event) : void => {
         event.preventDefault();
         const email = event.target.email.value;
         const taskName = event.target.taskName.value;
@@ -41,7 +41,7 @@ const TaskSubmit = ({ submit, setRefresh, singleTask, setToogle }) => {
         // console.log(task)
         console.log(event)
 
-        fetch(` http://localhost:5000/answer`, {
+        fetch(` https://cryptic-stream-86241.herokuapp.com/answer`, {
             method: 'POST',
             body: JSON.stringify({
                 email,
@@ -70,7 +70,7 @@ const TaskSubmit = ({ submit, setRefresh, singleTask, setToogle }) => {
         event.target.reset();
 
         //put method in alltask for submit roll 
-        fetch(` http://localhost:5000/alltasks/${taskId}`, {
+        fetch(` https://cryptic-stream-86241.herokuapp.com/alltasks/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -94,36 +94,36 @@ const TaskSubmit = ({ submit, setRefresh, singleTask, setToogle }) => {
             <form onSubmit={handleForm} className='w-3/4 mx-auto' >
                 <div className='hidden'>
                     <span>Email:</span>
-                    <input size='20' className='h-5 mb-2 ml-1' name='email' type="text" readOnly value={user?.email} /> <br />
+                    <input size={20} className='h-5 mb-2 ml-1' name='email' type="text" readOnly value={user?.email} /> <br />
 
                     <span> Asignment Name and serial: </span>
-                    <input size='20' className='h-5 mb-2 ml-1' name='taskName' type="text" readOnly value={asignmentName} />
+                    <input size={20} className='h-5 mb-2 ml-1' name='taskName' type="text" readOnly value={asignmentName} />
                     <br />
                     <span>Milestone serial:.</span>
-                    <input name='taskNo' size='20' className='h-5 mb-2 ml-1' type="text" readOnly value={MilstoneSerialNo} />
+                    <input name='taskNo' size={20} className='h-5 mb-2 ml-1' type="text" readOnly value={MilstoneSerialNo} />
                     <br />
                     <span>Deadline</span>
-                    <input size='20' className='h-5 mb-2 ml-1' name='deadline' type="text" readOnly value={taskDeadline} />
+                    <input size={20} className='h-5 mb-2 ml-1' name='deadline' type="text" readOnly value={taskDeadline} />
                     <br />
 
                     <span>Submisson Date: </span>
-                    <input size='20' className='h-5 mb-2 ml-1' name='taskSubmittedDate' type="text" readOnly value={currentDate} />
+                    <input size={20} className='h-5 mb-2 ml-1' name='taskSubmittedDate' type="text" readOnly value={currentDate} />
                     <br />
                     <span>Submisson Time:</span>
-                    <input size='20' className='h-5 mb-2 ml-1' name='taskSubmitedHour' type="text" readOnly value={currentHour} />
+                    <input size={20} className='h-5 mb-2 ml-1' name='taskSubmitedHour' type="text" readOnly value={currentHour} />
                     <br />
                     <span>Assignement description:</span>
-                    <input size='20' className='h-5 mb-2 ml-1' name='assignmentInstruction' type="text" readOnly value={assignmentInstruction} />
+                    <input size={20} className='h-5 mb-2 ml-1' name='assignmentInstruction' type="text" readOnly value={assignmentInstruction} />
                     <br />
                 </div>
 
                 {/* <span>Massage:</span> */}
                 <small className='text-sm'>Submission Time:{currentHour},{currentDate} </small>
-                <textarea className='border mt-2 p-2' required placeholder="Give your doc file link here or put answer here" id="" cols="45" rows="5" name='assignmentAnswer'></textarea>
+                <textarea className='border mt-2 p-2' required placeholder="Give your doc file link here or put answer here" id="" cols={45} rows={5} name='assignmentAnswer'></textarea>
 
 
 
-                <input type="submit" value="Submit" className="bg-blue-700 border-0 px-3 py-1 button  rounded text-white modal-button cursor-pointer mt-3" />
+                <input type="submit" value="Submit" className="bg-primary border-0 px-3 py-1 button  rounded text-white modal-button cursor-pointer mt-3" />
             </form >
         </div>
     );

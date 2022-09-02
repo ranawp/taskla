@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FeedbackDetails = ({ feedbackModal }) => {
+const FeedbackDetails = ({ feedbackModal } : any) => {
     console.log(feedbackModal.mark)
     return (
         <div>
@@ -20,3 +20,4 @@ const FeedbackDetails = ({ feedbackModal }) => {
 };
 
 export default FeedbackDetails;
+// https://cryptic-stream-86241.herokuapp.com/

@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import Loading from '../../../../../Share/Loading'
 import EvaluteDetails from './EvaluteDetails';
 import EvaluteFeedbackModal from './EvaluteFeedbackModal';
 import SingleTaskEvalute from './SingleTaskEvalute';
@@ -10,11 +12,21 @@ const TaskEvaluate = () => {
     const [evaluteFeedbackModal, setEvaluteFeedbackModal] = useState<Object | null>(null);
     const [refresh, setRefresh] = useState<Object | null>(null)
 
+    const [loading, isLoading] = useState(false);
+
+
+
 
     useEffect(() => {
-        fetch('http://localhost:5000/answers')
+        isLoading(true)
+
+        fetch('https://cryptic-stream-86241.herokuapp.com/answers')
+
             .then(res => res.json())
-            .then(data => setTaskEvalute(data))
+            .then(data => {
+                setTaskEvalute(data)
+                isLoading(false)
+            })
     }
         , [refresh])
 
@@ -23,10 +35,19 @@ const TaskEvaluate = () => {
     })
     return (
         <div>
-            <h1 className='font-bold text-2xl my-10 text-center text-primary dark:text-slate-50'>Student  <span className='text-secondary'>Submitted tasks</span> </h1>
-            <table className="w-full text-left text-primary dark:text-slate-50 border dark:border-[#293241] dark:bg-transparent">
+            <h1 className='font-bold text-2xl my-10 text-center text-primary dark:text-slate-200'>Student  <span className='text-secondary'>Evalution tasks</span> </h1>
 
-                
+            <div className='lg:ml-96 md:ml-60 ml-10'>
+                <button className=" mb-2"> <NavLink className="px-2 py-1 rounded" to="/dashboard/taskEvaluate">Pending Evalute </NavLink> </button>
+                <button className="px-3 py-2 rounded mb-2"> <NavLink className="px-2 py-1 rounded" to="/dashboard/taskEvaluateCompleted">Evalute done</NavLink> </button>
+            </div>
+            {loading && <Loading />}
+
+
+
+
+            <table className="w-full text-left text-primary dark:text-slate-50 border dark:border-[#293241] dark:bg-transparent">
+                <thead>
                     <tr className='bg-gray-200  dark:bg-[#182233]'>
                         <th className='p-3'>Serial</th>
                         <th>Task no</th>
@@ -37,11 +58,12 @@ const TaskEvaluate = () => {
                         <th>Answer Script</th>
                         {/* <th>Mark</th> */}
                         <th>Give Feedback</th>
+                        <th>Submit Status</th>
                         {/* <th>Upadte</th> */}
                     </tr>
-               
 
-               
+
+
                     {
                         pendingFeedbackTask.map((taskEvalute, index) => <SingleTaskEvalute
                             key={taskEvalute._id}
@@ -52,15 +74,23 @@ const TaskEvaluate = () => {
 
                         ></SingleTaskEvalute>)
                     }
-                
-                {evaluteModalDetails && <EvaluteDetails evaluteModalDetails={evaluteModalDetails} ></EvaluteDetails>}
-                {evaluteFeedbackModal && <EvaluteFeedbackModal
-                    setRefresh={setRefresh}
-                    evaluteFeedbackModal={evaluteFeedbackModal}></EvaluteFeedbackModal>}
 
+                    {evaluteModalDetails && <EvaluteDetails evaluteModalDetails={evaluteModalDetails} ></EvaluteDetails>}
+                    {evaluteFeedbackModal && <EvaluteFeedbackModal
+                        setRefresh={setRefresh}
+                        evaluteFeedbackModal={evaluteFeedbackModal}></EvaluteFeedbackModal>}
+                </thead>
             </table>
         </div>
     );
 };
 
 export default TaskEvaluate;
+
+
+{/* <h1 className='font-bold text-2xl my-10 text-center text-primary dark:text-slate-50'>Student  <span className='text-secondary'>Submitted tasks</span> </h1>
+            <table className="w-full text-left text-primary dark:text-slate-50 border dark:border-[#293241] dark:bg-transparent">
+
+                
+                    <tr className='bg-gray-200  dark:bg-[#182233]'>
+                        <th className='p-3'>Serial</th> */}

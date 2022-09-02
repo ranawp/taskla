@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Area, AreaChart, CartesianGrid, Cell, Line, LineChart, Pie, PieChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import auth from '../../firebase.init';
+import Loading from '../../Share/Loading';
 import StudentMark from './StudentMark';
 
 
@@ -27,6 +28,23 @@ interface Mark {
 
 
 const studentAnalytic = () => {
+    const [user] = useAuthState(auth)
+    const email: string | null | undefined = user?.email
+    const [marks, setMarks] = useState<Mark[]>([]);
+    const [loading, isLoading] = useState(false);
+
+    useEffect(() => {
+        isLoading(true)
+        fetch(`https://cryptic-stream-86241.herokuapp.com/allMarks/${email}`)
+            .then(res => res.json())
+            .then(data => {
+                setMarks(data)
+                isLoading(false)
+            })
+    }, [marks])
+
+
+
     const chartData: CardData[] = [
         {
             "month": "Mar",
@@ -66,13 +84,10 @@ const studentAnalytic = () => {
         }
     ]
 
-    const [user] = useAuthState(auth)
-    const email: string | null | undefined = user?.email
 
-    const [marks, setMarks] = useState<Mark[]>([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allMarks/${email}`)
+        fetch(`https://cryptic-stream-86241.herokuapp.com/allMarks/${email}`)
             .then(res => res.json())
             .then(data => setMarks(data))
     }, [marks])

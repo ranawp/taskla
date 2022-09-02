@@ -17,7 +17,7 @@ const DoneSignleEvaluate = ({ taskEvalute, index }) => {
 
                 <td><label htmlFor="Evalutedetails-modal"
                     // onClick={() => setEvaluteModalDetails(taskEvalute)}
-                    className=' bg-blue-700 border-0 px-3 py-1 button  rounded text-white modal-button' >Details </label></td>
+                    className=' bg-primary border-0 px-3 py-1 button  rounded text-white modal-button' >Details </label></td>
 
 
             </tr>

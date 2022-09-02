@@ -1,19 +1,26 @@
 import React, { useEffect, useState } from 'react';
+import Loading from '../../../../Share/Loading';
 import ModuleEditModal from './ModuleEditModal';
 import SignleEditTask from './SignleEditTask';
 
 const TaskEdit = () => {
-    const [singleTask, setSingleTask] = useState([]);
-    const [editvideoModal, seteditvideoModal] = useState(null);
+    const [singleTask, setSingleTask] : any = useState<Object[] | any>([]);
+    const [editvideoModal, seteditvideoModal] : any = useState<Object | null | any>(null);
+    const [loading, isLoading] = useState(false)
 
     useEffect(() => {
-        fetch('http://localhost:5000/alltasks')
+        isLoading(true)
+        fetch('https://cryptic-stream-86241.herokuapp.com/alltasks')
             .then(res => res.json())
-            .then(data => setSingleTask(data))
+            .then(data => {
+                setSingleTask(data)
+                isLoading(false)
+            })
     }, [])
     return (
         <div className='mt-20'>
             <h1 className='text-2xl mb-4 text-center font-bold text-primary dark:text-slate-50'>Task <span className='text-secondary'>Edit </span> </h1>
+            {loading && <Loading />}
             <table className=" w-80 mx-auto sm:w-full dark:text-slate-50 border dark:border-[#293241]">
 
                 

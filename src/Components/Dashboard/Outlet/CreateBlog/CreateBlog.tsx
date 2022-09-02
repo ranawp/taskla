@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import auth from '../../../../firebase.init';
+import swal from 'sweetalert';
 
 const CreateBlog = () => {
     const { register, handleSubmit, reset } = useForm();
@@ -33,7 +34,7 @@ const CreateBlog = () => {
                     }
 
                     //send to database 
-                    fetch('http://localhost:5000/createBlog', {
+                    fetch('https://cryptic-stream-86241.herokuapp.com/createBlog', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'
@@ -43,6 +44,7 @@ const CreateBlog = () => {
                         .then(res => res.json())
                         .then(result => {
                             console.log('products', result)
+                            swal("WOW!", "Blog Published", "success");
                         })
                 }
 

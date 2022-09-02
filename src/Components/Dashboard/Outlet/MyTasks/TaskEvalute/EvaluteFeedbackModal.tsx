@@ -23,7 +23,7 @@ const EvaluteFeedbackModal = ({ evaluteFeedbackModal, setRefresh }) => {
         const scriptfeedback = e.target.scriptfeedback.value;
         console.log(email, taskDescription, taskName, deadline, taskNo, currentDate, currentHour, mark, scriptfeedback);
 
-        fetch(`http://localhost:5000/studentMarks`, {
+        fetch(`https://cryptic-stream-86241.herokuapp.com/studentMarks`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -40,8 +40,10 @@ const EvaluteFeedbackModal = ({ evaluteFeedbackModal, setRefresh }) => {
                 feedbackDate: feedbackDate,
                 feedbackHour: feedbackHour
             })
-        });
-        fetch(` http://localhost:5000/answers/${taskId}`, {
+        }).then(res => res.json())
+            .then(data => console.log(data))
+
+        fetch(` https://cryptic-stream-86241.herokuapp.com/answers/${taskId}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -55,7 +57,7 @@ const EvaluteFeedbackModal = ({ evaluteFeedbackModal, setRefresh }) => {
                 console.log(data)
                 setRefresh(data.acknowledged == true)
             })
-        event?.target?.reset()
+        e?.target?.reset()
 
     }
 
@@ -107,7 +109,7 @@ const EvaluteFeedbackModal = ({ evaluteFeedbackModal, setRefresh }) => {
                             className=" mt-2 p-2 rounded-lg background-color dark:bg-[#212d41]"
                         ></textarea>
                         <br />
-                        <input className=' bg-blue-700 border-0 px-3 py-1 button  rounded text-white' type="submit" value="Submit" />
+                        <input className=' bg-primary border-0 px-3 py-1 button  rounded text-white' type="submit" value="Submit" />
                     </form>
 
                 </div>

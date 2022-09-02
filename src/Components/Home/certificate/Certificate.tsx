@@ -50,7 +50,7 @@ const Certificate = () => {
 
                         <div className="box-style m-12">
                             <div className="imageBox">
-                                <img className='w-48 max-w-sm rounded-lg shadow-2xl' src="https://devabit.com/wp-content/uploads/2018/07/adult-business-businessman-1061588-e1550068468107.jpg" alt="" />
+                                <img className='w-48 max-w-sm rounded-lg shadow-2xl' src="https://i.ibb.co/M5ZT06h/employee-training.jpg" alt="" />
 
                             </div>
                             <div className="content">

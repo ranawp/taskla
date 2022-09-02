@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
 const BookPublish = () => {
-    const imageStoragekey = 'b2898afe89c6cab65b047e7f8e7453c1';
-    const [imgData, setImgdata] = useState();
+    const imageStoragekey:string = 'b2898afe89c6cab65b047e7f8e7453c1';
+    const [imgData, setImgdata] = useState<string>('');
 
-    const handleFile = e => {
+    const handleFile = (e):void => {
         const image = e.target.files[0];
         const url = `https://api.imgbb.com/1/upload?key=${imageStoragekey}`;
         const formData = new FormData();
@@ -22,14 +22,14 @@ const BookPublish = () => {
     }
 
 
-    const formSubmit = event => {
+    const formSubmit = (event):void => {
         event.preventDefault();
         const name = event.target.name.value;
         const author = event.target.author.value;
         const description = event.target.description.value;
         const link = event.target.link.value;
 
-        fetch('http://localhost:5000/booksUpload', {
+        fetch('https://cryptic-stream-86241.herokuapp.com/booksUpload', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
@@ -62,7 +62,7 @@ const BookPublish = () => {
                                     <input type="text" className='input w-full dark:text-slate-50 bg-slate-100 dark:bg-[#182233]' name="author" id="author" placeholder='Type Author Name' />
 
                                     <label htmlFor="description" className='my-2  cursor-pointer dark:text-slate-50'>Description</label>
-                                    <textarea name="description" className='w-full p-5 dark:text-slate-50 bg-slate-100 dark:bg-[#182233]' id="description" cols="30" rows="10" placeholder='Write Short Description'></textarea>
+                                    <textarea name="description" className='w-full p-5 dark:text-slate-50 bg-slate-100 dark:bg-[#182233]' id="description" cols={30} rows={10} placeholder='Write Short Description'></textarea>
 
                                     <div className=' form-control'>
                                         <label htmlFor="image" className='my-2  cursor-pointer dark:text-slate-50'>Image</label>

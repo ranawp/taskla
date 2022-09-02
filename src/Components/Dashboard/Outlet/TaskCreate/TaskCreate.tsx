@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import './TaskCreate.css';
 import taskSvg from '../../../../imgages/taskCreate.svg'
+import swal from 'sweetalert';
 
 const TaskCreate = () => {
 
@@ -12,7 +13,7 @@ const TaskCreate = () => {
     const currentHour = date.toLocaleTimeString();
 
     const onSubmit = (data): void => {
-        const url = `http://localhost:5000/tasks`
+        const url = `https://cryptic-stream-86241.herokuapp.com/tasks`
         fetch(url, {
             method: 'POST',
             headers: {
@@ -22,16 +23,17 @@ const TaskCreate = () => {
         })
             .then(res => res.json())
             .then(result => {
-                result
+                if (result) {
+                    swal("Good job!", "Task Added", "success");
+                }
             })
         reset()
     };
     return (
         <div>
-            <h2 className='text-lg text-center font-bold dark:text-slate-50'>Give task to Students</h2>
-            <div className=' mx-auto  mb-10 grid lg:grid-cols-2 gap-4'>
-
-                <div className="ml-10 mt-5 w-96 card dark:text-slate-50 bg-white dark:bg-[#182233] shadow-2xl ">
+            <h2 className='text-lg text-center font-bold dark:text-slate-50'>Give task to  <span className='text-secondary'>Students</span> </h2>
+            <div className='mb-10 grid lg:grid-cols-2 gap-4'>
+                <div className="sm:ml-10 mt-5 mx-auto w-80 sm:w-96 card dark:text-slate-50 bg-white dark:bg-[#182233] shadow-2xl">
                     <div className="card-body">
                         <form className=' ' onSubmit={handleSubmit(onSubmit)}>
 

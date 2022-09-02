@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import swal from 'sweetalert';
 
 interface Date {
     month: string
@@ -9,7 +10,7 @@ interface Date {
 const NoticePublish = () => {
 
 
-    const options: any = { month: 'short', day: 'numeric', year: 'numeric' };
+    const options: Date | any = { month: 'short', day: 'numeric', year: 'numeric' };
     const dateFunction = new Date().toLocaleDateString("en-UK", options);
 
     // time 
@@ -33,8 +34,8 @@ const NoticePublish = () => {
         const notice = event.target.title.value;
         const announcement = event.target.announcement.value;
         const read = false;
-        const data = { notice, announcement, time: dateTime }
-        fetch(`http://localhost:5000/notice`, {
+        const data = { notice, announcement, time: dateTime, read }
+        fetch(`https://cryptic-stream-86241.herokuapp.com/notice`, {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
@@ -42,7 +43,11 @@ const NoticePublish = () => {
             },
         })
             .then((response) => response.json())
-            .then((json) => console.log(json));
+            .then((json) => {
+                if (json) {
+                    swal("Notice Published",  "success");
+                }
+            });
 
         event.target.reset();
     }

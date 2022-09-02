@@ -1,11 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import BookCard from './BookCard';
 
+interface Books{ 
+    _id:string,
+    name:string,
+    author:string,
+    description:string,
+    link:string,
+    img:string
+}
+
 const Elibrary = () => {
-    const [search,setSearch] = useState("");
-    const [books, setBooks] = useState([{}]);
+    const [search,setSearch] = useState<string>("");
+    const [books, setBooks] = useState<Books[]>([]);
     useEffect(() => {
-        fetch('http://localhost:5000/books')
+        fetch('https://cryptic-stream-86241.herokuapp.com/books')
             .then(res => res.json())
             .then(data => setBooks(data))
     }, [])

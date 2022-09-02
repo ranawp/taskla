@@ -11,7 +11,7 @@ const BookCard = (book) => {
 
                 <img className='w-[130px] mx-auto' src={img} alt="" />
                 <h3 className='text-[16px] text-center mt-3 mb-1 font-bold z-0'>{name}</h3>
-                <div className='bg-[#bbbfc6d1] opacity-0 hover:opacity-100 duration-300 absolute inset-0 z-100 flex justify-center items-center text-lg font-bold text-slate-100'><p className='p-3 bg-yellow-500 rounded'>READ</p></div>
+                <div className='bg-[#5f6b827a] dark:bg-[#242e41d1] opacity-0 hover:opacity-100 duration-1000 absolute inset-0 z-100 flex justify-center items-center text-lg font-bold text-slate-100'><p className='p-3 bg-secondary rounded'>READ</p></div>
                 <h3 className='text-[14px] text-center font-bold mb-2'>{author}</h3>
                 <p className='text-[14px]'>{description}</p>
                 

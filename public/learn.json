@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "HTML",
+        "description": "You can confidently and beginner friendly learn advanced HTML",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSouo35olUMABRtk82_z9W5CTen-WFDysgPt1ZdCv-PzFBuC-yc97X5jj-voLOZmk8kcbQ&usqp=CAU"
+    },
+    {
+        "id": 2,
+        "name": "CSS",
+        "description": "You can confidently and beginner friendly learn advanced CSS",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCb5mDznuvf8bkjFmzxzSzOoiC3FIVJP67Ng&usqp=CAU"
+    },
+    {
+        "id": 3,
+        "name": "JavaScript",
+        "description": "You can confidently and beginner friendly learn advanced JavaScript",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPvTmL1YdTOToOkJ2ZJfeZ2Ki1MsKkHN0i800o4JMr3wEK_EJmCfJQX4EOsIt-o2iR7OQ&usqp=CAU"
+    },
+    {
+        "id": 4,
+        "name": "React Js",
+        "description": "You can confidently and beginner friendly learn advanced React js",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlxbWrY5_-xfJfNtj8tfB7Cd9UXQ1tfd4EpldwE0bVQDJ-QiaTPihrK1dGJuCWLBjMr9I&usqp=CAU"
+    },
+    {
+        "id": 5,
+        "name": "Node Js",
+        "description": "You can confidently and beginner friendly learn advanced Node js",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-oDlqsGZafPOdrWATbpoIQ8w2IMxT5XRY4w&usqp=CAU"
+    },
+    {
+        "id": 6,
+        "name": "MongoDB",
+        "description": "You can confidently and beginner friendly learn advanced MongoDB",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiCbY7nOQZ42XVkPPCckVzG-jIdTRfj_5hyQ&usqp=CAU"
+    }
+]

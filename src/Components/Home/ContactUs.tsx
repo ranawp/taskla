@@ -1,6 +1,13 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const ContactUs = () => {
+
+    const onSubmitForm = e => {
+        toast.success('Message Sent!!')
+        e.target.reset();
+    }
+
     return (
         <div>
             <h1 className='lg:text-[40px] mt-32 text-[32px] text-center text-primary font-bold' > Contact With Taskla</h1 >

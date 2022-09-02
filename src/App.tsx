@@ -5,8 +5,7 @@ import Courses from './Components/Courses/Courses';
 import Payment from './Components/Courses/Payment';
 import MyTask from './Components/Dashboard/Outlet/MyTasks/MyTask';
 import Home from './Components/Home/Home';
-// import Login from './Components/Login/Login';
-import MyClass from './Components/MyClass/MyClass';
+// import MyClass from './Components/MyClass/MyClass';
 import Register from './Components/Register/Register';
 import ViewProfile from './Components/ViewProfile/ViewProfile';
 import StudentAnalytic from './Components/StudentAnalytic/StudentAnalytic';
@@ -26,11 +25,14 @@ import CompletedTaskEvalute from './Components/Dashboard/Outlet/MyTasks/TaskEval
 import CreateBlog from './Components/Dashboard/Outlet/CreateBlog/CreateBlog';
 import NoticePublish from './Components/Dashboard/NoticePublish/NoticePublish';
 import ModuleUpload from './Components/Dashboard/Outlet/TaskCreate/ModuleUpload';
+import AllBlogs from './Components/Dashboard/AllBlogs/AllBlogs';
 import TaskEdit from './Components/Dashboard/Outlet/TaskCreate/TaskEdit';
 import Login from './Components/Login/Login';
 import Elibrary from './Elibrary/Elibrary';
 import BookPublish from './Components/Dashboard/Outlet/BookPublish/BookPublish';
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export const TimeContext = createContext('default');
@@ -69,7 +71,6 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='/blog' element={<Blogs />} />
           <Route path="/createBlog/:blogId" element={<BlogDetails />} />
-          <Route path="/classroom" element={<MyClass />} />
           <Route path="/mytask" element={<MyTask />} />
           <Route path="/viewprofile" element={<ViewProfile />} />
           <Route path='/courses' element={<Courses />} />
@@ -86,10 +87,11 @@ const App = () => {
             <Route index element={<Admin_Dashboard />} />
             <Route path="allusers" element={<Allusers />} />
             <Route path="createtask" element={<TaskCreate />} />
+            <Route path="moduleUpload" element={<ModuleUpload></ModuleUpload>}></Route>
             <Route path="taskEvaluate" element={<TaskEvaluate />} />
             <Route path="moduleupload" element={<ModuleUpload />} />
             <Route path="editTask" element={<TaskEdit />} />
-            {/* <Route path="allblogs" element={<AllBlog />} /> */}
+            <Route path="allblogs" element={<AllBlogs />} />
             <Route path="taskEvaluateCompleted" element={<CompletedTaskEvalute />} />
             <Route path="createBlog" element={<CreateBlog />} />
             <Route path="notice" element={<NoticePublish />} />
@@ -97,13 +99,14 @@ const App = () => {
           </Route>
 
 
-          <Route path="/login" element={<Login></Login>}></Route>
+          <Route path="/login" element={<Login/>}></Route>
           <Route path="/register" element={<Register></Register>}></Route>
           <Route path="/elibrary" element={<Elibrary/>}></Route>
         </Routes>
 
         <Footer></Footer>
       </TimeContext.Provider>
+      <ToastContainer />
     </div>
   );
 };

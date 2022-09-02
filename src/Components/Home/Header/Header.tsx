@@ -3,13 +3,13 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 // import moment from 'moment';
 import banner from '../../../asset/hero-bg.png'
-import hero from '../../../asset/hero.png'
+
 
 
 const Header = () => {
     return (
-        <div className='mt-[40px] bg-cover h-[550px]  relative' style={{ backgroundImage: `url(${banner})` }}>
-            <div className='max-w-screen-xl mx-auto '>
+        <div className='mt-[40px] bg-cover h-[600px] lg:h-[550px]  relative' style={{ backgroundImage: `url(${banner})` }}>
+            <div className='max-w-screen-xl mx-auto'>
                 <div className='grid-cols-2'>
                     <div className='p-5 lg:top-[20px] w-full pb-32'>
                         <h1 className='text-[32px] lg:text-[45px] text-primary dark:text-[#E2E8F0] font-bold md:mt-20 mt-4 tracking-wide' > Believe Bigger,<span className='dark:text-secondary'> Aim Higher</span>  </h1 >
@@ -22,7 +22,7 @@ const Header = () => {
                         <Link to='/courses'><button className='btn btn-secondary mt-5 text-white'>Enroll Now</button></Link>
                     </div >
                     <div className='absolute my-auto bottom-0 right-0'>
-                        <img className='w-[700px]' src={hero} alt="" />
+                        <img className='w-[700px]' src="https://i.ibb.co/hfHqtP6/123456.png" alt="" />
                     </div>
                 </div>
             </div>

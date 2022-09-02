@@ -4,14 +4,14 @@ import { useForm } from 'react-hook-form';
 const ModuleEditModal = ({ editvideoModal, singleTask }) => {
     const taskId = editvideoModal?._id
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e): void => {
         console.log(e)
         e.preventDefault()
         const ModuleNameserial7 = e.target.ModuleNameserial7.value
         const Modulevideo7 = e.target.Modulevideo7.value
 
 
-        fetch(`http://localhost:5000/tasks/${taskId}`, {
+        fetch(`https://cryptic-stream-86241.herokuapp.com/tasks/${taskId}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

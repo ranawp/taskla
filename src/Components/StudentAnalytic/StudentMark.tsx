@@ -1,7 +1,7 @@
 import React from 'react';
 
 const StudentMark = ({ singleMark, index }) => {
-
+     console.log(singleMark)
     return (
         <>
             <tr className='border dark:border-[#293241]'>

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../../firebase.init';
 
-const SingleSubmittedTask = ({ taskDone, answerScript }) => {
+const SingleSubmittedTask = ({ taskDone, answerScript }:any) => {
     // console.log(answerScript)
 
     return (
@@ -31,7 +31,7 @@ const SingleSubmittedTask = ({ taskDone, answerScript }) => {
                     {/* onClick={() => handleSubmit(singleTask)} */}
 
                     <div className="collapse-content">
-                        <label className="bg-blue-700 border-0 px-3 py-1 button  rounded text-white modal-button cursor-pointer">My Submission</label>
+                        <label className="bg-primary- border-0 px-3 py-1 button  rounded text-white modal-button cursor-pointer">My Submission</label>
                         <p>My submission: {answerScript.taskDescription}</p>
                     </div>
                 </div>

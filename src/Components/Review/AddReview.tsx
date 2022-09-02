@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import ReactStars from "react-rating-stars-component";
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
+import swal from 'sweetalert';
 
 const AddReview = () => {
 
@@ -12,18 +14,16 @@ const AddReview = () => {
     const email: string | null | undefined = user?.email;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/user/${email}`)
+        fetch(`https://cryptic-stream-86241.herokuapp.com/user/${email}`)
             .then((res) => res.json())
             .then((data) => getData(data));
 
     }, [email])
 
 
-    const ratingChanged = (newRating: number): void => {
+    const ratingChanged = (newRating: number): void => {    
         setRating(newRating);
     };
-
-
 
 
     const handleAddReview = (event: any): void => {
@@ -33,7 +33,8 @@ const AddReview = () => {
         const message = event.target.message.value;
         const image = data.image || 'https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png';
         const review = { name, course, message, rating, image }
-        fetch('http://localhost:5000/review', {
+        
+        fetch('https://cryptic-stream-86241.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -42,7 +43,9 @@ const AddReview = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                if (data) {
+                    swal("Good job!", "Successfully Review added", "success");
+                }
             })
         event.target.reset();
     }
@@ -52,8 +55,8 @@ const AddReview = () => {
             <div className="hero h-[700px]" style={{ backgroundImage: `url(https://alphagypsumboard.com/wp-content/uploads/2019/07/Background-website-01.jpg)` }}>
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
-                        <h1 className="text-3xl font-bold">Give Feedback</h1>
-                        <p className="py-6">You give a important review, that's helps to grow us?</p>
+                        <h1 className="text-3xl font-bold text-center">Give <span className='text-secondary'>Feedback</span></h1>
+                        <p className="py-6 font-bold text-sky-400 text-xl">You give a important review, that's helps to grow us?</p>
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl text-primary dark:text-slate-50 bg-white dark:bg-[#182233]">
                         <div className="card-body">
@@ -82,10 +85,9 @@ const AddReview = () => {
                                         size={35}
                                         activeColor="#ffd700"
                                     />,
-                                    <button className="btn btn-primary mt-1">Submit</button>
+                                    <button className="btn btn-secondary mt-1">Submit</button>
                                 </div>
                             </form>
-
                         </div>
                     </div>
                 </div>
